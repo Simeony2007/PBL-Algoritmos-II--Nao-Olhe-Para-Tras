@@ -1,24 +1,42 @@
 package scr.controller;
 
 import scr.model.repository.StoryBuilder;
+
+import scr.model.repository.SaveManager; // Import necessário
 import scr.model.service.Chapter;
 import scr.model.service.GameState;
+import scr.model.service.SaveState;     // Import necessário
 import scr.model.service.Scene;
 import scr.view.GameInterface;
 
 public class Game {
     private GameState state;
-	
+    private int currentSaveSlot;
+
     /**
      * Método construtor. Cria um novo GameState adicionando os personagens
      * e os capítulos.
      */
-    public Game() {
+    public Game(int saveSlot, SaveState loadedData) {
+        this.currentSaveSlot = saveSlot;
+        
         this.state = new GameState(
-            StoryBuilder.getOrfeu(),
-            StoryBuilder.GetNpcs(),
-            StoryBuilder.getChapters());
-	    }
+            loadedData.orfeu,
+            loadedData.npcs,
+            StoryBuilder.getChapters()
+        );
+
+        // Avança silenciosamente até o capítulo salvo
+        for (int i = 0; i < loadedData.chapterIndex; i++) {
+            this.state.advanceChapter();
+        }
+
+        // Pula para a cena salva
+        Chapter currentChapter = this.state.getCurrentChapter();
+        if (currentChapter != null && loadedData.sceneId != null) {
+            currentChapter.changeCurrentScene(loadedData.sceneId);
+        }
+    }
     
     /**
      * É o Core do jogo, é a lógica de funcionamento.
@@ -49,8 +67,10 @@ public class Game {
                     GameInterface.showTextLn(currentScene.getChoicesText());
                     GameInterface.showPlayerStats(state.getOrfeu().toString());
                     GameInterface.showPromptChoice();
-                
-                    int choiceId = getNumberInput(currentScene.choicesSize());
+
+                    // 3. Passe a currentSceneId para o getNumberInput poder salvar a cena certa
+                    int choiceId = getInput(currentScene.choicesSize(), currentScene.getSceneId());
+                    
                     String currentSceneId = ApplyConsequences.applyConsequences(
                         state.getOrfeu(), 
                         state.getNpcs(), 
@@ -78,7 +98,16 @@ public class Game {
             if (state.isRunning()) {
                 GameInterface.waitForEnter("\n[Fim do Capítulo. Pressione ENTER para avançar...]");
                 GameInterface.clearConsole();
+                
+                // Avança para o próximo capítulo no GameState
                 state.advanceChapter();
+                
+                // AUTO-SAVE: Salva o jogo no início do novo capítulo
+                if (state.isRunning()) {
+                    // Passamos "null" para a cena, assim o jogo carrega a primeira cena padrão do capítulo
+                    saveCurrentProgress(null);
+                    System.out.println("[!] Jogo salvo automaticamente no Slot " + this.currentSaveSlot + ".\n");
+                }
             }
         }
         GameInterface.clearConsole();
@@ -93,13 +122,22 @@ public class Game {
      * @param maxChoices int
      * @return escolha int
      */
-    private int getNumberInput(int maxChoices) {
+    private int getInput(int maxChoices, String currentSceneId) {
         int choice;
         while (true) {
+            String userInput = GameInterface.getTextInput().trim();
+
+            // Lógica interceptadora do Save
+            if (userInput.equalsIgnoreCase("salvar")) {
+                saveCurrentProgress(currentSceneId);
+                System.out.println("\n[!] Jogo salvo no Slot " + this.currentSaveSlot + " com sucesso!");
+                GameInterface.showPromptChoice(); // Mostra o prompt de novo para o jogador poder continuar
+                continue; // Volta ao início do while(true) sem avançar a história
+            }
+
+            // Lógica normal das escolhas
             try {
-                String userInput = GameInterface.getTextInput();
-                choice = Integer.parseInt(userInput.trim());
-                
+                choice = Integer.parseInt(userInput);
                 if (choice > 0 && choice <= maxChoices) {
                     return choice - 1;
                 } else {
@@ -118,4 +156,15 @@ public class Game {
             Thread.currentThread().interrupt();
         }
     }
+
+    private void saveCurrentProgress(String currentSceneId) {
+        SaveState saveInfo = new SaveState(
+            this.state.getOrfeu(),
+            this.state.getNpcs(),
+            this.state.getCurrentChapterIndex(), // *LEMBRETE: Você precisa ter criado este Getter no GameState.java*
+            currentSceneId
+        );
+        SaveManager.saveGame(saveInfo, this.currentSaveSlot);
+    }
+
 }

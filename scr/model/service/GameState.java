@@ -33,6 +33,10 @@ public class GameState {
         return null;
     }
 
+    public int getCurrentChapterIndex() {
+       return currentChapterIndex;
+    }
+
     public void advanceChapter() {
         this.currentChapterIndex++;
     }

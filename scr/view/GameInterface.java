@@ -101,6 +101,14 @@ public class GameInterface {
         System.out.println("\nAté a próxima!\n");
     }
 
+    public static void showLoadMenu() {
+        System.out.println("\n=================================");
+        System.out.println("       SELECIONAR SLOT           ");
+        System.out.println("=================================");
+        System.out.println("Escolha um slot (1, 2 ou 3) para iniciar ou continuar:");
+        System.out.print("Slot: ");
+    }
+
     // --- MÉTODOS DE TEXTO DO JOGO ---
     public static void showChapterTitle(String title) {
         System.out.println("\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
@@ -115,7 +123,7 @@ public class GameInterface {
     }
 
     public static void showPromptChoice() {
-        System.out.print("\nO que você faz? Escolha uma opção: ");
+        System.out.print("\nO que você faz? Escolha uma opção (ou digite 'salvar'): ");
     }
 
     public static void showGameInvalidOption() {
