@@ -5,7 +5,7 @@ import scr.model.repository.StoryBuilder;
 import scr.model.repository.SaveManager; // Import necessário
 import scr.model.service.Chapter;
 import scr.model.service.GameState;
-import scr.model.service.SaveState;     // Import necessário
+import scr.model.service.SaveState; // Import necessário
 import scr.model.service.Scene;
 import scr.view.GameInterface;
 
@@ -19,12 +19,11 @@ public class Game {
      */
     public Game(int saveSlot, SaveState loadedData) {
         this.currentSaveSlot = saveSlot;
-        
+
         this.state = new GameState(
-            loadedData.orfeu,
-            loadedData.npcs,
-            StoryBuilder.getChapters()
-        );
+                loadedData.orfeu,
+                loadedData.npcs,
+                StoryBuilder.getChapters());
 
         // Avança silenciosamente até o capítulo salvo
         for (int i = 0; i < loadedData.chapterIndex; i++) {
@@ -37,7 +36,7 @@ public class Game {
             currentChapter.changeCurrentScene(loadedData.sceneId);
         }
     }
-    
+
     /**
      * É o Core do jogo, é a lógica de funcionamento.
      * Mostra falas, passa cenas e capítulos de acordo com decisões
@@ -48,14 +47,14 @@ public class Game {
             GameInterface.showChapterTitle(currentChapter.getTitle());
 
             while (!state.isCurrentScenesFinished()) {
-            
+
                 Scene currentScene = currentChapter.getCurrentScene();
 
                 while (!currentScene.isFinishedAllDialogues()) {
                     GameInterface.showDialogue(currentScene.nextDialogue());
                     littleStop(1000);
                 }
-            
+
                 GameInterface.showTextLn("");
 
                 if (currentScene.isEnding()) {
@@ -70,12 +69,11 @@ public class Game {
 
                     // 3. Passe a currentSceneId para o getNumberInput poder salvar a cena certa
                     int choiceId = getInput(currentScene.choicesSize(), currentScene.getSceneId());
-                    
+
                     String currentSceneId = ApplyConsequences.applyConsequences(
-                        state.getOrfeu(), 
-                        state.getNpcs(), 
-                        currentScene.getChoice(choiceId)
-                    );
+                            state.getOrfeu(),
+                            state.getNpcs(),
+                            currentScene.getChoice(choiceId));
                     currentChapter.changeCurrentScene(currentSceneId);
                     GameInterface.clearConsole();
                 } else {
@@ -98,15 +96,16 @@ public class Game {
             if (state.isRunning()) {
                 GameInterface.waitForEnter("\n[Fim do Capítulo. Pressione ENTER para avançar...]");
                 GameInterface.clearConsole();
-                
+
                 // Avança para o próximo capítulo no GameState
                 state.advanceChapter();
-                
+
                 // AUTO-SAVE: Salva o jogo no início do novo capítulo
                 if (state.isRunning()) {
-                    // Passamos "null" para a cena, assim o jogo carrega a primeira cena padrão do capítulo
+                    // Passamos "null" para a cena, assim o jogo carrega a primeira cena padrão do
+                    // capítulo
                     saveCurrentProgress(null);
-                    System.out.println("[!] Jogo salvo automaticamente no Slot " + this.currentSaveSlot + ".\n");
+                    GameInterface.printWarning("[!] Jogo salvo automaticamente no Slot " + this.currentSaveSlot + ".");
                 }
             }
         }
@@ -119,6 +118,7 @@ public class Game {
     /**
      * Recebe um valor máximo e recebe uma entrada do usuário.
      * Faz a conversão em inteiro e retorna um valor dentro do máximo.
+     * 
      * @param maxChoices int
      * @return escolha int
      */
@@ -159,12 +159,22 @@ public class Game {
 
     private void saveCurrentProgress(String currentSceneId) {
         SaveState saveInfo = new SaveState(
-            this.state.getOrfeu(),
-            this.state.getNpcs(),
-            this.state.getCurrentChapterIndex(), // *LEMBRETE: Você precisa ter criado este Getter no GameState.java*
-            currentSceneId
-        );
+                this.state.getOrfeu(),
+                this.state.getNpcs(),
+                this.state.getCurrentChapterIndex(), // *LEMBRETE: Você precisa ter criado este Getter no
+                                                     // GameState.java*
+                currentSceneId);
         SaveManager.saveGame(saveInfo, this.currentSaveSlot);
+    }
+
+    private void saveCurrentProgress(int slot) {
+        SaveState saveInfo = new SaveState(
+                this.state.getOrfeu(),
+                this.state.getNpcs(),
+                this.state.getCurrentChapterIndex(), // *LEMBRETE: Você precisa ter criado este Getter no
+                                                     // GameState.java*
+                null);
+        SaveManager.saveGame(saveInfo, slot);
     }
 
 }

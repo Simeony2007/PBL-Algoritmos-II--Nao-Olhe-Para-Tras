@@ -1,11 +1,15 @@
 package scr.view;
 
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+import java.util.Map;
 import java.util.Scanner;
 
 public class GameInterface {
     private static final Scanner scanner = new Scanner(System.in);
 
-    private GameInterface() {}
+    private GameInterface() {
+    }
 
     public static String getTextInput() {
         return scanner.nextLine();
@@ -29,25 +33,30 @@ public class GameInterface {
         System.out.println(wrappedText.toString().trim());
     }
 
+    public static void printWarning(String text) {
+        System.out.println("---WARNING---");
+        System.out.println(text);
+    }
+
     // Feito utilizando IA
     public static void showDialogue(String text) {
         int wrapLength = 160;
         String indent = "    ";
-    
+
         String[] words = text.split(" ");
-    
+
         StringBuilder wrappedText = new StringBuilder(indent);
         int currentLineLength = indent.length();
 
         for (String word : words) {
             if (currentLineLength + word.length() > wrapLength) {
-                wrappedText.append("\n"); 
+                wrappedText.append("\n");
                 currentLineLength = 0;
             }
-        wrappedText.append(word).append(" ");
-        currentLineLength += word.length() + 1;
+            wrappedText.append(word).append(" ");
+            currentLineLength += word.length() + 1;
         }
-    
+
         System.out.println(wrappedText.toString());
     }
 
@@ -55,8 +64,6 @@ public class GameInterface {
         System.out.print("\033[H\033[2J");
         System.out.flush();
     }
-
-
 
     // --- MÉTODOS DE TEXTO DO MENU ---
     public static void showMainMenu() {
@@ -83,7 +90,8 @@ public class GameInterface {
         System.out.println("\n=== INSTRUÇÕES ===");
         System.out.println("Objetivo:\n- Atravessar o Submundo e recuperar sua Amada.\n");
         System.out.println("Como Jogar:\n- Digite no terminal um dos números das opções para selecionar elas.\n");
-        System.out.println("Mecânicas:\n- Orfeu possui 3 atributos, Amor, Raiva e Tristeza, eles aumentam ou diminuem conforme suas escolhas");
+        System.out.println(
+                "Mecânicas:\n- Orfeu possui 3 atributos, Amor, Raiva e Tristeza, eles aumentam ou diminuem conforme suas escolhas");
         System.out.println("- Orfeu também irá coletar óbolos (moedas) para atravessar o Submundo.");
         System.out.println("- Você também fará relacionamento com alguns personagens.");
         System.out.println("- Tanto o relacionameto, quanto os atributos terão consequências futuras.");
@@ -93,7 +101,8 @@ public class GameInterface {
     public static void showCredits() {
         System.out.println("\n=== CRÉDITOS ===");
         System.out.println("Desenvolvido por: Pedro e Simeony\n");
-        System.out.println("Universo e História inspirados na mitologia grega, em especial o conto de Orfeu e Eurídice");
+        System.out
+                .println("Universo e História inspirados na mitologia grega, em especial o conto de Orfeu e Eurídice");
         System.out.println("\n(Pressione ENTER para voltar)");
     }
 
@@ -101,11 +110,20 @@ public class GameInterface {
         System.out.println("\nAté a próxima!\n");
     }
 
-    public static void showLoadMenu() {
+    public static void showLoadMenu(Map informationDictionary) {
         System.out.println("\n=================================");
         System.out.println("       SELECIONAR SLOT           ");
         System.out.println("=================================");
         System.out.println("Escolha um slot (1, 2 ou 3) para iniciar ou continuar:");
+        if (informationDictionary != null) {
+            for (int i = 1; i < 4; i++) {
+                System.out.println(informationDictionary.get(i));
+            }
+            for (int i = 1; i < 6; i++) {
+                int a = i + 3;
+                System.out.println(informationDictionary.get(a));
+            }
+        }
         System.out.print("Slot: ");
     }
 

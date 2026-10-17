@@ -1,8 +1,17 @@
 package scr.controller;
 
 import scr.view.GameInterface;
+
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.util.Dictionary;
+import java.util.HashMap;
+import java.util.Map;
+import java.nio.file.attribute.FileTime;
+
 import scr.model.repository.SaveManager; // Importe o seu SaveManager
-import scr.model.service.SaveState;     // Importe o seu SaveState
+import scr.model.service.SaveState; // Importe o seu SaveState
 
 public class Menu {
     private Game game;
@@ -56,10 +65,11 @@ public class Menu {
         switch (optionNumber) {
             case 1:
                 // Atualizado para perguntar o slot e carregar os dados
-                GameInterface.showLoadMenu();
+
+                GameInterface.showLoadMenu(getAllSavesInformation());
                 int slot = getSlotInput();
                 SaveState loadedState = SaveManager.loadGame(slot); // Carrega o JSON
-                
+
                 game = new Game(slot, loadedState); // Passa os dados para o jogo
                 game.gameRunning();
                 break;
@@ -79,5 +89,35 @@ public class Menu {
                 break;
         }
         GameInterface.clearConsole();
+    }
+
+    public Map<Integer, String> getAllSavesInformation() {
+        SaveManager tempSVM = new SaveManager();
+        Map<Integer, String> tempDic = new HashMap<>();
+
+        // 1. Saves manuais (1 a 3)
+        for (int i = 1; i <= 3; i++) {
+            SaveState j = tempSVM.loadGame(i);
+            if (j != null) {
+                String tempStr = "Slot " + i + " - Capítulo: " + j.chapterIndex + " | Cena: " + j.sceneId;
+                tempDic.put(i, tempStr);
+            } else {
+                tempDic.put(i, "Slot " + i + ": [Vazio]");
+            }
+        }
+
+        // 2. Autosaves (1 a 5 -> mapeados para as chaves 4 a 8)
+        for (int i = 1; i <= 5; i++) {
+            SaveState j = tempSVM.loadAutoSave(i);
+            int chave = i + 3;
+            if (j != null) {
+                String tempStr = "Autosave " + i + " - Capítulo: " + j.chapterIndex + " | Cena: " + j.sceneId;
+                tempDic.put(chave, tempStr);
+            } else {
+                tempDic.put(chave, "Autosave " + i + ": [Vazio]");
+            }
+        }
+
+        return tempDic;
     }
 }
