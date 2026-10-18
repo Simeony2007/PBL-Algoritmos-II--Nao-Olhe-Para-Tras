@@ -99,7 +99,9 @@ public class Menu {
         for (int i = 1; i <= 3; i++) {
             SaveState j = tempSVM.loadGame(i);
             if (j != null) {
-                String tempStr = "Slot " + i + " - Capítulo: " + j.chapterIndex + " | Cena: " + j.sceneId;
+                String time = tempSVM.getSaveDateTime(i);
+                String tempStr = "Slot " + i + " - Capítulo: " + j.chapterIndex + " | Cena: " + j.sceneId
+                        + " | Data e Hora: " + time;
                 tempDic.put(i, tempStr);
             } else {
                 tempDic.put(i, "Slot " + i + ": [Vazio]");
@@ -111,7 +113,9 @@ public class Menu {
             SaveState j = tempSVM.loadAutoSave(i);
             int chave = i + 3;
             if (j != null) {
-                String tempStr = "Autosave " + i + " - Capítulo: " + j.chapterIndex + " | Cena: " + j.sceneId;
+                String time = tempSVM.getAutoSaveDateTime(i);
+                String tempStr = "Autosave " + i + " - Capítulo: " + j.chapterIndex + " | Cena: " + j.sceneId
+                        + " | Data e Hora: " + time;
                 tempDic.put(chave, tempStr);
             } else {
                 tempDic.put(chave, "Autosave " + i + ": [Vazio]");

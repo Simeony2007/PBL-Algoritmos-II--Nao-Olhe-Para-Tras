@@ -8,6 +8,9 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.sql.Date;
+import java.text.SimpleDateFormat;
+
 import scr.view.GameInterface;
 
 public class SaveManager {
@@ -86,6 +89,26 @@ public class SaveManager {
             GameInterface
                     .printWarning("\n[!] Erro ao carregar o save. Iniciando um novo jogo. (" + e.getMessage() + ")");
             return new SaveState();
+        }
+    }
+
+    public static String getSaveDateTime(int slot) {
+        File file = new File(SAVE_DIRECTORY + "save_slot_" + slot + ".json");
+        if (file.exists()) {
+            SimpleDateFormat formatador = new SimpleDateFormat("dd/MM/yyyy HH:mm");
+            return formatador.format(new Date(file.lastModified()));
+        } else {
+            return null;
+        }
+    }
+
+    public static String getAutoSaveDateTime(int slot) {
+        File file = new File(SAVE_DIRECTORY + "auto_save" + slot + ".json");
+        if (file.exists()) {
+            SimpleDateFormat formatador = new SimpleDateFormat("dd/MM/yyyy HH:mm");
+            return formatador.format(new Date(file.lastModified()));
+        } else {
+            return null;
         }
     }
 }
