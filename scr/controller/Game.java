@@ -76,10 +76,12 @@ public class Game {
                             currentScene.getChoice(choiceId));
                     currentChapter.changeCurrentScene(currentSceneId);
                     GameInterface.clearConsole();
+                    saveCurrentProgress(currentSceneId, -1);
                 } else {
                     if (currentScene.getCondition() != null) {
                         String currentSceneId = StatVerify.selectScene(state.getOrfeu(), state.getNpcs(), currentScene);
                         if (currentSceneId != null) {
+                            saveCurrentProgress(currentSceneId, -1);
                             currentChapter.changeCurrentScene(currentSceneId);
                         } else if (currentScene.getNextSceneId() != null) {
                             currentChapter.changeCurrentScene(currentScene.getNextSceneId());
@@ -92,6 +94,7 @@ public class Game {
                         currentChapter.nextScene();
                     }
                 }
+
             }
             if (state.isRunning()) {
                 GameInterface.waitForEnter("\n[Fim do Capítulo. Pressione ENTER para avançar...]");
@@ -165,6 +168,16 @@ public class Game {
                                                      // GameState.java*
                 currentSceneId);
         SaveManager.saveGame(saveInfo, this.currentSaveSlot);
+    }
+
+    private void saveCurrentProgress(String currentSceneId, int slot) {
+        SaveState saveInfo = new SaveState(
+                this.state.getOrfeu(),
+                this.state.getNpcs(),
+                this.state.getCurrentChapterIndex(), // *LEMBRETE: Você precisa ter criado este Getter no
+                                                     // GameState.java*
+                currentSceneId);
+        SaveManager.saveGame(saveInfo, slot);
     }
 
     private void saveCurrentProgress(int slot) {

@@ -18,7 +18,9 @@ public class SaveManager {
 
     // 1. Define the dedicated folder path
     public static final String SAVE_DIRECTORY = "saves/";
-    private static int autoSaveCounter = 1;
+    private static int autoSaveCounter = 1; // ISSO RESETA QUANDO REINICIA O JOGO
+    // OU SEJA, QUANDO COMEÇA O JOGO DNV, ELE SUBSTITUI OS PRIMEIROS AO INVES DE
+    // CONTINUAR PELO ULTIMO
 
     public static void saveGame(SaveState state, int slot) {
 

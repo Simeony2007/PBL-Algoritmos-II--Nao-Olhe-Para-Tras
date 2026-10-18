@@ -1,0 +1,24 @@
+{
+  "orfeu": {
+    "obol": 1,
+    "love": 2,
+    "angry": 0,
+    "sadness": 2
+  },
+  "npcs": [
+    {
+      "name": "Charon",
+      "affinity": 0
+    },
+    {
+      "name": "Eurydice",
+      "affinity": 0
+    },
+    {
+      "name": "Sisyphus",
+      "affinity": 0
+    }
+  ],
+  "chapterIndex": 1,
+  "sceneId": "s3a_fan"
+}
