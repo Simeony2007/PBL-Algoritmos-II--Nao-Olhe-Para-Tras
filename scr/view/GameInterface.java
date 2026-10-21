@@ -15,6 +15,10 @@ public class GameInterface {
         return scanner.nextLine();
     }
 
+    public static void showText(String text) {
+        System.out.print(text);
+    }
+
     // Feito utilizando IA
     public static void showTextLn(String text) {
         int wrapLength = 160;
@@ -95,6 +99,7 @@ public class GameInterface {
         System.out.println("- Orfeu também irá coletar óbolos (moedas) para atravessar o Submundo.");
         System.out.println("- Você também fará relacionamento com alguns personagens.");
         System.out.println("- Tanto o relacionameto, quanto os atributos terão consequências futuras.");
+        System.out.println("\nPara salvar manualmente, digite \"salvar\" no momento onde uma escolha for exigida.");
         System.out.println("\n(Pressione ENTER para voltar)");
     }
 
@@ -161,5 +166,33 @@ public class GameInterface {
         System.out.println("\n=================================");
         System.out.println("             FIM                 ");
         System.out.println("=================================\n");
+    }
+
+    public static void changeColor(int colorNumber) {
+
+        switch (colorNumber) {
+            case 1:
+                System.out.print("\u001B[0m");
+                break;
+
+            case 2:
+                System.out.print("\u001B[34m");
+                break;
+            case 3:
+                System.out.println("\u001B[31m");
+                break;
+            case 4:
+                System.out.println("\u001B[35m");
+                break;
+            default:
+                System.out.print("\u001B[0m");
+                break;
+        }
+
+    }
+
+    public static void showDefinitions() {
+        // Falta fazer o menu de Settings e mostrar as settings atuais e suas possíveis
+        // mudanças - Simeony
     }
 }

@@ -17,8 +17,10 @@ public class Menu {
     private Game game;
 
     public void iniciar() {
+        GameInterface.changeColor(0); // Pra testar é só trocar o número!
+        // Tem q fazer no momento onde trocar em settings ele atualizar tbm! - Simeony
         int opcao = 0;
-        while (opcao != 4) {
+        while (opcao != 5) {
             opcao = inputOptions();
             optionScanner(opcao);
         }
@@ -30,7 +32,7 @@ public class Menu {
                 GameInterface.showMainMenu();
                 String userInput = GameInterface.getTextInput();
                 int number = Integer.parseInt(userInput.trim());
-                if (number > 0 && number <= 4) {
+                if (number > 0 && number <= 5) {
                     return number;
                 } else {
                     GameInterface.showMenuInvalidOption();
@@ -47,25 +49,26 @@ public class Menu {
             try {
                 String userInput = GameInterface.getTextInput();
                 int number = Integer.parseInt(userInput.trim());
-                if (number >= 1 && number <= 3) {
+                if (number >= 1 && number <= 8) {
                     return number;
                 } else {
-                    System.out.println("\n[!] Slot inválido! Digite 1, 2 ou 3.\n");
-                    System.out.print("Slot: ");
+                    GameInterface.showText("\n[!] Slot inválido! Digite um número de 1 até 8.\n\n");
+                    GameInterface.showText("Slot: ");
                 }
             } catch (NumberFormatException e) {
-                System.out.println("\n[!] Entrada inválida! Digite apenas números.\n");
-                System.out.print("Slot: ");
+                GameInterface.showText("\n[!] Entrada inválida! Digite apenas números.\n\n");
+                GameInterface.showText("Slot: ");
             }
         }
     }
 
     public void optionScanner(int optionNumber) {
         GameInterface.clearConsole();
-        switch (optionNumber) {
-            case 1:
-                // Atualizado para perguntar o slot e carregar os dados
+        switch (optionNumber) { // PRECISAMOS ADICIONAR O SOBRESCREVER E APAGAR SAVE!
+            case 1: // Acho que uma nova aba pra "Saves" é uma boa!
+                    // Acho q uma das configs pode ser a língua tbm - Simeony
 
+                // Atualizado para perguntar o slot e carregar os dados
                 GameInterface.showLoadMenu(getAllSavesInformation());
                 int slot = getSlotInput();
                 SaveState loadedState = SaveManager.loadGame(slot); // Carrega o JSON
@@ -82,8 +85,10 @@ public class Menu {
                 GameInterface.getTextInput();
                 break;
             case 4:
-                GameInterface.showExitMessage();
+                GameInterface.showDefinitions();
                 break;
+            case 5:
+                GameInterface.showExitMessage();
             default:
                 GameInterface.showTextLn("Erro inesperado...");
                 break;
@@ -92,14 +97,13 @@ public class Menu {
     }
 
     public Map<Integer, String> getAllSavesInformation() {
-        SaveManager tempSVM = new SaveManager();
         Map<Integer, String> tempDic = new HashMap<>();
 
         // 1. Saves manuais (1 a 3)
         for (int i = 1; i <= 3; i++) {
-            SaveState j = tempSVM.loadGame(i);
-            if (j != null) {
-                String time = tempSVM.getSaveDateTime(i);
+            SaveState j = SaveManager.loadGame(i);
+            if (j != null && SaveManager.getAutoSaveDateTime(i) != null) {
+                String time = SaveManager.getSaveDateTime(i);
                 String tempStr = "Slot " + i + " - Capítulo: " + j.chapterIndex + " | Cena: " + j.sceneId
                         + " | Data e Hora: " + time;
                 tempDic.put(i, tempStr);
@@ -110,10 +114,10 @@ public class Menu {
 
         // 2. Autosaves (1 a 5 -> mapeados para as chaves 4 a 8)
         for (int i = 1; i <= 5; i++) {
-            SaveState j = tempSVM.loadAutoSave(i);
+            SaveState j = SaveManager.loadAutoSave(i);
             int chave = i + 3;
-            if (j != null) {
-                String time = tempSVM.getAutoSaveDateTime(i);
+            if (j != null && SaveManager.getAutoSaveDateTime(i) != null) {
+                String time = SaveManager.getAutoSaveDateTime(i);
                 String tempStr = "Autosave " + i + " - Capítulo: " + j.chapterIndex + " | Cena: " + j.sceneId
                         + " | Data e Hora: " + time;
                 tempDic.put(chave, tempStr);

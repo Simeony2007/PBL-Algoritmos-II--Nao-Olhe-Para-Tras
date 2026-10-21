@@ -2,6 +2,8 @@ package scr.model.repository;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+
+import scr.controller.Settings;
 import scr.model.service.SaveState;
 
 import java.io.File;
@@ -18,9 +20,6 @@ public class SaveManager {
 
     // 1. Define the dedicated folder path
     public static final String SAVE_DIRECTORY = "saves/";
-    private static int autoSaveCounter = 1; // ISSO RESETA QUANDO REINICIA O JOGO
-    // OU SEJA, QUANDO COMEÇA O JOGO DNV, ELE SUBSTITUI OS PRIMEIROS AO INVES DE
-    // CONTINUAR PELO ULTIMO
 
     public static void saveGame(SaveState state, int slot) {
 
@@ -30,14 +29,14 @@ public class SaveManager {
                 directory.mkdirs();
             }
 
-            if (autoSaveCounter > 5) {
-                autoSaveCounter = 1;
+            if (Settings.autoSaveCounter > 5) {
+                Settings.autoSaveCounter = 1;
             }
             // 3. Append the folder path to the file name
-            String fileName = SAVE_DIRECTORY + "auto_save" + autoSaveCounter + ".json";
+            String fileName = SAVE_DIRECTORY + "auto_save" + Settings.autoSaveCounter + ".json";
             try (FileWriter writer = new FileWriter(fileName)) {
                 gson.toJson(state, writer);
-                autoSaveCounter++;
+                Settings.autoSaveCounter++;
             } catch (IOException e) {
                 GameInterface.printWarning("\n[!] Erro crítico ao salvar o arquivo: " + e.getMessage());
             }
