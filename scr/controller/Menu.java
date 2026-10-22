@@ -18,9 +18,8 @@ public class Menu {
     private Settings settings;
 
     public void iniciar() {
-        GameInterface.changeColor(0); // Pra testar é só trocar o número!
-        // Tem q fazer no momento onde trocar em settings ele atualizar tbm! - Simeony
         settings = SaveManager.loadSettings();
+        GameInterface.changeColor(settings.collorNum);
         int opcao = 0;
         while (opcao != 5) {
             opcao = inputOptions();

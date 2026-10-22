@@ -23,6 +23,7 @@ public class SaveManager {
     public static final String SETTINGS_DIRECTORY = "saves/settings/";
 
     public static void saveGame(SaveState state, int slot) {
+        Settings settings = loadSettings();
 
         if (slot == -1) {
             File directory = new File(SAVE_DIRECTORY);
@@ -30,14 +31,14 @@ public class SaveManager {
                 directory.mkdirs();
             }
 
-            if (Settings.autoSaveCounter > 5) {
-                Settings.autoSaveCounter = 1;
+            if (settings.autoSaveCounter > 5) {
+                settings.autoSaveCounter = 1;
             }
             // 3. Append the folder path to the file name
-            String fileName = SAVE_DIRECTORY + "auto_save_" + Settings.autoSaveCounter + ".json";
+            String fileName = SAVE_DIRECTORY + "auto_save_" + settings.autoSaveCounter + ".json";
             try (FileWriter writer = new FileWriter(fileName)) {
                 gson.toJson(state, writer);
-                Settings.autoSaveCounter++;
+                settings.autoSaveCounter++;
             } catch (IOException e) {
                 GameInterface.printWarning("\n[!] Erro crítico ao salvar o arquivo: " + e.getMessage());
             }
