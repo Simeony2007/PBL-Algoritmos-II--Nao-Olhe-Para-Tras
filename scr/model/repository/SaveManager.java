@@ -135,4 +135,22 @@ public class SaveManager {
             }
         }
     }
+
+    public static void deleteSave(int saveSlot, boolean isItAutoSave) {
+        if (isItAutoSave) {
+            File file = new File(SAVE_DIRECTORY + "auto_save_" + saveSlot + ".json");
+            if (file.exists()) {
+                file.delete();
+            } else {
+                // throw CUSTOMEXCEPTION (DÁ PRA COLOCAR UMA AQ!!)
+            }
+        } else {
+            File file = new File(SAVE_DIRECTORY + "save_slot_" + saveSlot + ".json");
+            if (file.exists()) {
+                file.delete();
+            } else {
+                // throw CUSTOMEXCEPTION (DÁ PRA COLOCAR UMA AQ!!)
+            }
+        }
+    }
 }

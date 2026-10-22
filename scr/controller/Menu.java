@@ -96,14 +96,18 @@ public class Menu {
                 game.gameRunning();
                 break;
             case 2:
+                GameInterface.showLoadMenu(getAllSavesInformation());
+                // SaveManager.deleteSave(); // ADICIONAR AQUI O SLOT - Simeony
+                break;
+            case 3:
                 GameInterface.showInstructions();
                 GameInterface.getTextInput();
                 break;
-            case 3:
+            case 4:
                 GameInterface.showCredits();
                 GameInterface.getTextInput();
                 break;
-            case 4:
+            case 5:
                 while (choice != 3) {
                     choice = getSettingsMenuOption();
                     if (choice == 1) {
@@ -117,7 +121,7 @@ public class Menu {
                 GameInterface.changeColor(settings.collorNum);
                 // Falta o autosave verificar a variavel autosave tbm - Simeony
                 break;
-            case 5:
+            case 6:
                 GameInterface.showExitMessage();
             default:
                 GameInterface.showTextLn("Erro inesperado...");

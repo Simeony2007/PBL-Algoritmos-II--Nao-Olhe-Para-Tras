@@ -76,10 +76,11 @@ public class GameInterface {
         System.out.println("       NÃO OLHE PARA TRÁS        ");
         System.out.println("=================================");
         System.out.println("1 - Iniciar jogo");
-        System.out.println("2 - Instruções");
-        System.out.println("3 - Créditos");
-        System.out.println("4 - Definições");
-        System.out.println("5 - Fechar jogo");
+        System.out.println("2 - Deletar um save");
+        System.out.println("3 - Instruções");
+        System.out.println("4 - Créditos");
+        System.out.println("5 - Definições");
+        System.out.println("6 - Fechar jogo");
         System.out.println("=================================");
         System.out.print("Escolha uma opção: ");
     }
