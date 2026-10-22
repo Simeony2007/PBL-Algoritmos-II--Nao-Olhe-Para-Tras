@@ -1,5 +1,7 @@
 package scr.controller;
 
+import scr.view.GameInterface;
+
 public class Settings {
     public int collorNum = 1;
     public boolean autoSave = true;
@@ -15,12 +17,20 @@ public class Settings {
         autoSaveCounter++;
     }
 
-    public void setAutosave(boolean state) {
-        autoSave = state;
+    public void setAutosave() {
+        if (autoSave) {
+            autoSave = false;
+        } else {
+            autoSave = true;
+        }
     }
 
-    public void changeColorNumber(int number) {
-        collorNum = number;
+    public void changeColorNumber() {
+        if (collorNum <= GameInterface.MAX_COLLORS) {
+            collorNum += 1;
+        } else {
+            collorNum = 1;
+        }
     }
 
 }

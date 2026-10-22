@@ -44,6 +44,23 @@ public class Menu {
         }
     }
 
+    public int getSettingsMenuOption() {
+        while (true) {
+            try {
+                GameInterface.showDefinitions(settings.autoSave, settings.collorNum);
+                String userInput = GameInterface.getTextInput();
+                int number = Integer.parseInt(userInput.trim());
+                if (number > 0 && number <= 3) {
+                    return number;
+                } else {
+                    GameInterface.showTextLn("Digite números entre 1 e 3!");
+                }
+            } catch (NumberFormatException e) {
+                GameInterface.showMenuInvalidInput();
+            }
+        }
+    }
+
     // Método novo para validar a escolha do Slot (1 a 3)
     public int getSlotInput() {
         while (true) {
@@ -64,6 +81,7 @@ public class Menu {
     }
 
     public void optionScanner(int optionNumber) {
+        int choice = 0;
         GameInterface.clearConsole();
         switch (optionNumber) { // PRECISAMOS ADICIONAR O SOBRESCREVER E APAGAR SAVE!
             case 1: // Acho que uma nova aba pra "Saves" é uma boa!
@@ -86,9 +104,18 @@ public class Menu {
                 GameInterface.getTextInput();
                 break;
             case 4:
-                GameInterface.showDefinitions(settings.autoSave, settings.collorNum);
-                // Forma de mudar as settings! - Simeony
+                while (choice != 3) {
+                    choice = getSettingsMenuOption();
+                    if (choice == 1) {
+                        settings.setAutosave();
+                    } else if (choice == 2) {
+                        settings.changeColorNumber();
+                    }
+                }
+                // Forma de mudar as settings quase pronta - Simeony
                 SaveManager.saveSettings(settings);
+                GameInterface.changeColor(settings.collorNum);
+                // Falta o autosave verificar a variavel autosave tbm - Simeony
                 break;
             case 5:
                 GameInterface.showExitMessage();

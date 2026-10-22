@@ -7,6 +7,7 @@ import java.util.Scanner;
 
 public class GameInterface {
     private static final Scanner scanner = new Scanner(System.in);
+    public static final int MAX_COLLORS = 3;
 
     private GameInterface() {
     }
@@ -219,5 +220,8 @@ public class GameInterface {
         System.out.println(autoSaveMode);
         System.out.print("2 - Cor do texto: ");
         System.out.println(collorName);
+        System.out.print("3 - Voltar para o menu inicial ");
+        System.out.println();
+        System.out.print("Digite sua escolha: ");
     }
 }
