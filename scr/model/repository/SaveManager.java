@@ -30,7 +30,6 @@ public class SaveManager {
             if (!directory.exists()) {
                 directory.mkdirs();
             }
-
             if (settings.autoSaveCounter > 5) {
                 settings.autoSaveCounter = 1;
             }
@@ -38,7 +37,8 @@ public class SaveManager {
             String fileName = SAVE_DIRECTORY + "auto_save_" + settings.autoSaveCounter + ".json";
             try (FileWriter writer = new FileWriter(fileName)) {
                 gson.toJson(state, writer);
-                settings.autoSaveCounter++;
+                settings.addAutoSaveCounter();
+                SaveManager.saveSettings(settings);
             } catch (IOException e) {
                 GameInterface.printWarning("\n[!] Erro crítico ao salvar o arquivo: " + e.getMessage());
             }

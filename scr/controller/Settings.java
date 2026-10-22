@@ -3,9 +3,9 @@ package scr.controller;
 import scr.view.GameInterface;
 
 public class Settings {
-    public int collorNum = 1;
-    public boolean autoSave = true;
-    public int autoSaveCounter = 1;
+    public int collorNum;
+    public boolean autoSave;
+    public int autoSaveCounter;
 
     public Settings() {
         collorNum = 1;
@@ -31,6 +31,10 @@ public class Settings {
         } else {
             collorNum = 1;
         }
+    }
+
+    public void addAutoSaveCounter() {
+        autoSaveCounter++;
     }
 
 }

@@ -1,9 +1,9 @@
 {
   "orfeu": {
-    "obol": 0,
+    "obol": 1,
     "love": 2,
-    "angry": 1,
-    "sadness": 0
+    "angry": 0,
+    "sadness": 1
   },
   "npcs": [
     {
@@ -20,5 +20,5 @@
     }
   ],
   "chapterIndex": 1,
-  "sceneId": "Alma do Marinheiro"
+  "sceneId": "Ataque das Keres"
 }
