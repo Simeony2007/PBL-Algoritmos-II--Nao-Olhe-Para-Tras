@@ -102,9 +102,9 @@ public class Menu {
         // 1. Saves manuais (1 a 3)
         for (int i = 1; i <= 3; i++) {
             SaveState j = SaveManager.loadGame(i);
-            if (j != null && SaveManager.getAutoSaveDateTime(i) != null) {
+            if (j != null && SaveManager.getSaveDateTime(i) != null) {
                 String time = SaveManager.getSaveDateTime(i);
-                String tempStr = "Slot " + i + " - Capítulo: " + j.chapterIndex + " | Cena: " + j.sceneId
+                String tempStr = "Slot " + i + " - Capítulo: " + (j.chapterIndex+1) + " | Cena: " + j.sceneId
                         + " | Data e Hora: " + time;
                 tempDic.put(i, tempStr);
             } else {
@@ -114,11 +114,11 @@ public class Menu {
 
         // 2. Autosaves (1 a 5 -> mapeados para as chaves 4 a 8)
         for (int i = 1; i <= 5; i++) {
-            SaveState j = SaveManager.loadAutoSave(i);
             int chave = i + 3;
+            SaveState j = SaveManager.loadGame(chave);
             if (j != null && SaveManager.getAutoSaveDateTime(i) != null) {
                 String time = SaveManager.getAutoSaveDateTime(i);
-                String tempStr = "Autosave " + i + " - Capítulo: " + j.chapterIndex + " | Cena: " + j.sceneId
+                String tempStr = "Autosave " + i + " - Capítulo: " + (j.chapterIndex+1) + " | Cena: " + j.sceneId
                         + " | Data e Hora: " + time;
                 tempDic.put(chave, tempStr);
             } else {

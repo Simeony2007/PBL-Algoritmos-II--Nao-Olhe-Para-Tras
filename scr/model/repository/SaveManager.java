@@ -33,7 +33,7 @@ public class SaveManager {
                 Settings.autoSaveCounter = 1;
             }
             // 3. Append the folder path to the file name
-            String fileName = SAVE_DIRECTORY + "auto_save" + Settings.autoSaveCounter + ".json";
+            String fileName = SAVE_DIRECTORY + "auto_save_" + Settings.autoSaveCounter + ".json";
             try (FileWriter writer = new FileWriter(fileName)) {
                 gson.toJson(state, writer);
                 Settings.autoSaveCounter++;
@@ -61,7 +61,14 @@ public class SaveManager {
 
     public static SaveState loadGame(int slot) {
         // 4. Look for the file inside the "saves/" folder
-        File file = new File(SAVE_DIRECTORY + "save_slot_" + slot + ".json");
+        File file;
+        if (slot > 0 && slot <= 3) {
+            file = new File(SAVE_DIRECTORY + "save_slot_" + slot + ".json");
+        }
+        else {
+            slot = slot - 3;
+            file = new File(SAVE_DIRECTORY + "auto_save_" + slot + ".json");
+        }
 
         if (!file.exists()) {
             return new SaveState();
@@ -76,25 +83,10 @@ public class SaveManager {
         }
     }
 
-    public static SaveState loadAutoSave(int slot) {
-        // 4. Look for the file inside the "saves/" folder
-        File file = new File(SAVE_DIRECTORY + "auto_save" + slot + ".json");
-
-        if (!file.exists()) {
-            return new SaveState();
-        }
-
-        try (FileReader reader = new FileReader(file)) {
-            return gson.fromJson(reader, SaveState.class);
-        } catch (IOException e) {
-            GameInterface
-                    .printWarning("\n[!] Erro ao carregar o save. Iniciando um novo jogo. (" + e.getMessage() + ")");
-            return new SaveState();
-        }
-    }
 
     public static String getSaveDateTime(int slot) {
         File file = new File(SAVE_DIRECTORY + "save_slot_" + slot + ".json");
+
         if (file.exists()) {
             SimpleDateFormat formatador = new SimpleDateFormat("dd/MM/yyyy HH:mm");
             return formatador.format(new Date(file.lastModified()));
@@ -104,7 +96,7 @@ public class SaveManager {
     }
 
     public static String getAutoSaveDateTime(int slot) {
-        File file = new File(SAVE_DIRECTORY + "auto_save" + slot + ".json");
+        File file = new File(SAVE_DIRECTORY + "auto_save_" + slot + ".json");
         if (file.exists()) {
             SimpleDateFormat formatador = new SimpleDateFormat("dd/MM/yyyy HH:mm");
             return formatador.format(new Date(file.lastModified()));

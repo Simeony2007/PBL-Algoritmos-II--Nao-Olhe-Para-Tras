@@ -76,12 +76,10 @@ public class Game {
                             currentScene.getChoice(choiceId));
                     currentChapter.changeCurrentScene(currentSceneId);
                     GameInterface.clearConsole();
-                    saveCurrentProgress(currentSceneId, -1);
                 } else {
                     if (currentScene.getCondition() != null) {
                         String currentSceneId = StatVerify.selectScene(state.getOrfeu(), state.getNpcs(), currentScene);
                         if (currentSceneId != null) {
-                            saveCurrentProgress(currentSceneId, -1);
                             currentChapter.changeCurrentScene(currentSceneId);
                         } else if (currentScene.getNextSceneId() != null) {
                             currentChapter.changeCurrentScene(currentScene.getNextSceneId());
@@ -107,7 +105,7 @@ public class Game {
                 if (state.isRunning()) {
                     // Passamos "null" para a cena, assim o jogo carrega a primeira cena padrão do
                     // capítulo
-                    saveCurrentProgress(null);
+                    saveCurrentProgress(state.getCurrentChapter().getCurrentScene().getNextSceneId(), -1);
                     GameInterface.printWarning("[!] Jogo salvo automaticamente no Slot " + this.currentSaveSlot + ".");
                 }
             }

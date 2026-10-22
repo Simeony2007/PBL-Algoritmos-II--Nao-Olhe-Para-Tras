@@ -1,9 +1,9 @@
 {
   "orfeu": {
     "obol": 1,
-    "love": 0,
-    "angry": 0,
-    "sadness": 2
+    "love": 2,
+    "angry": 1,
+    "sadness": 0
   },
   "npcs": [
     {
@@ -20,5 +20,5 @@
     }
   ],
   "chapterIndex": 0,
-  "sceneId": "s2_cerberus"
+  "sceneId": "Margem do Rio"
 }
