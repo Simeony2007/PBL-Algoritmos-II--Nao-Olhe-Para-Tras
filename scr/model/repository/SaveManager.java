@@ -20,6 +20,7 @@ public class SaveManager {
 
     // 1. Define the dedicated folder path
     public static final String SAVE_DIRECTORY = "saves/";
+    public static final String SETTINGS_DIRECTORY = "saves/settings/";
 
     public static void saveGame(SaveState state, int slot) {
 
@@ -64,8 +65,7 @@ public class SaveManager {
         File file;
         if (slot > 0 && slot <= 3) {
             file = new File(SAVE_DIRECTORY + "save_slot_" + slot + ".json");
-        }
-        else {
+        } else {
             slot = slot - 3;
             file = new File(SAVE_DIRECTORY + "auto_save_" + slot + ".json");
         }
@@ -82,7 +82,6 @@ public class SaveManager {
             return new SaveState();
         }
     }
-
 
     public static String getSaveDateTime(int slot) {
         File file = new File(SAVE_DIRECTORY + "save_slot_" + slot + ".json");
@@ -102,6 +101,37 @@ public class SaveManager {
             return formatador.format(new Date(file.lastModified()));
         } else {
             return null;
+        }
+    }
+
+    public static void saveSettings(Settings currentSettings) {
+        File directory = new File(SETTINGS_DIRECTORY);
+        if (!directory.exists()) {
+            directory.mkdirs();
+        }
+
+        String fileName = SETTINGS_DIRECTORY + "config.json";
+        try (FileWriter writer = new FileWriter(fileName)) {
+            gson.toJson(currentSettings, writer);
+        } catch (IOException e) {
+            GameInterface.printWarning("\n[!] Erro crítico ao salvar o arquivo: " + e.getMessage());
+        }
+
+    }
+
+    public static Settings loadSettings() {
+        File file = new File(SETTINGS_DIRECTORY + "config.json");
+        if (!file.exists()) {
+            return new Settings();
+        } else {
+            try (FileReader reader = new FileReader(file)) {
+                return gson.fromJson(reader, Settings.class);
+            } catch (IOException e) {
+                GameInterface
+                        .printWarning(
+                                "\n[!] Erro ao carregar. Reiniciando configurações. (" + e.getMessage() + ")");
+                return new Settings();
+            }
         }
     }
 }

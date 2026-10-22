@@ -15,10 +15,12 @@ import scr.model.service.SaveState; // Importe o seu SaveState
 
 public class Menu {
     private Game game;
+    private Settings settings;
 
     public void iniciar() {
         GameInterface.changeColor(0); // Pra testar é só trocar o número!
         // Tem q fazer no momento onde trocar em settings ele atualizar tbm! - Simeony
+        settings = SaveManager.loadSettings();
         int opcao = 0;
         while (opcao != 5) {
             opcao = inputOptions();
@@ -86,6 +88,8 @@ public class Menu {
                 break;
             case 4:
                 GameInterface.showDefinitions();
+                // Forma de mudar as settings! - Simeony
+                SaveManager.saveSettings(settings);
                 break;
             case 5:
                 GameInterface.showExitMessage();
@@ -104,7 +108,7 @@ public class Menu {
             SaveState j = SaveManager.loadGame(i);
             if (j != null && SaveManager.getSaveDateTime(i) != null) {
                 String time = SaveManager.getSaveDateTime(i);
-                String tempStr = "Slot " + i + " - Capítulo: " + (j.chapterIndex+1) + " | Cena: " + j.sceneId
+                String tempStr = "Slot " + i + " - Capítulo: " + (j.chapterIndex + 1) + " | Cena: " + j.sceneId
                         + " | Data e Hora: " + time;
                 tempDic.put(i, tempStr);
             } else {
@@ -118,7 +122,7 @@ public class Menu {
             SaveState j = SaveManager.loadGame(chave);
             if (j != null && SaveManager.getAutoSaveDateTime(i) != null) {
                 String time = SaveManager.getAutoSaveDateTime(i);
-                String tempStr = "Autosave " + i + " - Capítulo: " + (j.chapterIndex+1) + " | Cena: " + j.sceneId
+                String tempStr = "Autosave " + i + " - Capítulo: " + (j.chapterIndex + 1) + " | Cena: " + j.sceneId
                         + " | Data e Hora: " + time;
                 tempDic.put(chave, tempStr);
             } else {

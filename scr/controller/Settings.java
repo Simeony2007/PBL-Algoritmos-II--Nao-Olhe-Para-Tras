@@ -1,9 +1,15 @@
 package scr.controller;
 
 public class Settings {
-    public static int collorNum = 1;
-    public static boolean autoSave = true;
-    public static int autoSaveCounter = 1;
+    public static int collorNum;
+    public static boolean autoSave;
+    public static int autoSaveCounter;
+
+    public Settings() {
+        collorNum = 1;
+        autoSave = true;
+        autoSaveCounter = 1;
+    }
 
     public static void incrementCounter() {
         autoSaveCounter++;
