@@ -77,7 +77,8 @@ public class GameInterface {
         System.out.println("1 - Iniciar jogo");
         System.out.println("2 - Instruções");
         System.out.println("3 - Créditos");
-        System.out.println("4 - Fechar jogo");
+        System.out.println("4 - Definições");
+        System.out.println("5 - Fechar jogo");
         System.out.println("=================================");
         System.out.print("Escolha uma opção: ");
     }
@@ -191,8 +192,32 @@ public class GameInterface {
 
     }
 
-    public static void showDefinitions() {
+    public static void showDefinitions(boolean autoSaveState, int textCollorNumber) {
         // Falta fazer o menu de Settings e mostrar as settings atuais e suas possíveis
         // mudanças - Simeony
+
+        String collorName;
+        String autoSaveMode = "Desligado";
+        switch (textCollorNumber) {
+            case 1:
+                collorName = "Branco";
+                break;
+            case 2:
+                collorName = "Azul";
+                break;
+            default:
+                collorName = "Branco";
+                break;
+        }
+
+        if (autoSaveState) {
+            autoSaveMode = "Ligado";
+        }
+
+        System.out.println("--- Configurações ---");
+        System.out.print("1 - AutoSave: ");
+        System.out.println(autoSaveMode);
+        System.out.print("2 - Cor do texto: ");
+        System.out.println(collorName);
     }
 }

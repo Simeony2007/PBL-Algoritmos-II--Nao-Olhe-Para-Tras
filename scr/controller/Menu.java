@@ -86,7 +86,7 @@ public class Menu {
                 GameInterface.getTextInput();
                 break;
             case 4:
-                GameInterface.showDefinitions();
+                GameInterface.showDefinitions(settings.autoSave, settings.collorNum);
                 // Forma de mudar as settings! - Simeony
                 SaveManager.saveSettings(settings);
                 break;
