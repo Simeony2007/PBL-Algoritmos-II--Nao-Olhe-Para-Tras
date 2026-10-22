@@ -8,7 +8,7 @@
 
 - [ ] Exclusão de saves. 
 
-- [ ] Configurações e a persistência da mesma. _(Adicionado a troca de cor e teste de cor azul, falta finalizar o menu inicial e as Settings por completo - Simeony)_ _(Persistencia adicionada e fiz o início do menu de mudança das configs - Simeony)_
+- [x] Configurações e a persistência da mesma. _(Adicionado a troca de cor e teste de cor azul, falta finalizar o menu inicial e as Settings por completo - Simeony)_ _(Persistencia adicionada e fiz o início do menu de mudança das configs - Simeony)_
 
 - [ ] Registro de finais _(Não conferi se tem feito, mas acho q vi isso pronto - Simeony)_ _(Não tem nada automatizado - Pedro)_
 

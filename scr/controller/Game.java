@@ -132,13 +132,53 @@ public class Game {
 
             // Lógica interceptadora do Save
             if (userInput.equalsIgnoreCase("salvar")) {
-                saveCurrentProgress(currentSceneId);
-                System.out.println("\n[!] Jogo salvo no Slot " + this.currentSaveSlot + " com sucesso!");
-                GameInterface.showPromptChoice(); // Mostra o prompt de novo para o jogador poder continuar
-                continue; // Volta ao início do while(true) sem avançar a história
+                boolean control = true;
+                while (control) {
+                    GameInterface.showText("Escolha o slot: ");
+                    int userSlot = getNumericInput(8); // NUMERO MAXIMO DE SLOTS! - Simeony
+                    SaveState temp = SaveManager.loadGame(userSlot);
+                    if (temp.sceneId == null) {
+                        saveCurrentProgress(currentSceneId);
+                        GameInterface.showTextLn("\n[!] Jogo salvo no Slot " + this.currentSaveSlot + " com sucesso!");
+                        GameInterface.showPromptChoice(); // Mostra o prompt de novo para o jogador poder continuar
+                        control = false;
+                        continue; // Volta ao início do while(true) sem avançar a história
+                    } else {
+                        GameInterface.showOverwriteQuestion();
+                        String confirmation = GameInterface.getTextInput().trim();
+                        if (confirmation.equalsIgnoreCase("S")) {
+                            saveCurrentProgress(currentSceneId);
+                            GameInterface
+                                    .showTextLn("\n[!] Jogo salvo no Slot " + this.currentSaveSlot + " com sucesso!");
+                            control = false;
+                            continue;
+                        } else {
+                            GameInterface.showTextLn("Escolha outro Slot!");
+                        }
+                    }
+                }
+                userInput = GameInterface.getTextInput().trim();
+
             }
 
             // Lógica normal das escolhas
+            try {
+                choice = Integer.parseInt(userInput);
+                if (choice > 0 && choice <= maxChoices) {
+                    return choice - 1;
+                } else {
+                    GameInterface.showGameInvalidOption();
+                }
+            } catch (NumberFormatException e) {
+                GameInterface.showGameInvalidInput();
+            }
+        }
+    }
+
+    private int getNumericInput(int maxChoices) {
+        int choice;
+        while (true) {
+            String userInput = GameInterface.getTextInput();
             try {
                 choice = Integer.parseInt(userInput);
                 if (choice > 0 && choice <= maxChoices) {

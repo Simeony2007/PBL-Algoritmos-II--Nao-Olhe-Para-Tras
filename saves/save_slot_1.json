@@ -1,9 +1,9 @@
 {
   "orfeu": {
-    "obol": 0,
-    "love": 2,
+    "obol": 1,
+    "love": 0,
     "angry": 0,
-    "sadness": 1
+    "sadness": 0
   },
   "npcs": [
     {
@@ -19,6 +19,6 @@
       "affinity": 0
     }
   ],
-  "chapterIndex": 1,
-  "sceneId": "Alma do Marinheiro"
+  "chapterIndex": 0,
+  "sceneId": "Introdução"
 }

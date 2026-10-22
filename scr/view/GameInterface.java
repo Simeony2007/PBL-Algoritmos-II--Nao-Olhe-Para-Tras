@@ -224,4 +224,9 @@ public class GameInterface {
         System.out.println();
         System.out.print("Digite sua escolha: ");
     }
+
+    public static void showOverwriteQuestion() {
+        System.out.println("Deseja sobrescrever o Save atual?");
+        System.out.print("Digite(S/N): ");
+    }
 }
