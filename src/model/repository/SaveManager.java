@@ -40,7 +40,8 @@ public class SaveManager {
                 settings.addAutoSaveCounter();
                 SaveManager.saveSettings(settings);
             } catch (IOException e) {
-            //    GameInterface.printWarning("\n[!] Erro crítico ao salvar o arquivo: " + e.getMessage());
+                // GameInterface.printWarning("\n[!] Erro crítico ao salvar o arquivo: " +
+                // e.getMessage());
             }
 
         } else {
@@ -56,7 +57,8 @@ public class SaveManager {
             try (FileWriter writer = new FileWriter(fileName)) {
                 gson.toJson(state, writer);
             } catch (IOException e) {
-            //    GameInterface.printWarning("\n[!] Erro crítico ao salvar o arquivo: " + e.getMessage());
+                // GameInterface.printWarning("\n[!] Erro crítico ao salvar o arquivo: " +
+                // e.getMessage());
             }
         }
     }
@@ -77,7 +79,8 @@ public class SaveManager {
         try (FileReader reader = new FileReader(file)) {
             return gson.fromJson(reader, SaveState.class);
         } catch (IOException e) {
-        //    GameInterface.printWarning("\n[!] Erro ao carregar o save. Iniciando um novo jogo. (" + e.getMessage() + ")");
+            // GameInterface.printWarning("\n[!] Erro ao carregar o save. Iniciando um novo
+            // jogo. (" + e.getMessage() + ")");
             return new SaveState();
         }
     }
@@ -124,7 +127,7 @@ public class SaveManager {
     public static boolean doesSaveExist(int saveSlot) {
         File file = new File(SAVE_DIRECTORY + "save_slot_" + saveSlot + ".json");
         return file.exists();
-        }
+    }
 
     // Settings
     public static void saveSettings(Settings currentSettings) {
@@ -137,7 +140,8 @@ public class SaveManager {
         try (FileWriter writer = new FileWriter(fileName)) {
             gson.toJson(currentSettings, writer);
         } catch (IOException e) {
-        //    GameInterface.printWarning("\n[!] Erro crítico ao salvar o arquivo: " + e.getMessage());
+            // GameInterface.printWarning("\n[!] Erro crítico ao salvar o arquivo: " +
+            // e.getMessage());
         }
 
     }
@@ -150,7 +154,8 @@ public class SaveManager {
             try (FileReader reader = new FileReader(file)) {
                 return gson.fromJson(reader, Settings.class);
             } catch (IOException e) {
-            //    GameInterface.printWarning("\n[!] Erro ao carregar. Reiniciando settingsurações. (" + e.getMessage() + ")");
+                // GameInterface.printWarning("\n[!] Erro ao carregar. Reiniciando
+                // settingsurações. (" + e.getMessage() + ")");
                 return new Settings();
             }
         }
@@ -167,7 +172,8 @@ public class SaveManager {
         try (FileWriter writer = new FileWriter(fileName)) {
             gson.toJson(currentCollection, writer);
         } catch (IOException e) {
-        //    GameInterface.printWarning("\n[!] Erro crítico ao salvar o arquivo: " + e.getMessage());
+            // GameInterface.printWarning("\n[!] Erro crítico ao salvar o arquivo: " +
+            // e.getMessage());
         }
 
     }
@@ -180,7 +186,8 @@ public class SaveManager {
             try (FileReader reader = new FileReader(file)) {
                 return gson.fromJson(reader, Collection.class);
             } catch (IOException e) {
-            //    GameInterface.printWarning("\n[!] Erro ao carregar. Reiniciando settingsurações. (" + e.getMessage() + ")");
+                // GameInterface.printWarning("\n[!] Erro ao carregar. Reiniciando
+                // settingsurações. (" + e.getMessage() + ")");
                 return new Collection();
             }
         }

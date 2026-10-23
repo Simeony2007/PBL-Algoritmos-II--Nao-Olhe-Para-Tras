@@ -3,7 +3,7 @@
     "obol": 1,
     "love": 3,
     "angry": 2,
-    "sadness": 2
+    "sadness": 4
   },
   "npcs": [
     {
@@ -19,5 +19,5 @@
       "affinity": 0
     }
   ],
-  "chapterIndex": 5
+  "chapterIndex": 6
 }

@@ -1,8 +1,8 @@
 {
-  "final_1": true,
-  "final_2": true,
-  "final_3": true,
-  "final_4": true,
+  "final_1": false,
+  "final_2": false,
+  "final_3": false,
+  "final_4": false,
   "achievement_1": false,
   "achievement_2": false,
   "achievement_3": false,
@@ -11,8 +11,8 @@
   "achievement_6": false,
   "achievement_7": false,
   "achievement_8": false,
-  "achievement_9": false,
+  "achievement_9": true,
   "achievement_10": false,
-  "achievement_11": true,
+  "achievement_11": false,
   "achievement_12": false
 }
