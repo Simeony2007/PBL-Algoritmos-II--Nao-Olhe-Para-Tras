@@ -1,15 +1,15 @@
-package scr.controller;
+package src.controller.core;
 
 import java.util.ArrayList;
-import scr.model.service.Scene;
-import scr.model.service.Npc;
-import scr.model.service.Orfeu;
-import scr.model.service.Condition;
+
+import src.model.service.Condition;
+import src.model.service.Npc;
+import src.model.service.Orfeu;
+import src.model.service.Scene;
 
 public class StatVerify {
 
-    private StatVerify() {
-    }
+    private StatVerify(){}
 
     public static String selectScene(Orfeu orfeu, ArrayList<Npc> npcs, Scene scene) {
         Condition condition = scene.getCondition();

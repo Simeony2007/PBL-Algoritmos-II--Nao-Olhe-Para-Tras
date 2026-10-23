@@ -9,9 +9,9 @@ import static org.junit.Assert.assertTrue;
 import org.junit.Before;
 import org.junit.Test;
 
-import scr.model.service.Scene;
-import scr.model.service.Condition;
-import scr.model.service.Choice;
+import src.model.service.Choice;
+import src.model.service.Condition;
+import src.model.service.Scene;
 
 public class SceneTest {
 

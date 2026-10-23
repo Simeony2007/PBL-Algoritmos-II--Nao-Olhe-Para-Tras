@@ -4,7 +4,7 @@ import static org.junit.Assert.assertEquals;
 import org.junit.Before;
 import org.junit.Test;
 
-import scr.model.service.*;
+import src.model.service.*;
 
 public class DialogueTest {
     private Dialogue dialogue1;

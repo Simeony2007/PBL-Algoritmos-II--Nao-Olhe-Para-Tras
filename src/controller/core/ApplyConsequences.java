@@ -1,6 +1,7 @@
-package scr.controller;
-import scr.model.service.*;
+package src.controller.core;
 import java.util.ArrayList;
+
+import src.model.service.*;
 
 public class ApplyConsequences {
 

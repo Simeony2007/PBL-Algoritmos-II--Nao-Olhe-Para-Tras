@@ -5,7 +5,7 @@ import static org.junit.Assert.assertEquals;
 import org.junit.Before;
 import org.junit.Test;
 
-import scr.model.service.Npc;
+import src.model.service.Npc;
 
 public class NpcTest {
 

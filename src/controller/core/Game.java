@@ -1,14 +1,13 @@
-package scr.controller;
+package src.controller.core;
 
-import scr.model.repository.StoryBuilder;
-
-import scr.model.repository.SaveManager; // Import necessário
-import scr.model.service.Chapter;
-import scr.model.service.GameState;
-import scr.model.service.SaveState; // Import necessário
-import scr.model.service.Scene;
-import scr.model.service.Settings;
-import scr.view.GameInterface;
+import src.model.repository.SaveManager;
+import src.model.repository.StoryBuilder;
+import src.model.service.Chapter;
+import src.model.service.GameState;
+import src.model.service.SaveState;
+import src.model.service.Scene;
+import src.model.service.Settings;
+import src.view.GameInterface;
 
 public class Game {
     private GameState state;

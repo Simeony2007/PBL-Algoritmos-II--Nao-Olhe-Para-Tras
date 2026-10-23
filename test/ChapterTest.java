@@ -2,13 +2,14 @@ package test;
 
 import org.junit.Before;
 import org.junit.Test;
+
+import src.model.service.Chapter;
+import src.model.service.Scene;
+
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
 import java.util.ArrayList;
-
-import scr.model.service.Chapter;
-import scr.model.service.Scene;
 
 public class ChapterTest {
 

@@ -1,12 +1,12 @@
-package scr.model.repository;
-
-import scr.model.service.Chapter;
-import scr.model.service.Condition;
-import scr.model.service.Npc;
-import scr.model.service.Orfeu;
-import scr.model.service.Scene;
+package src.model.repository;
 
 import java.util.ArrayList;
+
+import src.model.service.Chapter;
+import src.model.service.Condition;
+import src.model.service.Npc;
+import src.model.service.Orfeu;
+import src.model.service.Scene;
 
 
 public class StoryBuilder {

@@ -1,4 +1,4 @@
-package scr.model.service;
+package src.model.service;
 
 public class Settings {
     private int colorNum;

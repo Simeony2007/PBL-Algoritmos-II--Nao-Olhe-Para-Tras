@@ -1,4 +1,6 @@
-package scr.controller;
+package src.controller;
+
+import src.controller.menu.Menu;
 
 public class Main {
 	public static void main(String[] args) {

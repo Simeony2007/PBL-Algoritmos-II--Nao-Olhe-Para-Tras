@@ -10,9 +10,9 @@ import java.util.ArrayList;
 import org.junit.Before;
 import org.junit.Test;
 
-import scr.model.service.Condition;
-import scr.model.service.Orfeu;
-import scr.model.service.Npc;
+import src.model.service.Condition;
+import src.model.service.Npc;
+import src.model.service.Orfeu;
 
 public class ConditionTest {
     private Condition condition;

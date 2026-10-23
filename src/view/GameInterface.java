@@ -1,4 +1,4 @@
-package scr.view;
+package src.view;
 
 import java.util.Map;
 import java.util.Scanner;

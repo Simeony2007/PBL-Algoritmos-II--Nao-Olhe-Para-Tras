@@ -1,7 +1,8 @@
-package scr.model.service;
+package src.model.service;
 
 import java.util.ArrayList;
-import scr.model.repository.StoryBuilder;
+
+import src.model.repository.StoryBuilder;
 
 public class SaveState {
     public String saveName; // Acho que isso serve como o nome do player - Simeony

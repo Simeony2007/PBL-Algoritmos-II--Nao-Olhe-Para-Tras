@@ -1,10 +1,11 @@
-package scr.model.repository;
+package src.model.repository;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
-import scr.model.service.SaveState;
-import scr.model.service.Settings;
+import src.model.service.SaveState;
+import src.model.service.Settings;
+import src.view.GameInterface;
 
 import java.io.File;
 import java.io.FileReader;
@@ -12,8 +13,6 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.sql.Date;
 import java.text.SimpleDateFormat;
-
-import scr.view.GameInterface;
 
 public class SaveManager {
     private static final Gson gson = new GsonBuilder().setPrettyPrinting().create();

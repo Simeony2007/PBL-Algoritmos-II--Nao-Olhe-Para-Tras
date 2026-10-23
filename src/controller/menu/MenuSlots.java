@@ -1,12 +1,13 @@
-package scr.controller;
+package src.controller.menu;
 
 import java.util.HashMap;
 import java.util.Map;
 
-import scr.model.repository.SaveManager;
-import scr.model.service.SaveState;
-import scr.view.GameInterface;
-import scr.model.service.Settings;
+import src.controller.core.Game;
+import src.model.repository.SaveManager;
+import src.model.service.SaveState;
+import src.model.service.Settings;
+import src.view.GameInterface;
 
 public class MenuSlots {
     Game game;

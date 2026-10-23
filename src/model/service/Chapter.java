@@ -1,4 +1,4 @@
-package scr.model.service;
+package src.model.service;
 
 import java.util.ArrayList;
 

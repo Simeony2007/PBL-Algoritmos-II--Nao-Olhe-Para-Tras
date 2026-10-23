@@ -1,9 +1,8 @@
-package scr.controller;
+package src.controller.menu;
 
-import scr.view.GameInterface;
-
-import scr.model.repository.SaveManager; // Importe o seu SaveManager
-import scr.model.service.Settings;
+import src.model.repository.SaveManager;
+import src.model.service.Settings;
+import src.view.GameInterface;
 
 public class Menu {
     private Settings settings;
