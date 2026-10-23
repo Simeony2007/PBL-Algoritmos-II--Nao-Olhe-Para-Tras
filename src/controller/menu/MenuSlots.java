@@ -7,14 +7,18 @@ import src.controller.core.Game;
 import src.model.repository.SaveManager;
 import src.model.service.SaveState;
 import src.model.service.Settings;
+import src.model.service.Collection;
 import src.view.GameInterface;
 
 public class MenuSlots {
     Game game;
     Settings settings;
+    Collection collection;
 
-    public MenuSlots(Settings settings) {
+    public MenuSlots(Settings settings, Collection collection) {
         this.settings = settings;
+        this.collection = collection;
+        manageSaves();
     }
 
     public void manageSaves() {
@@ -39,7 +43,7 @@ public class MenuSlots {
             switch (action) {
                 case 1:
                     SaveState loadedState = SaveManager.loadGame(slot);
-                    game = new Game(slot, loadedState);
+                    game = new Game(slot, loadedState, collection);
                     game.setTextSpeed(settings.getTextSpeed());
                     game.gameRunning();
                     break;
@@ -120,7 +124,7 @@ public class MenuSlots {
 
     private void startGame(int slot) {
         SaveState loadedState = SaveManager.loadGame(slot);
-        game = new Game(slot, loadedState);
+        game = new Game(slot, loadedState, collection);
         game.setTextSpeed(settings.getTextSpeed());
         game.gameRunning();
     }

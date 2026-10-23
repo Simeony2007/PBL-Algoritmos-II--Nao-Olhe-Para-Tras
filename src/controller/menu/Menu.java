@@ -2,10 +2,12 @@ package src.controller.menu;
 
 import src.model.repository.SaveManager;
 import src.model.service.Settings;
+import src.model.service.Collection;
 import src.view.GameInterface;
 
 public class Menu {
     private Settings settings;
+    private Collection collection;
 
     public Menu() {
         iniciar();
@@ -13,6 +15,7 @@ public class Menu {
 
     private void iniciar() {
         settings = SaveManager.loadSettings();
+        collection = SaveManager.loadCollection();
         GameInterface.changeColor(settings.getColorNum());
         int opcao = 0;
         while (opcao != 6) {
@@ -42,14 +45,13 @@ public class Menu {
         GameInterface.clearConsole();
         switch (optionNumber) {
             case 1:
-                loadMenuSlots().manageSaves();
+                new MenuSlots(settings, collection);
                 break;
             case 2:
                 new MenuSettings(settings);
                 break;
             case 3:
-                // COLEÇÃO AINDA NÃO IMPLEMENTADA
-                GameInterface.showTextLn("\n[!] Coleção ainda não implementada.\n");
+                new MenuCollection(collection);
                 break;
             case 4:
                 GameInterface.showInstructions();
@@ -68,7 +70,4 @@ public class Menu {
         GameInterface.clearConsole();
     }
 
-    private MenuSlots loadMenuSlots() {
-        return new MenuSlots(settings);
-    }
 }

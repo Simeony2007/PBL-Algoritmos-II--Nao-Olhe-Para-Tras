@@ -2,24 +2,27 @@ package src.controller.core;
 
 import src.model.repository.SaveManager;
 import src.model.repository.StoryBuilder;
-import src.model.service.Chapter;
+import src.model.service.Collection;
 import src.model.service.GameState;
 import src.model.service.SaveState;
-import src.model.service.Scene;
 import src.model.service.Settings;
+import src.model.service.logic.Chapter;
+import src.model.service.logic.Scene;
 import src.view.GameInterface;
 
 public class Game {
     private GameState state;
     private int currentSaveSlot;
     private int textSpeed;
+    private Collection collection;
 
     /**
      * Método construtor. Cria um novo GameState adicionando os personagens
      * e os capítulos.
      */
-    public Game(int saveSlot, SaveState loadedData) {
+    public Game(int saveSlot, SaveState loadedData, Collection collection) {
         this.currentSaveSlot = saveSlot;
+        this.collection = collection;
 
         this.state = new GameState(
                 loadedData.orfeu,
@@ -60,6 +63,7 @@ public class Game {
                 GameInterface.showTextLn("");
 
                 if (currentScene.isEnding()) {
+                    collection.onFinalReached(currentChapter.getCurrentScene().getSceneId());
                     state.setRunning(false);
                     break;
                 }
@@ -99,6 +103,9 @@ public class Game {
                 GameInterface.waitForEnter("\n[Fim do Capítulo. Pressione ENTER para avançar...]");
                 GameInterface.clearConsole();
 
+                int chapterNumber = state.getCurrentChapterIndex();
+                collection.onChapterReached(chapterNumber);
+
                 // Avança para o próximo capítulo no GameState
                 state.advanceChapter();
 
@@ -112,6 +119,7 @@ public class Game {
             }
         }
         GameInterface.clearConsole();
+
         GameInterface.showGameFinished();
         GameInterface.waitForEnter("\nPressione ENTER para voltar ao Menu Principal...");
         GameInterface.clearConsole();

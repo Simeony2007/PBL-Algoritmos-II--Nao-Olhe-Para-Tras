@@ -191,10 +191,7 @@ public class GameInterface {
 
     }
 
-    public static void showDefinitions(boolean autoSaveState, int textColorNumber, int textSpeedNumber) {
-        // Falta fazer o menu de Settings e mostrar as settings atuais e suas possíveis
-        // mudanças - Simeony
-
+    public static void showSettings(boolean autoSaveState, int textColorNumber, int textSpeedNumber) {
         String colorName;
         String autoSaveMode = "Desligado";
         String textSpeedText;
@@ -250,5 +247,22 @@ public class GameInterface {
     public static void showOverwriteQuestion() {
         System.out.println("Deseja sobrescrever o Save atual?");
         System.out.print("Digite(S/N): ");
+    }
+
+    public static void showCollection(Map<String, Boolean> collectionStatus) {
+        System.out.println("\n=== COLEÇÃO ===");
+        System.out.println("Capítulos:");
+        for (int i = 1; i <= 10; i++) {
+            String chapterKey = "chapter_" + i;
+            String status = collectionStatus.get(chapterKey) ? "Concluído" : "Não Concluído";
+            System.out.println("Capítulo " + i + ": " + status);
+        }
+
+        System.out.println("\nFinais:");
+        for (int i = 1; i <= 4; i++) {
+            String finalKey = "final_" + i;
+            String status = collectionStatus.get(finalKey) ? "Desbloqueado" : "Bloqueado";
+            System.out.println("Final " + i + ": " + status);
+        }
     }
 }

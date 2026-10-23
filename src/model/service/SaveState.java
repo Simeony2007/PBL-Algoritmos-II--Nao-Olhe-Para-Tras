@@ -3,6 +3,8 @@ package src.model.service;
 import java.util.ArrayList;
 
 import src.model.repository.StoryBuilder;
+import src.model.service.logic.Npc;
+import src.model.service.logic.Orfeu;
 
 public class SaveState {
     public String saveName; // Acho que isso serve como o nome do player - Simeony

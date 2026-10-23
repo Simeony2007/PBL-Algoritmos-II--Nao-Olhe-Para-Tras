@@ -5,7 +5,7 @@ import com.google.gson.GsonBuilder;
 
 import src.model.service.SaveState;
 import src.model.service.Settings;
-import src.view.GameInterface;
+import src.model.service.Collection;
 
 import java.io.File;
 import java.io.FileReader;
@@ -19,8 +19,9 @@ public class SaveManager {
 
     // 1. Define the dedicated folder path
     public static final String SAVE_DIRECTORY = "data/saves/";
-    public static final String SETTINGS_DIRECTORY = "data/profile/";
+    public static final String PROFILE_DIRECTORY = "data/profile/";
 
+    // Saves
     public static void saveGame(SaveState state, int slot) {
         Settings settings = loadSettings();
 
@@ -39,7 +40,7 @@ public class SaveManager {
                 settings.addAutoSaveCounter();
                 SaveManager.saveSettings(settings);
             } catch (IOException e) {
-                GameInterface.printWarning("\n[!] Erro crítico ao salvar o arquivo: " + e.getMessage());
+            //    GameInterface.printWarning("\n[!] Erro crítico ao salvar o arquivo: " + e.getMessage());
             }
 
         } else {
@@ -55,7 +56,7 @@ public class SaveManager {
             try (FileWriter writer = new FileWriter(fileName)) {
                 gson.toJson(state, writer);
             } catch (IOException e) {
-                GameInterface.printWarning("\n[!] Erro crítico ao salvar o arquivo: " + e.getMessage());
+            //    GameInterface.printWarning("\n[!] Erro crítico ao salvar o arquivo: " + e.getMessage());
             }
         }
     }
@@ -76,7 +77,7 @@ public class SaveManager {
         try (FileReader reader = new FileReader(file)) {
             return gson.fromJson(reader, SaveState.class);
         } catch (IOException e) {
-            GameInterface.printWarning("\n[!] Erro ao carregar o save. Iniciando um novo jogo. (" + e.getMessage() + ")");
+        //    GameInterface.printWarning("\n[!] Erro ao carregar o save. Iniciando um novo jogo. (" + e.getMessage() + ")");
             return new SaveState();
         }
     }
@@ -102,37 +103,6 @@ public class SaveManager {
         }
     }
 
-    public static void saveSettings(Settings currentSettings) {
-        File directory = new File(SETTINGS_DIRECTORY);
-        if (!directory.exists()) {
-            directory.mkdirs();
-        }
-
-        String fileName = SETTINGS_DIRECTORY + "settings.json";
-        try (FileWriter writer = new FileWriter(fileName)) {
-            gson.toJson(currentSettings, writer);
-        } catch (IOException e) {
-            GameInterface.printWarning("\n[!] Erro crítico ao salvar o arquivo: " + e.getMessage());
-        }
-
-    }
-
-    public static Settings loadSettings() {
-        File file = new File(SETTINGS_DIRECTORY + "settings.json");
-        if (!file.exists()) {
-            return new Settings();
-        } else {
-            try (FileReader reader = new FileReader(file)) {
-                return gson.fromJson(reader, Settings.class);
-            } catch (IOException e) {
-                GameInterface
-                        .printWarning(
-                                "\n[!] Erro ao carregar. Reiniciando settingsurações. (" + e.getMessage() + ")");
-                return new Settings();
-            }
-        }
-    }
-
     public static void deleteSave(int saveSlot) {
         if (saveSlot > 3) {
             File file = new File(SAVE_DIRECTORY + "auto_save_" + saveSlot + ".json");
@@ -155,4 +125,64 @@ public class SaveManager {
         File file = new File(SAVE_DIRECTORY + "save_slot_" + saveSlot + ".json");
         return file.exists();
         }
+
+    // Settings
+    public static void saveSettings(Settings currentSettings) {
+        File directory = new File(PROFILE_DIRECTORY);
+        if (!directory.exists()) {
+            directory.mkdirs();
+        }
+
+        String fileName = PROFILE_DIRECTORY + "settings.json";
+        try (FileWriter writer = new FileWriter(fileName)) {
+            gson.toJson(currentSettings, writer);
+        } catch (IOException e) {
+        //    GameInterface.printWarning("\n[!] Erro crítico ao salvar o arquivo: " + e.getMessage());
+        }
+
+    }
+
+    public static Settings loadSettings() {
+        File file = new File(PROFILE_DIRECTORY + "settings.json");
+        if (!file.exists()) {
+            return new Settings();
+        } else {
+            try (FileReader reader = new FileReader(file)) {
+                return gson.fromJson(reader, Settings.class);
+            } catch (IOException e) {
+            //    GameInterface.printWarning("\n[!] Erro ao carregar. Reiniciando settingsurações. (" + e.getMessage() + ")");
+                return new Settings();
+            }
+        }
+    }
+
+    // Collection
+    public static void saveCollection(Collection currentCollection) {
+        File directory = new File(PROFILE_DIRECTORY);
+        if (!directory.exists()) {
+            directory.mkdirs();
+        }
+
+        String fileName = PROFILE_DIRECTORY + "collection.json";
+        try (FileWriter writer = new FileWriter(fileName)) {
+            gson.toJson(currentCollection, writer);
+        } catch (IOException e) {
+        //    GameInterface.printWarning("\n[!] Erro crítico ao salvar o arquivo: " + e.getMessage());
+        }
+
+    }
+
+    public static Collection loadCollection() {
+        File file = new File(PROFILE_DIRECTORY + "collection.json");
+        if (!file.exists()) {
+            return new Collection();
+        } else {
+            try (FileReader reader = new FileReader(file)) {
+                return gson.fromJson(reader, Collection.class);
+            } catch (IOException e) {
+            //    GameInterface.printWarning("\n[!] Erro ao carregar. Reiniciando settingsurações. (" + e.getMessage() + ")");
+                return new Collection();
+            }
+        }
+    }
 }

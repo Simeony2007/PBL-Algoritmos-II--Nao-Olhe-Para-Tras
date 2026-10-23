@@ -2,6 +2,10 @@ package src.model.service;
 
 import java.util.ArrayList;
 
+import src.model.service.logic.Chapter;
+import src.model.service.logic.Npc;
+import src.model.service.logic.Orfeu;
+
 public class GameState {
     private Orfeu orfeu;
     private ArrayList<Npc> npcs;

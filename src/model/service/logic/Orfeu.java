@@ -1,4 +1,4 @@
-package src.model.service;
+package src.model.service.logic;
 
 public class Orfeu{
 	private int obol;

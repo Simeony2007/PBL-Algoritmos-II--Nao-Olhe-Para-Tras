@@ -9,10 +9,10 @@ import java.util.ArrayList;
 import org.junit.Before;
 import org.junit.Test;
 
-import src.model.service.Chapter;
 import src.model.service.GameState;
-import src.model.service.Npc;
-import src.model.service.Orfeu;
+import src.model.service.logic.Chapter;
+import src.model.service.logic.Npc;
+import src.model.service.logic.Orfeu;
 
 public class GameStateTest {
 

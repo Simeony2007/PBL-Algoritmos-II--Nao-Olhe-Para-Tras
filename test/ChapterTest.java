@@ -3,8 +3,8 @@ package test;
 import org.junit.Before;
 import org.junit.Test;
 
-import src.model.service.Chapter;
-import src.model.service.Scene;
+import src.model.service.logic.Chapter;
+import src.model.service.logic.Scene;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;

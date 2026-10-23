@@ -33,7 +33,7 @@ public class MenuSettings {
     private int getSettingsMenuOption() {
         while (true) {
             try {
-                GameInterface.showDefinitions(settings.isAutoSave(), settings.getColorNum(), settings.getTextSpeed());
+                GameInterface.showSettings(settings.isAutoSave(), settings.getColorNum(), settings.getTextSpeed());
                 String userInput = GameInterface.getTextInput();
                 int number = Integer.parseInt(userInput.trim());
                 if (number > 0 && number <= 4) {

@@ -2,11 +2,11 @@ package src.model.repository;
 
 import java.util.ArrayList;
 
-import src.model.service.Chapter;
-import src.model.service.Condition;
-import src.model.service.Npc;
-import src.model.service.Orfeu;
-import src.model.service.Scene;
+import src.model.service.logic.Chapter;
+import src.model.service.logic.Condition;
+import src.model.service.logic.Npc;
+import src.model.service.logic.Orfeu;
+import src.model.service.logic.Scene;
 
 
 public class StoryBuilder {
@@ -501,7 +501,7 @@ public class StoryBuilder {
         Scene scene1 = new Scene("Sala do Trono");
         Scene scene2 = new Scene("Julgamento de Hades");
         Scene scene2a = new Scene("s2a_judgment", "Encontro com Eurídice");
-        Scene scene2b = new Scene("s2b_judgment", null);
+        Scene scene2b = new Scene("Final 3: Punição Eterna", null);
         Scene scene3 = new Scene("Encontro com Eurídice");
         Scene scene3a = new Scene("s3a_eurydice", "s4_leaving");
         Scene scene3b = new Scene("s3b_eurydice", "s4_leaving");
@@ -525,7 +525,7 @@ public class StoryBuilder {
         scene2.addNewDialogue("Como Orfeu responde perante o tribunal de Hades?");
 
         scene2.addNewChoice("Engolir o orgulho e pedir perdão por sua amargura", "s2a_judgment", 0, 0, 1, 0, 0);
-        scene2.addNewChoice("Dobrar a aposta e exigir Eurídice de qualquer maneira", "s2b_judgment", 0, 0, 0, 0, 1);
+        scene2.addNewChoice("Dobrar a aposta e exigir Eurídice de qualquer maneira", "Final 3: Punição Eterna", 0, 0, 0, 0, 1);
 
         // Cenas 2a e 2b - Resultados do Julgamento
         scene2a.addNewDialogue("Orfeu abaixa a cabeça.");
@@ -537,7 +537,9 @@ public class StoryBuilder {
         scene2b.addNewDialogue("Orfeu: Seus mortos são fracos e o seu reino é patético! Eu exijo que ela volte comigo agora!");
         scene2b.addNewDialogue("Hades ergue a mão, com chamas sombrias nos olhos.");
         scene2b.addNewDialogue("Hades: Tolo insolente. Você se juntará a eles pela eternidade!");
-        scene2b.addNewDialogue("Correntes de bronze surgem do chão, prendendo Orfeu para sempre no Tártaro. (Final Prematuro)");
+        scene2b.addNewDialogue("Correntes de bronze surgem do chão, prendendo Orfeu para sempre no Tártaro.");
+        scene2b.addNewDialogue("[Final 3: Punição Eterna]");
+        scene2b.isEnding();
 
         // Cena 3 - Eurídice
         scene3.addNewDialogue("Perséfone ergue a mão e uma bruma de ametista se forma no centro do salão. Das névoas, uma figura feminina com véu de noiva caminha hesitante. É Eurídice.");
@@ -911,7 +913,7 @@ public class StoryBuilder {
         chapter.newScene(scene4a);
 
         // Cena 4B - A Resignação Fracassada (Tristeza Baixa)
-        Scene scene4b = new Scene("s4b_failed_resignation", "s8_ending4");
+        Scene scene4b = new Scene("s4b_failed_resignation", "Final 4: Orfeu fracassa e Sísifo escapa");
         scene4b.addNewDialogue("A falta de uma reação enérgica ou de uma dor expressada com força suficiente faz com que o bardo paralise. Sísifo leva a melhor, a oportunidade evapora e o rio permanece intransponível.");
         scene4b.addNewDialogue("[Final 4: Orfeu fracassa e Sísifo escapa]");
         chapter.newScene(scene4b);
@@ -952,7 +954,7 @@ public class StoryBuilder {
         chapter.newScene(scene7b);
 
         // Cena 8 - Final 4
-        Scene scene8 = new Scene("s8_ending4", null);
+        Scene scene8 = new Scene("Final 4: Orfeu fracassa e Sísifo escapa", null);
         scene8.addNewDialogue("[Final 4: Orfeu fracassa e Sísifo escapa]");
         scene8.isEnding();
         chapter.newScene(scene8);
