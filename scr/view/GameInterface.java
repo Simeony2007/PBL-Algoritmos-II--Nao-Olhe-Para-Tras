@@ -73,11 +73,11 @@ public class GameInterface {
         System.out.println("=================================");
         System.out.println("       NÃO OLHE PARA TRÁS        ");
         System.out.println("=================================");
-        System.out.println("1 - Iniciar jogo");
-        System.out.println("2 - Deletar um save");
-        System.out.println("3 - Instruções");
-        System.out.println("4 - Créditos");
-        System.out.println("5 - Configurações");
+        System.out.println("1 - Iniciar");
+        System.out.println("2 - Configurações");
+        System.out.println("3 - Coleção");
+        System.out.println("4 - Instruções");
+        System.out.println("5 - Créditos");
         System.out.println("6 - Fechar jogo");
         System.out.println("=================================");
         System.out.print("Escolha uma opção: ");
@@ -107,8 +107,7 @@ public class GameInterface {
     public static void showCredits() {
         System.out.println("\n=== CRÉDITOS ===");
         System.out.println("Desenvolvido por: Pedro e Simeony\n");
-        System.out
-                .println("Universo e História inspirados na mitologia grega, em especial o conto de Orfeu e Eurídice");
+        System.out.println("Universo e História inspirados na mitologia grega, em especial o conto de Orfeu e Eurídice");
         System.out.println("\n(Pressione ENTER para voltar)");
     }
 
@@ -120,7 +119,7 @@ public class GameInterface {
         System.out.println("\n=================================");
         System.out.println("       SELECIONAR SLOT           ");
         System.out.println("=================================");
-        System.out.println("Escolha um slot (1, 2 ou 3) para iniciar ou continuar:");
+        System.out.println("Escolha um slot para iniciar ou continuar:");
         if (informationDictionary != null) {
             for (int i = 1; i < 4; i++) {
                 System.out.println(informationDictionary.get(i));

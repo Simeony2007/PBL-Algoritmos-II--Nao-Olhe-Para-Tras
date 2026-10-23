@@ -7,13 +7,12 @@ import scr.view.GameInterface;
 public class MenuSettings {
     Settings settings;
 
-
     public MenuSettings(Settings settings) {
         this.settings = settings;
+        iniciar();
     }
 
-
-    public void iniciar() {
+    private void iniciar() {
         int choice = 0;
         while (choice != 4) {
             choice = getSettingsMenuOption();
@@ -29,11 +28,9 @@ public class MenuSettings {
         }
         SaveManager.saveSettings(settings);
         GameInterface.clearConsole();
-        Menu menu = new Menu();
-        menu.iniciar();
     }
 
-    public int getSettingsMenuOption() {
+    private int getSettingsMenuOption() {
         while (true) {
             try {
                 GameInterface.showDefinitions(settings.isAutoSave(), settings.getColorNum(), settings.getTextSpeed());

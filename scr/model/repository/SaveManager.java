@@ -19,8 +19,8 @@ public class SaveManager {
     private static final Gson gson = new GsonBuilder().setPrettyPrinting().create();
 
     // 1. Define the dedicated folder path
-    public static final String SAVE_DIRECTORY = "saves/";
-    public static final String SETTINGS_DIRECTORY = "saves/settings/";
+    public static final String SAVE_DIRECTORY = "data/saves/";
+    public static final String SETTINGS_DIRECTORY = "data/profile/";
 
     public static void saveGame(SaveState state, int slot) {
         Settings settings = loadSettings();
@@ -111,7 +111,7 @@ public class SaveManager {
             directory.mkdirs();
         }
 
-        String fileName = SETTINGS_DIRECTORY + "config.json";
+        String fileName = SETTINGS_DIRECTORY + "settings.json";
         try (FileWriter writer = new FileWriter(fileName)) {
             gson.toJson(currentSettings, writer);
         } catch (IOException e) {
@@ -121,7 +121,7 @@ public class SaveManager {
     }
 
     public static Settings loadSettings() {
-        File file = new File(SETTINGS_DIRECTORY + "config.json");
+        File file = new File(SETTINGS_DIRECTORY + "settings.json");
         if (!file.exists()) {
             return new Settings();
         } else {
@@ -130,14 +130,14 @@ public class SaveManager {
             } catch (IOException e) {
                 GameInterface
                         .printWarning(
-                                "\n[!] Erro ao carregar. Reiniciando configurações. (" + e.getMessage() + ")");
+                                "\n[!] Erro ao carregar. Reiniciando settingsurações. (" + e.getMessage() + ")");
                 return new Settings();
             }
         }
     }
 
-    public static void deleteSave(int saveSlot, boolean isItAutoSave) {
-        if (isItAutoSave) {
+    public static void deleteSave(int saveSlot) {
+        if (saveSlot > 3) {
             File file = new File(SAVE_DIRECTORY + "auto_save_" + saveSlot + ".json");
             if (file.exists()) {
                 file.delete();

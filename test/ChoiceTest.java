@@ -9,8 +9,6 @@ import scr.model.service.*;;
 public class ChoiceTest {
     private Choice choice1;
     private Choice choice2;
-    private Choice choice3;
-    private Choice choice4;
     
     @Before
     public void setUp(){

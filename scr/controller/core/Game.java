@@ -95,8 +95,6 @@ public class Game {
                         currentChapter.nextScene();
                     }
                 }
-                saveCurrentProgress(state.getCurrentChapter().getCurrentScene().getNextSceneId(), -1);
-
             }
             if (state.isRunning()) {
                 GameInterface.waitForEnter("\n[Fim do Capítulo. Pressione ENTER para avançar...]");
