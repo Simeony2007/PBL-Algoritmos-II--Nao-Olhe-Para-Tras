@@ -1,8 +1,8 @@
 {
   "orfeu": {
     "obol": 1,
-    "love": 2,
-    "angry": 1,
+    "love": 3,
+    "angry": 2,
     "sadness": 2
   },
   "npcs": [
@@ -19,6 +19,6 @@
       "affinity": 0
     }
   ],
-  "chapterIndex": 4,
-  "sceneId": "Julgamento de Hades"
+  "chapterIndex": 5,
+  "sceneId": "A Sombra na Trilha"
 }

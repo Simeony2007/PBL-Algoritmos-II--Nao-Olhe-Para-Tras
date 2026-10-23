@@ -1,4 +1,4 @@
-package src.controller;
+package src;
 
 import src.controller.menu.Menu;
 

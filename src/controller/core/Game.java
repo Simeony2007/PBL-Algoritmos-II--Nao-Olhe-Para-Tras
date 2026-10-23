@@ -134,7 +134,7 @@ public class Game {
                 boolean control = true;
                 while (control) {
                     GameInterface.showText("Escolha o slot: ");
-                    int userSlot = getNumericInput(8); // NUMERO MAXIMO DE SLOTS! - Simeony
+                    int userSlot = getNumericInput(3);
                     SaveState temp = SaveManager.loadGame(userSlot);
                     if (temp.sceneId == null) {
                         saveCurrentProgress(currentSceneId);

@@ -1,12 +1,12 @@
 ## Checklist de Pendências:
 
-- [x] Salvar e Selecionar save _(Implementado, tem algo estranho acontecendo quando selecionar um slot automático - Pedro)_
+- [x] Salvar e Selecionar save _(Implementado - Pedro)_
 
 - [ ] Sistema de confirmação de sobrescrita. _(Planejo dividir parte dela para SaveManager ou MenuSlots - Pedro)_
 
-- [x] Exclusão de saves. _(Implementado, é possível deletar saves inexistentes, precisa ser corrigido - Pedro)_
+- [x] Exclusão de saves. _(Implementado - Pedro)_
 
-- [x] Configurações e a persistência da mesma. _(Implementado, com 4 cores, habilitar save auto e velocidade do texto - Pedro)_
+- [x] Configurações e a persistência da mesma. _(Implementado - Pedro)_
 
 - [ ] Registro de finais _(Ideia de estar incluído num sub-menu em Coleções - Pedro)_
 

@@ -1,0 +1,23 @@
+{
+  "orfeu": {
+    "obol": 1,
+    "love": 3,
+    "angry": 2,
+    "sadness": 2
+  },
+  "npcs": [
+    {
+      "name": "Charon",
+      "affinity": 0
+    },
+    {
+      "name": "Eurydice",
+      "affinity": 0
+    },
+    {
+      "name": "Sisyphus",
+      "affinity": 0
+    }
+  ],
+  "chapterIndex": 5
+}

@@ -61,7 +61,6 @@ public class SaveManager {
     }
 
     public static SaveState loadGame(int slot) {
-        // 4. Look for the file inside the "saves/" folder
         File file;
         if (slot > 0 && slot <= 3) {
             file = new File(SAVE_DIRECTORY + "save_slot_" + slot + ".json");
@@ -77,8 +76,7 @@ public class SaveManager {
         try (FileReader reader = new FileReader(file)) {
             return gson.fromJson(reader, SaveState.class);
         } catch (IOException e) {
-            GameInterface
-                    .printWarning("\n[!] Erro ao carregar o save. Iniciando um novo jogo. (" + e.getMessage() + ")");
+            GameInterface.printWarning("\n[!] Erro ao carregar o save. Iniciando um novo jogo. (" + e.getMessage() + ")");
             return new SaveState();
         }
     }
@@ -152,4 +150,9 @@ public class SaveManager {
             }
         }
     }
+
+    public static boolean doesSaveExist(int saveSlot) {
+        File file = new File(SAVE_DIRECTORY + "save_slot_" + saveSlot + ".json");
+        return file.exists();
+        }
 }
