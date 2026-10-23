@@ -115,6 +115,7 @@ public class Collection {
                 final_4 = true;
                 break;
         }
+        SaveManager.saveCollection(this);
     }
 
     public void showEndings() {
