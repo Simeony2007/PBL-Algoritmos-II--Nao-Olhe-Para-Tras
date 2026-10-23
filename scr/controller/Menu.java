@@ -2,16 +2,12 @@ package scr.controller;
 
 import scr.view.GameInterface;
 
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.util.Dictionary;
 import java.util.HashMap;
 import java.util.Map;
-import java.nio.file.attribute.FileTime;
 
 import scr.model.repository.SaveManager; // Importe o seu SaveManager
 import scr.model.service.SaveState; // Importe o seu SaveState
+import scr.model.service.Settings;
 
 public class Menu {
     private Game game;
@@ -19,9 +15,9 @@ public class Menu {
 
     public void iniciar() {
         settings = SaveManager.loadSettings();
-        GameInterface.changeColor(settings.collorNum);
+        GameInterface.changeColor(settings.getColorNum());
         int opcao = 0;
-        while (opcao != 5) {
+        while (opcao != 6) {
             opcao = inputOptions();
             optionScanner(opcao);
         }
@@ -33,7 +29,7 @@ public class Menu {
                 GameInterface.showMainMenu();
                 String userInput = GameInterface.getTextInput();
                 int number = Integer.parseInt(userInput.trim());
-                if (number > 0 && number <= 5) {
+                if (number > 0 && number <= 6) {
                     return number;
                 } else {
                     GameInterface.showMenuInvalidOption();
@@ -44,22 +40,6 @@ public class Menu {
         }
     }
 
-    public int getSettingsMenuOption() {
-        while (true) {
-            try {
-                GameInterface.showDefinitions(settings.autoSave, settings.collorNum);
-                String userInput = GameInterface.getTextInput();
-                int number = Integer.parseInt(userInput.trim());
-                if (number > 0 && number <= 3) {
-                    return number;
-                } else {
-                    GameInterface.showTextLn("Digite números entre 1 e 3!");
-                }
-            } catch (NumberFormatException e) {
-                GameInterface.showMenuInvalidInput();
-            }
-        }
-    }
 
     // Método novo para validar a escolha do Slot (1 a 3)
     public int getSlotInput() {
@@ -81,7 +61,6 @@ public class Menu {
     }
 
     public void optionScanner(int optionNumber) {
-        int choice = 0;
         GameInterface.clearConsole();
         switch (optionNumber) { // PRECISAMOS ADICIONAR O SOBRESCREVER E APAGAR SAVE!
             case 1: // Acho que uma nova aba pra "Saves" é uma boa!
@@ -93,6 +72,7 @@ public class Menu {
                 SaveState loadedState = SaveManager.loadGame(slot); // Carrega o JSON
 
                 game = new Game(slot, loadedState); // Passa os dados para o jogo
+                game.setTextSpeed(settings.getTextSpeed());
                 game.gameRunning();
                 break;
             case 2:
@@ -108,18 +88,8 @@ public class Menu {
                 GameInterface.getTextInput();
                 break;
             case 5:
-                while (choice != 3) {
-                    choice = getSettingsMenuOption();
-                    if (choice == 1) {
-                        settings.setAutosave();
-                    } else if (choice == 2) {
-                        settings.changeColorNumber();
-                    }
-                }
-                // Forma de mudar as settings quase pronta - Simeony
-                SaveManager.saveSettings(settings);
-                GameInterface.changeColor(settings.collorNum);
-                // Falta o autosave verificar a variavel autosave tbm - Simeony
+                MenuSettings menuSettings = new MenuSettings(settings);
+                menuSettings.iniciar();
                 break;
             case 6:
                 GameInterface.showExitMessage();

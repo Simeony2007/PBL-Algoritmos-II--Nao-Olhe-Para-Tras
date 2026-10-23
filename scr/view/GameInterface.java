@@ -1,13 +1,11 @@
 package scr.view;
 
-import java.lang.reflect.Array;
-import java.util.ArrayList;
 import java.util.Map;
 import java.util.Scanner;
 
 public class GameInterface {
     private static final Scanner scanner = new Scanner(System.in);
-    public static final int MAX_COLLORS = 3;
+    public static final int MAX_COLLORS = 4;
 
     private GameInterface() {
     }
@@ -79,7 +77,7 @@ public class GameInterface {
         System.out.println("2 - Deletar um save");
         System.out.println("3 - Instruções");
         System.out.println("4 - Créditos");
-        System.out.println("5 - Definições");
+        System.out.println("5 - Configurações");
         System.out.println("6 - Fechar jogo");
         System.out.println("=================================");
         System.out.print("Escolha uma opção: ");
@@ -118,7 +116,7 @@ public class GameInterface {
         System.out.println("\nAté a próxima!\n");
     }
 
-    public static void showLoadMenu(Map informationDictionary) {
+    public static void showLoadMenu(Map<Integer, String> informationDictionary) {
         System.out.println("\n=================================");
         System.out.println("       SELECIONAR SLOT           ");
         System.out.println("=================================");
@@ -194,21 +192,44 @@ public class GameInterface {
 
     }
 
-    public static void showDefinitions(boolean autoSaveState, int textCollorNumber) {
+    public static void showDefinitions(boolean autoSaveState, int textColorNumber, int textSpeedNumber) {
         // Falta fazer o menu de Settings e mostrar as settings atuais e suas possíveis
         // mudanças - Simeony
 
-        String collorName;
+        String colorName;
         String autoSaveMode = "Desligado";
-        switch (textCollorNumber) {
+        String textSpeedText;
+
+        switch (textColorNumber) {
             case 1:
-                collorName = "Branco";
+                colorName = "Branco";
                 break;
             case 2:
-                collorName = "Azul";
+                colorName = "Azul";
+                break;
+            case 3:
+                colorName = "Vermelho";
+                break;
+            case 4:
+                colorName = "Roxo";
                 break;
             default:
-                collorName = "Branco";
+                colorName = "Branco";
+                break;
+        }
+
+        switch (textSpeedNumber) {
+            case 100:
+                textSpeedText = "Rápido";
+                break;
+            case 1000:
+                textSpeedText = "Médio";
+                break;
+            case 2500:
+                textSpeedText = "Lento";
+                break;
+            default:
+                textSpeedText = "Médio";
                 break;
         }
 
@@ -220,9 +241,10 @@ public class GameInterface {
         System.out.print("1 - AutoSave: ");
         System.out.println(autoSaveMode);
         System.out.print("2 - Cor do texto: ");
-        System.out.println(collorName);
-        System.out.print("3 - Voltar para o menu inicial ");
-        System.out.println();
+        System.out.println(colorName);
+        System.out.print("3 - Velocidade do texto: ");
+        System.out.println(textSpeedText);
+        System.out.println("4 - Salvar e voltar ao menu principal");
         System.out.print("Digite sua escolha: ");
     }
 

@@ -3,8 +3,8 @@ package scr.model.repository;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
-import scr.controller.Settings;
 import scr.model.service.SaveState;
+import scr.model.service.Settings;
 
 import java.io.File;
 import java.io.FileReader;
@@ -30,11 +30,11 @@ public class SaveManager {
             if (!directory.exists()) {
                 directory.mkdirs();
             }
-            if (settings.autoSaveCounter > 5) {
-                settings.autoSaveCounter = 1;
+            if (settings.isAutoSave() && settings.getAutoSaveCounter() > 5) {
+                settings.addAutoSaveCounter();
             }
             // 3. Append the folder path to the file name
-            String fileName = SAVE_DIRECTORY + "auto_save_" + settings.autoSaveCounter + ".json";
+            String fileName = SAVE_DIRECTORY + "auto_save_" + settings.getAutoSaveCounter() + ".json";
             try (FileWriter writer = new FileWriter(fileName)) {
                 gson.toJson(state, writer);
                 settings.addAutoSaveCounter();

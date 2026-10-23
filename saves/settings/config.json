@@ -1,5 +1,6 @@
 {
-  "collorNum": 1,
+  "colorNum": 1,
   "autoSave": true,
-  "autoSaveCounter": 6
+  "autoSaveCounter": 6,
+  "textSpeed": 100
 }

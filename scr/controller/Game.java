@@ -7,11 +7,13 @@ import scr.model.service.Chapter;
 import scr.model.service.GameState;
 import scr.model.service.SaveState; // Import necessário
 import scr.model.service.Scene;
+import scr.model.service.Settings;
 import scr.view.GameInterface;
 
 public class Game {
     private GameState state;
     private int currentSaveSlot;
+    private int textSpeed;
 
     /**
      * Método construtor. Cria um novo GameState adicionando os personagens
@@ -53,7 +55,7 @@ public class Game {
 
                 while (!currentScene.isFinishedAllDialogues()) {
                     GameInterface.showDialogue(currentScene.nextDialogue());
-                    littleStop(1000);
+                    littleStop(textSpeed);
                 }
 
                 GameInterface.showTextLn("");
@@ -104,7 +106,7 @@ public class Game {
                 state.advanceChapter();
 
                 // AUTO-SAVE: Salva o jogo no início do novo capítulo
-                if (state.isRunning() && settings.autoSave) {
+                if (state.isRunning() && settings.isAutoSave()) {
                     // Passamos "null" para a cena, assim o jogo carrega a primeira cena padrão do
                     // capítulo
                     saveCurrentProgress(state.getCurrentChapter().getCurrentScene().getNextSceneId(), -1);
@@ -218,14 +220,9 @@ public class Game {
         SaveManager.saveGame(saveInfo, slot);
     }
 
-    private void saveCurrentProgress(int slot) {
-        SaveState saveInfo = new SaveState(
-                this.state.getOrfeu(),
-                this.state.getNpcs(),
-                this.state.getCurrentChapterIndex(),
-                null);
 
-        SaveManager.saveGame(saveInfo, slot);
+    public void setTextSpeed(int speed) {
+        textSpeed = speed;
     }
 
 }
