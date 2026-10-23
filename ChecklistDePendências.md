@@ -8,8 +8,8 @@
 
 - [x] Configurações e a persistência da mesma. _(Implementado - Pedro)_
 
-- [ ] Registro de finais _(Falta implementar o view - Pedro)_
+- [x] Registro de finais _(Implementado - Pedro)_
 
-- [ ] Conquistas _(Sub-menu de Coleções, a ideia é ser para cada capítulo alcançado e por ter alcançado todos os finais)_
+- [x] Conquistas _(Implementado - Pedro)_
 
 - [ ] Exceptions personalizadas.

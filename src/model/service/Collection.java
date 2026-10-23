@@ -65,7 +65,7 @@ public class Collection {
     }
 
     public void onChapterReached(int achievementNumber) {
-        switch (achievementNumber) {
+        switch (achievementNumber+1) {
             case 1:
                 achievement_1 = true;
                 break;
@@ -97,6 +97,7 @@ public class Collection {
                 achievement_10 = true;
                 break;
         }
+        SaveManager.saveCollection(this);
     }
 
     public void onFinalReached(String finalSceneId) {

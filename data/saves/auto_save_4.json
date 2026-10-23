@@ -1,0 +1,24 @@
+{
+  "orfeu": {
+    "obol": 0,
+    "love": 0,
+    "angry": 0,
+    "sadness": 3
+  },
+  "npcs": [
+    {
+      "name": "Charon",
+      "affinity": 0
+    },
+    {
+      "name": "Eurydice",
+      "affinity": 0
+    },
+    {
+      "name": "Sisyphus",
+      "affinity": 0
+    }
+  ],
+  "chapterIndex": 1,
+  "sceneId": "Alma do Marinheiro"
+}

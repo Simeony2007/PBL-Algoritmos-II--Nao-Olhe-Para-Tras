@@ -20,8 +20,7 @@ public class Game {
      * Método construtor. Cria um novo GameState adicionando os personagens
      * e os capítulos.
      */
-    public Game(int saveSlot, SaveState loadedData, Collection collection) {
-        this.currentSaveSlot = saveSlot;
+    public Game(SaveState loadedData, Collection collection) {
         this.collection = collection;
 
         this.state = new GameState(
@@ -125,13 +124,6 @@ public class Game {
         GameInterface.clearConsole();
     }
 
-    /**
-     * Recebe um valor máximo e recebe uma entrada do usuário.
-     * Faz a conversão em inteiro e retorna um valor dentro do máximo.
-     * 
-     * @param maxChoices int
-     * @return escolha int
-     */
     private int getInput(int maxChoices, String currentSceneId) {
         int choice;
         while (true) {
@@ -224,7 +216,6 @@ public class Game {
                 currentSceneId);
         SaveManager.saveGame(saveInfo, slot);
     }
-
 
     public void setTextSpeed(int speed) {
         textSpeed = speed;
