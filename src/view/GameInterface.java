@@ -1,39 +1,9 @@
 package src.view;
 
-import java.util.Map;
-import java.util.Scanner;
-
-public class GameInterface {
-    private static final Scanner scanner = new Scanner(System.in);
+public class GameInterface extends Interface {
     public static final int MAX_COLLORS = 4;
 
     private GameInterface() {
-    }
-
-    public static String getTextInput() {
-        return scanner.nextLine();
-    }
-
-    public static void showText(String text) {
-        System.out.print(text);
-    }
-
-    // Feito utilizando IA
-    public static void showTextLn(String text) {
-        int wrapLength = 160;
-        String[] words = text.split(" ");
-        StringBuilder wrappedText = new StringBuilder();
-        int currentLineLength = 0;
-
-        for (String word : words) {
-            if (currentLineLength + word.length() > wrapLength) {
-                wrappedText.append("\n");
-                currentLineLength = 0;
-            }
-            wrappedText.append(word).append(" ");
-            currentLineLength += word.length() + 1;
-        }
-        System.out.println(wrappedText.toString().trim());
     }
 
     public static void printWarning(String text) {
@@ -41,7 +11,7 @@ public class GameInterface {
         System.out.println(text);
     }
 
-    // Feito utilizando IA
+    // Classe feita utilizando IA
     public static void showDialogue(String text) {
         int wrapLength = 160;
         String indent = "    ";
@@ -61,75 +31,6 @@ public class GameInterface {
         }
 
         System.out.println(wrappedText.toString());
-    }
-
-    public static void clearConsole() {
-        System.out.print("\033[H\033[2J");
-        System.out.flush();
-    }
-
-    // --- MÉTODOS DE TEXTO DO MENU ---
-    public static void showMainMenu() {
-        System.out.println("=================================");
-        System.out.println("       NÃO OLHE PARA TRÁS        ");
-        System.out.println("=================================");
-        System.out.println("1 - Iniciar");
-        System.out.println("2 - Configurações");
-        System.out.println("3 - Coleção");
-        System.out.println("4 - Instruções");
-        System.out.println("5 - Créditos");
-        System.out.println("6 - Fechar jogo");
-        System.out.println("=================================");
-        System.out.print("Escolha uma opção: ");
-    }
-
-    public static void showMenuInvalidOption() {
-        System.out.println("\n[!] Opção inválida! Digite um número de 1 a 4.\n");
-    }
-
-    public static void showMenuInvalidInput() {
-        System.out.println("\n[!] Entrada inválida! Digite apenas números.\n");
-    }
-
-    public static void showInstructions() {
-        System.out.println("\n=== INSTRUÇÕES ===");
-        System.out.println("Objetivo:\n- Atravessar o Submundo e recuperar sua Amada.\n");
-        System.out.println("Como Jogar:\n- Digite no terminal um dos números das opções para selecionar elas.\n");
-        System.out.println(
-                "Mecânicas:\n- Orfeu possui 3 atributos, Amor, Raiva e Tristeza, eles aumentam ou diminuem conforme suas escolhas");
-        System.out.println("- Orfeu também irá coletar óbolos (moedas) para atravessar o Submundo.");
-        System.out.println("- Você também fará relacionamento com alguns personagens.");
-        System.out.println("- Tanto o relacionameto, quanto os atributos terão consequências futuras.");
-        System.out.println("\nPara salvar manualmente, digite \"salvar\" no momento onde uma escolha for exigida.");
-        System.out.println("\n(Pressione ENTER para voltar)");
-    }
-
-    public static void showCredits() {
-        System.out.println("\n=== CRÉDITOS ===");
-        System.out.println("Desenvolvido por: Pedro e Simeony\n");
-        System.out.println("Universo e História inspirados na mitologia grega, em especial o conto de Orfeu e Eurídice");
-        System.out.println("\n(Pressione ENTER para voltar)");
-    }
-
-    public static void showExitMessage() {
-        System.out.println("\nAté a próxima!\n");
-    }
-
-    public static void showLoadMenu(Map<Integer, String> informationDictionary) {
-        System.out.println("\n=================================");
-        System.out.println("       SELECIONAR SLOT           ");
-        System.out.println("=================================");
-        System.out.println("Escolha um slot para iniciar ou continuar:");
-        if (informationDictionary != null) {
-            for (int i = 1; i < 4; i++) {
-                System.out.println(informationDictionary.get(i));
-            }
-            for (int i = 1; i < 6; i++) {
-                int a = i + 3;
-                System.out.println(informationDictionary.get(a));
-            }
-        }
-        System.out.print("Slot: ");
     }
 
     // --- MÉTODOS DE TEXTO DO JOGO ---
@@ -168,101 +69,10 @@ public class GameInterface {
         System.out.println("=================================\n");
     }
 
-    public static void changeColor(int colorNumber) {
-
-        switch (colorNumber) {
-            case 1:
-                System.out.print("\u001B[0m");
-                break;
-
-            case 2:
-                System.out.print("\u001B[34m");
-                break;
-            case 3:
-                System.out.println("\u001B[31m");
-                break;
-            case 4:
-                System.out.println("\u001B[35m");
-                break;
-            default:
-                System.out.print("\u001B[0m");
-                break;
-        }
-
-    }
-
-    public static void showSettings(boolean autoSaveState, int textColorNumber, int textSpeedNumber) {
-        String colorName;
-        String autoSaveMode = "Desligado";
-        String textSpeedText;
-
-        switch (textColorNumber) {
-            case 1:
-                colorName = "Branco";
-                break;
-            case 2:
-                colorName = "Azul";
-                break;
-            case 3:
-                colorName = "Vermelho";
-                break;
-            case 4:
-                colorName = "Roxo";
-                break;
-            default:
-                colorName = "Branco";
-                break;
-        }
-
-        switch (textSpeedNumber) {
-            case 100:
-                textSpeedText = "Rápido";
-                break;
-            case 1000:
-                textSpeedText = "Médio";
-                break;
-            case 2500:
-                textSpeedText = "Lento";
-                break;
-            default:
-                textSpeedText = "Médio";
-                break;
-        }
-
-        if (autoSaveState) {
-            autoSaveMode = "Ligado";
-        }
-
-        System.out.println("--- Configurações ---");
-        System.out.print("1 - AutoSave: ");
-        System.out.println(autoSaveMode);
-        System.out.print("2 - Cor do texto: ");
-        System.out.println(colorName);
-        System.out.print("3 - Velocidade do texto: ");
-        System.out.println(textSpeedText);
-        System.out.println("4 - Salvar e voltar ao menu principal");
-        System.out.print("Digite sua escolha: ");
-    }
-
     public static void showOverwriteQuestion() {
         System.out.println("Deseja sobrescrever o Save atual?");
         System.out.print("Digite(S/N): ");
     }
 
-    public static void showCollection(Map<String, Boolean> collectionStatus) {
-        System.out.println("\n=== COLEÇÃO ===");
-        System.out.println("Capítulos:");
-        for (int i = 1; i <= 10; i++) {
-            String chapterKey = "chapter_" + i;
-            String status = collectionStatus.get(chapterKey) ? "Concluído" : "Não Concluído";
-            System.out.println("Capítulo " + i + ": " + status);
-        }
-
-        System.out.println("\nFinais:");
-        for (int i = 1; i <= 4; i++) {
-            String finalKey = "final_" + i;
-            String status = collectionStatus.get(finalKey) ? "Desbloqueado" : "Bloqueado";
-            System.out.println("Final " + i + ": " + status);
-        }
-    }
+    
 }

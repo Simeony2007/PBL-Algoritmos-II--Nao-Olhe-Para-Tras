@@ -60,4 +60,5 @@ public class GameState {
         Chapter current = getCurrentChapter();
         return current == null || current.isScenesFinished();
     }
+
 }

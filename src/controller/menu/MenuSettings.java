@@ -2,7 +2,7 @@ package src.controller.menu;
 
 import src.model.repository.SaveManager;
 import src.model.service.Settings;
-import src.view.GameInterface;
+import src.view.MenuInterface;
 
 public class MenuSettings {
     Settings settings;
@@ -20,30 +20,30 @@ public class MenuSettings {
                 settings.setAutosave();
             } else if (choice == 2) {
                 settings.changeColorNumber();
-                GameInterface.changeColor(settings.getColorNum());
+                MenuInterface.changeColor(settings.getColorNum());
             } else if (choice == 3) {
                 settings.changeTextSpeed();
             }
-            GameInterface.clearConsole();
+            MenuInterface.clearConsole();
         }
         SaveManager.saveSettings(settings);
-        GameInterface.clearConsole();
+        MenuInterface.clearConsole();
     }
 
     private int getSettingsMenuOption() {
         while (true) {
             try {
-                GameInterface.showSettings(settings.isAutoSave(), settings.getColorNum(), settings.getTextSpeed());
-                String userInput = GameInterface.getTextInput();
+                MenuInterface.showSettings(settings.isAutoSave(), settings.getColorNum(), settings.getTextSpeed());
+                String userInput = MenuInterface.getTextInput();
                 int number = Integer.parseInt(userInput.trim());
                 if (number > 0 && number <= 4) {
                     return number;
                 } else {
-                    GameInterface.clearConsole();
-                    GameInterface.showTextLn("Digite números entre 1 e 4");
+                    MenuInterface.clearConsole();
+                    MenuInterface.showTextLn("Digite números entre 1 e 4");
                 }
             } catch (NumberFormatException e) {
-                GameInterface.showMenuInvalidInput();
+                MenuInterface.showMenuInvalidInput();
             }
         }
     }

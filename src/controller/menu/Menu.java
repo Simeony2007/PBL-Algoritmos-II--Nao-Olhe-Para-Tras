@@ -3,7 +3,7 @@ package src.controller.menu;
 import src.model.repository.SaveManager;
 import src.model.service.Settings;
 import src.model.service.Collection;
-import src.view.GameInterface;
+import src.view.MenuInterface;
 
 public class Menu {
     private Settings settings;
@@ -16,7 +16,7 @@ public class Menu {
     private void iniciar() {
         settings = SaveManager.loadSettings();
         collection = SaveManager.loadCollection();
-        GameInterface.changeColor(settings.getColorNum());
+        MenuInterface.changeColor(settings.getColorNum());
         int opcao = 0;
         while (opcao != 6) {
             opcao = inputOptions();
@@ -27,22 +27,22 @@ public class Menu {
     private int inputOptions() {
         while (true) {
             try {
-                GameInterface.showMainMenu();
-                String userInput = GameInterface.getTextInput();
+                MenuInterface.showMainMenu();
+                String userInput = MenuInterface.getTextInput();
                 int number = Integer.parseInt(userInput.trim());
                 if (number > 0 && number <= 6) {
                     return number;
                 } else {
-                    GameInterface.showMenuInvalidOption();
+                    MenuInterface.showMenuInvalidOption();
                 }
             } catch (NumberFormatException e) {
-                GameInterface.showMenuInvalidInput();
+                MenuInterface.showMenuInvalidInput();
             }
         }
     }
 
     private void optionScanner(int optionNumber) {
-        GameInterface.clearConsole();
+        MenuInterface.clearConsole();
         switch (optionNumber) {
             case 1:
                 new MenuSlots(settings, collection);
@@ -54,20 +54,20 @@ public class Menu {
                 new MenuCollection(collection);
                 break;
             case 4:
-                GameInterface.showInstructions();
-                GameInterface.getTextInput();
+                MenuInterface.showInstructions();
+                MenuInterface.getTextInput();
                 break;
             case 5:
-                GameInterface.showCredits();
-                GameInterface.getTextInput();
+                MenuInterface.showCredits();
+                MenuInterface.getTextInput();
                 break;
             case 6:
-                GameInterface.showExitMessage();
+                MenuInterface.showExitMessage();
             default:
-                GameInterface.showTextLn("Erro inesperado...");
+                MenuInterface.showTextLn("Erro inesperado...");
                 break;
         }
-        GameInterface.clearConsole();
+        MenuInterface.clearConsole();
     }
 
 }
