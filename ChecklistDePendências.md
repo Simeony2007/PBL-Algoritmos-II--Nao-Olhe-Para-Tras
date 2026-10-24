@@ -16,4 +16,4 @@
 
 - [x] O contador do Autosave está ultrapassando o limite de 5. _(Corrigi, ao invés de colocar de volta em 1, tava adicionando mais um - Simeony)_
 
-- [ ] O final de não olhar para trás não roda
+- [x] O final de não olhar para trás não roda

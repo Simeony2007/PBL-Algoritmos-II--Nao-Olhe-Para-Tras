@@ -248,7 +248,7 @@ public class StoryBuilder {
                 "Marinheiro: Eu fui um grande capitão nos mares Egeus, mas a névoa deste lugar está devorando minha mente. Eu... Eu não consigo mais lembrar da cor do mar, nem do som das ondas. Por favor, me traga uma lembrança.");
         scene2.addNewDialogue("Como Orfeu responderá ao apelo doloroso do velho lobo do mar?");
 
-        scene2.addNewChoice("Música vibrante sobre o mar e a brisa salgada", "s2a_sailor", 0, 0, 0, -1, 0);
+        scene2.addNewChoice("Música vibrante sobre o mar e a brisa salgada", "s2a_sailor", "Charon", 0, 1, 0, -1, 0);
         scene2.addNewChoice("Lamentar a perda das memórias e a tragédia do marinheiro", "s2b_sailor", 0, 0, 0, 0, 0);
         scene2.addNewChoice("Ignorar sua prece nostálgica e pedir informações", "s2c_sailor", "Charon", 0, -1, 0, 0, 0);
 
@@ -278,7 +278,7 @@ public class StoryBuilder {
                 "O espírito maravilhado estende a mão translúcida e revela um óbolo perfeitamente conservado, brilhando com um fraco fulgor na penumbra opressora dos Campos de Asfódelo.");
         scene3.addNewDialogue("Como você recebe o presente inesperado do seu antigo admirador?");
 
-        scene3.addNewChoice("Agradecer o carinho com humildade e oferecer uma melodia em retribuição", "s3a_fan", 1, 0,
+        scene3.addNewChoice("Agradecer o carinho com humildade e oferecer uma melodia em retribuição", "s3a_fan", "Charon", 1, 1,
                 0, 0, 0);
         scene3.addNewChoice("Aceitar a moeda com melancolia, dizendo que a fama não salvou sua esposa", "s3b_fan", 1, 0,
                 0, 0, 0);
@@ -335,8 +335,8 @@ public class StoryBuilder {
                 "Caronte: Já que pagou, suba no barco de uma vez. Mas me diga, intruso vivo... Caminhar por entre as flores mortas de Asfódelo muda qualquer um. O que achou do destino comum da imensa maioria da raça humana?");
         scene5.addNewDialogue("O que Orfeu expressa sobre sua experiência nos Campos de Asfódelo?");
 
-        scene5.addNewChoice("Expressar compaixão pelas almas", "s5a_charon", "Charon", -1, 1, 0, 0, 0);
-        scene5.addNewChoice("Demonstrar desprezo pelas almas e pelo lugar", "s5b_charon", "Charon", -1, -1, 0, 0, 0);
+        scene5.addNewChoice("Expressar compaixão pelas almas", "s5a_charon", "Charon", -1, 2, 0, 0, 0);
+        scene5.addNewChoice("Demonstrar desprezo pelas almas e pelo lugar", "s5b_charon", "Charon", -1, -2, 0, 0, 0);
 
         // Cenas 5a e 5b - Diálogos finais com Caronte
         scene5a.addNewDialogue(
@@ -389,7 +389,8 @@ public class StoryBuilder {
         Scene scene3a = new Scene("s3a_jason", "s4_charon");
         Scene scene3b = new Scene("s3b_jason", "s4_charon");
         Scene scene3c = new Scene("s3c_jason", "s4_charon");
-        Scene scene4 = new Scene("s4_charon", null);
+        Scene scene4 = new Scene("Porto do caronte");
+        Scene scene5 = new Scene ("s5_charon", null);
 
         // Cena 1 - O Preço da Memória
         scene1.addNewDialogue(
@@ -401,7 +402,7 @@ public class StoryBuilder {
         scene1.addNewDialogue("Qual argumento Orfeu usará para salvar as memórias do nobre e conseguir a moeda?");
 
         scene1.addNewChoice("Nossas memórias são os alicerces de quem amamos", "s1a_memory", 1, 0, 0, 0, 0);
-        scene1.addNewChoice("A dor prova que um dia nós estivemos vivos", "s1b_memory", 1, 0, 0, 0, 0);
+        scene1.addNewChoice("A dor prova que um dia nós estivemos vivos", "s1b_memory", "Charon", 1, 1, 0, 0, 0);
         scene1.addNewChoice("Sua covardia me dá nojo", "s1c_memory", "Charon", 1, -1, 0, 0, 1);
 
         // Cenas 1a, 1b e 1c - Resultados das escolhas com a Alma Nobre
@@ -430,7 +431,7 @@ public class StoryBuilder {
 
         scene2.addNewChoice("O paraíso é justo, pois o amor deles pelo mundo lhes custou tudo", "s2a_glory", 0, 0, 1, 0,
                 0);
-        scene2.addNewChoice("A eternidade dourada não apaga a dor do que foi perdido", "s2b_glory", 0, 1, 0, 1, 0);
+        scene2.addNewChoice("A eternidade dourada não apaga a dor do que foi perdido", "s2b_glory","Charon", 0, 1, 0, 1, 0);
         scene2.addNewChoice("Sua glória inútil não me interessa, seu fantasma patético", "s2c_glory", "Charon", 0, -1,
                 0, 0, 1);
 
@@ -480,10 +481,10 @@ public class StoryBuilder {
         // Cena 4 - O Pedágio de Caronte
         scene4.addNewDialogue(
                 "Os campos férteis acabam abruptamente, dando lugar às margens escuras do próximo afluente do rio infernal. Lá, a velha barca de madeira balança na água negra. Caronte o aguarda com a mão ossuda estendida.");
-        scene4.addNewDialogue(
-                "Orfeu deposita o óbolo de prata que conquistou na mão fria de Caronte (-1 moeda). O barqueiro avalia o brilho do metal com um leve grunhido de aprovação e abre espaço para o bardo subir em sua barca.");
-        scene4.addNewDialogue(
-                "A madeira range ameaçadoramente sob os pés do bardo enquanto a barca rasga a correnteza cada vez mais violenta do rio. Deixando as memórias douradas dos Elíseos para trás, o frio absoluto do núcleo do Submundo perfura os ossos de Orfeu, um alerta sombrio de que o próximo destino exigirá mais do que apenas moedas e belas canções.");
+        scene4.addNewChoice("Oferecer óbolo ao caronte","s5_charon", -1, 0, 0, 0, 0);
+        
+        scene5.addNewDialogue("Orfeu deposita o óbolo de prata que conquistou na mão fria de Caronte. O barqueiro avalia o brilho do metal com um leve grunhido de aprovação e abre espaço para o bardo subir em sua barca.");
+        scene5.addNewDialogue("A madeira range ameaçadoramente sob os pés do bardo enquanto a barca rasga a correnteza cada vez mais violenta do rio. Deixando as memórias douradas dos Elíseos para trás, o frio absoluto do núcleo do Submundo perfura os ossos de Orfeu, um alerta sombrio de que o próximo destino exigirá mais do que apenas moedas e belas canções.");
 
         chapter.newScene(scene1);
         chapter.newScene(scene1a);
@@ -498,6 +499,7 @@ public class StoryBuilder {
         chapter.newScene(scene3b);
         chapter.newScene(scene3c);
         chapter.newScene(scene4);
+        chapter.newScene(scene5);
 
         return chapter;
     }
