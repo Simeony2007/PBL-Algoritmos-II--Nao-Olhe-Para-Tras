@@ -5,6 +5,7 @@ import com.google.gson.GsonBuilder;
 
 import src.model.service.SaveState;
 import src.model.service.Settings;
+import src.model.customExceptions.SaveNotFoundException;
 import src.model.service.Collection;
 
 import java.io.File;
@@ -106,13 +107,14 @@ public class SaveManager {
         }
     }
 
-    public static void deleteSave(int saveSlot) {
+    public static void deleteSave(int saveSlot) throws SaveNotFoundException {
         if (saveSlot > 3) {
             File file = new File(SAVE_DIRECTORY + "auto_save_" + saveSlot + ".json");
             if (file.exists()) {
                 file.delete();
             } else {
                 // throw CUSTOMEXCEPTION (DÁ PRA COLOCAR UMA AQ!!)
+                throw new SaveNotFoundException(saveSlot);
             }
         } else {
             File file = new File(SAVE_DIRECTORY + "save_slot_" + saveSlot + ".json");
@@ -120,6 +122,7 @@ public class SaveManager {
                 file.delete();
             } else {
                 // throw CUSTOMEXCEPTION (DÁ PRA COLOCAR UMA AQ!!)
+                throw new SaveNotFoundException(saveSlot);
             }
         }
     }
