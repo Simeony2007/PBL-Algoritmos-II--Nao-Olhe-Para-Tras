@@ -398,9 +398,9 @@ public class StoryBuilder {
                 Scene scene2b = new Scene("s2b_glory", "Encontro com Jasão");
                 Scene scene2c = new Scene("s2c_glory", "Encontro com Jasão");
                 Scene scene3 = new Scene("Encontro com Jasão");
-                Scene scene3a = new Scene("s3a_jason", "s4_charon");
-                Scene scene3b = new Scene("s3b_jason", "s4_charon");
-                Scene scene3c = new Scene("s3c_jason", "s4_charon");
+                Scene scene3a = new Scene("s3a_jason", "Porto do caronte");
+                Scene scene3b = new Scene("s3b_jason", "Porto do caronte");
+                Scene scene3c = new Scene("s3c_jason", "Porto do caronte");
                 Scene scene4 = new Scene("Porto do caronte");
                 Scene scene5 = new Scene("s5_charon", null);
 
