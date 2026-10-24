@@ -63,6 +63,7 @@ public class Game {
 
                 if (currentScene.isEnding()) {
                     collection.onFinalReached(currentChapter.getCurrentScene().getSceneId());
+                    SaveManager.saveCollection(collection);
                     state.setRunning(false);
                     break;
                 }
@@ -104,6 +105,7 @@ public class Game {
 
                 int chapterNumber = state.getCurrentChapterIndex();
                 collection.onChapterReached(chapterNumber);
+                SaveManager.saveCollection(collection);
 
                 // Avança para o próximo capítulo no GameState
                 state.advanceChapter();

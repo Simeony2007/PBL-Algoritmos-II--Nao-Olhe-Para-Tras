@@ -73,6 +73,4 @@ public class GameInterface extends Interface {
         System.out.println("Deseja sobrescrever o Save atual?");
         System.out.print("Digite(S/N): ");
     }
-
-    
 }
