@@ -22,8 +22,8 @@ public class Scene {
     }
 
     // Getters e Setters de Finalização
-    public void setEnding(boolean isEnding) {
-        this.isEnding = isEnding;
+    public void setEnding() {
+        this.isEnding = true;
     }
 
     public boolean isEnding() {

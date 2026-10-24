@@ -39,7 +39,7 @@ public class SceneTest {
     @Test
     public void testEndingState() {
         assertFalse(scene1.isEnding());
-        scene1.setEnding(true);
+        scene1.setEnding();
         assertTrue(scene1.isEnding());
     }
 
