@@ -6,7 +6,8 @@ import src.view.GameInterface;
 import src.model.service.GameState;
 
 public class GameInput {
-    private GameInput(){}
+    private GameInput() {
+    }
 
     public static int getInputGame(GameState state, int maxChoices, String currentSceneId) {
         int choice;
@@ -45,19 +46,18 @@ public class GameInput {
                         }
                     }
                 }
-                userInput = GameInterface.getTextInput().trim();
-            }
-
-            // Lógica normal das escolhas
-            try {
-                choice = Integer.parseInt(userInput);
-                if (choice > 0 && choice <= maxChoices) {
-                    return choice - 1;
-                } else {
-                    GameInterface.showGameInvalidOption();
+            } else {
+                // Lógica normal das escolhas
+                try {
+                    choice = Integer.parseInt(userInput);
+                    if (choice > 0 && choice <= maxChoices) {
+                        return choice - 1;
+                    } else {
+                        GameInterface.showGameInvalidOption();
+                    }
+                } catch (NumberFormatException e) {
+                    GameInterface.showGameInvalidInput();
                 }
-            } catch (NumberFormatException e) {
-                GameInterface.showGameInvalidInput();
             }
         }
     }
