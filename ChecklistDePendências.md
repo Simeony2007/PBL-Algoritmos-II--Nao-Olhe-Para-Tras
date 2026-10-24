@@ -16,4 +16,6 @@
 
 - [x] O final de não olhar para trás não roda
 
-- [ ] Exceptions personalizadas. _(Vou deixar na sua mão isso daí - Pedro)_
+- [x] Exceptions personalizadas.
+
+- [ ] Relatório...
