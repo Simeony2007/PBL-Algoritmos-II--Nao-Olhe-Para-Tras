@@ -40,7 +40,7 @@ public class MenuSlots {
             switch (action) {
                 case 1:
                     SaveState loadedState = SaveManager.loadGame(slot);
-                    game = new Game(loadedState, collection);
+                    game = new Game(loadedState, collection, settings);
                     game.setTextSpeed(settings.getTextSpeed());
                     game.gameRunning();
                     break;
@@ -120,7 +120,7 @@ public class MenuSlots {
 
     private void startGame(int slot) {
         SaveState loadedState = SaveManager.loadGame(slot);
-        game = new Game(loadedState, collection);
+        game = new Game(loadedState, collection, settings);
         game.setTextSpeed(settings.getTextSpeed());
         game.gameRunning();
     }

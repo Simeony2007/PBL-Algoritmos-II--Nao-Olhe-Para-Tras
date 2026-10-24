@@ -19,7 +19,7 @@ public class Game {
      * Método construtor. Cria um novo GameState adicionando os personagens
      * e os capítulos.
      */
-    public Game(SaveState loadedData, Collection collection) {
+    public Game(SaveState loadedData, Collection collection, Settings settings) {
         this.collection = collection;
 
         this.state = new GameState(
@@ -116,7 +116,7 @@ public class Game {
                     // Passamos "null" para a cena, assim o jogo carrega a primeira cena padrão do
                     // capítulo
                     GameSave.saveCurrentProgress(state, state.getCurrentChapter().getCurrentScene().getNextSceneId(), -1);
-                    GameInterface.printWarning("[!] Jogo salvo automaticamente.");
+                    GameInterface.printWarning("[!] Jogo salvo automaticamente em autosave " + (settings.getAutoSaveCounter()) + ".");
                 }
             }
         }
