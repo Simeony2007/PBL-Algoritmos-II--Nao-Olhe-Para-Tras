@@ -16,6 +16,7 @@ public class GameInput {
             // Lógica interceptadora do Save
             if (userInput.equalsIgnoreCase("salvar")) {
                 boolean control = true;
+                int delete = 5;
 
                 while (control) {
                     GameInterface.showText("Escolha o slot: ");
@@ -33,12 +34,13 @@ public class GameInput {
                         String confirmation = GameInterface.getTextInput().trim();
                         if (confirmation.equalsIgnoreCase("S")) {
                             GameSave.saveCurrentProgress(state, currentSceneId, userSlot);
-                            GameInterface.clearConsoleSave(5);
+                            GameInterface.clearConsoleSave(delete);
                             GameInterface.showTextLn("\n[!] Jogo salvo no Slot " + userSlot + " com sucesso!");
                             GameInterface.showPromptChoice();
                             control = false;
                             continue;
                         } else {
+                            delete += 6;
                             GameInterface.showTextLn("Escolha outro Slot!");
                         }
                     }
