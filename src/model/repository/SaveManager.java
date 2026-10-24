@@ -31,7 +31,7 @@ public class SaveManager {
                 directory.mkdirs();
             }
             if (settings.isAutoSave() && settings.getAutoSaveCounter() > 5) {
-                settings.addAutoSaveCounter();
+                settings.setAutoSaveInOne();
             }
             // 3. Append the folder path to the file name
             String fileName = SAVE_DIRECTORY + "auto_save_" + settings.getAutoSaveCounter() + ".json";

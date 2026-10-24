@@ -1,7 +1,7 @@
 {
   "orfeu": {
     "obol": 1,
-    "love": 0,
+    "love": 15,
     "angry": 0,
     "sadness": 0
   },
@@ -12,13 +12,13 @@
     },
     {
       "name": "Eurydice",
-      "affinity": 0
+      "affinity": 15
     },
     {
       "name": "Sisyphus",
       "affinity": 0
     }
   ],
-  "chapterIndex": 3,
-  "sceneId": "Encontro com Sísifo"
+  "chapterIndex": 9,
+  "sceneId": "s9_climax_threshold"
 }

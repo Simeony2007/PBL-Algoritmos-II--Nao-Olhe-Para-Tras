@@ -82,4 +82,8 @@ public class Settings {
         return textSpeed;
     }
 
+    public void setAutoSaveInOne() {
+        autoSaveCounter = 1;
+    }
+
 }

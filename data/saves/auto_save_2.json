@@ -1,7 +1,7 @@
 {
   "orfeu": {
     "obol": 1,
-    "love": 3,
+    "love": 6,
     "angry": 2,
     "sadness": 4
   },
@@ -19,5 +19,5 @@
       "affinity": 0
     }
   ],
-  "chapterIndex": 6
+  "chapterIndex": 7
 }

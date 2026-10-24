@@ -1,7 +1,7 @@
 {
   "orfeu": {
     "obol": 1,
-    "love": 4,
+    "love": 8,
     "angry": 2,
     "sadness": 4
   },
@@ -19,5 +19,6 @@
       "affinity": 0
     }
   ],
-  "chapterIndex": 7
+  "chapterIndex": 8,
+  "sceneId": "s5_sisyphus_hostile"
 }

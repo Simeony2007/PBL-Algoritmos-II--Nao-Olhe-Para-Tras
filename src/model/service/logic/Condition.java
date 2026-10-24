@@ -21,13 +21,33 @@ public class Condition {
         this.angry = angry;
     }
 
-    public String getNextSceneId() { return nextSceneId; }
-    public String getNpcName() { return npcName; }
-    public int getType() { return type; }
-    public int getLove() { return love; }
-    public int getSadness() { return sadness; }
-    public int getAngry() { return angry; }
-    public int getAffinity() { return affinity; }
+    public String getNextSceneId() {
+        return nextSceneId;
+    }
+
+    public String getNpcName() {
+        return npcName;
+    }
+
+    public int getType() {
+        return type;
+    }
+
+    public int getLove() {
+        return love;
+    }
+
+    public int getSadness() {
+        return sadness;
+    }
+
+    public int getAngry() {
+        return angry;
+    }
+
+    public int getAffinity() {
+        return affinity;
+    }
 
     // NOVA LÓGICA: A própria condição verifica se os atributos batem
     public boolean isMet(Orfeu orfeu, ArrayList<Npc> npcs) {
@@ -40,10 +60,14 @@ public class Condition {
             return false;
         } else {
             switch (type) {
-                case 1: return orfeu.getLove() >= this.love;
-                case 2: return orfeu.getSadness() >= this.sadness;
-                case 3: return orfeu.getAngry() >= this.angry;
-                default: return false;
+                case 1:
+                    return orfeu.getLove() >= this.love;
+                case 2:
+                    return orfeu.getSadness() >= this.sadness;
+                case 3:
+                    return orfeu.getAngry() >= this.angry;
+                default:
+                    return false;
             }
         }
     }
