@@ -23,18 +23,24 @@ public class SaveAndLoadTest {
     @Before
     public void setUp() {
         try {
-            if (SaveManager.doesSaveExist(1)) {
-                SaveManager.deleteSave(1);
-            }
-            if (SaveManager.doesSaveExist(2)) {
-                SaveManager.deleteSave(2);
-            }
-            if (SaveManager.doesSaveExist(3)) {
-                SaveManager.deleteSave(3);
-            }
+            SaveManager.deleteSave(1);
 
         } catch (SaveNotFoundException e) {
-            System.out.println("Save já inexistente, deletando outro...");
+            System.out.println("Save já inexistente...");
+        }
+
+        try {
+            SaveManager.deleteSave(2);
+
+        } catch (SaveNotFoundException e) {
+            System.out.println("Save já inexistente...");
+        }
+
+        try {
+            SaveManager.deleteSave(3);
+
+        } catch (SaveNotFoundException e) {
+            System.out.println("Save já inexistente...");
         }
     }
 
