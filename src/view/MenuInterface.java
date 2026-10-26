@@ -38,7 +38,8 @@ public class MenuInterface extends Interface {
     public static void showCredits() {
         System.out.println("\n=== CRÉDITOS ===");
         System.out.println("Desenvolvido por: Pedro e Simeony\n");
-        System.out.println("Universo e História inspirados na mitologia grega, em especial o conto de Orfeu e Eurídice");
+        System.out
+                .println("Universo e História inspirados na mitologia grega, em especial o conto de Orfeu e Eurídice");
         showPressEnterToContinue();
     }
 
@@ -62,7 +63,7 @@ public class MenuInterface extends Interface {
                 System.out.println(informationDictionary.get(a));
             }
         }
-        System.out.print("Slot: ");
+        // System.out.print("Slot: ");
     }
 
     public static void showSlotSelection(int slot) {
@@ -150,8 +151,6 @@ public class MenuInterface extends Interface {
 
     }
 
-
-
     // Collection Menu
     public static void showCollectionMenu() {
         System.out.println("\n--- Menu Coleção ---");
@@ -218,8 +217,7 @@ public class MenuInterface extends Interface {
                 showText("Descubra todos os desfechos da jornada de Orfeu.");
             } else if (achievementNumber == 12) {
                 showText("Conquiste tudo o que o jogo tem a oferecer.");
-            }
-            else {
+            } else {
                 showText("Error: Conquista não reconhecida.");
             }
         } else {
