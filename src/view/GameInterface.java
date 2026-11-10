@@ -73,4 +73,13 @@ public class GameInterface extends Interface {
         System.out.println("Deseja sobrescrever o Save atual?");
         System.out.print("Digite(S/N): ");
     }
+
+    public static void clearConsoleSave(int lines) {
+    for (int i = 0; i < lines; i++) {
+        System.out.print("\033[1A");
+        System.out.print("\033[2K");
+    }
+    System.out.flush();
+}
+
 }

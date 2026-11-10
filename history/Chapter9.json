@@ -1,0 +1,240 @@
+{
+  "scenes": [
+    {
+      "dialogues": [
+        {
+          "text": "As águas densas e fétidas do rio Estige correm diante de Orfeu e Eurídice. Na margem, a barca de Caronte balança suavemente na névoa. O barqueiro os aguarda de braços cruzados sobre o remo, com o olhar cético e impaciente de quem não tem tempo a perder."
+        },
+        {
+          "text": "Caronte: Vocês chegaram até aqui com vida e com a permissão dos deuses. Mostrem os óbolos exatos para a travessia e entrem logo no barco, pois não ficarei esperando eternamente."
+        },
+        {
+          "text": "Orfeu tateia rapidamente a pequena bolsa de couro dada por Hades para conferir o pagamento. De repente, Sísifo emerge das sombras, aproximando-se do grupo."
+        }
+      ],
+      "choices": [],
+      "sceneId": "s1_styx_intro",
+      "currentDialogueID": 0,
+      "nextSceneId": "s5_sisyphus_hostile",
+      "condition": {
+        "nextSceneId": "s2_sisyphus_friendly",
+        "npcName": "sisyphus",
+        "type": 0,
+        "love": 0,
+        "sadness": 0,
+        "angry": 0,
+        "affinity": 2
+      },
+      "isEnding": false
+    },
+    {
+      "dialogues": [
+        {
+          "text": "Sísifo abre um sorriso caloroso e caminha na direção de Orfeu para uma despedida amigável."
+        },
+        {
+          "text": "Sísifo: Meu caro bardo! Que alegria vê-lo chegar até aqui. Deixe-me dar um abraço de despedida antes que você cruze para o mundo dos vivos."
+        },
+        {
+          "text": "Num movimento rápido e sutil durante o abraço, Sísifo enfia a mão na bolsa de Orfeu e furta o estatero dourado entregue por Hades, afastando-se logo em seguida com uma piscadela cúmplice. Quando Orfeu percebe o rombo, já é tarde demais."
+        }
+      ],
+      "choices": [],
+      "sceneId": "s2_sisyphus_friendly",
+      "currentDialogueID": 0,
+      "nextSceneId": "s3b_charon_rigidity",
+      "condition": {
+        "nextSceneId": "s9_climax_threshold",
+        "type": 3,
+        "love": 0,
+        "sadness": 0,
+        "angry": 5,
+        "affinity": 0
+      },
+      "isEnding": false
+    },
+    {
+      "dialogues": [
+        {
+          "text": "Com duas moedas a menos devido ao furto de Sísifo, Orfeu apela para o barqueiro."
+        },
+        {
+          "text": "Caronte cruza os braços, mas solta um suspiro pesado, lembrando-se das interações anteriores com o bardo."
+        },
+        {
+          "text": "Caronte: Pelos deuses... Que dor de cabeça desnecessária. Sobe logo nessa barca antes que eu perdoe essa minha mania de ter paciência."
+        },
+        {
+          "text": "Caronte cede à passagem, salvando o dia e permitindo que o casal avance."
+        }
+      ],
+      "choices": [],
+      "sceneId": "s3a_charon_help",
+      "currentDialogueID": 0,
+      "nextSceneId": "s9_climax_threshold",
+      "isEnding": false
+    },
+    {
+      "dialogues": [
+        {
+          "text": "Caronte observa o prejuízo de Orfeu com total indiferença, mantendo a postura irredutível."
+        },
+        {
+          "text": "Caronte: Problema de seu descuido. Minha única responsabilidade é cobrar o óbolo exato. Como faltam duas moedas, não há travessia."
+        },
+        {
+          "text": "Orfeu precisa lidar com a falta de pagamento e com a própria fúria perante a injustiça."
+        }
+      ],
+      "choices": [],
+      "sceneId": "s3b_charon_rigidity",
+      "currentDialogueID": 0,
+      "nextSceneId": "s4b_failed_resignation",
+      "condition": {
+        "nextSceneId": "s4a_melancholy_weight",
+        "type": 2,
+        "love": 0,
+        "sadness": 5,
+        "angry": 0,
+        "affinity": 0
+      },
+      "isEnding": false
+    },
+    {
+      "dialogues": [
+        {
+          "text": "Tomado por uma dor profunda e um pranto devastador ao ver Eurídice imobilizada, o desespero emocional de Orfeu comove vagamente o ambiente, gerando uma abertura trágica, mas salvadora, que força uma reviravolta na margem e permite que prossigam."
+        }
+      ],
+      "choices": [],
+      "sceneId": "s4a_melancholy_weight",
+      "currentDialogueID": 0,
+      "nextSceneId": "s9_climax_threshold",
+      "isEnding": false
+    },
+    {
+      "dialogues": [
+        {
+          "text": "A falta de uma reação enérgica ou de uma dor expressada com força suficiente faz com que o bardo paralise. Sísifo leva a melhor, a oportunidade evapora e o rio permanece intransponível."
+        },
+        {
+          "text": "[Final 4: Orfeu fracassa e Sísifo escapa]"
+        }
+      ],
+      "choices": [],
+      "sceneId": "s4b_failed_resignation",
+      "currentDialogueID": 0,
+      "nextSceneId": "Final 4: Orfeu fracassa e Sísifo escapa",
+      "isEnding": false
+    },
+    {
+      "dialogues": [
+        {
+          "text": "Sísifo não se aproxima com carinho; ele salta de trás de uma rocha, avança diretamente sobre Eurídice e a agarra com força pelos braços, imobilizando-a como refém."
+        },
+        {
+          "text": "Sísifo: Nem ouse dar um passo em frente, Orfeu! Sua desconfiança e seu desrespeito lá no abismo me custaram caro. A sua esposa agora é minha garantia para forçar Caronte a me levar daqui no lugar de vocês!"
+        }
+      ],
+      "choices": [],
+      "sceneId": "s5_sisyphus_hostile",
+      "currentDialogueID": 0,
+      "nextSceneId": "s6b_charon_neutrality",
+      "condition": {
+        "nextSceneId": "s6a_charon_exception",
+        "npcName": "charon",
+        "type": 0,
+        "love": 0,
+        "sadness": 0,
+        "angry": 0,
+        "affinity": 3
+      },
+      "isEnding": false
+    },
+    {
+      "dialogues": [
+        {
+          "text": "Com Eurídice feita de refém por Sísifo, Orfeu implora por ajuda. Apesar da relutância, a afinidade prévia com Caronte pesa a favor do bardo."
+        },
+        {
+          "text": "Caronte: Eu não sou polícia de almas, mas essa audácia no meu rio já passou dos limites."
+        },
+        {
+          "text": "O barqueiro usa seu remo para afastar Sísifo e abrir brecha para resgatarem Eurídice e embarcar."
+        }
+      ],
+      "choices": [],
+      "sceneId": "s6a_charon_exception",
+      "currentDialogueID": 0,
+      "nextSceneId": "s9_climax_threshold",
+      "isEnding": false
+    },
+    {
+      "dialogues": [
+        {
+          "text": "Caronte vira o rosto, recusando-se a intervir no sequestro de Eurídice."
+        },
+        {
+          "text": "Caronte: O problema entre vocês dois não me diz respeito. Resolvam-se na terra firme ou fiquem na margem."
+        },
+        {
+          "text": "Orfeu se vê encurralado, precisando contar com o peso de sua própria dor e melancolia para tentar salvar a esposa."
+        }
+      ],
+      "choices": [],
+      "sceneId": "s6b_charon_neutrality",
+      "currentDialogueID": 0,
+      "isEnding": false
+    },
+    {
+      "dialogues": [
+        {
+          "text": "Consumido pela indignação com o furto e com a frieza do barqueiro, Orfeu desconta toda a sua frustração exigindo e ameaçando desafiar as regras do rio, impressionando Caronte com sua marra ou encontrando uma brecha na própria revolta para forçar a passagem."
+        }
+      ],
+      "choices": [],
+      "sceneId": "s7a_wrath_impulse",
+      "currentDialogueID": 0,
+      "nextSceneId": "s9_climax_threshold",
+      "isEnding": false
+    },
+    {
+      "dialogues": [
+        {
+          "text": "Sem a fúria necessária para impor sua vontade e sem as moedas completas, Orfeu apenas aceita a derrota em silêncio, vendo o barco partir sem eles."
+        },
+        {
+          "text": "[Final 4: Orfeu fracassa e Sísifo escapa]"
+        }
+      ],
+      "choices": [],
+      "sceneId": "s7b_silent_despair",
+      "currentDialogueID": 0,
+      "isEnding": false
+    },
+    {
+      "dialogues": [
+        {
+          "text": "[Final 4: Orfeu fracassa e Sísifo escapa]"
+        }
+      ],
+      "choices": [],
+      "sceneId": "Final 4: Orfeu fracassa e Sísifo escapa",
+      "currentDialogueID": 0,
+      "isEnding": true
+    },
+    {
+      "dialogues": [
+        {
+          "text": "Superados os percalços na margem do Estige - seja contornando o furto de Sísifo ou contornando o sequestro com a ajuda de Caronte -, Orfeu e Eurídice finalmente garantem a travessia final. A barca corta as águas escuras rumo à última etapa da jornada, preparando o terreno para o julgamento definitivo."
+        }
+      ],
+      "choices": [],
+      "sceneId": "s9_climax_threshold",
+      "currentDialogueID": 0,
+      "isEnding": false
+    }
+  ],
+  "title": "Capítulo 9 - O Rio Estíge",
+  "currentSceneIndex": 0
+}
