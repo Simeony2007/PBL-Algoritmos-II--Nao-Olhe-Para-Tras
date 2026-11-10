@@ -1,6 +1,12 @@
 package src.model.repository;
 
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
+
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 
 import src.model.service.logic.Chapter;
 import src.model.service.logic.Condition;
@@ -1394,6 +1400,30 @@ public class StoryBuilder {
                 chapter.newScene(scene7);
 
                 return chapter;
+        }
+
+        public static void salvarHistoria() {
+
+                Gson gson = new GsonBuilder().setPrettyPrinting().create();
+                ArrayList<Chapter> lista;
+                lista = getChapters();
+
+                File directory = new File("history/");
+                if (!directory.exists()) {
+                        directory.mkdirs();
+                }
+                for (int i = 0; i < 10; i++) {
+                        Chapter elemento = lista.get(i);
+                        String fileName = "history/Chapter" + (i + 1) + ".json";
+                        try (FileWriter writer = new FileWriter(fileName)) {
+                                gson.toJson(elemento, writer);
+                        } catch (IOException e) {
+                                // GameInterface.printWarning("\n[!] Erro crítico ao salvar o arquivo: " +
+                                // e.getMessage());
+                        }
+
+                }
+
         }
 
 }

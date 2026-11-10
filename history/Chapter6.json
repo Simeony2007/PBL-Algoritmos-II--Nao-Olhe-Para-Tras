@@ -1,0 +1,333 @@
+{
+  "scenes": [
+    {
+      "dialogues": [
+        {
+          "text": "O silêncio entre o casal na trilha de pedra é denso, cortado apenas pelo som abafado de passos sobre a cinza vulcânica. À margem do caminho, o Tártaro exibe toda a sua crueza: um abismo escaldante onde gritos de desespero e o estalar de chicotes celestes ecoam sem trégua, servindo como um lembrete constante e aterrorizante do que os aguarda caso falhem na travessia."
+        },
+        {
+          "text": "Orfeu caminha à frente, sentindo a tensão pesando em seus ombros. Ele tenta quebrar a atmosfera gélida que se instalou desde que deixaram o palácio."
+        },
+        {
+          "text": "Orfeu: Quando voltarmos para a Trácia, construiremos aquela casa perto do riacho que você tanto queria... O inverno lá fora é rigoroso agora, Eurídice, mas logo a bela primavera vai voltar para aquecer seus dias de novo."
+        },
+        {
+          "text": "Eurídice dá alguns passos em silêncio, a voz soando distante, desprovida da vivacidade de antes."
+        },
+        {
+          "text": "Eurídice: A primavera... É estranho pensar nela. Enquanto eu vagava naquela névoa cinzenta, o tempo perdeu o sentido. Diga-me, Orfeu... O mundo lá em cima continuou gelado e silencioso enquanto eu apodrecia sob a terra? A vida seguiu seu curso tão facilmente assim, como se eu nunca tivesse existido?"
+        },
+        {
+          "text": "Como Orfeu responde à apatia e ao distanciamento melancólico de sua esposa?"
+        }
+      ],
+      "choices": [
+        {
+          "text": "O mundo parou para mim, cada segundo sem você foi uma eternidade",
+          "nextSceneId": "s1a_abyss_echo",
+          "npc": "Eurydice",
+          "obol": 0,
+          "affinity": 1,
+          "love": 0,
+          "angry": 0,
+          "sadness": 1
+        },
+        {
+          "text": "A vida lá fora continua fria e vazia sem o seu reflexo nela",
+          "nextSceneId": "s1b_abyss_echo",
+          "npc": "Eurydice",
+          "obol": 0,
+          "affinity": 0,
+          "love": 1,
+          "angry": 0,
+          "sadness": 1
+        },
+        {
+          "text": "Não pense no passado, o futuro na superfície é o que importa agora",
+          "nextSceneId": "s1c_abyss_echo",
+          "npc": "Eurydice",
+          "obol": 0,
+          "affinity": 0,
+          "love": 0,
+          "angry": 0,
+          "sadness": 0
+        }
+      ],
+      "sceneId": "O Eco do Abismo",
+      "currentDialogueID": 0,
+      "isEnding": false
+    },
+    {
+      "dialogues": [
+        {
+          "text": "Orfeu aperta as mãos, contendo a angústia na voz."
+        },
+        {
+          "text": "Orfeu: Para os outros a vida continuou, mas para o meu coração o tempo congelou no dia em que te perdi."
+        },
+        {
+          "text": "Eurídice o olha por breves segundos, sentindo o peso da devoção dele tocar o eco frio que habita nela agora."
+        }
+      ],
+      "choices": [],
+      "sceneId": "s1a_abyss_echo",
+      "currentDialogueID": 0,
+      "nextSceneId": "A Sombra na Trilha",
+      "isEnding": false
+    },
+    {
+      "dialogues": [
+        {
+          "text": "Orfeu abaixa a cabeça, caminhando com passos arrastados pela culpa."
+        },
+        {
+          "text": "Orfeu: Ninguém cantou, nenhuma alegria verdadeira restou na superfície enquanto você jazia aqui."
+        },
+        {
+          "text": "Ela solta um suspiro frágil, absorvendo a dor compartilhada que os une naquelas sombras."
+        }
+      ],
+      "choices": [],
+      "sceneId": "s1b_abyss_echo",
+      "currentDialogueID": 0,
+      "nextSceneId": "A Sombra na Trilha",
+      "isEnding": false
+    },
+    {
+      "dialogues": [
+        {
+          "text": "Orfeu endurece o tom, tentando apressar o passo para abafar os gritos do abismo."
+        },
+        {
+          "text": "Orfeu: Deixe os mortos com o esquecimento. Nós vencemos a morte, o que importa é o amanhã."
+        },
+        {
+          "text": "Eurídice desvia o olhar para o abismo fumegante, respondendo apenas com um silêncio apático e desconfortável."
+        }
+      ],
+      "choices": [],
+      "sceneId": "s1c_abyss_echo",
+      "currentDialogueID": 0,
+      "nextSceneId": "A Sombra na Trilha",
+      "isEnding": false
+    },
+    {
+      "dialogues": [
+        {
+          "text": "Enquanto avançam pelas fendas rochosas, a presença de Eurídice parece emitir um frio sutil que contrasta com o calor sufocante do Tártaro. Ela caminha rigidamente alguns passos atrás, absorvendo o ambiente macabro ao seu redor de uma forma perturbadora."
+        },
+        {
+          "text": "Orfeu tenta puxar assunto novamente, buscando qualquer indício da mulher vibrante que ela costumava ser antes da tragédia."
+        },
+        {
+          "text": "Orfeu: Lembra-se de quando tocávamos harpa sob as oliveiras? Você dizia que a música era a única coisa capaz de acalmar os deuses."
+        },
+        {
+          "text": "Eurídice para de andar por um instante. Ao fundo, o grito de uma alma torturada corta o ar, e ela parece sintonizar com o som antes de responder."
+        },
+        {
+          "text": "Eurídice: A música... parece tão distante, Orfeu. Aqui embaixo, aprendi que o silêncio é a única verdade duradoura. As vozes do mundo dos vivos parecem apenas ruídos fúteis de quem ainda não entendeu que vai morrer."
+        },
+        {
+          "text": "Como Orfeu lida com a estranheza e a frieza crescente nas palavras de Eurídice?"
+        }
+      ],
+      "choices": [
+        {
+          "text": "A minha música trará você de volta à vida por completo, eu prometo",
+          "nextSceneId": "s2a_trail_shadow",
+          "npc": "Eurydice",
+          "obol": 0,
+          "affinity": 1,
+          "love": 0,
+          "angry": 0,
+          "sadness": 1
+        },
+        {
+          "text": "O Submundo deixou marcas profundas em nós dois, vamos superar isso juntos",
+          "nextSceneId": "s2b_trail_shadow",
+          "npc": "Eurydice",
+          "obol": 0,
+          "affinity": 0,
+          "love": 1,
+          "angry": 0,
+          "sadness": 1
+        },
+        {
+          "text": "Você não é um fantasma, pare de falar como se pertencesse a este lugar maldito",
+          "nextSceneId": "s2c_trail_shadow",
+          "npc": "Eurydice",
+          "obol": 0,
+          "affinity": 0,
+          "love": 0,
+          "angry": 0,
+          "sadness": 0
+        }
+      ],
+      "sceneId": "A Sombra na Trilha",
+      "currentDialogueID": 0,
+      "isEnding": false
+    },
+    {
+      "dialogues": [
+        {
+          "text": "Orfeu ergue a voz levemente, cheio de esperança fervorosa."
+        },
+        {
+          "text": "Orfeu: Assim que deixarmos este reino, o calor do sol vai derreter esse gelo em sua alma."
+        },
+        {
+          "text": "Eurídice esboça um sorriso melancólico e frágil, deixando-se guiar pela fé inabalável do bardo."
+        }
+      ],
+      "choices": [],
+      "sceneId": "s2a_trail_shadow",
+      "currentDialogueID": 0,
+      "nextSceneId": "O Atalho Oculto",
+      "isEnding": false
+    },
+    {
+      "dialogues": [
+        {
+          "text": "Orfeu suspira profundamente, sentindo o peso do sofrimento dela refletido em seu próprio peito."
+        },
+        {
+          "text": "Orfeu: Nenhum de nós saiu ileso daqui, mas suportaremos o fardo lado a lado."
+        },
+        {
+          "text": "Ela assente em silêncio, encontrando consolo na dor mútua."
+        }
+      ],
+      "choices": [],
+      "sceneId": "s2b_trail_shadow",
+      "currentDialogueID": 0,
+      "nextSceneId": "O Atalho Oculto",
+      "isEnding": false
+    },
+    {
+      "dialogues": [
+        {
+          "text": "Orfeu endurece a postura, irritado com a resignação dela diante da morte."
+        },
+        {
+          "text": "Orfeu: Eu cruzei o Submundo para te tirar daqui, então comece a agir como alguém que quer viver!"
+        },
+        {
+          "text": "Eurídice se cala imediatamente, fechando-se em uma apatia ainda mais profunda e distante."
+        }
+      ],
+      "choices": [],
+      "sceneId": "s2c_trail_shadow",
+      "currentDialogueID": 0,
+      "nextSceneId": "O Atalho Oculto",
+      "isEnding": false
+    },
+    {
+      "dialogues": [
+        {
+          "text": "Deixando o calor sufocante e os gritos do Tártaro para trás, Orfeu nota que a trilha rochosa se desvia das rotas comuns dos barqueiros. Conforme as ordens e o favor secreto concedidos por Hades, uma fenda oculta na muralha de basalto se abre diante deles, revelando um túnel iluminado por um brilho dourado e suave."
+        },
+        {
+          "text": "Não há necessidade de enfrentar os rios ou os barcos de Caronte; este atalho místico conduz diretamente aos Campos Elíseos, facilitando a subida final para o mundo dos vivos."
+        },
+        {
+          "text": "Apesar de estarem livres do perigo imediato, a distância emocional entre os dois parece maior do que nunca. Eurídice caminha cabisbaixa, olhando fixamente para os calcanhares de Orfeu na poeira, parecendo mais uma espectra obediente do que uma esposa resgatada."
+        },
+        {
+          "text": "Eurídice: Estamos passando por este caminho dourado... Sinto o ar mudar, mas sinto um vazio estranho. Diga-me a verdade, Orfeu: quando chegarmos à luz, eu serei de fato quem eu era, ou apenas uma lembrança viva que errou o caminho de volta para a cova?"
+        },
+        {
+          "text": "O que Orfeu responde à pergunta cortante e angustiante de Eurídice?"
+        }
+      ],
+      "choices": [
+        {
+          "text": "Você será sempre o meu único lar e o meu maior amor",
+          "nextSceneId": "s3a_hidden_shortcut",
+          "npc": "Eurydice",
+          "obol": 0,
+          "affinity": 1,
+          "love": 0,
+          "angry": 0,
+          "sadness": 1
+        },
+        {
+          "text": "Seremos diferentes, mas vamos sarar as feridas juntos no mundo dos vivos",
+          "nextSceneId": "s3b_hidden_shortcut",
+          "npc": "Eurydice",
+          "obol": 0,
+          "affinity": 0,
+          "love": 1,
+          "angry": 0,
+          "sadness": 1
+        },
+        {
+          "text": "Basta sairmos daqui para que essas tolices saiam da sua cabeça",
+          "nextSceneId": "s3c_hidden_shortcut",
+          "npc": "Eurydice",
+          "obol": 0,
+          "affinity": 0,
+          "love": 0,
+          "angry": 0,
+          "sadness": -1
+        }
+      ],
+      "sceneId": "O Atalho Oculto",
+      "currentDialogueID": 0,
+      "isEnding": false
+    },
+    {
+      "dialogues": [
+        {
+          "text": "Orfeu vira o rosto minimamente para trás, sem contudo quebrar a regra de olhar em seus olhos."
+        },
+        {
+          "text": "Orfeu: Não importa o que mudou em você, meu coração continua batendo apenas por ti."
+        },
+        {
+          "text": "Eurídice respira fundo, sentindo o calor das palavras resgatar uma centelha de humanidade em seu peito."
+        }
+      ],
+      "choices": [],
+      "sceneId": "s3a_hidden_shortcut",
+      "currentDialogueID": 0,
+      "isEnding": false
+    },
+    {
+      "dialogues": [
+        {
+          "text": "Orfeu fala com a voz pesada de melancolia."
+        },
+        {
+          "text": "Orfeu: Ninguém volta imune da morte, Eurídice. Mas carregaremos essa cicatriz em paz, juntos."
+        },
+        {
+          "text": "Ela acena com a cabeça lentamente, aceitando a realidade quebrada de seu retorno."
+        }
+      ],
+      "choices": [],
+      "sceneId": "s3b_hidden_shortcut",
+      "currentDialogueID": 0,
+      "isEnding": false
+    },
+    {
+      "dialogues": [
+        {
+          "text": "Orfeu suspira com aspereza, impaciente com as dúvidas dela."
+        },
+        {
+          "text": "Orfeu: Chega de filosofar sobre fantasmas. Só precisamos continuar andando por este atalho e deixar este inferno para trás."
+        },
+        {
+          "text": "Eurídice se encolhe com a frieza da resposta, mantendo o passo firme, mas completamente isolada em seus próprios pensamentos sombrios."
+        }
+      ],
+      "choices": [],
+      "sceneId": "s3c_hidden_shortcut",
+      "currentDialogueID": 0,
+      "isEnding": false
+    }
+  ],
+  "title": "Capítulo 6 - A volta pelo Tártaro",
+  "currentSceneIndex": 0
+}

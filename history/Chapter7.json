@@ -1,0 +1,333 @@
+{
+  "scenes": [
+    {
+      "dialogues": [
+        {
+          "text": "O calor sufocante e os gritos distantes do Tártaro dão lugar a uma brisa suave, perfumada com o aroma de jasmins e águas cristalinas. O atalho dourado conduz Orfeu e Eurídice diretamente aos Campos Elíseos."
+        },
+        {
+          "text": "Aqui, o cenário é de uma beleza deslumbrante e eterna: prados verdes sob um crepúsculo dourado, onde heróis virtuosos e almas justas caminham em paz, conversando sob a sombra de oliveiras perfeitas. É um contraste brutal com o abismo, oferecendo uma paz profunda e melancólica que parece envolver o espírito como um abraço morno."
+        },
+        {
+          "text": "Orfeu respira fundo, sentindo o alívio momentâneo daquele refúgio celestial, e olha de relance por cima do ombro, lembrando-se estritamente de nunca fitar o rosto de sua amada."
+        },
+        {
+          "text": "Orfeu: Veja, Eurídice... Chegamos aos Elíseos. O pior já passou. Sinta o perfume destas flores. Estamos cada vez mais perto da superfície, do sol e da nossa verdadeira casa."
+        },
+        {
+          "text": "Eurídice caminha devagar, seus pés translúcidos tocando a grama macia. Ela ergue o rosto para a luz dourada, absorvendo a serenidade absoluta daquele lugar sagrado, parecendo cada vez mais distante do bardo."
+        },
+        {
+          "text": "Eurídice: É tão silencioso aqui... A dor da picada e o frio do esquecimento desapareceram por completo. Ninguém chora nos Elíseos, Orfeu. Ninguém sofre."
+        },
+        {
+          "text": "Como Orfeu reage à primeira impressão pacífica que os Elíseos exercem sobre a alma de sua esposa?"
+        }
+      ],
+      "choices": [
+        {
+          "text": "A verdadeira vida tem lágrimas e sorrisos, a paz daqui é apenas uma prisão",
+          "nextSceneId": "s1a_elysium_glow",
+          "npc": "Eurydice",
+          "obol": 0,
+          "affinity": 1,
+          "love": 0,
+          "angry": 0,
+          "sadness": 0
+        },
+        {
+          "text": "Eu entendo o seu cansaço, mas o nosso lugar ainda não é entre os mortos",
+          "nextSceneId": "s1b_elysium_glow",
+          "npc": "Eurydice",
+          "obol": 0,
+          "affinity": 1,
+          "love": 1,
+          "angry": 0,
+          "sadness": 0
+        },
+        {
+          "text": "Não ouse se render agora, depois de tudo o que atravessei para te buscar",
+          "nextSceneId": "s1c_elysium_glow",
+          "npc": "Eurydice",
+          "obol": 0,
+          "affinity": 0,
+          "love": 0,
+          "angry": 0,
+          "sadness": 0
+        }
+      ],
+      "sceneId": "Brilho dos Elíseos",
+      "currentDialogueID": 0,
+      "isEnding": false
+    },
+    {
+      "dialogues": [
+        {
+          "text": "Orfeu aperta as mãos com firmeza."
+        },
+        {
+          "text": "Orfeu: A paz eterna sem o calor do toque humano ou da nossa história não passa de uma mentira dourada. Venha comigo, meu amor."
+        },
+        {
+          "text": "Eurídice o escuta em silêncio, sentindo o chamado do mundo real agitar o marasmo de sua alma."
+        }
+      ],
+      "choices": [],
+      "sceneId": "s1a_elysium_glow",
+      "currentDialogueID": 0,
+      "nextSceneId": "Tentação do Descanso",
+      "isEnding": false
+    },
+    {
+      "dialogues": [
+        {
+          "text": "Orfeu fala com a voz pesada e melancólica, caminhando com passos cautelosos."
+        },
+        {
+          "text": "Orfeu: O descanso é tentador, mas o nosso destino foi brutalmente interrompido. Precisamos terminar o que começamos."
+        },
+        {
+          "text": "Ela suspira fundo, reconhecendo a dor que ainda os une."
+        }
+      ],
+      "choices": [],
+      "sceneId": "s1b_elysium_glow",
+      "currentDialogueID": 0,
+      "nextSceneId": "Tentação do Descanso",
+      "isEnding": false
+    },
+    {
+      "dialogues": [
+        {
+          "text": "Orfeu endurece o tom, perdendo a paciência com a hesitação dela."
+        },
+        {
+          "text": "Orfeu: Eu não enfrentei os deuses e os monstros do inferno para ver você contemplando a paisagem! Continue andando!"
+        },
+        {
+          "text": "Eurídice se encolhe com a hostilidade, distanciando-se ainda mais emocionalmente dele."
+        }
+      ],
+      "choices": [],
+      "sceneId": "s1c_elysium_glow",
+      "currentDialogueID": 0,
+      "nextSceneId": "Tentação do Descanso",
+      "isEnding": false
+    },
+    {
+      "dialogues": [
+        {
+          "text": "Conforme avançam pelas alamedas iluminadas dos Elíseos, algumas figuras ilustres e almas de antigos poetas e ninfas que habitam o paraíso se aproximam respeitosamente. Ao reconhecerem Eurídice, elas sorriem com compaixão e sussurram convites doces, tentando persuadi-la a abandonar a jornada."
+        },
+        {
+          "text": "Alma dos Elíseos: Doce ninfa... Por que retornar a um mundo mortal onde a velhice consome a carne, a dor dilacera o peito e a morte espreita em cada esquina? Aqui não há invernos rigorosos, nem pranto. Fique conosco na luz eterna."
+        },
+        {
+          "text": "Eurídice para de caminhar. A oferta de uma existência livre de sofrimento atinge o seu espírito desgastado, fazendo-a olhar fixamente para a grama dourada, balançando entre a luz e o compromisso com o bardo."
+        },
+        {
+          "text": "Eurídice: Eles têm razão, Orfeu... Lá em cima, eu era apenas uma mortal frágil destinada ao sofrimento. Aqui, encontrei a paz que o mundo me negou. Diga-me a verdade, olhando no fundo da sua alma... Você me trouxe de volta por amor ao que éramos, ou por saudade egoísta do meu canto e da minha companhia?"
+        },
+        {
+          "text": "O que Orfeu responde à pergunta cortante e existencial de Eurídice?"
+        }
+      ],
+      "choices": [
+        {
+          "text": "Eu te amo além da arte, você é a própria razão de o meu coração bater",
+          "nextSceneId": "s2a_temptation",
+          "npc": "Eurydice",
+          "obol": 0,
+          "affinity": 1,
+          "love": 1,
+          "angry": 0,
+          "sadness": 0
+        },
+        {
+          "text": "A saudade da sua alma rasga o meu peito, eu estou perdido sem o seu reflexo",
+          "nextSceneId": "s2b_temptation",
+          "npc": "Eurydice",
+          "obol": 0,
+          "affinity": 1,
+          "love": 0,
+          "angry": 1,
+          "sadness": 0
+        },
+        {
+          "text": "Você é minha esposa e minha responsabilidade, pare de fazer perguntas tolas",
+          "nextSceneId": "s2c_temptation",
+          "npc": "Eurydice",
+          "obol": 0,
+          "affinity": -5,
+          "love": 0,
+          "angry": 0,
+          "sadness": 1
+        }
+      ],
+      "sceneId": "Tentação do Descanso",
+      "currentDialogueID": 0,
+      "isEnding": false
+    },
+    {
+      "dialogues": [
+        {
+          "text": "Orfeu vira o rosto minimamente, com a voz embargada e transbordando de paixão genuína."
+        },
+        {
+          "text": "Orfeu: A minha música não vale nada sem você para ouvi-la. Eu te amo, Eurídice, inteiramente e acima de qualquer verso."
+        },
+        {
+          "text": "Ela sente uma lágrima fantasma escorrer, tocada no fundo do ser pela sinceridade absoluta do bardo."
+        }
+      ],
+      "choices": [],
+      "sceneId": "s2a_temptation",
+      "currentDialogueID": 0,
+      "nextSceneId": "Portas de Asfódelo",
+      "isEnding": false
+    },
+    {
+      "dialogues": [
+        {
+          "text": "Orfeu fala com um tom doloroso, carregado de uma melancolia devastadora."
+        },
+        {
+          "text": "Orfeu: O meu mundo é um deserto cinzento sem a sua presença. Eu não vim buscar a minha musa, vim buscar a minha metade."
+        },
+        {
+          "text": "Eurídice assente lentamente, compreendendo que a dor da perda dele espelhava a sua própria desolação."
+        }
+      ],
+      "choices": [],
+      "sceneId": "s2b_temptation",
+      "currentDialogueID": 0,
+      "nextSceneId": "Portas de Asfódelo",
+      "isEnding": false
+    },
+    {
+      "dialogues": [
+        {
+          "text": "Orfeu endurece a mandíbula, irritado com a dúvida dela em pleno paraíso."
+        },
+        {
+          "text": "Orfeu: Chega de questionamentos! Você vai voltar para casa porque eu decidi que vai. Agora venha!"
+        },
+        {
+          "text": "Eurídice fecha os olhos, engolindo a mágoa e seguindo seus passos com o coração completamente frio e distante."
+        }
+      ],
+      "choices": [],
+      "sceneId": "s2c_temptation",
+      "currentDialogueID": 0,
+      "nextSceneId": "Portas de Asfódelo",
+      "isEnding": false
+    },
+    {
+      "dialogues": [
+        {
+          "text": "Avançando pelos limites dos Campos Elíseos, o brilho dourado e suave do paraíso começa a se dissipar, dando lugar a uma fenda rochosa estreita e descendente que se aprofunda na penumbra. É a entrada para o túnel secreto que atravessa os extensos Campos de Asfódelo, conduzindo lentamente à superfície da Terra por uma rota longa e cinzenta."
+        },
+        {
+          "text": "O ar quente e perfumado dos Elíseos vai dando lugar a uma brisa monótona e empoeirada. O silêncio do limbo recai sobre eles, e a saída para o mundo dos vivos ainda está distante exigindo que o casal caminhe por todo o árduo trajeto subterrâneo antes de alcançar a luz definitiva."
+        },
+        {
+          "text": "Eurídice para por um instante na entrada do túnel escuro, sentindo o peso daquela planície esquecida ecoar em sua alma translúcida mais uma vez."
+        },
+        {
+          "text": "Eurídice: Vamos caminhar por este longo corredor de cinzas... Sinto o vazio de Asfódelo nos chamando. O medo de voltar a sofrer ainda me consome, Orfeu. Como ter certeza de que este sacrifício todo não será em vão?"
+        },
+        {
+          "text": "O que Orfeu faz para guiar sua esposa pelo túnel e dar início a esta etapa final da jornada?"
+        }
+      ],
+      "choices": [
+        {
+          "text": "A dor faz parte da vida, mas o nosso amor tornará tudo suportável",
+          "nextSceneId": "s3a_asphodel_gates",
+          "npc": "Eurydice",
+          "obol": 0,
+          "affinity": 0,
+          "love": 0,
+          "angry": 0,
+          "sadness": 0
+        },
+        {
+          "text": "Caminharemos sob o peso desse luto juntos, até que o tempo cure nossas feridas",
+          "nextSceneId": "s3b_asphodel_gates",
+          "npc": "Eurydice",
+          "obol": 0,
+          "affinity": 1,
+          "love": 1,
+          "angry": 0,
+          "sadness": 0
+        },
+        {
+          "text": "Não ouse hesitar agora que o caminho está aberto para nós!",
+          "nextSceneId": "s3c_asphodel_gates",
+          "npc": "Eurydice",
+          "obol": 0,
+          "affinity": -5,
+          "love": 0,
+          "angry": 0,
+          "sadness": 0
+        }
+      ],
+      "sceneId": "Portas de Asfódelo",
+      "currentDialogueID": 0,
+      "isEnding": false
+    },
+    {
+      "dialogues": [
+        {
+          "text": "Orfeu estende a mão para trás, sem tocá-la, mantendo o calor da sua presença firme."
+        },
+        {
+          "text": "Orfeu: Confie em mim. Eu estarei lá para segurar sua mão em cada passo desta travessia."
+        },
+        {
+          "text": "Eurídice respira fundo, aceitando o risco de viver novamente e dando o passo decisivo para o túnel."
+        }
+      ],
+      "choices": [],
+      "sceneId": "s3a_asphodel_gates",
+      "currentDialogueID": 0,
+      "isEnding": false
+    },
+    {
+      "dialogues": [
+        {
+          "text": "Orfeu abaixa a cabeça, compartilhando do mesmo temor silencioso."
+        },
+        {
+          "text": "Orfeu: Ninguém prometeu que seria fácil, Eurídice. Mas suportaremos a escuridão de mãos dadas."
+        },
+        {
+          "text": "Ela assente de forma solene, reunindo forças para cruzar o limiar de Asfódelo."
+        }
+      ],
+      "choices": [],
+      "sceneId": "s3b_asphodel_gates",
+      "currentDialogueID": 0,
+      "isEnding": false
+    },
+    {
+      "dialogues": [
+        {
+          "text": "Orfeu sibila com impaciência, apontando para a escuridão do túnel com raiva contida."
+        },
+        {
+          "text": "Orfeu: Depois de tudo, você vai amarelar bem na linha de chegada? Ande logo!"
+        },
+        {
+          "text": "Eurídice morde os lábios, trancando qualquer réplica, e avança em direção ao caminho cinzento com o orgulho ferido e o espírito entorpecido."
+        }
+      ],
+      "choices": [],
+      "sceneId": "s3c_asphodel_gates",
+      "currentDialogueID": 0,
+      "isEnding": false
+    }
+  ],
+  "title": "Capítulo 7 - A volta por Elíseos",
+  "currentSceneIndex": 0
+}

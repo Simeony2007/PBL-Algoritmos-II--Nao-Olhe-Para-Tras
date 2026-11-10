@@ -1,0 +1,3014 @@
+[
+  {
+    "scenes": [
+      {
+        "dialogues": [
+          {
+            "text": "Orfeu, filho da musa Calíope, era considerado o maior bardo de toda a Grécia. Com a harpa de Apolo em mãos, ele viajou com os Argonautas, entoando canções que acalmavam mares e feras."
+          },
+          {
+            "text": "Sua vida ganhou verdadeiro sentido ao se casar com a bela ninfa Eurídice. No entanto, a alegria durou pouco. Logo após a cerimônia, enquanto fugia de um perseguidor invejoso e cheio de ódio, ela foi picada por uma víbora e seu espírito foi levado para o reino dos mortos."
+          },
+          {
+            "text": "Consumido pelo luto, Orfeu toma uma decisão impensável: descer ao próprio Submundo, desafiar as leis da vida e da morte, e trazer sua amada de volta para a luz."
+          },
+          {
+            "text": "O que mais motiva os passos de Orfeu em direção ao abismo?"
+          }
+        ],
+        "choices": [
+          {
+            "text": "Seu peito queima com um amor que transcende a mortalidade. Você avança movido pela convicção de que nem mesmo Hades pode separar duas almas gêmeas.",
+            "nextSceneId": "Encontro com Cérbero",
+            "obol": 0,
+            "affinity": 0,
+            "love": 2,
+            "angry": 0,
+            "sadness": 0
+          },
+          {
+            "text": "Cada nota que toca é um lamento lúgubre. A dor de não tê-la ao seu lado é um peso esmagador que o arrasta naturalmente para as sombras.",
+            "nextSceneId": "Encontro com Cérbero",
+            "obol": 0,
+            "affinity": 0,
+            "love": 0,
+            "angry": 0,
+            "sadness": 2
+          },
+          {
+            "text": "Como os deuses permitiram tamanha injustiça? Sua música agora é um hino de fúria contra o destino cruel, e você não aceitará um \u0027não\u0027 como resposta.",
+            "nextSceneId": "Encontro com Cérbero",
+            "obol": 0,
+            "affinity": 0,
+            "love": 2,
+            "angry": 0,
+            "sadness": 0
+          }
+        ],
+        "sceneId": "Introdução",
+        "currentDialogueID": 0,
+        "isEnding": false
+      },
+      {
+        "dialogues": [
+          {
+            "text": "A jornada o leva até o sombrio Cabo Tênaro, onde o ar se torna gélido e com cheiro de enxofre. Diante da caverna profunda, uma criatura aterrorizante barra definitivamente o seu caminho."
+          },
+          {
+            "text": "É Cérbero, o cão gigante de três cabeças, rosnando e babando, pronto para devorar qualquer ser vivo que ouse adentrar os domínios de seu mestre. Orfeu, ciente de que armas mortais são inúteis aqui, não puxa uma espada, mas sim as cordas douradas de sua harpa."
+          },
+          {
+            "text": "Qual música Orfeu tocará para lidar com o guardião infernal?"
+          }
+        ],
+        "choices": [
+          {
+            "text": "Música sobre o descanso e o acalento da natureza",
+            "nextSceneId": "s2a_cerberus",
+            "obol": 0,
+            "affinity": 0,
+            "love": 1,
+            "angry": 0,
+            "sadness": 0
+          },
+          {
+            "text": "Música sobre o peso da perda",
+            "nextSceneId": "s2b_cerberus",
+            "obol": 0,
+            "affinity": 0,
+            "love": 0,
+            "angry": 0,
+            "sadness": 1
+          },
+          {
+            "text": "Música sobre guerra",
+            "nextSceneId": "s2c_cerberus",
+            "obol": 0,
+            "affinity": 0,
+            "love": 0,
+            "angry": 1,
+            "sadness": 0
+          }
+        ],
+        "sceneId": "Encontro com Cérbero",
+        "currentDialogueID": 0,
+        "isEnding": false
+      },
+      {
+        "dialogues": [
+          {
+            "text": "As notas fluem suaves como a brisa da primavera, lembrando o cão dos campos verdejantes. As três cabeças se acalmam, deitando no chão e caindo em um sono sereno, abrindo caminho."
+          }
+        ],
+        "choices": [],
+        "sceneId": "s2a_cerberus",
+        "currentDialogueID": 0,
+        "nextSceneId": "Margem do Rio",
+        "isEnding": false
+      },
+      {
+        "dialogues": [
+          {
+            "text": "As notas graves e melancólicas carregadas do peso de um luto insuportável fazem Cérbero soltar ganidos lúgubres pelas três bocas, chorando em sintonia com a dor do bardo enquanto este contorna o guardião cabisbaixo, determinado a transformar a própria tragédia no caminho para resgatar sua amada."
+          }
+        ],
+        "choices": [],
+        "sceneId": "s2b_cerberus",
+        "currentDialogueID": 0,
+        "nextSceneId": "Margem do Rio",
+        "isEnding": false
+      },
+      {
+        "dialogues": [
+          {
+            "text": "O dedilhado agressivo e vibrante ressoa como o estalo do trovão, intimidando a besta colossal que dá passos para trás e se curva em submissão involuntária, abrindo passagem para Orfeu avançar com passos firmes em direção às profundezas do reino dos mortos."
+          }
+        ],
+        "choices": [],
+        "sceneId": "s2c_cerberus",
+        "currentDialogueID": 0,
+        "nextSceneId": "Margem do Rio",
+        "isEnding": false
+      },
+      {
+        "dialogues": [
+          {
+            "text": "A escuridão engole Orfeu enquanto ele desce pelas entranhas da terra. Em pouco tempo, ele chega a uma costa sombria, margeada por um rio lamacento e coberta por uma névoa densa."
+          },
+          {
+            "text": "O local está lotado de almas translúcidas humanas, que vagam sem rumo murmurando lamentos incessantes. Atracado na água escura do rio, um pequeno barco de madeira balança levemente, guiado por um homem velho, de pele cinzenta, que aguarda impassível."
+          },
+          {
+            "text": "O que você faz ao observar a margem do rio dos mortos?"
+          }
+        ],
+        "choices": [
+          {
+            "text": "Se aproximar do Caronte",
+            "nextSceneId": "Conversa com Caronte",
+            "obol": 0,
+            "affinity": 0,
+            "love": 0,
+            "angry": 0,
+            "sadness": 0
+          },
+          {
+            "text": "Interagir com uma das almas",
+            "nextSceneId": "Conversa com Alma",
+            "obol": 0,
+            "affinity": 0,
+            "love": 0,
+            "angry": 0,
+            "sadness": 0
+          }
+        ],
+        "sceneId": "Margem do Rio",
+        "currentDialogueID": 0,
+        "isEnding": false
+      },
+      {
+        "dialogues": [
+          {
+            "text": "Você se aproxima de uma sombra curvada que chora compulsivamente na beira do rio, estendendo suas mãos pálidas para as águas negras."
+          },
+          {
+            "text": "Orfeu: Quem é você, e por que chora mais alto que o próprio correr destas águas?"
+          },
+          {
+            "text": "Alma Esquecida: Sou apenas um pobre coitado, bardo... Estou vagando por esta margem há um século. Minha família me enterrou às pressas, sem a honra de uma moeda sob a língua."
+          },
+          {
+            "text": "Alma Esquecida: Dizem que, de vez em quando, algumas moedas extras perdidas aparecem pelo chão de terra da margem, trazidas pelas correntes. Mas meus olhos já estão opacos... Eu nunca achei uma sequer."
+          },
+          {
+            "text": "Como você reage ao lamento centenário dessa alma?"
+          }
+        ],
+        "choices": [
+          {
+            "text": "Oferecer seu único óbolo",
+            "nextSceneId": "s4a_soul",
+            "npc": "Charon",
+            "obol": -1,
+            "affinity": 1,
+            "love": 0,
+            "angry": 0,
+            "sadness": 0
+          },
+          {
+            "text": "Deixar a Alma para trás",
+            "nextSceneId": "s4b_soul",
+            "obol": 0,
+            "affinity": 0,
+            "love": 0,
+            "angry": 0,
+            "sadness": 0
+          }
+        ],
+        "sceneId": "Conversa com Alma",
+        "currentDialogueID": 0,
+        "isEnding": false
+      },
+      {
+        "dialogues": [
+          {
+            "text": "Você coloca uma moeda brilhante na mão espectral. A alma chora lágrimas de gratidão e desaparece rumo ao barco. Ao longe, o velho barqueiro observa seu ato com um olhar intrigado."
+          }
+        ],
+        "choices": [],
+        "sceneId": "s4a_soul",
+        "currentDialogueID": 0,
+        "nextSceneId": "Conversa com Caronte",
+        "isEnding": false
+      },
+      {
+        "dialogues": [
+          {
+            "text": "Você se afasta com pesar, deixando a alma continuar sua eterna e frustrante busca no barro."
+          }
+        ],
+        "choices": [],
+        "sceneId": "s4b_soul",
+        "currentDialogueID": 0,
+        "nextSceneId": "Conversa com Caronte",
+        "isEnding": false
+      },
+      {
+        "dialogues": [
+          {
+            "text": "Você finalmente para diante do barqueiro do Submundo. Caronte o observa de cima a baixo com olhos ocos que brilham com uma luz esverdeada e avarenta sob o capuz esfarrapado."
+          },
+          {
+            "text": "Caronte: Mais um espírito choroso para encher meu barco... Não, espere. Há sangue quente correndo sob essa pele."
+          },
+          {
+            "text": "Orfeu: Preciso cruzar este rio. Tenho assuntos a tratar no reino de Hades, no outro lado."
+          },
+          {
+            "text": "Caronte: Assuntos de vivos não me dizem respeito, bardo. Meu único negócio aqui é a cobrança. A regra é imutável: eu espero a moeda, o passageiro paga a moeda. Enquanto houver pagamento, eu não me importo se você respira ou não."
+          },
+          {
+            "text": "Como você negociará a travessia com o barqueiro?"
+          }
+        ],
+        "choices": [
+          {
+            "text": "Pagar a moeda",
+            "nextSceneId": "s5a_charon",
+            "obol": -1,
+            "affinity": 0,
+            "love": 0,
+            "angry": 0,
+            "sadness": 0
+          },
+          {
+            "text": "Tentar convencer o Caronte a deixá-lo passar sem pagar",
+            "nextSceneId": "s5b_charon",
+            "npc": "Charon",
+            "obol": 0,
+            "affinity": 0,
+            "love": 0,
+            "angry": 0,
+            "sadness": 0
+          },
+          {
+            "text": "Voltar para a margem",
+            "nextSceneId": "s5c_charon",
+            "obol": 0,
+            "affinity": 0,
+            "love": 0,
+            "angry": 0,
+            "sadness": 0
+          }
+        ],
+        "sceneId": "Conversa com Caronte",
+        "currentDialogueID": 0,
+        "isEnding": false
+      },
+      {
+        "dialogues": [
+          {
+            "text": "Sem hesitar, você coloca o óbolo na mão esquelética de Caronte. Ele sente o peso do metal, dá um sorriso desdentado e aponta com a cabeça para que você suba na barca."
+          }
+        ],
+        "choices": [],
+        "sceneId": "s5a_charon",
+        "currentDialogueID": 0,
+        "nextSceneId": "Barca de Caronte",
+        "isEnding": false
+      },
+      {
+        "dialogues": [
+          {
+            "text": "Orfeu: Você não sabe quem eu sou? Minha música vale mais que todos os tesouros de Hades! Me deixe passar!"
+          },
+          {
+            "text": "Caronte: E minha paciência vale menos do que a poeira que você pisa. Sem prata, sem viagem. Saia daqui, mortal insolente!"
+          }
+        ],
+        "choices": [],
+        "sceneId": "s5b_charon",
+        "currentDialogueID": 0,
+        "nextSceneId": "s5c_charon",
+        "isEnding": false
+      },
+      {
+        "dialogues": [
+          {
+            "text": "Desolado por não ter como pagar, você se afasta do píer. Você chora e passa horas cavando a terra fria, até que o brilho de um óbolo esquecido reflete na penumbra. Com ele em mãos, você retorna à barca e garante sua passagem."
+          }
+        ],
+        "choices": [],
+        "sceneId": "s5c_charon",
+        "currentDialogueID": 0,
+        "nextSceneId": "Barca de Caronte",
+        "isEnding": false
+      },
+      {
+        "dialogues": [
+          {
+            "text": "A madeira podre range sob seus pés enquanto a barca corta as águas densas do submundo. O silêncio é pesado, quebrado apenas pelo som do remo batendo contra a correnteza."
+          },
+          {
+            "text": "Caronte: Não costumo receber passageiros com um coração batendo no peito. A maioria dos mortais foge de fininho do Submundo, não entra nele marchando."
+          },
+          {
+            "text": "Caronte: Diga-me, vivo... O que exatamente te arrastou para a terra dos mortos?"
+          },
+          {
+            "text": "O que você responde às indagações de Caronte?"
+          }
+        ],
+        "choices": [
+          {
+            "text": "Não faça perguntas, apenas me leve em frente",
+            "nextSceneId": "s6a_charon_boat",
+            "npc": "Charon",
+            "obol": 0,
+            "affinity": -1,
+            "love": 0,
+            "angry": 0,
+            "sadness": 0
+          },
+          {
+            "text": "Desejo rever o amor da minha vida",
+            "nextSceneId": "s6b_charon_boat",
+            "npc": "Charon",
+            "obol": 0,
+            "affinity": 0,
+            "love": 0,
+            "angry": 0,
+            "sadness": 0
+          },
+          {
+            "text": "Não consigo viver sem ela",
+            "nextSceneId": "s6c_charon_boat",
+            "npc": "Charon",
+            "obol": 0,
+            "affinity": 0,
+            "love": 0,
+            "angry": 0,
+            "sadness": 0
+          }
+        ],
+        "sceneId": "Barca de Caronte",
+        "currentDialogueID": 0,
+        "isEnding": false
+      },
+      {
+        "dialogues": [
+          {
+            "text": "Caronte aperta o remo com força, irritado com a sua hostilidade."
+          },
+          {
+            "text": "Caronte: Tolo arrogante."
+          },
+          {
+            "text": "Caronte: Hades vai mastigar sua insolência."
+          }
+        ],
+        "choices": [],
+        "sceneId": "s6a_charon_boat",
+        "currentDialogueID": 0,
+        "nextSceneId": "s7_end_chapter",
+        "isEnding": false
+      },
+      {
+        "dialogues": [
+          {
+            "text": "A postura tensa do barqueiro relaxa um pouco."
+          },
+          {
+            "text": "Caronte: Amor... O veneno dos vivos."
+          }
+        ],
+        "choices": [],
+        "sceneId": "s6b_charon_boat",
+        "currentDialogueID": 0,
+        "nextSceneId": "s7_end_chapter",
+        "isEnding": false
+      },
+      {
+        "dialogues": [
+          {
+            "text": "Você desvia o olhar, encarando seu próprio reflexo distorcido na água negra."
+          },
+          {
+            "text": "Caronte solta um suspiro rouco, há muito acostumado com o desespero, mas levemente impressionado pela profundidade da sua dor."
+          }
+        ],
+        "choices": [],
+        "sceneId": "s6c_charon_boat",
+        "currentDialogueID": 0,
+        "nextSceneId": "s7_end_chapter",
+        "isEnding": false
+      },
+      {
+        "dialogues": [
+          {
+            "text": "Caronte: Escute bem, vivo. Minha jurisdição é limitada pelas águas. Posso levá-lo apenas uma região por vez. Se deseja se embrenhar mais a fundo nos domínios de Hades, precisará de mais moedas para o resto do trajeto."
+          }
+        ],
+        "choices": [],
+        "sceneId": "s7_end_chapter",
+        "currentDialogueID": 0,
+        "isEnding": false
+      }
+    ],
+    "title": "Capítulo 1 - A Entrada do Submundo",
+    "currentSceneIndex": 0
+  },
+  {
+    "scenes": [
+      {
+        "dialogues": [
+          {
+            "text": "O barco de Caronte se afasta lentamente, deixando Orfeu nas margens desoladas dos Campos de Asfódelo. Diante dele se estende uma planície cinzenta e infinita, onde flores pálidas e murchas cobrem o chão coberto de pó."
+          },
+          {
+            "text": "Milhares de almas vagam sem rumo neste limbo apático, murmurando palavras ininteligíveis. Não há grandes punições aqui, mas também não há alegria; apenas uma existência monótona e esquecida, suspensa na eternidade de Hades."
+          },
+          {
+            "text": "Orfeu sabe que, para prosseguir sua descida pelo Submundo e cruzar a próxima barreira do rio Estige, precisará convencer o barqueiro novamente. O bardo aperta sua harpa divina contra o peito, ciente de que precisará encontrar mais um óbolo neste deserto espiritual."
+          }
+        ],
+        "choices": [],
+        "sceneId": "s1_asphodel",
+        "currentDialogueID": 0,
+        "nextSceneId": "Alma do Marinheiro",
+        "isEnding": false
+      },
+      {
+        "dialogues": [
+          {
+            "text": "Caminhando pela névoa densa, Orfeu percebe uma figura robusta, de braços cruzados, observando as águas paradas ao longe com uma saudade profunda. A alma usa trapos que um dia foram roupas de um navegador."
+          },
+          {
+            "text": "Ao ouvir os passos firmes de Orfeu, o espírito se vira bruscamente. Seus olhos translúcidos se arregalam ao notar as cores vivas e o calor emanando do corpo do bardo. É uma visão raríssima."
+          },
+          {
+            "text": "Marinheiro: Pelos deuses esquecidos... Você respira! Faz tanto tempo que não vejo a vida pulsando dessa forma. Diga-me, jovem vivo... Como estão os oceanos?"
+          },
+          {
+            "text": "Marinheiro: Eu fui um grande capitão nos mares Egeus, mas a névoa deste lugar está devorando minha mente. Eu... Eu não consigo mais lembrar da cor do mar, nem do som das ondas. Por favor, me traga uma lembrança."
+          },
+          {
+            "text": "Como Orfeu responderá ao apelo doloroso do velho lobo do mar?"
+          }
+        ],
+        "choices": [
+          {
+            "text": "Música vibrante sobre o mar e a brisa salgada",
+            "nextSceneId": "s2a_sailor",
+            "npc": "Charon",
+            "obol": 0,
+            "affinity": 1,
+            "love": 0,
+            "angry": -1,
+            "sadness": 0
+          },
+          {
+            "text": "Lamentar a perda das memórias e a tragédia do marinheiro",
+            "nextSceneId": "s2b_sailor",
+            "obol": 0,
+            "affinity": 0,
+            "love": 0,
+            "angry": 0,
+            "sadness": 0
+          },
+          {
+            "text": "Ignorar sua prece nostálgica e pedir informações",
+            "nextSceneId": "s2c_sailor",
+            "npc": "Charon",
+            "obol": 0,
+            "affinity": -1,
+            "love": 0,
+            "angry": 0,
+            "sadness": 0
+          }
+        ],
+        "sceneId": "Alma do Marinheiro",
+        "currentDialogueID": 0,
+        "isEnding": false
+      },
+      {
+        "dialogues": [
+          {
+            "text": "A melodia traz o cheiro imaginário de sal e a visão de águas cristalinas. O marinheiro chora de alegria."
+          },
+          {
+            "text": "Marinheiro: Obrigado! E se esse velho pode te ajudar em sua jornada, tem monstros voadores perigosos nesses campos, eles só recuam se você revirar seu ataque."
+          }
+        ],
+        "choices": [],
+        "sceneId": "s2a_sailor",
+        "currentDialogueID": 0,
+        "nextSceneId": "Fã de Orfeu",
+        "isEnding": false
+      },
+      {
+        "dialogues": [
+          {
+            "text": "Orfeu canta uma balada suave e dolorosa sobre como tudo no mundo dos vivos acaba desaparecendo nas areias do tempo. O marinheiro suspira, aceitando o abraço frio da eternidade e desaparecendo lentamente na multidão silenciosa de Asfódelo."
+          }
+        ],
+        "choices": [],
+        "sceneId": "s2b_sailor",
+        "currentDialogueID": 0,
+        "nextSceneId": "Fã de Orfeu",
+        "isEnding": false
+      },
+      {
+        "dialogues": [
+          {
+            "text": "Orfeu: Não tenho tempo para nostalgias marítimas de quem já afundou no esquecimento. Onde encontro uma moeda por aqui?"
+          },
+          {
+            "text": "O marinheiro fecha a cara, ofendido com sua brutalidade implacável"
+          },
+          {
+            "text": "Marinheiro: Vá para o poço do Tártaro, garoto prepotente. Que os espíritos o devorem!"
+          },
+          {
+            "text": "Ele cospe no chão de cinzas e se afasta furioso."
+          }
+        ],
+        "choices": [],
+        "sceneId": "s2c_sailor",
+        "currentDialogueID": 0,
+        "nextSceneId": "Fã de Orfeu",
+        "isEnding": false
+      },
+      {
+        "dialogues": [
+          {
+            "text": "Afastando-se das margens, Orfeu percebe que não está mais sozinho na vasta planície. Uma alma jovem, esguia e pálida, o acompanha a poucos passos de distância, com as mãos entrelaçadas e um sorriso admirado."
+          },
+          {
+            "text": "Fã: Eu não posso acreditar... Esses acordes celestiais, esse rosto abençoado pelas Musas. Você é realmente Orfeu de Trácia! Eu viajava de vilarejo em vilarejo no mundo lá em cima só para ouvir suas incríveis apresentações."
+          },
+          {
+            "text": "Fã: Você iluminou minha vida mortal, grande bardo. Eu escondi isto quando desci aos mundos inferiores porque era tudo o que eu tinha. Quero que você fique com ela, para que sua música nunca pare de tocar."
+          },
+          {
+            "text": "O espírito maravilhado estende a mão translúcida e revela um óbolo perfeitamente conservado, brilhando com um fraco fulgor na penumbra opressora dos Campos de Asfódelo."
+          },
+          {
+            "text": "Como você recebe o presente inesperado do seu antigo admirador?"
+          }
+        ],
+        "choices": [
+          {
+            "text": "Agradecer o carinho com humildade e oferecer uma melodia em retribuição",
+            "nextSceneId": "s3a_fan",
+            "npc": "Charon",
+            "obol": 1,
+            "affinity": 1,
+            "love": 0,
+            "angry": 0,
+            "sadness": 0
+          },
+          {
+            "text": "Aceitar a moeda com melancolia, dizendo que a fama não salvou sua esposa",
+            "nextSceneId": "s3b_fan",
+            "obol": 1,
+            "affinity": 0,
+            "love": 0,
+            "angry": 0,
+            "sadness": 0
+          },
+          {
+            "text": "Pegar a moeda de forma ríspida, dizendo que elogios não têm valor no mundo dos mortos",
+            "nextSceneId": "s3c_fan",
+            "npc": "Charon",
+            "obol": 1,
+            "affinity": -1,
+            "love": 0,
+            "angry": 0,
+            "sadness": 0
+          }
+        ],
+        "sceneId": "Fã de Orfeu",
+        "currentDialogueID": 0,
+        "isEnding": false
+      },
+      {
+        "dialogues": [
+          {
+            "text": "Orfeu: Sua gentileza aquece este reino de gelo eterno. Deixe-me retribuir da única forma que sei."
+          },
+          {
+            "text": "Você toca a canção favorita dele suavemente. A alma chora de alegria pura antes de sumir na névoa, deixando a moeda em suas mãos e o seu coração levemente reconfortado."
+          }
+        ],
+        "choices": [],
+        "sceneId": "s3a_fan",
+        "currentDialogueID": 0,
+        "nextSceneId": "Ataque das Keres",
+        "isEnding": false
+      },
+      {
+        "dialogues": [
+          {
+            "text": "Orfeu: Minha fama não impediu a víbora de picar o calcanhar da minha amada... Mas essa sua moeda me ajudará a tentar consertar minha falha."
+          },
+          {
+            "text": "Você aceita o óbolo de forma solene. O fã abaixa a cabeça com profunda empatia, compreendendo sua dor, e respeitosamente deixa você sozinho."
+          }
+        ],
+        "choices": [],
+        "sceneId": "s3b_fan",
+        "currentDialogueID": 0,
+        "nextSceneId": "Ataque das Keres",
+        "isEnding": false
+      },
+      {
+        "dialogues": [
+          {
+            "text": "Orfeu: Elogios de fantasmas não valem nada neste inferno. Mas o seu dinheiro será muito útil para mim."
+          },
+          {
+            "text": "Você arranca a moeda da mão da alma. O jovem recua assustado e profundamente magoado com a frieza do ídolo que tanto admirava em vida, fugindo para longe de você."
+          }
+        ],
+        "choices": [],
+        "sceneId": "s3c_fan",
+        "currentDialogueID": 0,
+        "nextSceneId": "Ataque das Keres",
+        "isEnding": false
+      },
+      {
+        "dialogues": [
+          {
+            "text": "O bardo segue viagem por um campo desolado até que um guincho estridente e demoníaco corta o silêncio mórbido. Do céu coberto de trevas, criaturas aladas e grotescas com presas afiadas mergulham em direção a Orfeu. São as terríveis Keres, espíritos da matança."
+          },
+          {
+            "text": "Elas não parecem interessadas na carne de Orfeu, mas sim no brilho dourado e divino de sua harpa. As garras enferrujadas rasgam o ar, ameaçando destruir o intruso para arrancar o instrumento sagrado de suas mãos."
+          },
+          {
+            "text": "Orfeu recua rapidamente, desviando de uma investida rasante que por pouco não rasga seu ombro. Ele sabe que armas comuns seriam inúteis. Suas mãos se posicionam instintivamente sobre as cordas mágicas de Apolo."
+          },
+          {
+            "text": "Qual música você usará para repelir as Keres famintas?"
+          }
+        ],
+        "choices": [
+          {
+            "text": "Música sobre esperança de um futuro melhor",
+            "nextSceneId": "s4a_keres",
+            "obol": 0,
+            "affinity": 0,
+            "love": 0,
+            "angry": 0,
+            "sadness": 0
+          },
+          {
+            "text": "Música sobre a fatalidade da morte",
+            "nextSceneId": "s4b_keres",
+            "obol": 0,
+            "affinity": 0,
+            "love": 0,
+            "angry": 0,
+            "sadness": 0
+          },
+          {
+            "text": "Música sobre heróis matando monstros",
+            "nextSceneId": "s4c_keres",
+            "obol": 1,
+            "affinity": 0,
+            "love": 0,
+            "angry": 0,
+            "sadness": 0
+          }
+        ],
+        "sceneId": "Ataque das Keres",
+        "currentDialogueID": 0,
+        "isEnding": false
+      },
+      {
+        "dialogues": [
+          {
+            "text": "Notas puras e radiantes criam uma redoma invisível de luz pulsante ao seu redor. Acostumadas com a desgraça e o caos, as Keres não suportam a beleza e a pureza extrema do som, fugindo atordoadas para as sombras de onde vieram."
+          }
+        ],
+        "choices": [],
+        "sceneId": "s4a_keres",
+        "currentDialogueID": 0,
+        "nextSceneId": "Retorno de Caronte",
+        "isEnding": false
+      },
+      {
+        "dialogues": [
+          {
+            "text": "A canção ecoa um lamento tão macabro e definitivo que as próprias Keres perdem a vontade de destruir. Satisfeitas com a energia letárgica que você emanou, elas se dispersam lentamente pelos ares lúgubres sem te ferir."
+          }
+        ],
+        "choices": [],
+        "sceneId": "s4b_keres",
+        "currentDialogueID": 0,
+        "nextSceneId": "Retorno de Caronte",
+        "isEnding": false
+      },
+      {
+        "dialogues": [
+          {
+            "text": "Acordes violentos e trovejantes simulam o choque de espadas de Héracles e a fúria de Aquiles. As Keres gritam apavoradas com a agressividade sonora e fogem. Na pressa, uma delas derruba um óbolo enferrujado que havia roubado de um cadáver na superfície."
+          }
+        ],
+        "choices": [],
+        "sceneId": "s4c_keres",
+        "currentDialogueID": 0,
+        "nextSceneId": "Retorno de Caronte",
+        "isEnding": false
+      },
+      {
+        "dialogues": [
+          {
+            "text": "Com a moeda no bolso e a determinação renovada, Orfeu faz o perigoso caminho de volta até as margens escuras. Caronte está lá novamente, encostado em seu longo remo rústico, aguardando impaciente."
+          },
+          {
+            "text": "Caronte: Você ainda não virou pó e os monstros não devoraram sua carne. Um feito surpreendente para um tocador de harpa. E vejo no brilho dos seus olhos que encontrou o pagamento da travessia."
+          },
+          {
+            "text": "O barqueiro estende a mão esquelética. Orfeu deposita a moeda arduamente conquistada (-1 moeda), garantindo sua passagem para as águas mais traiçoeiras e profundas da morada de Hades."
+          },
+          {
+            "text": "Caronte: Já que pagou, suba no barco de uma vez. Mas me diga, intruso vivo... Caminhar por entre as flores mortas de Asfódelo muda qualquer um. O que achou do destino comum da imensa maioria da raça humana?"
+          },
+          {
+            "text": "O que Orfeu expressa sobre sua experiência nos Campos de Asfódelo?"
+          }
+        ],
+        "choices": [
+          {
+            "text": "Expressar compaixão pelas almas",
+            "nextSceneId": "s5a_charon",
+            "npc": "Charon",
+            "obol": -1,
+            "affinity": 2,
+            "love": 0,
+            "angry": 0,
+            "sadness": 0
+          },
+          {
+            "text": "Demonstrar desprezo pelas almas e pelo lugar",
+            "nextSceneId": "s5b_charon",
+            "npc": "Charon",
+            "obol": -1,
+            "affinity": -2,
+            "love": 0,
+            "angry": 0,
+            "sadness": 0
+          }
+        ],
+        "sceneId": "Retorno de Caronte",
+        "currentDialogueID": 0,
+        "isEnding": false
+      },
+      {
+        "dialogues": [
+          {
+            "text": "Orfeu: Ninguém merece ser esquecido dessa forma, apagado como uma chama sem vento. É uma existência cruel, privada de dor, mas roubada de qualquer alegria. Sinto pena de cada uma daquelas almas."
+          },
+          {
+            "text": "Caronte acena levemente com a cabeça, seus olhos esverdeados brilhando com uma fagulha de respeito pela sua observação sábia e sua empatia pelas vítimas do destino."
+          }
+        ],
+        "choices": [],
+        "sceneId": "s5a_charon",
+        "currentDialogueID": 0,
+        "nextSceneId": "s6_end_chapter",
+        "isEnding": false
+      },
+      {
+        "dialogues": [
+          {
+            "text": "Orfeu: É um bando de inúteis choramingando num mar de poeira e tédio. Aquele lugar me dá nojo, um desperdício imenso de espaço para pessoas que não tiveram coragem de viver e amar de verdade."
+          },
+          {
+            "text": "Caronte resmunga e aperta o remo com nojo. \"A arrogância de quem ainda tem sangue nas veias é uma doença patética\", diz ele com frieza, virando o rosto ossudo para a escuridão do rio."
+          }
+        ],
+        "choices": [],
+        "sceneId": "s5b_charon",
+        "currentDialogueID": 0,
+        "nextSceneId": "s6_end_chapter",
+        "isEnding": false
+      },
+      {
+        "dialogues": [
+          {
+            "text": "Caronte empurra a barca, cortando as águas densas do Estige rumo à próxima região do Submundo."
+          }
+        ],
+        "choices": [],
+        "sceneId": "s6_end_chapter",
+        "currentDialogueID": 0,
+        "isEnding": false
+      }
+    ],
+    "title": "Capítulo 2 - Campos de Asfódelos",
+    "currentSceneIndex": 0
+  },
+  {
+    "scenes": [
+      {
+        "dialogues": [
+          {
+            "text": "Orfeu adentra os Campos Elíseos, um local vibrante banhado por grama dourada e brisa suave. Perto da margem do rio Lete, cujas águas apagam as memórias dos mortos, ele nota uma alma segurando um óbolo."
+          },
+          {
+            "text": "Alma Nobre: Músico vivo... estou exausto. As lembranças das minhas perdas no mundo me torturam diariamente, mas tenho pavor do vazio total. Guardei este óbolo, mas agora não vejo sentido na viagem."
+          },
+          {
+            "text": "Alma Nobre: Se você puder me dar uma razão sólida para não apagar minha própria essência nas águas deste rio, esta moeda é sua. Caso contrário, beberei o esquecimento e afundarei esta prata no lodo."
+          },
+          {
+            "text": "Qual argumento Orfeu usará para salvar as memórias do nobre e conseguir a moeda?"
+          }
+        ],
+        "choices": [
+          {
+            "text": "Nossas memórias são os alicerces de quem amamos",
+            "nextSceneId": "s1a_memory",
+            "obol": 1,
+            "affinity": 0,
+            "love": 0,
+            "angry": 0,
+            "sadness": 0
+          },
+          {
+            "text": "A dor prova que um dia nós estivemos vivos",
+            "nextSceneId": "s1b_memory",
+            "npc": "Charon",
+            "obol": 1,
+            "affinity": 1,
+            "love": 0,
+            "angry": 0,
+            "sadness": 0
+          },
+          {
+            "text": "Sua covardia me dá nojo",
+            "nextSceneId": "s1c_memory",
+            "npc": "Charon",
+            "obol": 1,
+            "affinity": -1,
+            "love": 0,
+            "angry": 0,
+            "sadness": 1
+          }
+        ],
+        "sceneId": "Preço da Memória",
+        "currentDialogueID": 0,
+        "isEnding": false
+      },
+      {
+        "dialogues": [
+          {
+            "text": "Orfeu: Apagar sua dor é apagar também os sorrisos e a luz de quem você amou."
+          },
+          {
+            "text": "A alma recua, emocionada com a verdade de suas palavras, e lhe entrega a prata cintilante com profunda gratidão."
+          }
+        ],
+        "choices": [],
+        "sceneId": "s1a_memory",
+        "currentDialogueID": 0,
+        "nextSceneId": "Ilusão da Glória",
+        "isEnding": false
+      },
+      {
+        "dialogues": [
+          {
+            "text": "Orfeu: O vazio infinito é pior que a angústia da perda. Aceite o peso da sua história."
+          },
+          {
+            "text": "Compreendendo a melancolia da afirmação, o nobre chora em silêncio e passa a moeda para suas mãos quentes."
+          }
+        ],
+        "choices": [],
+        "sceneId": "s1b_memory",
+        "currentDialogueID": 0,
+        "nextSceneId": "Ilusão da Glória",
+        "isEnding": false
+      },
+      {
+        "dialogues": [
+          {
+            "text": "Orfeu: Você chora por dores patéticas enquanto eu desbravo o submundo pelo que é meu. Você não é digno dos Campos Elíseos, me entregue o óbolo antes que eu mesmo o jogue nesse rio maldito."
+          },
+          {
+            "text": "Amedrontado pela crueldade egoísta e agressiva do bardo, o nobre encolhe-se e simplesmente solta a moeda em suas mãos."
+          }
+        ],
+        "choices": [],
+        "sceneId": "s1c_memory",
+        "currentDialogueID": 0,
+        "nextSceneId": "Ilusão da Glória",
+        "isEnding": false
+      },
+      {
+        "dialogues": [
+          {
+            "text": "Com a moeda guardada, o bardo se afasta do rio. Ao longe, um banquete divino atrai heróis e semideuses. Porém, isolado dessa multidão festiva, um guerreiro imponente afia uma espada de bronze rachada."
+          },
+          {
+            "text": "Guerreiro: Você cheira a suor e terra molhada, mortal. Veio buscar histórias épicas de vitórias para cantar no mundo de cima? Saiba que a glória eterna aqui não passa de vento vazio em nossa mente."
+          },
+          {
+            "text": "Guerreiro: Eu daria toda a minha fama conquistada nas areias de Troia apenas para sentir o calor do sol na pele mais uma vez, ou para abraçar minha filha. A morte revela a grande farsa da guerra."
+          },
+          {
+            "text": "Como Orfeu responde à revelação amarga do velho soldado?"
+          }
+        ],
+        "choices": [
+          {
+            "text": "O paraíso é justo, pois o amor deles pelo mundo lhes custou tudo",
+            "nextSceneId": "s2a_glory",
+            "obol": 0,
+            "affinity": 0,
+            "love": 1,
+            "angry": 0,
+            "sadness": 0
+          },
+          {
+            "text": "A eternidade dourada não apaga a dor do que foi perdido",
+            "nextSceneId": "s2b_glory",
+            "npc": "Charon",
+            "obol": 0,
+            "affinity": 1,
+            "love": 0,
+            "angry": 1,
+            "sadness": 0
+          },
+          {
+            "text": "Sua glória inútil não me interessa, seu fantasma patético",
+            "nextSceneId": "s2c_glory",
+            "npc": "Charon",
+            "obol": 0,
+            "affinity": -1,
+            "love": 0,
+            "angry": 0,
+            "sadness": 1
+          }
+        ],
+        "sceneId": "Ilusão da Glória",
+        "currentDialogueID": 0,
+        "isEnding": false
+      },
+      {
+        "dialogues": [
+          {
+            "text": "Orfeu: Eles sacrificaram seu futuro para proteger suas famílias e cidades. A paz é a única recompensa justa."
+          },
+          {
+            "text": "O soldado suspira e sorri com amargura, encontrando um breve e doce conforto ao lembrar que lutou por quem amava."
+          }
+        ],
+        "choices": [],
+        "sceneId": "s2a_glory",
+        "currentDialogueID": 0,
+        "nextSceneId": "Encontro com Jasão",
+        "isEnding": false
+      },
+      {
+        "dialogues": [
+          {
+            "text": "Orfeu: Vi reis chorarem na luz. O paraíso é apenas uma jaula bonita; a angústia por tudo o que não puderam viver os assombra para sempre."
+          },
+          {
+            "text": "O guerreiro concorda solenemente."
+          }
+        ],
+        "choices": [],
+        "sceneId": "s2b_glory",
+        "currentDialogueID": 0,
+        "nextSceneId": "Encontro com Jasão",
+        "isEnding": false
+      },
+      {
+        "dialogues": [
+          {
+            "text": "Orfeu: Você viveu apenas para derramar sangue e agora chora como um covarde por ter perdido o sol. Guarde sua autopiedade para si, pois sua existência vazia me dá nojo."
+          },
+          {
+            "text": "O guerreiro trinca os dentes e aperta o cabo da espada, ofendido com o seu desprezo e crueldade, e vira as costas abruptamente."
+          }
+        ],
+        "choices": [],
+        "sceneId": "s2c_glory",
+        "currentDialogueID": 0,
+        "nextSceneId": "Encontro com Jasão",
+        "isEnding": false
+      },
+      {
+        "dialogues": [
+          {
+            "text": "A luz reconfortante dos Elíseos ilumina uma grande oliveira. Sob ela, descansando em uma túnica simples, está Jasão, o líder dos Argonautas. Ao notar o bardo, ele levanta-se surpreso com o calor humano."
+          },
+          {
+            "text": "Jasão: Orfeu? Pelos deuses celestes, a vida ainda corre quente em suas veias! Que ventos tempestuosos e trágicos trouxeram o maior músico de todos os tempos e meu velho amigo até o fim da linha?"
+          },
+          {
+            "text": "Orfeu: Vim buscar minha esposa, Jasão. Não posso aceitar que o fio da vida de Eurídice tenha sido cortado pelas Moiras de forma tão prematura. Preciso resgatá-la do fundo deste abismo sombrio."
+          },
+          {
+            "text": "Jasão: O amor... Força mais destrutiva que monstros marinhos. Confiei em Médea e ela assassinou nossos filhos para me punir. Conquistei o Velocino, mas uma mulher destroçou minha alma. Vale a pena?"
+          },
+          {
+            "text": "Qual será a resposta de Orfeu ao questionamento fatalista de Jasão?"
+          }
+        ],
+        "choices": [
+          {
+            "text": "O amor verdadeiro cura, não destrói",
+            "nextSceneId": "s3a_jason",
+            "obol": 0,
+            "affinity": 0,
+            "love": 1,
+            "angry": 0,
+            "sadness": 0
+          },
+          {
+            "text": "A dor da perda é o nosso destino comum",
+            "nextSceneId": "s3b_jason",
+            "obol": 0,
+            "affinity": 0,
+            "love": 0,
+            "angry": 1,
+            "sadness": 0
+          },
+          {
+            "text": "O passado de vocês não dita o meu futuro",
+            "nextSceneId": "s3c_jason",
+            "obol": 0,
+            "affinity": 0,
+            "love": 0,
+            "angry": 0,
+            "sadness": 1
+          }
+        ],
+        "sceneId": "Encontro com Jasão",
+        "currentDialogueID": 0,
+        "isEnding": false
+      },
+      {
+        "dialogues": [
+          {
+            "text": "Orfeu: Médea foi consumida pela obsessão pura. O que sinto por Eurídice é divino e lutarei por isso até o fim."
+          },
+          {
+            "text": "Jasão suspira, admirando sua convicção inabalável e desejando-lhe muita sorte."
+          }
+        ],
+        "choices": [],
+        "sceneId": "s3a_jason",
+        "currentDialogueID": 0,
+        "nextSceneId": "Porto do caronte",
+        "isEnding": false
+      },
+      {
+        "dialogues": [
+          {
+            "text": "Orfeu: Nossas histórias sempre terminam em desgraça, meu capitão. Somos peões na mão dos deuses."
+          },
+          {
+            "text": "O herói abaixa a cabeça com peso, compartilhando do seu luto profundo em absoluto silêncio."
+          }
+        ],
+        "choices": [],
+        "sceneId": "s3b_jason",
+        "currentDialogueID": 0,
+        "nextSceneId": "Porto do caronte",
+        "isEnding": false
+      },
+      {
+        "dialogues": [
+          {
+            "text": "Orfeu mantém uma postura pragmática e firme, recusando-se a comparar seu casamento de luz com os erros letais de Jasão. O herói balança a cabeça, reconhece a teimosia de Orfeu e deixa o caminho livre."
+          }
+        ],
+        "choices": [],
+        "sceneId": "s3c_jason",
+        "currentDialogueID": 0,
+        "nextSceneId": "Porto do caronte",
+        "isEnding": false
+      },
+      {
+        "dialogues": [
+          {
+            "text": "Os campos férteis acabam abruptamente, dando lugar às margens escuras do próximo afluente do rio infernal. Lá, a velha barca de madeira balança na água negra. Caronte o aguarda com a mão ossuda estendida."
+          }
+        ],
+        "choices": [
+          {
+            "text": "Oferecer óbolo ao caronte",
+            "nextSceneId": "s5_charon",
+            "obol": -1,
+            "affinity": 0,
+            "love": 0,
+            "angry": 0,
+            "sadness": 0
+          }
+        ],
+        "sceneId": "Porto do caronte",
+        "currentDialogueID": 0,
+        "isEnding": false
+      },
+      {
+        "dialogues": [
+          {
+            "text": "Orfeu deposita o óbolo de prata que conquistou na mão fria de Caronte. O barqueiro avalia o brilho do metal com um leve grunhido de aprovação e abre espaço para o bardo subir em sua barca."
+          },
+          {
+            "text": "A madeira range ameaçadoramente sob os pés do bardo enquanto a barca rasga a correnteza cada vez mais violenta do rio. Deixando as memórias douradas dos Elíseos para trás, o frio absoluto do núcleo do Submundo perfura os ossos de Orfeu, um alerta sombrio de que o próximo destino exigirá mais do que apenas moedas e belas canções."
+          }
+        ],
+        "choices": [],
+        "sceneId": "s5_charon",
+        "currentDialogueID": 0,
+        "isEnding": false
+      }
+    ],
+    "title": "Capítulo 3 - Campos Elíseos",
+    "currentSceneIndex": 0
+  },
+  {
+    "scenes": [
+      {
+        "dialogues": [
+          {
+            "text": "Orfeu desce pelas encostas quentes e sufocantes do Tártaro. Em meio à escuridão, ele avista um homem suado empurrando uma rocha colossal ladeira acima. A pedra escorrega e rola de volta para a base."
+          },
+          {
+            "text": "O homem simplesmente enxuga a testa e abre um sorriso caloroso ao notar o bardo."
+          },
+          {
+            "text": "Sísifo: Ora, um vivo no Tártaro! Faz eras que não vejo sangue quente por essas bandas. As almas recém-chegadas não param de sussurrar sobre suas melodias no escuro. Você deve ser o famoso Orfeu."
+          },
+          {
+            "text": "Orfeu: E você é Sísifo, o antigo rei de Corinto. Não achei que ainda tivesse fôlego para sorrir com essa rocha pesando sobre os seus ombros pela eternidade."
+          },
+          {
+            "text": "Sísifo: A eternidade é longa demais para não se fazer pausas, meu jovem! Deixe a pedra aí por um momento. O palácio de Hades não está longe. Gostaria de acompanhá-lo e conversar um pouco no caminho."
+          },
+          {
+            "text": "Como Orfeu reage à oferta calorosa e repentina do antigo rei?"
+          }
+        ],
+        "choices": [
+          {
+            "text": "Aceito sua companhia, a caminhada tem sido muito solitária",
+            "nextSceneId": "s1a_sisyphus",
+            "npc": "Sisyphus",
+            "obol": 0,
+            "affinity": 1,
+            "love": 0,
+            "angry": 0,
+            "sadness": 0
+          },
+          {
+            "text": "Não vejo sentido, mas aceito alguém para dividir a escuridão",
+            "nextSceneId": "s1b_sisyphus",
+            "npc": "Sisyphus",
+            "obol": 0,
+            "affinity": 1,
+            "love": 0,
+            "angry": 0,
+            "sadness": 0
+          },
+          {
+            "text": "Conheço sua fama de trapaceiro. Mantenha distância se vier comigo",
+            "nextSceneId": "s1c_sisyphus",
+            "obol": 0,
+            "affinity": 0,
+            "love": 0,
+            "angry": 0,
+            "sadness": 0
+          }
+        ],
+        "sceneId": "Encontro com Sísifo",
+        "currentDialogueID": 0,
+        "isEnding": false
+      },
+      {
+        "dialogues": [
+          {
+            "text": "Orfeu: Se deseja caminhar ao meu lado, serei grato pela presença."
+          },
+          {
+            "text": "Sísifo abre um sorriso acolhedor, assentindo positivamente com a cabeça e demonstrando profunda satisfação com a aceitação."
+          }
+        ],
+        "choices": [],
+        "sceneId": "s1a_sisyphus",
+        "currentDialogueID": 0,
+        "nextSceneId": "Conversa no Abismo",
+        "isEnding": false
+      },
+      {
+        "dialogues": [
+          {
+            "text": "Orfeu: Nossas histórias são de dor, Sísifo. Mas não recuso alguém para compartilhar o silêncio."
+          },
+          {
+            "text": "O rei suspira e concorda com um olhar solene, colocando-se respeitosamente ao seu lado."
+          }
+        ],
+        "choices": [],
+        "sceneId": "s1b_sisyphus",
+        "currentDialogueID": 0,
+        "nextSceneId": "Conversa no Abismo",
+        "isEnding": false
+      },
+      {
+        "dialogues": [
+          {
+            "text": "Orfeu: O caminho é livre, mas não confio em você."
+          },
+          {
+            "text": "Sísifo não perde o sorriso amigável; ele apenas faz uma pequena mesura e garante em tom muito educado que manterá uma distância respeitosa."
+          }
+        ],
+        "choices": [],
+        "sceneId": "s1c_sisyphus",
+        "currentDialogueID": 0,
+        "nextSceneId": "Conversa no Abismo",
+        "isEnding": false
+      },
+      {
+        "dialogues": [
+          {
+            "text": "Enquanto caminham pelos desfiladeiros de basalto, o calor opressor do Tártaro parece não incomodar Sísifo. Ele observa Orfeu com uma curiosidade genuína, tentando desvendar o coração do bardo."
+          },
+          {
+            "text": "Sísifo: Diga-me, Orfeu... O que realmente impulsiona um homem a descer vivo ao abismo? Conheci o desespero e a ambição em vida, mas desafiar o senhor dos mortos exige algo que foge à razão."
+          },
+          {
+            "text": "Sísifo: Quando você olha para as portas daquele palácio, o que é que grita mais alto dentro do seu peito? É apenas a saudade da sua esposa, ou há algo mais pesado guiando os seus passos?"
+          },
+          {
+            "text": "O que Orfeu revela sobre seus sentimentos e como lida com o questionamento?"
+          }
+        ],
+        "choices": [
+          {
+            "text": "O amor dela é a única luz que me mantém respirando",
+            "nextSceneId": "s2a_abyss",
+            "npc": "Sisyphus",
+            "obol": 0,
+            "affinity": 1,
+            "love": 0,
+            "angry": 0,
+            "sadness": 0
+          },
+          {
+            "text": "A dor do luto é uma âncora que me arrastou para cá",
+            "nextSceneId": "s2b_abyss",
+            "npc": "Sisyphus",
+            "obol": 0,
+            "affinity": 1,
+            "love": 0,
+            "angry": 0,
+            "sadness": 0
+          },
+          {
+            "text": "Por que tanto interesse nos meus motivos, mestre das mentiras?",
+            "nextSceneId": "s2c_abyss",
+            "obol": 0,
+            "affinity": 0,
+            "love": 0,
+            "angry": 0,
+            "sadness": 0
+          }
+        ],
+        "sceneId": "Conversa no Abismo",
+        "currentDialogueID": 0,
+        "isEnding": false
+      },
+      {
+        "dialogues": [
+          {
+            "text": "Orfeu: Sem Eurídice, meu coração já está morto. Suportaria mil infernos por ela."
+          },
+          {
+            "text": "Sísifo o observa com uma empatia silenciosa, parecendo admirar a devoção pura e inabalável do bardo."
+          }
+        ],
+        "choices": [],
+        "sceneId": "s2a_abyss",
+        "currentDialogueID": 0,
+        "nextSceneId": "Portas de Hades",
+        "isEnding": false
+      },
+      {
+        "dialogues": [
+          {
+            "text": "Orfeu: O vazio que ela deixou não tem cura. Não há futuro no mundo lá em cima para mim."
+          },
+          {
+            "text": "Sísifo concorda devagar, parecendo compreender perfeitamente o peso da melancolia que o consome."
+          }
+        ],
+        "choices": [],
+        "sceneId": "s2b_abyss",
+        "currentDialogueID": 0,
+        "nextSceneId": "Portas de Hades",
+        "isEnding": false
+      },
+      {
+        "dialogues": [
+          {
+            "text": "Orfeu: Não vou entregar meus sentimentos para você usar contra mim."
+          },
+          {
+            "text": "Sísifo levanta as mãos calmamente, respondendo com extrema gentileza que apenas buscava uma boa história para aliviar o tédio."
+          }
+        ],
+        "choices": [],
+        "sceneId": "s2c_abyss",
+        "currentDialogueID": 0,
+        "nextSceneId": "Portas de Hades",
+        "isEnding": false
+      },
+      {
+        "dialogues": [
+          {
+            "text": "A névoa se dissipa, revelando os imensos portões de ébano e bronze do palácio de Hades. O som de chicotes estalando ao longe ecoa pelas pedras. As Fúrias estão fazendo a ronda."
+          },
+          {
+            "text": "Sísifo: Bem, minha pequena caminhada termina aqui. Mais um passo e os guardas do Tártaro me farão rolar a pedra com o dobro do peso. Foi uma excelente conversa, bardo."
+          },
+          {
+            "text": "Sísifo: Entre lá e faça os senhores do Submundo chorarem com a sua harpa. Espero, do fundo do meu coração, que você consiga o que veio buscar."
+          },
+          {
+            "text": "O que Orfeu faz antes de Sísifo voltar ao castigo?"
+          }
+        ],
+        "choices": [
+          {
+            "text": "Expressar profunda gratidão pelas palavras e pela companhia sincera",
+            "nextSceneId": "s3a_gates",
+            "npc": "Sisyphus",
+            "obol": 0,
+            "affinity": 1,
+            "love": 0,
+            "angry": 0,
+            "sadness": 0
+          },
+          {
+            "text": "Desejar que a eternidade seja misericordiosa com ele",
+            "nextSceneId": "s3b_gates",
+            "npc": "Sisyphus",
+            "obol": 0,
+            "affinity": 1,
+            "love": 0,
+            "angry": 0,
+            "sadness": 0
+          },
+          {
+            "text": "Dizer para ele sumir logo antes que tente alguma armadilha",
+            "nextSceneId": "s3c_gates",
+            "obol": 0,
+            "affinity": 0,
+            "love": 0,
+            "angry": 0,
+            "sadness": 0
+          }
+        ],
+        "sceneId": "Portas de Hades",
+        "currentDialogueID": 0,
+        "isEnding": false
+      },
+      {
+        "dialogues": [
+          {
+            "text": "Orfeu: Sua presença tornou a escuridão menos opressora, Sísifo. Agradeço de coração por ter caminhado ao meu lado até aqui."
+          },
+          {
+            "text": "O antigo rei sorri, recebendo as palavras amáveis com um aceno nobre antes de se afastar para o seu fardo."
+          }
+        ],
+        "choices": [],
+        "sceneId": "s3a_gates",
+        "currentDialogueID": 0,
+        "isEnding": false
+      },
+      {
+        "dialogues": [
+          {
+            "text": "Orfeu: Que as pedras um dia rolem a seu favor, Sísifo."
+          },
+          {
+            "text": "O homem sorri com a sua empatia, absorvendo as palavras amargas e gentis enquanto caminha de volta para a escuridão do Tártaro."
+          }
+        ],
+        "choices": [],
+        "sceneId": "s3b_gates",
+        "currentDialogueID": 0,
+        "isEnding": false
+      },
+      {
+        "dialogues": [
+          {
+            "text": "Orfeu: Volte para a sua pedra antes que eu perceba qual era o seu verdadeiro truque."
+          },
+          {
+            "text": "Sísifo dá uma leve risada elegante, desejando-lhe boa sorte com imensa cortesia antes de virar as costas."
+          }
+        ],
+        "choices": [],
+        "sceneId": "s3c_gates",
+        "currentDialogueID": 0,
+        "isEnding": false
+      }
+    ],
+    "title": "Capítulo 4 - O Tártaro",
+    "currentSceneIndex": 0
+  },
+  {
+    "scenes": [
+      {
+        "dialogues": [
+          {
+            "text": "Os imensos portões de ébano se abrem com um estrondo pesado. Orfeu adentra um salão colossal cujo chão é cravejado com diamantes brutos, enquanto as imensas colunas de obsidiana são adornadas com veios de ouro puro e rubis do tamanho de maçãs."
+          },
+          {
+            "text": "No fundo, repousa o rei do Submundo. Seus olhos são frios e calculistas. Ao seu lado, a rainha Perséfone exibe uma beleza pálida e compreensiva, coroada com flores tecidas em prata e rubis."
+          },
+          {
+            "text": "Hades: Orfeu de Trácia. Até mesmo os imortais no cume do Olimpo se calam para ouvir os ecos da sua harpa. Reconheço a sua fama, mortal, mas fama não é moeda de troca no meu reino. O que o traz ao fundo da terra?"
+          },
+          {
+            "text": "Perséfone: Hades, meu amor, os ventos do Tártaro me contaram a jornada que ele trilhou para chegar até nossa casa. Deixe que ele faça sua súplica."
+          },
+          {
+            "text": "O bardo guarda sua harpa. Ele sabe que a música não será suficiente para convencer os senhores do Submundo; ele precisará usar o peso de suas próprias palavras."
+          },
+          {
+            "text": "Qual é o principal argumento de Orfeu para que os deuses devolvam Eurídice?"
+          }
+        ],
+        "choices": [
+          {
+            "text": "Nossas almas foram forjadas como uma só, separá-las é um erro",
+            "nextSceneId": "Julgamento de Hades",
+            "obol": 0,
+            "affinity": 0,
+            "love": 0,
+            "angry": 0,
+            "sadness": 0
+          },
+          {
+            "text": "A escuridão já tomou muito do meu mundo lá em cima, não leve a minha única luz",
+            "nextSceneId": "Julgamento de Hades",
+            "obol": 0,
+            "affinity": 0,
+            "love": 0,
+            "angry": 0,
+            "sadness": 0
+          },
+          {
+            "text": "Ela foi roubada por uma fatalidade cruel antes de viver seu destino!",
+            "nextSceneId": "Julgamento de Hades",
+            "obol": 0,
+            "affinity": 0,
+            "love": 0,
+            "angry": 0,
+            "sadness": 0
+          }
+        ],
+        "sceneId": "Sala do Trono",
+        "currentDialogueID": 0,
+        "isEnding": false
+      },
+      {
+        "dialogues": [
+          {
+            "text": "O silêncio que se segue é denso e sufocante, quebrado apenas pelo tilintar das joias no chão. Hades se inclina em seu trono de ouro negro, pesando a alma de Orfeu e avaliando as atitudes do bardo durante sua jornada."
+          },
+          {
+            "text": "Como Orfeu responde perante o tribunal de Hades?"
+          }
+        ],
+        "choices": [
+          {
+            "text": "Engolir o orgulho e pedir perdão por sua amargura",
+            "nextSceneId": "s2a_judgment",
+            "obol": 0,
+            "affinity": 0,
+            "love": 1,
+            "angry": 0,
+            "sadness": 0
+          },
+          {
+            "text": "Dobrar a aposta e exigir Eurídice de qualquer maneira",
+            "nextSceneId": "Final 3: Punição Eterna",
+            "obol": 0,
+            "affinity": 0,
+            "love": 0,
+            "angry": 0,
+            "sadness": 1
+          }
+        ],
+        "sceneId": "Julgamento de Hades",
+        "currentDialogueID": 0,
+        "isEnding": false
+      },
+      {
+        "dialogues": [
+          {
+            "text": "Orfeu abaixa a cabeça."
+          },
+          {
+            "text": "Orfeu: O desespero cegou meu julgamento, grande Hades. Minha dor me transformou em um monstro para os seus súditos, e eu me arrependo."
+          },
+          {
+            "text": "Perséfone toca o braço do marido. Hades suspira e concorda em lhe dar uma chance."
+          },
+          {
+            "text": "Hades: Leve sua amada de volta para o sol, mas sob uma única regra inquebrável. Ela caminhará atrás de você. Se você olhar para trás antes de deixarem a totalidade dos meus domínios, o acordo estará quebrado e ela será minha para sempre."
+          },
+          {
+            "text": "Hades estala os dedos e uma pequena bolsa de couro cai aos pés de Orfeu, contendo dois óbolos para a travessia de volta."
+          }
+        ],
+        "choices": [],
+        "sceneId": "s2a_judgment",
+        "currentDialogueID": 0,
+        "nextSceneId": "Encontro com Eurídice",
+        "isEnding": false
+      },
+      {
+        "dialogues": [
+          {
+            "text": "Orfeu: Seus mortos são fracos e o seu reino é patético! Eu exijo que ela volte comigo agora!"
+          },
+          {
+            "text": "Hades ergue a mão, com chamas sombrias nos olhos."
+          },
+          {
+            "text": "Hades: Tolo insolente. Você se juntará a eles pela eternidade!"
+          },
+          {
+            "text": "Correntes de bronze surgem do chão, prendendo Orfeu para sempre no Tártaro."
+          },
+          {
+            "text": "[Final 3: Punição Eterna]"
+          }
+        ],
+        "choices": [],
+        "sceneId": "Final 3: Punição Eterna",
+        "currentDialogueID": 0,
+        "isEnding": true
+      },
+      {
+        "dialogues": [
+          {
+            "text": "Perséfone ergue a mão e uma bruma de ametista se forma no centro do salão. Das névoas, uma figura feminina com véu de noiva caminha hesitante. É Eurídice."
+          },
+          {
+            "text": "Ela levanta o olhar e para bruscamente, confusa. Ela olha para as próprias mãos translúcidas e depois para o peito arfante de Orfeu, incapaz de processar o que está acontecendo."
+          },
+          {
+            "text": "Eurídice: Orfeu? É você mesmo? Mas você... você está vivo. Como chegou até aqui? Por quê?"
+          },
+          {
+            "text": "Orfeu: Eu vim te buscar, meu amor. Os senhores do Submundo nos deram permissão. Nós vamos voltar para casa."
+          },
+          {
+            "text": "Eurídice: Voltar...? Orfeu, eu sinto tanto frio aqui, mas... a dor da picada sumiu. As lágrimas e as tristezas do mundo mortal não me alcançam mais. Voltar significa estar viva, mas também significa sangrar de novo, sofrer de novo. Eu... eu não sei se quero sentir toda aquela dor novamente."
+          },
+          {
+            "text": "Como Orfeu tenta convencer Eurídice a abandonar o conforto apático da morte?"
+          }
+        ],
+        "choices": [
+          {
+            "text": "Lembre-se do sol tocando nosso rosto e de tudo o que ainda vamos viver",
+            "nextSceneId": "s3a_eurydice",
+            "npc": "Eurydice",
+            "obol": 0,
+            "affinity": 0,
+            "love": 1,
+            "angry": 0,
+            "sadness": 0
+          },
+          {
+            "text": "Por favor, eu imploro, não me deixe sozinho com esse desespero",
+            "nextSceneId": "s3b_eurydice",
+            "npc": "Eurydice",
+            "obol": 0,
+            "affinity": 0,
+            "love": 0,
+            "angry": 1,
+            "sadness": 0
+          },
+          {
+            "text": "Se você ficar, levarei sua memória comigo como um farol eterno",
+            "nextSceneId": "s3c_eurydice",
+            "npc": "Eurydice",
+            "obol": 0,
+            "affinity": 1,
+            "love": 0,
+            "angry": 0,
+            "sadness": 0
+          }
+        ],
+        "sceneId": "Encontro com Eurídice",
+        "currentDialogueID": 0,
+        "isEnding": false
+      },
+      {
+        "dialogues": [
+          {
+            "text": "Orfeu exibe um sorriso esperançoso, segurando as mãos pálidas dela com carinho."
+          },
+          {
+            "text": "Orfeu: A vida tem espinhos, mas o nosso amor é maior que a morte. Deixe-me cuidar de você de novo."
+          },
+          {
+            "text": "Eurídice sorri docemente, recuperando a firmeza para retornar ao seu lado."
+          }
+        ],
+        "choices": [],
+        "sceneId": "s3a_eurydice",
+        "currentDialogueID": 0,
+        "nextSceneId": "s4_leaving",
+        "isEnding": false
+      },
+      {
+        "dialogues": [
+          {
+            "text": "Orfeu agarra a própria cabeça, com a voz embargada e lágrimas nos olhos."
+          },
+          {
+            "text": "Orfeu: O mundo lá em cima é um vazio sem fim sem você. Eu não consigo respirar, eu não consigo viver! Por favor, volte comigo!"
+          },
+          {
+            "text": "Eurídice se comove profundamente com a sua vulnerabilidade extrema e assente, aproximando-se para acalmá-lo."
+          }
+        ],
+        "choices": [],
+        "sceneId": "s3b_eurydice",
+        "currentDialogueID": 0,
+        "nextSceneId": "s4_leaving",
+        "isEnding": false
+      },
+      {
+        "dialogues": [
+          {
+            "text": "Orfeu respira fundo, aceitando o livre-arbítrio dela com uma dignidade melancólica e serena."
+          },
+          {
+            "text": "Orfeu: Se a sua escolha for o descanso, eu honrarei sua paz e levarei sua luz em minhas canções para sempre."
+          },
+          {
+            "text": "Eurídice o olha com profunda admiração por respeitar sua vontade, tocada pela pureza e maturidade do seu amor."
+          }
+        ],
+        "choices": [],
+        "sceneId": "s3c_eurydice",
+        "currentDialogueID": 0,
+        "nextSceneId": "s4_leaving",
+        "isEnding": false
+      },
+      {
+        "dialogues": [
+          {
+            "text": "Afastando-se dos tronos com dois óbolos em mãos, Orfeu guarda a bolsa com extremo cuidado. Ele olha profundamente nos olhos de sua esposa pela última vez."
+          },
+          {
+            "text": "Orfeu: Lembre-se do acordo. Hades afastou os monstros, o caminho estará livre de perigos, mas eu serei proibido de olhar para o seu rosto. Siga o som dos meus passos."
+          },
+          {
+            "text": "Eurídice concorda lentamente com a cabeça, ainda levemente atônita, mas com o coração decidido. Orfeu solta a mão de sua amada, sentindo o calor abandonar seus dedos. Ele vira as costas para Eurídice e encara os imensos portões do palácio, dando o primeiro passo em direção à longa e angustiante caminhada rumo ao mundo dos vivos."
+          }
+        ],
+        "choices": [],
+        "sceneId": "s4_leaving",
+        "currentDialogueID": 0,
+        "isEnding": false
+      }
+    ],
+    "title": "Capítulo 5 - A Casa de Hades",
+    "currentSceneIndex": 0
+  },
+  {
+    "scenes": [
+      {
+        "dialogues": [
+          {
+            "text": "O silêncio entre o casal na trilha de pedra é denso, cortado apenas pelo som abafado de passos sobre a cinza vulcânica. À margem do caminho, o Tártaro exibe toda a sua crueza: um abismo escaldante onde gritos de desespero e o estalar de chicotes celestes ecoam sem trégua, servindo como um lembrete constante e aterrorizante do que os aguarda caso falhem na travessia."
+          },
+          {
+            "text": "Orfeu caminha à frente, sentindo a tensão pesando em seus ombros. Ele tenta quebrar a atmosfera gélida que se instalou desde que deixaram o palácio."
+          },
+          {
+            "text": "Orfeu: Quando voltarmos para a Trácia, construiremos aquela casa perto do riacho que você tanto queria... O inverno lá fora é rigoroso agora, Eurídice, mas logo a bela primavera vai voltar para aquecer seus dias de novo."
+          },
+          {
+            "text": "Eurídice dá alguns passos em silêncio, a voz soando distante, desprovida da vivacidade de antes."
+          },
+          {
+            "text": "Eurídice: A primavera... É estranho pensar nela. Enquanto eu vagava naquela névoa cinzenta, o tempo perdeu o sentido. Diga-me, Orfeu... O mundo lá em cima continuou gelado e silencioso enquanto eu apodrecia sob a terra? A vida seguiu seu curso tão facilmente assim, como se eu nunca tivesse existido?"
+          },
+          {
+            "text": "Como Orfeu responde à apatia e ao distanciamento melancólico de sua esposa?"
+          }
+        ],
+        "choices": [
+          {
+            "text": "O mundo parou para mim, cada segundo sem você foi uma eternidade",
+            "nextSceneId": "s1a_abyss_echo",
+            "npc": "Eurydice",
+            "obol": 0,
+            "affinity": 1,
+            "love": 0,
+            "angry": 0,
+            "sadness": 1
+          },
+          {
+            "text": "A vida lá fora continua fria e vazia sem o seu reflexo nela",
+            "nextSceneId": "s1b_abyss_echo",
+            "npc": "Eurydice",
+            "obol": 0,
+            "affinity": 0,
+            "love": 1,
+            "angry": 0,
+            "sadness": 1
+          },
+          {
+            "text": "Não pense no passado, o futuro na superfície é o que importa agora",
+            "nextSceneId": "s1c_abyss_echo",
+            "npc": "Eurydice",
+            "obol": 0,
+            "affinity": 0,
+            "love": 0,
+            "angry": 0,
+            "sadness": 0
+          }
+        ],
+        "sceneId": "O Eco do Abismo",
+        "currentDialogueID": 0,
+        "isEnding": false
+      },
+      {
+        "dialogues": [
+          {
+            "text": "Orfeu aperta as mãos, contendo a angústia na voz."
+          },
+          {
+            "text": "Orfeu: Para os outros a vida continuou, mas para o meu coração o tempo congelou no dia em que te perdi."
+          },
+          {
+            "text": "Eurídice o olha por breves segundos, sentindo o peso da devoção dele tocar o eco frio que habita nela agora."
+          }
+        ],
+        "choices": [],
+        "sceneId": "s1a_abyss_echo",
+        "currentDialogueID": 0,
+        "nextSceneId": "A Sombra na Trilha",
+        "isEnding": false
+      },
+      {
+        "dialogues": [
+          {
+            "text": "Orfeu abaixa a cabeça, caminhando com passos arrastados pela culpa."
+          },
+          {
+            "text": "Orfeu: Ninguém cantou, nenhuma alegria verdadeira restou na superfície enquanto você jazia aqui."
+          },
+          {
+            "text": "Ela solta um suspiro frágil, absorvendo a dor compartilhada que os une naquelas sombras."
+          }
+        ],
+        "choices": [],
+        "sceneId": "s1b_abyss_echo",
+        "currentDialogueID": 0,
+        "nextSceneId": "A Sombra na Trilha",
+        "isEnding": false
+      },
+      {
+        "dialogues": [
+          {
+            "text": "Orfeu endurece o tom, tentando apressar o passo para abafar os gritos do abismo."
+          },
+          {
+            "text": "Orfeu: Deixe os mortos com o esquecimento. Nós vencemos a morte, o que importa é o amanhã."
+          },
+          {
+            "text": "Eurídice desvia o olhar para o abismo fumegante, respondendo apenas com um silêncio apático e desconfortável."
+          }
+        ],
+        "choices": [],
+        "sceneId": "s1c_abyss_echo",
+        "currentDialogueID": 0,
+        "nextSceneId": "A Sombra na Trilha",
+        "isEnding": false
+      },
+      {
+        "dialogues": [
+          {
+            "text": "Enquanto avançam pelas fendas rochosas, a presença de Eurídice parece emitir um frio sutil que contrasta com o calor sufocante do Tártaro. Ela caminha rigidamente alguns passos atrás, absorvendo o ambiente macabro ao seu redor de uma forma perturbadora."
+          },
+          {
+            "text": "Orfeu tenta puxar assunto novamente, buscando qualquer indício da mulher vibrante que ela costumava ser antes da tragédia."
+          },
+          {
+            "text": "Orfeu: Lembra-se de quando tocávamos harpa sob as oliveiras? Você dizia que a música era a única coisa capaz de acalmar os deuses."
+          },
+          {
+            "text": "Eurídice para de andar por um instante. Ao fundo, o grito de uma alma torturada corta o ar, e ela parece sintonizar com o som antes de responder."
+          },
+          {
+            "text": "Eurídice: A música... parece tão distante, Orfeu. Aqui embaixo, aprendi que o silêncio é a única verdade duradoura. As vozes do mundo dos vivos parecem apenas ruídos fúteis de quem ainda não entendeu que vai morrer."
+          },
+          {
+            "text": "Como Orfeu lida com a estranheza e a frieza crescente nas palavras de Eurídice?"
+          }
+        ],
+        "choices": [
+          {
+            "text": "A minha música trará você de volta à vida por completo, eu prometo",
+            "nextSceneId": "s2a_trail_shadow",
+            "npc": "Eurydice",
+            "obol": 0,
+            "affinity": 1,
+            "love": 0,
+            "angry": 0,
+            "sadness": 1
+          },
+          {
+            "text": "O Submundo deixou marcas profundas em nós dois, vamos superar isso juntos",
+            "nextSceneId": "s2b_trail_shadow",
+            "npc": "Eurydice",
+            "obol": 0,
+            "affinity": 0,
+            "love": 1,
+            "angry": 0,
+            "sadness": 1
+          },
+          {
+            "text": "Você não é um fantasma, pare de falar como se pertencesse a este lugar maldito",
+            "nextSceneId": "s2c_trail_shadow",
+            "npc": "Eurydice",
+            "obol": 0,
+            "affinity": 0,
+            "love": 0,
+            "angry": 0,
+            "sadness": 0
+          }
+        ],
+        "sceneId": "A Sombra na Trilha",
+        "currentDialogueID": 0,
+        "isEnding": false
+      },
+      {
+        "dialogues": [
+          {
+            "text": "Orfeu ergue a voz levemente, cheio de esperança fervorosa."
+          },
+          {
+            "text": "Orfeu: Assim que deixarmos este reino, o calor do sol vai derreter esse gelo em sua alma."
+          },
+          {
+            "text": "Eurídice esboça um sorriso melancólico e frágil, deixando-se guiar pela fé inabalável do bardo."
+          }
+        ],
+        "choices": [],
+        "sceneId": "s2a_trail_shadow",
+        "currentDialogueID": 0,
+        "nextSceneId": "O Atalho Oculto",
+        "isEnding": false
+      },
+      {
+        "dialogues": [
+          {
+            "text": "Orfeu suspira profundamente, sentindo o peso do sofrimento dela refletido em seu próprio peito."
+          },
+          {
+            "text": "Orfeu: Nenhum de nós saiu ileso daqui, mas suportaremos o fardo lado a lado."
+          },
+          {
+            "text": "Ela assente em silêncio, encontrando consolo na dor mútua."
+          }
+        ],
+        "choices": [],
+        "sceneId": "s2b_trail_shadow",
+        "currentDialogueID": 0,
+        "nextSceneId": "O Atalho Oculto",
+        "isEnding": false
+      },
+      {
+        "dialogues": [
+          {
+            "text": "Orfeu endurece a postura, irritado com a resignação dela diante da morte."
+          },
+          {
+            "text": "Orfeu: Eu cruzei o Submundo para te tirar daqui, então comece a agir como alguém que quer viver!"
+          },
+          {
+            "text": "Eurídice se cala imediatamente, fechando-se em uma apatia ainda mais profunda e distante."
+          }
+        ],
+        "choices": [],
+        "sceneId": "s2c_trail_shadow",
+        "currentDialogueID": 0,
+        "nextSceneId": "O Atalho Oculto",
+        "isEnding": false
+      },
+      {
+        "dialogues": [
+          {
+            "text": "Deixando o calor sufocante e os gritos do Tártaro para trás, Orfeu nota que a trilha rochosa se desvia das rotas comuns dos barqueiros. Conforme as ordens e o favor secreto concedidos por Hades, uma fenda oculta na muralha de basalto se abre diante deles, revelando um túnel iluminado por um brilho dourado e suave."
+          },
+          {
+            "text": "Não há necessidade de enfrentar os rios ou os barcos de Caronte; este atalho místico conduz diretamente aos Campos Elíseos, facilitando a subida final para o mundo dos vivos."
+          },
+          {
+            "text": "Apesar de estarem livres do perigo imediato, a distância emocional entre os dois parece maior do que nunca. Eurídice caminha cabisbaixa, olhando fixamente para os calcanhares de Orfeu na poeira, parecendo mais uma espectra obediente do que uma esposa resgatada."
+          },
+          {
+            "text": "Eurídice: Estamos passando por este caminho dourado... Sinto o ar mudar, mas sinto um vazio estranho. Diga-me a verdade, Orfeu: quando chegarmos à luz, eu serei de fato quem eu era, ou apenas uma lembrança viva que errou o caminho de volta para a cova?"
+          },
+          {
+            "text": "O que Orfeu responde à pergunta cortante e angustiante de Eurídice?"
+          }
+        ],
+        "choices": [
+          {
+            "text": "Você será sempre o meu único lar e o meu maior amor",
+            "nextSceneId": "s3a_hidden_shortcut",
+            "npc": "Eurydice",
+            "obol": 0,
+            "affinity": 1,
+            "love": 0,
+            "angry": 0,
+            "sadness": 1
+          },
+          {
+            "text": "Seremos diferentes, mas vamos sarar as feridas juntos no mundo dos vivos",
+            "nextSceneId": "s3b_hidden_shortcut",
+            "npc": "Eurydice",
+            "obol": 0,
+            "affinity": 0,
+            "love": 1,
+            "angry": 0,
+            "sadness": 1
+          },
+          {
+            "text": "Basta sairmos daqui para que essas tolices saiam da sua cabeça",
+            "nextSceneId": "s3c_hidden_shortcut",
+            "npc": "Eurydice",
+            "obol": 0,
+            "affinity": 0,
+            "love": 0,
+            "angry": 0,
+            "sadness": -1
+          }
+        ],
+        "sceneId": "O Atalho Oculto",
+        "currentDialogueID": 0,
+        "isEnding": false
+      },
+      {
+        "dialogues": [
+          {
+            "text": "Orfeu vira o rosto minimamente para trás, sem contudo quebrar a regra de olhar em seus olhos."
+          },
+          {
+            "text": "Orfeu: Não importa o que mudou em você, meu coração continua batendo apenas por ti."
+          },
+          {
+            "text": "Eurídice respira fundo, sentindo o calor das palavras resgatar uma centelha de humanidade em seu peito."
+          }
+        ],
+        "choices": [],
+        "sceneId": "s3a_hidden_shortcut",
+        "currentDialogueID": 0,
+        "isEnding": false
+      },
+      {
+        "dialogues": [
+          {
+            "text": "Orfeu fala com a voz pesada de melancolia."
+          },
+          {
+            "text": "Orfeu: Ninguém volta imune da morte, Eurídice. Mas carregaremos essa cicatriz em paz, juntos."
+          },
+          {
+            "text": "Ela acena com a cabeça lentamente, aceitando a realidade quebrada de seu retorno."
+          }
+        ],
+        "choices": [],
+        "sceneId": "s3b_hidden_shortcut",
+        "currentDialogueID": 0,
+        "isEnding": false
+      },
+      {
+        "dialogues": [
+          {
+            "text": "Orfeu suspira com aspereza, impaciente com as dúvidas dela."
+          },
+          {
+            "text": "Orfeu: Chega de filosofar sobre fantasmas. Só precisamos continuar andando por este atalho e deixar este inferno para trás."
+          },
+          {
+            "text": "Eurídice se encolhe com a frieza da resposta, mantendo o passo firme, mas completamente isolada em seus próprios pensamentos sombrios."
+          }
+        ],
+        "choices": [],
+        "sceneId": "s3c_hidden_shortcut",
+        "currentDialogueID": 0,
+        "isEnding": false
+      }
+    ],
+    "title": "Capítulo 6 - A volta pelo Tártaro",
+    "currentSceneIndex": 0
+  },
+  {
+    "scenes": [
+      {
+        "dialogues": [
+          {
+            "text": "O calor sufocante e os gritos distantes do Tártaro dão lugar a uma brisa suave, perfumada com o aroma de jasmins e águas cristalinas. O atalho dourado conduz Orfeu e Eurídice diretamente aos Campos Elíseos."
+          },
+          {
+            "text": "Aqui, o cenário é de uma beleza deslumbrante e eterna: prados verdes sob um crepúsculo dourado, onde heróis virtuosos e almas justas caminham em paz, conversando sob a sombra de oliveiras perfeitas. É um contraste brutal com o abismo, oferecendo uma paz profunda e melancólica que parece envolver o espírito como um abraço morno."
+          },
+          {
+            "text": "Orfeu respira fundo, sentindo o alívio momentâneo daquele refúgio celestial, e olha de relance por cima do ombro, lembrando-se estritamente de nunca fitar o rosto de sua amada."
+          },
+          {
+            "text": "Orfeu: Veja, Eurídice... Chegamos aos Elíseos. O pior já passou. Sinta o perfume destas flores. Estamos cada vez mais perto da superfície, do sol e da nossa verdadeira casa."
+          },
+          {
+            "text": "Eurídice caminha devagar, seus pés translúcidos tocando a grama macia. Ela ergue o rosto para a luz dourada, absorvendo a serenidade absoluta daquele lugar sagrado, parecendo cada vez mais distante do bardo."
+          },
+          {
+            "text": "Eurídice: É tão silencioso aqui... A dor da picada e o frio do esquecimento desapareceram por completo. Ninguém chora nos Elíseos, Orfeu. Ninguém sofre."
+          },
+          {
+            "text": "Como Orfeu reage à primeira impressão pacífica que os Elíseos exercem sobre a alma de sua esposa?"
+          }
+        ],
+        "choices": [
+          {
+            "text": "A verdadeira vida tem lágrimas e sorrisos, a paz daqui é apenas uma prisão",
+            "nextSceneId": "s1a_elysium_glow",
+            "npc": "Eurydice",
+            "obol": 0,
+            "affinity": 1,
+            "love": 0,
+            "angry": 0,
+            "sadness": 0
+          },
+          {
+            "text": "Eu entendo o seu cansaço, mas o nosso lugar ainda não é entre os mortos",
+            "nextSceneId": "s1b_elysium_glow",
+            "npc": "Eurydice",
+            "obol": 0,
+            "affinity": 1,
+            "love": 1,
+            "angry": 0,
+            "sadness": 0
+          },
+          {
+            "text": "Não ouse se render agora, depois de tudo o que atravessei para te buscar",
+            "nextSceneId": "s1c_elysium_glow",
+            "npc": "Eurydice",
+            "obol": 0,
+            "affinity": 0,
+            "love": 0,
+            "angry": 0,
+            "sadness": 0
+          }
+        ],
+        "sceneId": "Brilho dos Elíseos",
+        "currentDialogueID": 0,
+        "isEnding": false
+      },
+      {
+        "dialogues": [
+          {
+            "text": "Orfeu aperta as mãos com firmeza."
+          },
+          {
+            "text": "Orfeu: A paz eterna sem o calor do toque humano ou da nossa história não passa de uma mentira dourada. Venha comigo, meu amor."
+          },
+          {
+            "text": "Eurídice o escuta em silêncio, sentindo o chamado do mundo real agitar o marasmo de sua alma."
+          }
+        ],
+        "choices": [],
+        "sceneId": "s1a_elysium_glow",
+        "currentDialogueID": 0,
+        "nextSceneId": "Tentação do Descanso",
+        "isEnding": false
+      },
+      {
+        "dialogues": [
+          {
+            "text": "Orfeu fala com a voz pesada e melancólica, caminhando com passos cautelosos."
+          },
+          {
+            "text": "Orfeu: O descanso é tentador, mas o nosso destino foi brutalmente interrompido. Precisamos terminar o que começamos."
+          },
+          {
+            "text": "Ela suspira fundo, reconhecendo a dor que ainda os une."
+          }
+        ],
+        "choices": [],
+        "sceneId": "s1b_elysium_glow",
+        "currentDialogueID": 0,
+        "nextSceneId": "Tentação do Descanso",
+        "isEnding": false
+      },
+      {
+        "dialogues": [
+          {
+            "text": "Orfeu endurece o tom, perdendo a paciência com a hesitação dela."
+          },
+          {
+            "text": "Orfeu: Eu não enfrentei os deuses e os monstros do inferno para ver você contemplando a paisagem! Continue andando!"
+          },
+          {
+            "text": "Eurídice se encolhe com a hostilidade, distanciando-se ainda mais emocionalmente dele."
+          }
+        ],
+        "choices": [],
+        "sceneId": "s1c_elysium_glow",
+        "currentDialogueID": 0,
+        "nextSceneId": "Tentação do Descanso",
+        "isEnding": false
+      },
+      {
+        "dialogues": [
+          {
+            "text": "Conforme avançam pelas alamedas iluminadas dos Elíseos, algumas figuras ilustres e almas de antigos poetas e ninfas que habitam o paraíso se aproximam respeitosamente. Ao reconhecerem Eurídice, elas sorriem com compaixão e sussurram convites doces, tentando persuadi-la a abandonar a jornada."
+          },
+          {
+            "text": "Alma dos Elíseos: Doce ninfa... Por que retornar a um mundo mortal onde a velhice consome a carne, a dor dilacera o peito e a morte espreita em cada esquina? Aqui não há invernos rigorosos, nem pranto. Fique conosco na luz eterna."
+          },
+          {
+            "text": "Eurídice para de caminhar. A oferta de uma existência livre de sofrimento atinge o seu espírito desgastado, fazendo-a olhar fixamente para a grama dourada, balançando entre a luz e o compromisso com o bardo."
+          },
+          {
+            "text": "Eurídice: Eles têm razão, Orfeu... Lá em cima, eu era apenas uma mortal frágil destinada ao sofrimento. Aqui, encontrei a paz que o mundo me negou. Diga-me a verdade, olhando no fundo da sua alma... Você me trouxe de volta por amor ao que éramos, ou por saudade egoísta do meu canto e da minha companhia?"
+          },
+          {
+            "text": "O que Orfeu responde à pergunta cortante e existencial de Eurídice?"
+          }
+        ],
+        "choices": [
+          {
+            "text": "Eu te amo além da arte, você é a própria razão de o meu coração bater",
+            "nextSceneId": "s2a_temptation",
+            "npc": "Eurydice",
+            "obol": 0,
+            "affinity": 1,
+            "love": 1,
+            "angry": 0,
+            "sadness": 0
+          },
+          {
+            "text": "A saudade da sua alma rasga o meu peito, eu estou perdido sem o seu reflexo",
+            "nextSceneId": "s2b_temptation",
+            "npc": "Eurydice",
+            "obol": 0,
+            "affinity": 1,
+            "love": 0,
+            "angry": 1,
+            "sadness": 0
+          },
+          {
+            "text": "Você é minha esposa e minha responsabilidade, pare de fazer perguntas tolas",
+            "nextSceneId": "s2c_temptation",
+            "npc": "Eurydice",
+            "obol": 0,
+            "affinity": -5,
+            "love": 0,
+            "angry": 0,
+            "sadness": 1
+          }
+        ],
+        "sceneId": "Tentação do Descanso",
+        "currentDialogueID": 0,
+        "isEnding": false
+      },
+      {
+        "dialogues": [
+          {
+            "text": "Orfeu vira o rosto minimamente, com a voz embargada e transbordando de paixão genuína."
+          },
+          {
+            "text": "Orfeu: A minha música não vale nada sem você para ouvi-la. Eu te amo, Eurídice, inteiramente e acima de qualquer verso."
+          },
+          {
+            "text": "Ela sente uma lágrima fantasma escorrer, tocada no fundo do ser pela sinceridade absoluta do bardo."
+          }
+        ],
+        "choices": [],
+        "sceneId": "s2a_temptation",
+        "currentDialogueID": 0,
+        "nextSceneId": "Portas de Asfódelo",
+        "isEnding": false
+      },
+      {
+        "dialogues": [
+          {
+            "text": "Orfeu fala com um tom doloroso, carregado de uma melancolia devastadora."
+          },
+          {
+            "text": "Orfeu: O meu mundo é um deserto cinzento sem a sua presença. Eu não vim buscar a minha musa, vim buscar a minha metade."
+          },
+          {
+            "text": "Eurídice assente lentamente, compreendendo que a dor da perda dele espelhava a sua própria desolação."
+          }
+        ],
+        "choices": [],
+        "sceneId": "s2b_temptation",
+        "currentDialogueID": 0,
+        "nextSceneId": "Portas de Asfódelo",
+        "isEnding": false
+      },
+      {
+        "dialogues": [
+          {
+            "text": "Orfeu endurece a mandíbula, irritado com a dúvida dela em pleno paraíso."
+          },
+          {
+            "text": "Orfeu: Chega de questionamentos! Você vai voltar para casa porque eu decidi que vai. Agora venha!"
+          },
+          {
+            "text": "Eurídice fecha os olhos, engolindo a mágoa e seguindo seus passos com o coração completamente frio e distante."
+          }
+        ],
+        "choices": [],
+        "sceneId": "s2c_temptation",
+        "currentDialogueID": 0,
+        "nextSceneId": "Portas de Asfódelo",
+        "isEnding": false
+      },
+      {
+        "dialogues": [
+          {
+            "text": "Avançando pelos limites dos Campos Elíseos, o brilho dourado e suave do paraíso começa a se dissipar, dando lugar a uma fenda rochosa estreita e descendente que se aprofunda na penumbra. É a entrada para o túnel secreto que atravessa os extensos Campos de Asfódelo, conduzindo lentamente à superfície da Terra por uma rota longa e cinzenta."
+          },
+          {
+            "text": "O ar quente e perfumado dos Elíseos vai dando lugar a uma brisa monótona e empoeirada. O silêncio do limbo recai sobre eles, e a saída para o mundo dos vivos ainda está distante exigindo que o casal caminhe por todo o árduo trajeto subterrâneo antes de alcançar a luz definitiva."
+          },
+          {
+            "text": "Eurídice para por um instante na entrada do túnel escuro, sentindo o peso daquela planície esquecida ecoar em sua alma translúcida mais uma vez."
+          },
+          {
+            "text": "Eurídice: Vamos caminhar por este longo corredor de cinzas... Sinto o vazio de Asfódelo nos chamando. O medo de voltar a sofrer ainda me consome, Orfeu. Como ter certeza de que este sacrifício todo não será em vão?"
+          },
+          {
+            "text": "O que Orfeu faz para guiar sua esposa pelo túnel e dar início a esta etapa final da jornada?"
+          }
+        ],
+        "choices": [
+          {
+            "text": "A dor faz parte da vida, mas o nosso amor tornará tudo suportável",
+            "nextSceneId": "s3a_asphodel_gates",
+            "npc": "Eurydice",
+            "obol": 0,
+            "affinity": 0,
+            "love": 0,
+            "angry": 0,
+            "sadness": 0
+          },
+          {
+            "text": "Caminharemos sob o peso desse luto juntos, até que o tempo cure nossas feridas",
+            "nextSceneId": "s3b_asphodel_gates",
+            "npc": "Eurydice",
+            "obol": 0,
+            "affinity": 1,
+            "love": 1,
+            "angry": 0,
+            "sadness": 0
+          },
+          {
+            "text": "Não ouse hesitar agora que o caminho está aberto para nós!",
+            "nextSceneId": "s3c_asphodel_gates",
+            "npc": "Eurydice",
+            "obol": 0,
+            "affinity": -5,
+            "love": 0,
+            "angry": 0,
+            "sadness": 0
+          }
+        ],
+        "sceneId": "Portas de Asfódelo",
+        "currentDialogueID": 0,
+        "isEnding": false
+      },
+      {
+        "dialogues": [
+          {
+            "text": "Orfeu estende a mão para trás, sem tocá-la, mantendo o calor da sua presença firme."
+          },
+          {
+            "text": "Orfeu: Confie em mim. Eu estarei lá para segurar sua mão em cada passo desta travessia."
+          },
+          {
+            "text": "Eurídice respira fundo, aceitando o risco de viver novamente e dando o passo decisivo para o túnel."
+          }
+        ],
+        "choices": [],
+        "sceneId": "s3a_asphodel_gates",
+        "currentDialogueID": 0,
+        "isEnding": false
+      },
+      {
+        "dialogues": [
+          {
+            "text": "Orfeu abaixa a cabeça, compartilhando do mesmo temor silencioso."
+          },
+          {
+            "text": "Orfeu: Ninguém prometeu que seria fácil, Eurídice. Mas suportaremos a escuridão de mãos dadas."
+          },
+          {
+            "text": "Ela assente de forma solene, reunindo forças para cruzar o limiar de Asfódelo."
+          }
+        ],
+        "choices": [],
+        "sceneId": "s3b_asphodel_gates",
+        "currentDialogueID": 0,
+        "isEnding": false
+      },
+      {
+        "dialogues": [
+          {
+            "text": "Orfeu sibila com impaciência, apontando para a escuridão do túnel com raiva contida."
+          },
+          {
+            "text": "Orfeu: Depois de tudo, você vai amarelar bem na linha de chegada? Ande logo!"
+          },
+          {
+            "text": "Eurídice morde os lábios, trancando qualquer réplica, e avança em direção ao caminho cinzento com o orgulho ferido e o espírito entorpecido."
+          }
+        ],
+        "choices": [],
+        "sceneId": "s3c_asphodel_gates",
+        "currentDialogueID": 0,
+        "isEnding": false
+      }
+    ],
+    "title": "Capítulo 7 - A volta por Elíseos",
+    "currentSceneIndex": 0
+  },
+  {
+    "scenes": [
+      {
+        "dialogues": [
+          {
+            "text": "O longo túnel cinzento se abre, despejando o casal na imensidão monótona dos Campos de Asfódelo. A planície é um mar de poeira e flores pálidas onde milhares de almas vagam sem rumo, presas a um limbo de apatia onde a própria identidade se dissolve lentamente."
+          },
+          {
+            "text": "Aqui, o perigo não é o fogo ou o aço, mas o esquecimento. Conforme avançam pela névoa densa, Eurídice reduz o passo. Seu olhar perde o brilho, tornando-se translúcido e vago como o das outras sombras que os cercam."
+          },
+          {
+            "text": "Eurídice: Orfeu... Há quanto tempo estamos caminhando? O ar aqui é pesado... Sinto como se os meus pensamentos estivessem se desfazendo como fumaça."
+          },
+          {
+            "text": "Ela leva a mão translúcida à testa, franzindo o cenho em um esforço doloroso para focar a mente."
+          },
+          {
+            "text": "Eurídice: Diga-me... Qual era mesmo a cor da túnica que usei no dia do nosso casamento? Era branca, ou... ou azul como o mar? Eu não consigo lembrar. E o som da sua lira... parece apenas um zumbido distante na minha cabeça."
+          },
+          {
+            "text": "Como Orfeu reage ao pânico iminente de ver a esposa se apagando para sempre?"
+          }
+        ],
+        "choices": [
+          {
+            "text": "Deixe-me cantar para você, reviver cada segundo do que fomos",
+            "nextSceneId": "s1a_asphodel_mist",
+            "npc": "Eurydice",
+            "obol": 0,
+            "affinity": 1,
+            "love": 1,
+            "angry": 0,
+            "sadness": 0
+          },
+          {
+            "text": "Ainda estamos juntos, não deixe que este lugar leve o que é nosso",
+            "nextSceneId": "s1b_asphodel_mist",
+            "npc": "Eurydice",
+            "obol": 0,
+            "affinity": 0,
+            "love": 0,
+            "angry": 1,
+            "sadness": 0
+          },
+          {
+            "text": "Concentre-se em andar e pare de prestar atenção a essas névoas tolas!",
+            "nextSceneId": "s1c_asphodel_mist",
+            "npc": "Eurydice",
+            "obol": 0,
+            "affinity": 0,
+            "love": 0,
+            "angry": 0,
+            "sadness": 0
+          }
+        ],
+        "sceneId": "Névoa do Esquecimento",
+        "currentDialogueID": 0,
+        "isEnding": false
+      },
+      {
+        "dialogues": [
+          {
+            "text": "Orfeu sente o desespero rasgar sua garganta, mas aproxima-se dela, segurando a harpa bem junto ao peito. Ele começa a entoar uma melodia extremamente suave, sussurrada quase como uma prece, costurando cada nota com memórias e nomes para ancorar a alma dela à realidade. Eurídice fecha os olhos, deixando as lágrimas reais lavarem o rosto enquanto o som resgata o calor de sua própria história."
+          }
+        ],
+        "choices": [],
+        "sceneId": "s1a_asphodel_mist",
+        "currentDialogueID": 0,
+        "nextSceneId": "Ecos da Distância",
+        "isEnding": false
+      },
+      {
+        "dialogues": [
+          {
+            "text": "Orfeu engole o nó de choro que aperta seu peito, sentindo a exaustão mental e física cobrar seu preço de forma impiedosa. Ele toca uma balada melancólica e dolorosa sobre a perda e a lembrança, dividindo sua própria sanidade com ela para mantê-la sã. Ela aperta os braços, encontrando na dor compartilhada um escudo contra a névoa fria."
+          }
+        ],
+        "choices": [],
+        "sceneId": "s1b_asphodel_mist",
+        "currentDialogueID": 0,
+        "nextSceneId": "Ecos da Distância",
+        "isEnding": false
+      },
+      {
+        "dialogues": [
+          {
+            "text": "Orfeu endurece a voz, já exausto e mentalmente esgotado pelo peso da jornada."
+          },
+          {
+            "text": "Orfeu: Não há tempo para devaneios, Eurídice! Apenas continue seguindo o som dos meus passos e ignore o que este lugar tenta te roubar!"
+          },
+          {
+            "text": "Ela morde os lábios, sentindo-se profundamente sozinha e desamparada, enquanto a névoa cinzenta avança um pouco mais sobre sua mente."
+          }
+        ],
+        "choices": [],
+        "sceneId": "s1c_asphodel_mist",
+        "currentDialogueID": 0,
+        "nextSceneId": "Ecos da Distância",
+        "isEnding": false
+      },
+      {
+        "dialogues": [
+          {
+            "text": "A caminhada pela planície cinzenta consome o que resta das forças de ambos. Orfeu sente os braços dormentes de tanto sustentar a harpa e manter o foco absoluto em guiar o caminho, enquanto sua mente se fragmenta sob o peso do estresse e do terror de olhar para trás por engano."
+          },
+          {
+            "text": "Atrás dele, Eurídice oscila entre momentos de lucidez e lapsos profundos de apatia, murmurando nomes de pessoas e lugares que ela própria começa a confundir com o pó de Asfódelo."
+          },
+          {
+            "text": "Eurídice: Orfeu... Sinto que se eu fechar os olhos por um segundo sequer, eu vou esquecer o calor do sol. Por que tudo aqui parece tão mais fácil de aceitar do que a dor de viver?"
+          },
+          {
+            "text": "Como Orfeu responde ao cansaço supremo e à desistência silenciosa de Eurídice?"
+          }
+        ],
+        "choices": [
+          {
+            "text": "Resista mais um pouco, meu amor, o nosso recomeço está logo ali",
+            "nextSceneId": "s2a_distant_echoes",
+            "npc": "Eurydice",
+            "obol": 0,
+            "affinity": 2,
+            "love": 1,
+            "angry": 0,
+            "sadness": 0
+          },
+          {
+            "text": "A dor de carregar essa lembrança é o preço por estarmos vivos",
+            "nextSceneId": "s2b_distant_echoes",
+            "npc": "Eurydice",
+            "obol": 0,
+            "affinity": 1,
+            "love": 0,
+            "angry": 0,
+            "sadness": 0
+          },
+          {
+            "text": "Reclame menos e ande mais, eu estou carregando todo o peso desta jornada!",
+            "nextSceneId": "s2c_distant_echoes",
+            "npc": "Eurydice",
+            "obol": 0,
+            "affinity": -5,
+            "love": -2,
+            "angry": -2,
+            "sadness": 0
+          }
+        ],
+        "sceneId": "Ecos da Distância",
+        "currentDialogueID": 0,
+        "isEnding": false
+      },
+      {
+        "dialogues": [
+          {
+            "text": "Orfeu inspira fundo, forçando as pernas trêmulas a continuarem andando, emanando uma esperança desesperada."
+          },
+          {
+            "text": "Orfeu: Eu carregarei suas memórias por nós dois até sairmos daqui. Confie em mim."
+          },
+          {
+            "text": "Eurídice assente fracamente, amparando-se na força inabalável que ele ainda tenta sustentar."
+          }
+        ],
+        "choices": [],
+        "sceneId": "s2a_distant_echoes",
+        "currentDialogueID": 0,
+        "nextSceneId": "s3_styx_shore",
+        "isEnding": false
+      },
+      {
+        "dialogues": [
+          {
+            "text": "Orfeu fala com um fio de voz, completamente esgotado física e mentalmente pela pressão do submundo."
+          },
+          {
+            "text": "Orfeu: Lembrar dói, Eurídice, mas o esquecimento é a verdadeira morte. Vamos sofrer juntos, mas vamos sair daqui."
+          },
+          {
+            "text": "Ela concorda em silêncio, aceitando o fardo pesado da existência."
+          }
+        ],
+        "choices": [],
+        "sceneId": "s2b_distant_echoes",
+        "currentDialogueID": 0,
+        "nextSceneId": "s3_styx_shore",
+        "isEnding": false
+      },
+      {
+        "dialogues": [
+          {
+            "text": "Orfeu estala com irritação, perdendo a paciência com a lentidão e a confusão dela."
+          },
+          {
+            "text": "Orfeu: Você acha que é fácil para mim? Mantenha o foco e pare de fraquejar agora!"
+          },
+          {
+            "text": "Eurídice se enclausura em completo silêncio, engolindo a confusão mental e marchando como uma autômata fria e distante."
+          }
+        ],
+        "choices": [],
+        "sceneId": "s2c_distant_echoes",
+        "currentDialogueID": 0,
+        "nextSceneId": "s3_styx_shore",
+        "isEnding": false
+      },
+      {
+        "dialogues": [
+          {
+            "text": "A planície de Asfódelo finalmente termina, dando lugar a uma costa lamacenta e cinzenta. O cheiro de lodo e o ar denso anunciam o fim desta etapa da travessia."
+          },
+          {
+            "text": "Ao longe, cortando as águas escuras e paradas, ergue-se a silhueta familiar da margem oposta do rio Estige. Na penumbra do fundo, aguardando pacientemente junto à sua embarcação rústica, está o barqueiro Caronte, observando a aproximação exausta dos dois com seus olhos frios e indiferentes."
+          },
+          {
+            "text": "Orfeu e Eurídice param à beira da água. O bardo está com o corpo rígido, o suor frio escorrendo pela testa, e a mente no limite absoluto da exaustão após horas lutando contra a névoa do esquecimento. A penúltima barreira os aguarda."
+          }
+        ],
+        "choices": [],
+        "sceneId": "s3_styx_shore",
+        "currentDialogueID": 0,
+        "isEnding": false
+      }
+    ],
+    "title": "Capítulo 8 - A volta por Asfódelo",
+    "currentSceneIndex": 0
+  },
+  {
+    "scenes": [
+      {
+        "dialogues": [
+          {
+            "text": "As águas densas e fétidas do rio Estige correm diante de Orfeu e Eurídice. Na margem, a barca de Caronte balança suavemente na névoa. O barqueiro os aguarda de braços cruzados sobre o remo, com o olhar cético e impaciente de quem não tem tempo a perder."
+          },
+          {
+            "text": "Caronte: Vocês chegaram até aqui com vida e com a permissão dos deuses. Mostrem os óbolos exatos para a travessia e entrem logo no barco, pois não ficarei esperando eternamente."
+          },
+          {
+            "text": "Orfeu tateia rapidamente a pequena bolsa de couro dada por Hades para conferir o pagamento. De repente, Sísifo emerge das sombras, aproximando-se do grupo."
+          }
+        ],
+        "choices": [],
+        "sceneId": "s1_styx_intro",
+        "currentDialogueID": 0,
+        "nextSceneId": "s5_sisyphus_hostile",
+        "condition": {
+          "nextSceneId": "s2_sisyphus_friendly",
+          "npcName": "sisyphus",
+          "type": 0,
+          "love": 0,
+          "sadness": 0,
+          "angry": 0,
+          "affinity": 2
+        },
+        "isEnding": false
+      },
+      {
+        "dialogues": [
+          {
+            "text": "Sísifo abre um sorriso caloroso e caminha na direção de Orfeu para uma despedida amigável."
+          },
+          {
+            "text": "Sísifo: Meu caro bardo! Que alegria vê-lo chegar até aqui. Deixe-me dar um abraço de despedida antes que você cruze para o mundo dos vivos."
+          },
+          {
+            "text": "Num movimento rápido e sutil durante o abraço, Sísifo enfia a mão na bolsa de Orfeu e furta o estatero dourado entregue por Hades, afastando-se logo em seguida com uma piscadela cúmplice. Quando Orfeu percebe o rombo, já é tarde demais."
+          }
+        ],
+        "choices": [],
+        "sceneId": "s2_sisyphus_friendly",
+        "currentDialogueID": 0,
+        "nextSceneId": "s3b_charon_rigidity",
+        "condition": {
+          "nextSceneId": "s9_climax_threshold",
+          "type": 3,
+          "love": 0,
+          "sadness": 0,
+          "angry": 5,
+          "affinity": 0
+        },
+        "isEnding": false
+      },
+      {
+        "dialogues": [
+          {
+            "text": "Com duas moedas a menos devido ao furto de Sísifo, Orfeu apela para o barqueiro."
+          },
+          {
+            "text": "Caronte cruza os braços, mas solta um suspiro pesado, lembrando-se das interações anteriores com o bardo."
+          },
+          {
+            "text": "Caronte: Pelos deuses... Que dor de cabeça desnecessária. Sobe logo nessa barca antes que eu perdoe essa minha mania de ter paciência."
+          },
+          {
+            "text": "Caronte cede à passagem, salvando o dia e permitindo que o casal avance."
+          }
+        ],
+        "choices": [],
+        "sceneId": "s3a_charon_help",
+        "currentDialogueID": 0,
+        "nextSceneId": "s9_climax_threshold",
+        "isEnding": false
+      },
+      {
+        "dialogues": [
+          {
+            "text": "Caronte observa o prejuízo de Orfeu com total indiferença, mantendo a postura irredutível."
+          },
+          {
+            "text": "Caronte: Problema de seu descuido. Minha única responsabilidade é cobrar o óbolo exato. Como faltam duas moedas, não há travessia."
+          },
+          {
+            "text": "Orfeu precisa lidar com a falta de pagamento e com a própria fúria perante a injustiça."
+          }
+        ],
+        "choices": [],
+        "sceneId": "s3b_charon_rigidity",
+        "currentDialogueID": 0,
+        "nextSceneId": "s4b_failed_resignation",
+        "condition": {
+          "nextSceneId": "s4a_melancholy_weight",
+          "type": 2,
+          "love": 0,
+          "sadness": 5,
+          "angry": 0,
+          "affinity": 0
+        },
+        "isEnding": false
+      },
+      {
+        "dialogues": [
+          {
+            "text": "Tomado por uma dor profunda e um pranto devastador ao ver Eurídice imobilizada, o desespero emocional de Orfeu comove vagamente o ambiente, gerando uma abertura trágica, mas salvadora, que força uma reviravolta na margem e permite que prossigam."
+          }
+        ],
+        "choices": [],
+        "sceneId": "s4a_melancholy_weight",
+        "currentDialogueID": 0,
+        "nextSceneId": "s9_climax_threshold",
+        "isEnding": false
+      },
+      {
+        "dialogues": [
+          {
+            "text": "A falta de uma reação enérgica ou de uma dor expressada com força suficiente faz com que o bardo paralise. Sísifo leva a melhor, a oportunidade evapora e o rio permanece intransponível."
+          },
+          {
+            "text": "[Final 4: Orfeu fracassa e Sísifo escapa]"
+          }
+        ],
+        "choices": [],
+        "sceneId": "s4b_failed_resignation",
+        "currentDialogueID": 0,
+        "nextSceneId": "Final 4: Orfeu fracassa e Sísifo escapa",
+        "isEnding": false
+      },
+      {
+        "dialogues": [
+          {
+            "text": "Sísifo não se aproxima com carinho; ele salta de trás de uma rocha, avança diretamente sobre Eurídice e a agarra com força pelos braços, imobilizando-a como refém."
+          },
+          {
+            "text": "Sísifo: Nem ouse dar um passo em frente, Orfeu! Sua desconfiança e seu desrespeito lá no abismo me custaram caro. A sua esposa agora é minha garantia para forçar Caronte a me levar daqui no lugar de vocês!"
+          }
+        ],
+        "choices": [],
+        "sceneId": "s5_sisyphus_hostile",
+        "currentDialogueID": 0,
+        "nextSceneId": "s6b_charon_neutrality",
+        "condition": {
+          "nextSceneId": "s6a_charon_exception",
+          "npcName": "charon",
+          "type": 0,
+          "love": 0,
+          "sadness": 0,
+          "angry": 0,
+          "affinity": 3
+        },
+        "isEnding": false
+      },
+      {
+        "dialogues": [
+          {
+            "text": "Com Eurídice feita de refém por Sísifo, Orfeu implora por ajuda. Apesar da relutância, a afinidade prévia com Caronte pesa a favor do bardo."
+          },
+          {
+            "text": "Caronte: Eu não sou polícia de almas, mas essa audácia no meu rio já passou dos limites."
+          },
+          {
+            "text": "O barqueiro usa seu remo para afastar Sísifo e abrir brecha para resgatarem Eurídice e embarcar."
+          }
+        ],
+        "choices": [],
+        "sceneId": "s6a_charon_exception",
+        "currentDialogueID": 0,
+        "nextSceneId": "s9_climax_threshold",
+        "isEnding": false
+      },
+      {
+        "dialogues": [
+          {
+            "text": "Caronte vira o rosto, recusando-se a intervir no sequestro de Eurídice."
+          },
+          {
+            "text": "Caronte: O problema entre vocês dois não me diz respeito. Resolvam-se na terra firme ou fiquem na margem."
+          },
+          {
+            "text": "Orfeu se vê encurralado, precisando contar com o peso de sua própria dor e melancolia para tentar salvar a esposa."
+          }
+        ],
+        "choices": [],
+        "sceneId": "s6b_charon_neutrality",
+        "currentDialogueID": 0,
+        "isEnding": false
+      },
+      {
+        "dialogues": [
+          {
+            "text": "Consumido pela indignação com o furto e com a frieza do barqueiro, Orfeu desconta toda a sua frustração exigindo e ameaçando desafiar as regras do rio, impressionando Caronte com sua marra ou encontrando uma brecha na própria revolta para forçar a passagem."
+          }
+        ],
+        "choices": [],
+        "sceneId": "s7a_wrath_impulse",
+        "currentDialogueID": 0,
+        "nextSceneId": "s9_climax_threshold",
+        "isEnding": false
+      },
+      {
+        "dialogues": [
+          {
+            "text": "Sem a fúria necessária para impor sua vontade e sem as moedas completas, Orfeu apenas aceita a derrota em silêncio, vendo o barco partir sem eles."
+          },
+          {
+            "text": "[Final 4: Orfeu fracassa e Sísifo escapa]"
+          }
+        ],
+        "choices": [],
+        "sceneId": "s7b_silent_despair",
+        "currentDialogueID": 0,
+        "isEnding": false
+      },
+      {
+        "dialogues": [
+          {
+            "text": "[Final 4: Orfeu fracassa e Sísifo escapa]"
+          }
+        ],
+        "choices": [],
+        "sceneId": "Final 4: Orfeu fracassa e Sísifo escapa",
+        "currentDialogueID": 0,
+        "isEnding": true
+      },
+      {
+        "dialogues": [
+          {
+            "text": "Superados os percalços na margem do Estige - seja contornando o furto de Sísifo ou contornando o sequestro com a ajuda de Caronte -, Orfeu e Eurídice finalmente garantem a travessia final. A barca corta as águas escuras rumo à última etapa da jornada, preparando o terreno para o julgamento definitivo."
+          }
+        ],
+        "choices": [],
+        "sceneId": "s9_climax_threshold",
+        "currentDialogueID": 0,
+        "isEnding": false
+      }
+    ],
+    "title": "Capítulo 9 - O Rio Estíge",
+    "currentSceneIndex": 0
+  },
+  {
+    "scenes": [
+      {
+        "dialogues": [
+          {
+            "text": "A claridade fraca e prateada da superfície começa a se filtrar pelas fendas da rocha acima. O ar gélido e puro da Terra substitui o fedor de lodo do Submundo. Orfeu e Eurídice caminham pelo trecho final da subida, exaustos, pisando nas últimas pedras que separam a morte da vida."
+          },
+          {
+            "text": "A saída está logo ali na frente, a poucos metros de distância, banhada por uma luz real e natural. Mas o silêncio que se estende entre eles mudou de tom; tornou-se frágil, quase imperceptível."
+          },
+          {
+            "text": "Eurídice para de caminhar por um instante, respirando fundo o ar fresco com uma expressão de melancolia profunda."
+          },
+          {
+            "text": "Eurídice: Orfeu... Nós conseguimos. Estamos prestes a pisar no mundo dos vivos de novo. Mas... eu ainda carrego o eco deste lugar no meu peito. Você tem certeza de que há um lugar para mim lá em cima, ao seu lado?"
+          }
+        ],
+        "choices": [],
+        "sceneId": "Último Degrau",
+        "currentDialogueID": 0,
+        "nextSceneId": "Última Conversa",
+        "isEnding": false
+      },
+      {
+        "dialogues": [
+          {
+            "text": "Orfeu continua de costas, obedecendo à rigorosa regra imposta por Hades, mas estende a mão para trás para tentar tocá-la ou sentir sua proximidade."
+          },
+          {
+            "text": "Orfeu: Não há dúvidas, meu amor. O sol vai nos aquecer, a nossa história não terminou nas sombras. Segure minha mão, estamos quase livres."
+          },
+          {
+            "text": "No entanto, conforme os ventos da superfície uivam na fenda da montanha, abafando os sons ao redor, algo aterrorizante acontece. Orfeu de repente percebe que o som dos passos de Eurídice sumiu por completo. Ele tenta tatear o ar com a mão estendida, mas não encontra nada além do vazio gélido."
+          },
+          {
+            "text": "O silêncio absoluto toma o lugar da presença dela. O pânico gela o sangue do bardo: Será que ela escorregou? Será que desistiu e ficou para trás? Ou será que os deuses a levaram de volta?"
+          },
+          {
+            "text": "Como o destino de Orfeu e Eurídice se sela neste último momento?"
+          }
+        ],
+        "choices": [],
+        "sceneId": "Última Conversa",
+        "currentDialogueID": 0,
+        "nextSceneId": "Olhar para trás",
+        "condition": {
+          "nextSceneId": "Teste Afinidade",
+          "type": 1,
+          "love": 10,
+          "sadness": 0,
+          "angry": 0,
+          "affinity": 0
+        },
+        "isEnding": false
+      },
+      {
+        "dialogues": [],
+        "choices": [],
+        "sceneId": "Teste Afinidade",
+        "currentDialogueID": 0,
+        "nextSceneId": "Olhar para trás",
+        "condition": {
+          "nextSceneId": "Não Olhar",
+          "npcName": "Eurydice",
+          "type": 0,
+          "love": 0,
+          "sadness": 0,
+          "angry": 0,
+          "affinity": 10
+        },
+        "isEnding": false
+      },
+      {
+        "dialogues": [],
+        "choices": [
+          {
+            "text": "Ceder ao pânico e olhar para trás",
+            "nextSceneId": "Final 1: Olhe para trás",
+            "obol": 0,
+            "affinity": 0,
+            "love": 0,
+            "angry": 0,
+            "sadness": 99
+          }
+        ],
+        "sceneId": "Olhar para trás",
+        "currentDialogueID": 0,
+        "isEnding": false
+      },
+      {
+        "dialogues": [
+          {
+            "text": "O desespero do silêncio e a incerteza corroem a pouca fé que restava em Orfeu."
+          },
+          {
+            "text": "Incapaz de suportar a ideia de que ela tenha desaparecido na penumbra sem uma resposta, o bardo cede ao pânico e comete o erro fatal:"
+          },
+          {
+            "text": "ele vira o rosto e olha para trás para verificar se ela ainda está lá."
+          },
+          {
+            "text": "Resultado: Os olhos de Eurídice encontram os dele por um único segundo antes de ela começar a desvanecer em névoa cinzenta, puxada de volta para o abismo para sempre."
+          },
+          {
+            "text": "[Final 1: Olhe para trás]"
+          }
+        ],
+        "choices": [],
+        "sceneId": "Final 1: Olhe para trás",
+        "currentDialogueID": 0,
+        "isEnding": true
+      },
+      {
+        "dialogues": [],
+        "choices": [
+          {
+            "text": "Resistir à tentação e confiar",
+            "nextSceneId": "Final 2: Não olhe para trás",
+            "obol": 0,
+            "affinity": 99,
+            "love": 99,
+            "angry": 0,
+            "sadness": 0
+          }
+        ],
+        "sceneId": "Não Olhar",
+        "currentDialogueID": 0,
+        "isEnding": false
+      },
+      {
+        "dialogues": [
+          {
+            "text": "Mesmo com o coração disparado e o silêncio ensurdecedor cortando sua mente,"
+          },
+          {
+            "text": "Orfeu lembra-se de todo o laço que construíram, da força do amor e da confiança mútua que cultivaram a cada passo."
+          },
+          {
+            "text": "Apertando os punhos com uma convicção inabalável, ele resiste à tentação de virar o pescoço."
+          },
+          {
+            "text": "Orfeu: Não... Eu confio em você. Venha, Eurídice!"
+          },
+          {
+            "text": "Um segundo depois, a respiração frágil dela ecoa logo atrás, e a mão gelada, porém firme, toca os dedos dele."
+          },
+          {
+            "text": "Dando o passo final juntos, eles atravessam a fenda e saem sob a luz aberta do sol da Grécia."
+          },
+          {
+            "text": "[Final 2: Não olhe para trás]"
+          }
+        ],
+        "choices": [],
+        "sceneId": "Final 2: Não olhe para trás",
+        "currentDialogueID": 0,
+        "isEnding": true
+      }
+    ],
+    "title": "Capítulo 10 - Não olhe para trás",
+    "currentSceneIndex": 0
+  }
+]

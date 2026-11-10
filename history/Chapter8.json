@@ -1,0 +1,227 @@
+{
+  "scenes": [
+    {
+      "dialogues": [
+        {
+          "text": "O longo túnel cinzento se abre, despejando o casal na imensidão monótona dos Campos de Asfódelo. A planície é um mar de poeira e flores pálidas onde milhares de almas vagam sem rumo, presas a um limbo de apatia onde a própria identidade se dissolve lentamente."
+        },
+        {
+          "text": "Aqui, o perigo não é o fogo ou o aço, mas o esquecimento. Conforme avançam pela névoa densa, Eurídice reduz o passo. Seu olhar perde o brilho, tornando-se translúcido e vago como o das outras sombras que os cercam."
+        },
+        {
+          "text": "Eurídice: Orfeu... Há quanto tempo estamos caminhando? O ar aqui é pesado... Sinto como se os meus pensamentos estivessem se desfazendo como fumaça."
+        },
+        {
+          "text": "Ela leva a mão translúcida à testa, franzindo o cenho em um esforço doloroso para focar a mente."
+        },
+        {
+          "text": "Eurídice: Diga-me... Qual era mesmo a cor da túnica que usei no dia do nosso casamento? Era branca, ou... ou azul como o mar? Eu não consigo lembrar. E o som da sua lira... parece apenas um zumbido distante na minha cabeça."
+        },
+        {
+          "text": "Como Orfeu reage ao pânico iminente de ver a esposa se apagando para sempre?"
+        }
+      ],
+      "choices": [
+        {
+          "text": "Deixe-me cantar para você, reviver cada segundo do que fomos",
+          "nextSceneId": "s1a_asphodel_mist",
+          "npc": "Eurydice",
+          "obol": 0,
+          "affinity": 1,
+          "love": 1,
+          "angry": 0,
+          "sadness": 0
+        },
+        {
+          "text": "Ainda estamos juntos, não deixe que este lugar leve o que é nosso",
+          "nextSceneId": "s1b_asphodel_mist",
+          "npc": "Eurydice",
+          "obol": 0,
+          "affinity": 0,
+          "love": 0,
+          "angry": 1,
+          "sadness": 0
+        },
+        {
+          "text": "Concentre-se em andar e pare de prestar atenção a essas névoas tolas!",
+          "nextSceneId": "s1c_asphodel_mist",
+          "npc": "Eurydice",
+          "obol": 0,
+          "affinity": 0,
+          "love": 0,
+          "angry": 0,
+          "sadness": 0
+        }
+      ],
+      "sceneId": "Névoa do Esquecimento",
+      "currentDialogueID": 0,
+      "isEnding": false
+    },
+    {
+      "dialogues": [
+        {
+          "text": "Orfeu sente o desespero rasgar sua garganta, mas aproxima-se dela, segurando a harpa bem junto ao peito. Ele começa a entoar uma melodia extremamente suave, sussurrada quase como uma prece, costurando cada nota com memórias e nomes para ancorar a alma dela à realidade. Eurídice fecha os olhos, deixando as lágrimas reais lavarem o rosto enquanto o som resgata o calor de sua própria história."
+        }
+      ],
+      "choices": [],
+      "sceneId": "s1a_asphodel_mist",
+      "currentDialogueID": 0,
+      "nextSceneId": "Ecos da Distância",
+      "isEnding": false
+    },
+    {
+      "dialogues": [
+        {
+          "text": "Orfeu engole o nó de choro que aperta seu peito, sentindo a exaustão mental e física cobrar seu preço de forma impiedosa. Ele toca uma balada melancólica e dolorosa sobre a perda e a lembrança, dividindo sua própria sanidade com ela para mantê-la sã. Ela aperta os braços, encontrando na dor compartilhada um escudo contra a névoa fria."
+        }
+      ],
+      "choices": [],
+      "sceneId": "s1b_asphodel_mist",
+      "currentDialogueID": 0,
+      "nextSceneId": "Ecos da Distância",
+      "isEnding": false
+    },
+    {
+      "dialogues": [
+        {
+          "text": "Orfeu endurece a voz, já exausto e mentalmente esgotado pelo peso da jornada."
+        },
+        {
+          "text": "Orfeu: Não há tempo para devaneios, Eurídice! Apenas continue seguindo o som dos meus passos e ignore o que este lugar tenta te roubar!"
+        },
+        {
+          "text": "Ela morde os lábios, sentindo-se profundamente sozinha e desamparada, enquanto a névoa cinzenta avança um pouco mais sobre sua mente."
+        }
+      ],
+      "choices": [],
+      "sceneId": "s1c_asphodel_mist",
+      "currentDialogueID": 0,
+      "nextSceneId": "Ecos da Distância",
+      "isEnding": false
+    },
+    {
+      "dialogues": [
+        {
+          "text": "A caminhada pela planície cinzenta consome o que resta das forças de ambos. Orfeu sente os braços dormentes de tanto sustentar a harpa e manter o foco absoluto em guiar o caminho, enquanto sua mente se fragmenta sob o peso do estresse e do terror de olhar para trás por engano."
+        },
+        {
+          "text": "Atrás dele, Eurídice oscila entre momentos de lucidez e lapsos profundos de apatia, murmurando nomes de pessoas e lugares que ela própria começa a confundir com o pó de Asfódelo."
+        },
+        {
+          "text": "Eurídice: Orfeu... Sinto que se eu fechar os olhos por um segundo sequer, eu vou esquecer o calor do sol. Por que tudo aqui parece tão mais fácil de aceitar do que a dor de viver?"
+        },
+        {
+          "text": "Como Orfeu responde ao cansaço supremo e à desistência silenciosa de Eurídice?"
+        }
+      ],
+      "choices": [
+        {
+          "text": "Resista mais um pouco, meu amor, o nosso recomeço está logo ali",
+          "nextSceneId": "s2a_distant_echoes",
+          "npc": "Eurydice",
+          "obol": 0,
+          "affinity": 2,
+          "love": 1,
+          "angry": 0,
+          "sadness": 0
+        },
+        {
+          "text": "A dor de carregar essa lembrança é o preço por estarmos vivos",
+          "nextSceneId": "s2b_distant_echoes",
+          "npc": "Eurydice",
+          "obol": 0,
+          "affinity": 1,
+          "love": 0,
+          "angry": 0,
+          "sadness": 0
+        },
+        {
+          "text": "Reclame menos e ande mais, eu estou carregando todo o peso desta jornada!",
+          "nextSceneId": "s2c_distant_echoes",
+          "npc": "Eurydice",
+          "obol": 0,
+          "affinity": -5,
+          "love": -2,
+          "angry": -2,
+          "sadness": 0
+        }
+      ],
+      "sceneId": "Ecos da Distância",
+      "currentDialogueID": 0,
+      "isEnding": false
+    },
+    {
+      "dialogues": [
+        {
+          "text": "Orfeu inspira fundo, forçando as pernas trêmulas a continuarem andando, emanando uma esperança desesperada."
+        },
+        {
+          "text": "Orfeu: Eu carregarei suas memórias por nós dois até sairmos daqui. Confie em mim."
+        },
+        {
+          "text": "Eurídice assente fracamente, amparando-se na força inabalável que ele ainda tenta sustentar."
+        }
+      ],
+      "choices": [],
+      "sceneId": "s2a_distant_echoes",
+      "currentDialogueID": 0,
+      "nextSceneId": "s3_styx_shore",
+      "isEnding": false
+    },
+    {
+      "dialogues": [
+        {
+          "text": "Orfeu fala com um fio de voz, completamente esgotado física e mentalmente pela pressão do submundo."
+        },
+        {
+          "text": "Orfeu: Lembrar dói, Eurídice, mas o esquecimento é a verdadeira morte. Vamos sofrer juntos, mas vamos sair daqui."
+        },
+        {
+          "text": "Ela concorda em silêncio, aceitando o fardo pesado da existência."
+        }
+      ],
+      "choices": [],
+      "sceneId": "s2b_distant_echoes",
+      "currentDialogueID": 0,
+      "nextSceneId": "s3_styx_shore",
+      "isEnding": false
+    },
+    {
+      "dialogues": [
+        {
+          "text": "Orfeu estala com irritação, perdendo a paciência com a lentidão e a confusão dela."
+        },
+        {
+          "text": "Orfeu: Você acha que é fácil para mim? Mantenha o foco e pare de fraquejar agora!"
+        },
+        {
+          "text": "Eurídice se enclausura em completo silêncio, engolindo a confusão mental e marchando como uma autômata fria e distante."
+        }
+      ],
+      "choices": [],
+      "sceneId": "s2c_distant_echoes",
+      "currentDialogueID": 0,
+      "nextSceneId": "s3_styx_shore",
+      "isEnding": false
+    },
+    {
+      "dialogues": [
+        {
+          "text": "A planície de Asfódelo finalmente termina, dando lugar a uma costa lamacenta e cinzenta. O cheiro de lodo e o ar denso anunciam o fim desta etapa da travessia."
+        },
+        {
+          "text": "Ao longe, cortando as águas escuras e paradas, ergue-se a silhueta familiar da margem oposta do rio Estige. Na penumbra do fundo, aguardando pacientemente junto à sua embarcação rústica, está o barqueiro Caronte, observando a aproximação exausta dos dois com seus olhos frios e indiferentes."
+        },
+        {
+          "text": "Orfeu e Eurídice param à beira da água. O bardo está com o corpo rígido, o suor frio escorrendo pela testa, e a mente no limite absoluto da exaustão após horas lutando contra a névoa do esquecimento. A penúltima barreira os aguarda."
+        }
+      ],
+      "choices": [],
+      "sceneId": "s3_styx_shore",
+      "currentDialogueID": 0,
+      "isEnding": false
+    }
+  ],
+  "title": "Capítulo 8 - A volta por Asfódelo",
+  "currentSceneIndex": 0
+}

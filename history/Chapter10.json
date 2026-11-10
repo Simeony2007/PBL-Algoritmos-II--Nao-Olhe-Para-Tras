@@ -1,0 +1,162 @@
+{
+  "scenes": [
+    {
+      "dialogues": [
+        {
+          "text": "A claridade fraca e prateada da superfície começa a se filtrar pelas fendas da rocha acima. O ar gélido e puro da Terra substitui o fedor de lodo do Submundo. Orfeu e Eurídice caminham pelo trecho final da subida, exaustos, pisando nas últimas pedras que separam a morte da vida."
+        },
+        {
+          "text": "A saída está logo ali na frente, a poucos metros de distância, banhada por uma luz real e natural. Mas o silêncio que se estende entre eles mudou de tom; tornou-se frágil, quase imperceptível."
+        },
+        {
+          "text": "Eurídice para de caminhar por um instante, respirando fundo o ar fresco com uma expressão de melancolia profunda."
+        },
+        {
+          "text": "Eurídice: Orfeu... Nós conseguimos. Estamos prestes a pisar no mundo dos vivos de novo. Mas... eu ainda carrego o eco deste lugar no meu peito. Você tem certeza de que há um lugar para mim lá em cima, ao seu lado?"
+        }
+      ],
+      "choices": [],
+      "sceneId": "Último Degrau",
+      "currentDialogueID": 0,
+      "nextSceneId": "Última Conversa",
+      "isEnding": false
+    },
+    {
+      "dialogues": [
+        {
+          "text": "Orfeu continua de costas, obedecendo à rigorosa regra imposta por Hades, mas estende a mão para trás para tentar tocá-la ou sentir sua proximidade."
+        },
+        {
+          "text": "Orfeu: Não há dúvidas, meu amor. O sol vai nos aquecer, a nossa história não terminou nas sombras. Segure minha mão, estamos quase livres."
+        },
+        {
+          "text": "No entanto, conforme os ventos da superfície uivam na fenda da montanha, abafando os sons ao redor, algo aterrorizante acontece. Orfeu de repente percebe que o som dos passos de Eurídice sumiu por completo. Ele tenta tatear o ar com a mão estendida, mas não encontra nada além do vazio gélido."
+        },
+        {
+          "text": "O silêncio absoluto toma o lugar da presença dela. O pânico gela o sangue do bardo: Será que ela escorregou? Será que desistiu e ficou para trás? Ou será que os deuses a levaram de volta?"
+        },
+        {
+          "text": "Como o destino de Orfeu e Eurídice se sela neste último momento?"
+        }
+      ],
+      "choices": [],
+      "sceneId": "Última Conversa",
+      "currentDialogueID": 0,
+      "nextSceneId": "Olhar para trás",
+      "condition": {
+        "nextSceneId": "Teste Afinidade",
+        "type": 1,
+        "love": 10,
+        "sadness": 0,
+        "angry": 0,
+        "affinity": 0
+      },
+      "isEnding": false
+    },
+    {
+      "dialogues": [],
+      "choices": [],
+      "sceneId": "Teste Afinidade",
+      "currentDialogueID": 0,
+      "nextSceneId": "Olhar para trás",
+      "condition": {
+        "nextSceneId": "Não Olhar",
+        "npcName": "Eurydice",
+        "type": 0,
+        "love": 0,
+        "sadness": 0,
+        "angry": 0,
+        "affinity": 10
+      },
+      "isEnding": false
+    },
+    {
+      "dialogues": [],
+      "choices": [
+        {
+          "text": "Ceder ao pânico e olhar para trás",
+          "nextSceneId": "Final 1: Olhe para trás",
+          "obol": 0,
+          "affinity": 0,
+          "love": 0,
+          "angry": 0,
+          "sadness": 99
+        }
+      ],
+      "sceneId": "Olhar para trás",
+      "currentDialogueID": 0,
+      "isEnding": false
+    },
+    {
+      "dialogues": [
+        {
+          "text": "O desespero do silêncio e a incerteza corroem a pouca fé que restava em Orfeu."
+        },
+        {
+          "text": "Incapaz de suportar a ideia de que ela tenha desaparecido na penumbra sem uma resposta, o bardo cede ao pânico e comete o erro fatal:"
+        },
+        {
+          "text": "ele vira o rosto e olha para trás para verificar se ela ainda está lá."
+        },
+        {
+          "text": "Resultado: Os olhos de Eurídice encontram os dele por um único segundo antes de ela começar a desvanecer em névoa cinzenta, puxada de volta para o abismo para sempre."
+        },
+        {
+          "text": "[Final 1: Olhe para trás]"
+        }
+      ],
+      "choices": [],
+      "sceneId": "Final 1: Olhe para trás",
+      "currentDialogueID": 0,
+      "isEnding": true
+    },
+    {
+      "dialogues": [],
+      "choices": [
+        {
+          "text": "Resistir à tentação e confiar",
+          "nextSceneId": "Final 2: Não olhe para trás",
+          "obol": 0,
+          "affinity": 99,
+          "love": 99,
+          "angry": 0,
+          "sadness": 0
+        }
+      ],
+      "sceneId": "Não Olhar",
+      "currentDialogueID": 0,
+      "isEnding": false
+    },
+    {
+      "dialogues": [
+        {
+          "text": "Mesmo com o coração disparado e o silêncio ensurdecedor cortando sua mente,"
+        },
+        {
+          "text": "Orfeu lembra-se de todo o laço que construíram, da força do amor e da confiança mútua que cultivaram a cada passo."
+        },
+        {
+          "text": "Apertando os punhos com uma convicção inabalável, ele resiste à tentação de virar o pescoço."
+        },
+        {
+          "text": "Orfeu: Não... Eu confio em você. Venha, Eurídice!"
+        },
+        {
+          "text": "Um segundo depois, a respiração frágil dela ecoa logo atrás, e a mão gelada, porém firme, toca os dedos dele."
+        },
+        {
+          "text": "Dando o passo final juntos, eles atravessam a fenda e saem sob a luz aberta do sol da Grécia."
+        },
+        {
+          "text": "[Final 2: Não olhe para trás]"
+        }
+      ],
+      "choices": [],
+      "sceneId": "Final 2: Não olhe para trás",
+      "currentDialogueID": 0,
+      "isEnding": true
+    }
+  ],
+  "title": "Capítulo 10 - Não olhe para trás",
+  "currentSceneIndex": 0
+}
