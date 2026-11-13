@@ -1,42 +1,28 @@
 package src.view;
 
+import java.util.Stack;
+
 import javafx.application.Application;
+import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
 import javafx.scene.layout.Border;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
+import javafx.scene.paint.Paint;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
-import javafx.stage.Stage;;
+import javafx.scene.control.*;
+import javafx.stage.Stage;
 
 public class WindowMenuInterface extends Application {
 
     @Override
     public void start(Stage principalStage) throws Exception {
-        Button btn1 = createNewButton("Iniciar");
-        Button btn2 = createNewButton("Sair");
 
-        btn1.setTextFill(Color.BLACK);
-        btn2.setTextFill(Color.BLACK);
-
-        btn1.setFont(Font.font("Arial", FontWeight.EXTRA_BOLD, 25));
-        btn2.setFont(Font.font("Arial", 25));
-
-        btn1.setPrefWidth(250);
-        btn2.setPrefWidth(250);
-
-        // 1. VBox empilha os botões verticalmente com 15px de espaço entre eles
-        VBox menuBox = new VBox(15);
-        menuBox.setAlignment(Pos.CENTER);
-        menuBox.getChildren().addAll(btn1, btn2);
-
-        BorderPane borderPane = new BorderPane();
-        Scene menuScene = new Scene(borderPane);
-
-        borderPane.setCenter(menuBox);
+        Scene menuScene = menuScreen();
 
         principalStage.setHeight(600);
         principalStage.setWidth(800);
@@ -45,9 +31,40 @@ public class WindowMenuInterface extends Application {
 
     }
 
-    public Button createNewButton(String text) {
-        Button nButton = new Button(text);
-        return nButton;
+    public Scene menuScreen() {
+        BorderPane bPane = new BorderPane();
+        VBox vBox = new VBox();
+        StackPane stackPane = new StackPane();
+
+        Button btnStart = new Button("Iniciar");
+        Button btnSettings = new Button("Configurações");
+        Button btnCollection = new Button("Coleção");
+        Button btnInstructions = new Button("Instruções");
+        Button btnCredits = new Button("Créditos");
+        Button btnExit = new Button("Fechar jogo");
+
+        Label label = new Label("Título");
+
+        bPane.setTop(stackPane);
+        bPane.setCenter(vBox);
+        vBox.setSpacing(10);
+        vBox.getChildren().addAll(btnStart, btnSettings, btnCollection, btnInstructions, btnCredits, btnExit);
+        vBox.setAlignment(Pos.CENTER);
+        stackPane.getChildren().add(label);
+        label.setPadding(new Insets(50));
+
+        btnStart.setPrefWidth(100);
+        btnSettings.setPrefWidth(100);
+        btnCollection.setPrefWidth(100);
+        btnInstructions.setPrefWidth(100);
+        btnCredits.setPrefWidth(100);
+        btnExit.setPrefWidth(100);
+
+        label.setFont(Font.font("Arial", 30));
+
+        Scene scene = new Scene(bPane);
+
+        return scene;
     }
 
     public static void main(String[] args) {
