@@ -22,10 +22,14 @@ public class Game {
     public Game(SaveState loadedData, Collection collection, Settings settings) {
         this.collection = collection;
 
-        this.state = new GameState(
-                loadedData.orfeu,
-                loadedData.npcs,
-                StoryBuilder.getChapters());
+        try {
+            this.state = new GameState(
+                    loadedData.orfeu,
+                    loadedData.npcs,
+                    StoryBuilder.getChapters());
+        } catch (Exception e) {
+            GameInterface.showTextLn("História do jogo indisponível, não é possível jogar. Reinstale o jogo completo.");
+        }
 
         // Avança silenciosamente até o capítulo salvo
         for (int i = 0; i < loadedData.chapterIndex; i++) {
@@ -115,18 +119,19 @@ public class Game {
                 if (state.isRunning() && settings.isAutoSave()) {
                     // Passamos "null" para a cena, assim o jogo carrega a primeira cena padrão do
                     // capítulo
-                    GameSave.saveCurrentProgress(state, state.getCurrentChapter().getCurrentScene().getNextSceneId(), -1);
-                    GameInterface.printWarning("[!] Jogo salvo automaticamente em autosave " + (settings.getAutoSaveCounter()) + ".");
+                    GameSave.saveCurrentProgress(state, state.getCurrentChapter().getCurrentScene().getNextSceneId(),
+                            -1);
+                    GameInterface.printWarning(
+                            "[!] Jogo salvo automaticamente em autosave " + (settings.getAutoSaveCounter()) + ".");
                 }
             }
         }
-        
+
         GameInterface.clearConsole();
         GameInterface.showGameFinished();
         GameInterface.waitForEnter("\nPressione ENTER para voltar ao Menu Principal...");
         GameInterface.clearConsole();
     }
-
 
     private void littleStop(int milissegundos) {
         try {
@@ -135,7 +140,6 @@ public class Game {
             Thread.currentThread().interrupt();
         }
     }
-
 
     public void setTextSpeed(int speed) {
         textSpeed = speed;
