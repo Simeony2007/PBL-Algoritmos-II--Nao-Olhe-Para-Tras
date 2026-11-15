@@ -1,21 +1,5 @@
 ## Checklist de Pendências:
 
-- [x] Salvar e Selecionar save
-
-- [x] Sistema de confirmação de sobrescrita.
-
-- [x] Exclusão de saves.
-
-- [x] Configurações e a persistência da mesma.
-
-- [x] Registro de finais
-
-- [x] Conquistas
-
-- [x] O contador do Autosave está ultrapassando o limite de 5. _(Corrigi, ao invés de colocar de volta em 1, tava adicionando mais um - Simeony)_
-
-- [x] O final de não olhar para trás não roda
-
-- [x] Exceptions personalizadas.
-
-- [ ] Relatório...
+- [ ] Criar o modelo de tela pra cada coisa
+- [ ] Integrar os eventos ao funcionamento do jogo, provavelmente refatorar parte de Game
+- [ ] Conferir integração de 3 padrões GoF
