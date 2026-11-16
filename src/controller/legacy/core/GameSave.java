@@ -1,4 +1,4 @@
-package src.controller.core;
+package src.controller.legacy.core;
 
 import src.model.repository.SaveManager;
 import src.model.service.GameState;

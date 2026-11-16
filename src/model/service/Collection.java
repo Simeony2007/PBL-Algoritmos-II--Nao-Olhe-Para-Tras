@@ -3,8 +3,8 @@ package src.model.service;
 import java.util.HashMap;
 import java.util.Map;
 
-import src.view.MenuInterface;
 import src.model.repository.SaveManager;
+import src.view.legacy.MenuInterface;
 
 public class Collection {
     boolean final_1; // Final 1: Olhe para trás

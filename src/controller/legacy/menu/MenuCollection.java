@@ -1,7 +1,7 @@
-package src.controller.menu;
+package src.controller.legacy.menu;
 
 import src.model.service.Collection;
-import src.view.MenuInterface;
+import src.view.legacy.MenuInterface;
 
 public class MenuCollection {
     Collection collection;

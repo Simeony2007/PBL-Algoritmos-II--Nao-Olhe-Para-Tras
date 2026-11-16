@@ -1,9 +1,9 @@
-package src.controller.menu;
+package src.controller.legacy.menu;
 
 import src.model.repository.SaveManager;
 import src.model.service.Settings;
+import src.view.legacy.MenuInterface;
 import src.model.service.Collection;
-import src.view.MenuInterface;
 
 public class Menu {
     private Settings settings;

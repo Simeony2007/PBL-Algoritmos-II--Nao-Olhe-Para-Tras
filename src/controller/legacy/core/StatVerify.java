@@ -1,4 +1,4 @@
-package src.controller.core;
+package src.controller.legacy.core;
 
 import java.util.ArrayList;
 

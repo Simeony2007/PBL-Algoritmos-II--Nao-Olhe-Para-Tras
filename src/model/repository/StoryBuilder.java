@@ -19,7 +19,7 @@ import src.model.service.logic.Scene;
 
 public class StoryBuilder {
         public static Object BuildGame;
-        public static final String HISTORY_DIRECTORY = "history/";
+        public static final String STORY_DIRECTORY = "assets/story/";
 
         public static Orfeu getOrfeu() {
                 Orfeu orfeu = new Orfeu(1, 0, 0, 0);
@@ -53,7 +53,7 @@ public class StoryBuilder {
 
         private static Chapter loadChapter(int chapterNumber) throws FileNotFoundException, IOException {
                 Gson gson = new GsonBuilder().setPrettyPrinting().create();
-                File file = new File(HISTORY_DIRECTORY + "Chapter" + chapterNumber + ".json");
+                File file = new File(STORY_DIRECTORY + "Chapter" + chapterNumber + ".json");
 
                 if (!file.exists()) {
                         throw new FileNotFoundException("Não encontrado");

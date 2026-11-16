@@ -1,4 +1,4 @@
-package src.view;
+package src.view.legacy;
 
 import java.util.Map;
 

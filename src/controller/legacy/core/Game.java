@@ -1,4 +1,4 @@
-package src.controller.core;
+package src.controller.legacy.core;
 
 import src.model.repository.SaveManager;
 import src.model.repository.StoryBuilder;
@@ -8,7 +8,7 @@ import src.model.service.SaveState;
 import src.model.service.Settings;
 import src.model.service.logic.Chapter;
 import src.model.service.logic.Scene;
-import src.view.GameInterface;
+import src.view.legacy.GameInterface;
 
 public class Game {
     private GameState state;

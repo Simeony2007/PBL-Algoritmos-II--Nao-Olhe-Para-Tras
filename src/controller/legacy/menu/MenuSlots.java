@@ -1,15 +1,15 @@
-package src.controller.menu;
+package src.controller.legacy.menu;
 
 import java.util.HashMap;
 import java.util.Map;
 
-import src.controller.core.Game;
+import src.controller.legacy.core.Game;
 import src.model.customExceptions.SaveNotFoundException;
 import src.model.repository.SaveManager;
 import src.model.service.SaveState;
 import src.model.service.Settings;
+import src.view.legacy.MenuInterface;
 import src.model.service.Collection;
-import src.view.MenuInterface;
 
 public class MenuSlots {
     Game game;

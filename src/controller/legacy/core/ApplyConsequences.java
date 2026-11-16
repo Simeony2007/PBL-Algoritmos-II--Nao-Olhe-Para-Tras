@@ -1,10 +1,10 @@
-package src.controller.core;
+package src.controller.legacy.core;
 import java.util.ArrayList;
 
 import src.model.service.logic.Choice;
 import src.model.service.logic.Npc;
 import src.model.service.logic.Orfeu;
-import src.view.GameInterface;
+import src.view.legacy.GameInterface;
 
 public class ApplyConsequences {
 

@@ -3,6 +3,27 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Main",
+            "request": "launch",
+            "mainClass": "src.Main",
+            "projectName": "PBL-Algoritmos-II---Jogo-em-Java_e0d7350"
+        },
+        {
+            "type": "java",
+            "name": "TestApp",
+            "request": "launch",
+            "mainClass": "src.view.TestApp",
+            "projectName": "PBL-Algoritmos-II---Jogo-em-Java_e0d7350"
+        },
+        {
+            "type": "java",
+            "name": "WindowMenuInterface",
+            "request": "launch",
+            "mainClass": "src.view.WindowMenuInterface",
+            "projectName": "PBL-Algoritmos-II---Jogo-em-Java_e0d7350"
+        },
+        {
+            "type": "java",
             "name": "WindowMenuInterface",
             "request": "launch",
             "mainClass": "src.view.WindowMenuInterface",

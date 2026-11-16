@@ -27,7 +27,7 @@ public class TestApp extends Application {
         // ==========================================
         // 1. CARREGAMENTO E CONFIGURAÇÃO DA IMAGEM
         // ==========================================
-        File test = new File("test.jpg");
+        File test = new File("assets/sprites/test.jpg");
         InputStream is = new FileInputStream(test);
 
         Image image = new Image(is);

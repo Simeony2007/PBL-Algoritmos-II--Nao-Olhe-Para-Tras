@@ -1,8 +1,8 @@
-package src.controller.menu;
+package src.controller.legacy.menu;
 
 import src.model.repository.SaveManager;
 import src.model.service.Settings;
-import src.view.MenuInterface;
+import src.view.legacy.MenuInterface;
 
 public class MenuSettings {
     Settings settings;

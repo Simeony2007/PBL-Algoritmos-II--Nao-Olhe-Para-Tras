@@ -1,4 +1,4 @@
-package src.view;
+package src.view.legacy;
 
 public class GameInterface extends Interface {
     public static final int MAX_COLLORS = 4;

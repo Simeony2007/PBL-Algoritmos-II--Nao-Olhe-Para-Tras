@@ -1,7 +1,6 @@
 package src;
 
-import src.controller.menu.Menu;
-import src.model.repository.StoryBuilder;
+import src.controller.legacy.menu.Menu;
 
 public class Main {
 	public static void main(String[] args) {

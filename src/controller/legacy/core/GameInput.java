@@ -1,8 +1,8 @@
-package src.controller.core;
+package src.controller.legacy.core;
 
 import src.model.repository.SaveManager;
 import src.model.service.SaveState;
-import src.view.GameInterface;
+import src.view.legacy.GameInterface;
 import src.model.service.GameState;
 
 public class GameInput {
