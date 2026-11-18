@@ -1,7 +1,7 @@
 ## Checklist de Pendências:
 
 - [ ] Telas do Menu:
-- - [ ] Menu Inicial + Instruções + Créditos
+- - [x] Menu Inicial + Instruções + Créditos
 - - [ ] Iniciar
 - - [ ] Configurações
 - - [ ] Coleção
@@ -16,13 +16,15 @@
 - - [ ] Padrão 2
 - - [ ] Padrão 3
 
-- [ ] Sprites e Audios
-- - [x] Sprite Orfeu
-- - [x] Sprite Eurídice
-- - [x] Sprite Sisifo
-- - [x] Sprite Caronte
-- - [x] Sprite Jasão
-- - [x] Sprite Hades
-- - [x] Sprite Persefone
+- [ ] Audiovisual:
+- - [ ] Todos os Sprites dos Personagens:
+- - - [x] Sprite Orfeu
+- - - [x] Sprite Eurídice
+- - - [x] Sprite Sisifo
+- - - [x] Sprite Caronte
+- - - [x] Sprite Jasão
+- - - [x] Sprite Hades
+- - - [x] Sprite Persefone
+- - [ ] Botões e Menus Decorados
 - - [ ] Músicas
 - - [ ] Artes de Fundo (3/?)

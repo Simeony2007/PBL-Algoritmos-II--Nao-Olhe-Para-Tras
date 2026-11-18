@@ -6,6 +6,20 @@
             "name": "Main",
             "request": "launch",
             "mainClass": "src.Main",
+            "projectName": "PBL-Algoritmos-II--Nao-Olhe-Para-Tras_415999ff"
+        },
+        {
+            "type": "java",
+            "name": "WindowMenuInterface",
+            "request": "launch",
+            "mainClass": "src.view.WindowMenuInterface",
+            "projectName": "PBL-Algoritmos-II--Nao-Olhe-Para-Tras_415999ff"
+        },
+        {
+            "type": "java",
+            "name": "Main",
+            "request": "launch",
+            "mainClass": "src.Main",
             "projectName": "PBL-Algoritmos-II---Jogo-em-Java_e0d7350"
         },
         {

@@ -1,9 +1,9 @@
 package src;
 
-import src.controller.legacy.menu.Menu;
+import src.view.MenuInterfaceJFX;
 
 public class Main {
 	public static void main(String[] args) {
-		new Menu();
+		MenuInterfaceJFX.main(args);
 	}
 }
