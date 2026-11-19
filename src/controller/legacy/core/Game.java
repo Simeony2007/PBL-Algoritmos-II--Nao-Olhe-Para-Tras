@@ -9,11 +9,14 @@ import src.model.service.GameState;
 import src.model.service.SaveState;
 import src.model.service.Settings;
 import src.model.service.logic.Chapter;
+import src.model.service.logic.Choice;
 import src.model.service.logic.Scene;
 import src.view.legacy.GameInterface;
+import src.model.Observer;
 
 public class Game {
     private GameState state;
+    private ArrayList<Observer> observers = new ArrayList<>();
     private int textSpeed;
     private Collection collection;
 
@@ -48,107 +51,220 @@ public class Game {
     /**
      * É o Core do jogo, é a lógica de funcionamento.
      * Mostra falas, passa cenas e capítulos de acordo com decisões
+     * 
+     * public void gameRunning() {
+     * Settings settings = SaveManager.loadSettings();
+     * while (state.isRunning()) {
+     * Chapter currentChapter = state.getCurrentChapter();
+     * GameInterface.showChapterTitle(currentChapter.getTitle());
+     * 
+     * while (!state.isCurrentScenesFinished()) {
+     * Scene currentScene = currentChapter.getCurrentScene();
+     * 
+     * // Passa um dialogo até o outro
+     * while (!currentScene.isFinishedAllDialogues()) {
+     * GameInterface.showDialogue(currentScene.nextDialogue());
+     * littleStop(textSpeed);
+     * }
+     * 
+     * GameInterface.showTextLn("");
+     * 
+     * // Se chegar a um dos finais
+     * if (currentScene.isEnding()) {
+     * collection.onFinalReached(currentChapter.getCurrentScene().getSceneId());
+     * state.setRunning(false);
+     * break;
+     * }
+     * 
+     * // Passa as opções de dialogo
+     * if (currentScene.choicesSize() != 0) {
+     * GameInterface.showTextLn(currentScene.getChoicesText());
+     * GameInterface.showPlayerStats(state.getOrfeu().toString());
+     * GameInterface.showPromptChoice();
+     * 
+     * // 3. Passe a currentSceneId para o getInputGame poder salvar a cena certa
+     * int choiceId = GameInput.getInputGame(state, currentScene.choicesSize(),
+     * currentScene.getSceneId());
+     * 
+     * String currentSceneId = ApplyConsequences.applyConsequences(
+     * state.getOrfeu(),
+     * state.getNpcs(),
+     * currentScene.getChoice(choiceId));
+     * currentChapter.changeCurrentScene(currentSceneId);
+     * GameInterface.clearConsole();
+     * 
+     * } else {
+     * // Verifica condições
+     * if (currentScene.getCondition() != null) {
+     * String currentSceneId = StatVerify.selectScene(state.getOrfeu(),
+     * state.getNpcs(), currentScene);
+     * if (currentSceneId != null) {
+     * currentChapter.changeCurrentScene(currentSceneId);
+     * } else if (currentScene.getNextSceneId() != null) {
+     * currentChapter.changeCurrentScene(currentScene.getNextSceneId());
+     * } else {
+     * currentChapter.nextScene();
+     * }
+     * } else if (currentScene.getNextSceneId() != null) {
+     * currentChapter.changeCurrentScene(currentScene.getNextSceneId());
+     * } else {
+     * currentChapter.nextScene();
+     * }
+     * }
+     * }
+     * // Fim de capítulo
+     * if (state.isRunning()) {
+     * GameInterface.waitForEnter("\n[Fim do Capítulo. Pressione ENTER para
+     * avançar...]");
+     * GameInterface.clearConsole();
+     * 
+     * int chapterNumber = state.getCurrentChapterIndex();
+     * collection.onChapterReached(chapterNumber);
+     * 
+     * state.advanceChapter();
+     * 
+     * // AUTO-SAVE: Salva o jogo no início do novo capítulo
+     * if (state.isRunning() && settings.isAutoSave()) {
+     * // Passamos "null" para a cena, assim o jogo carrega a primeira cena padrão
+     * do
+     * // capítulo
+     * GameSave.saveCurrentProgress(state,
+     * state.getCurrentChapter().getCurrentScene().getNextSceneId(),
+     * -1);
+     * GameInterface.printWarning(
+     * "[!] Jogo salvo automaticamente em autosave " +
+     * (settings.getAutoSaveCounter()) + ".");
+     * }
+     * }
+     * }
+     * 
+     * GameInterface.clearConsole();
+     * GameInterface.showGameFinished();
+     * GameInterface.waitForEnter("\nPressione ENTER para voltar ao Menu
+     * Principal...");
+     * GameInterface.clearConsole();
+     * }
+     * 
+     * private void littleStop(int milissegundos) {
+     * try {
+     * Thread.sleep(milissegundos);
+     * } catch (InterruptedException e) {
+     * Thread.currentThread().interrupt();
+     * }
+     * }
+     * 
+     * public void setTextSpeed(int speed) {
+     * textSpeed = speed;
+     * }
      */
-    public void gameRunning() {
-        Settings settings = SaveManager.loadSettings();
-        while (state.isRunning()) {
+
+    public ArrayList<String> allSceneDialoguesQueue() {
+        if (!state.isCurrentScenesFinished()) {
             Chapter currentChapter = state.getCurrentChapter();
-            GameInterface.showChapterTitle(currentChapter.getTitle());
-
-            while (!state.isCurrentScenesFinished()) {
-                Scene currentScene = currentChapter.getCurrentScene();
-
-                // Passa um dialogo até o outro
-                while (!currentScene.isFinishedAllDialogues()) {
-                    GameInterface.showDialogue(currentScene.nextDialogue());
-                    littleStop(textSpeed);
-                }
-
-                GameInterface.showTextLn("");
-
-                // Se chegar a um dos finais
-                if (currentScene.isEnding()) {
-                    collection.onFinalReached(currentChapter.getCurrentScene().getSceneId());
-                    state.setRunning(false);
-                    break;
-                }
-
-                // Passa as opções de dialogo
-                if (currentScene.choicesSize() != 0) {
-                    GameInterface.showTextLn(currentScene.getChoicesText());
-                    GameInterface.showPlayerStats(state.getOrfeu().toString());
-                    GameInterface.showPromptChoice();
-
-                    // 3. Passe a currentSceneId para o getInputGame poder salvar a cena certa
-                    int choiceId = GameInput.getInputGame(state, currentScene.choicesSize(), currentScene.getSceneId());
-
-                    String currentSceneId = ApplyConsequences.applyConsequences(
-                            state.getOrfeu(),
-                            state.getNpcs(),
-                            currentScene.getChoice(choiceId));
-                    currentChapter.changeCurrentScene(currentSceneId);
-                    GameInterface.clearConsole();
-
-                } else {
-                    // Verifica condições
-                    if (currentScene.getCondition() != null) {
-                        String currentSceneId = StatVerify.selectScene(state.getOrfeu(), state.getNpcs(), currentScene);
-                        if (currentSceneId != null) {
-                            currentChapter.changeCurrentScene(currentSceneId);
-                        } else if (currentScene.getNextSceneId() != null) {
-                            currentChapter.changeCurrentScene(currentScene.getNextSceneId());
-                        } else {
-                            currentChapter.nextScene();
-                        }
-                    } else if (currentScene.getNextSceneId() != null) {
-                        currentChapter.changeCurrentScene(currentScene.getNextSceneId());
-                    } else {
-                        currentChapter.nextScene();
-                    }
-                }
+            Scene currentScene = currentChapter.getCurrentScene();
+            ArrayList<String> queue = new ArrayList<>();
+            // Passa um dialogo até o outro
+            while (!currentScene.isFinishedAllDialogues()) {
+                queue.add(currentScene.nextDialogue());
             }
-            // Fim de capítulo
-            if (state.isRunning()) {
-                GameInterface.waitForEnter("\n[Fim do Capítulo. Pressione ENTER para avançar...]");
-                GameInterface.clearConsole();
-
-                int chapterNumber = state.getCurrentChapterIndex();
-                collection.onChapterReached(chapterNumber);
-
-                state.advanceChapter();
-
-                // AUTO-SAVE: Salva o jogo no início do novo capítulo
-                if (state.isRunning() && settings.isAutoSave()) {
-                    // Passamos "null" para a cena, assim o jogo carrega a primeira cena padrão do
-                    // capítulo
-                    GameSave.saveCurrentProgress(state, state.getCurrentChapter().getCurrentScene().getNextSceneId(),
-                            -1);
-                    GameInterface.printWarning(
-                            "[!] Jogo salvo automaticamente em autosave " + (settings.getAutoSaveCounter()) + ".");
-                }
-            }
+            return queue;
         }
-
-        GameInterface.clearConsole();
-        GameInterface.showGameFinished();
-        GameInterface.waitForEnter("\nPressione ENTER para voltar ao Menu Principal...");
-        GameInterface.clearConsole();
+        return null;
     }
 
-    private void littleStop(int milissegundos) {
-        try {
-            Thread.sleep(milissegundos);
-        } catch (InterruptedException e) {
-            Thread.currentThread().interrupt();
+    public ArrayList<String> allSceneChoices() {
+        Chapter currentChapter = state.getCurrentChapter();
+        Scene currentScene = currentChapter.getCurrentScene();
+        ArrayList<String> choicesQueue = new ArrayList<>();
+        if (currentScene.choicesSize() != 0) {
+            choicesQueue.add(currentScene.getChoicesText());
+        }
+        return choicesQueue;
+    }
+
+    public void makeAChoice(int index) {
+        Chapter currentChapter = state.getCurrentChapter();
+        Scene currentScene = currentChapter.getCurrentScene();
+        String currentSceneId = ApplyConsequences.applyConsequences(
+                state.getOrfeu(),
+                state.getNpcs(),
+                currentScene.getChoice(index));
+        notifyObservers();
+        currentChapter.changeCurrentScene(currentSceneId);
+    }
+
+    public void goToNextScene() {
+        Chapter currentChapter = state.getCurrentChapter();
+        Scene currentScene = currentChapter.getCurrentScene();
+        if (currentScene.getCondition() != null) {
+            String currentSceneId = StatVerify.selectScene(state.getOrfeu(), state.getNpcs(), currentScene);
+            if (currentSceneId != null) {
+                currentChapter.changeCurrentScene(currentSceneId);
+            } else if (currentScene.getNextSceneId() != null) {
+                currentChapter.changeCurrentScene(currentScene.getNextSceneId());
+            } else {
+                currentChapter.nextScene();
+            }
+        } else if (currentScene.getNextSceneId() != null) {
+            currentChapter.changeCurrentScene(currentScene.getNextSceneId());
+        } else {
+            currentChapter.nextScene();
         }
     }
 
-    public void setTextSpeed(int speed) {
-        textSpeed = speed;
+    public boolean isTheEndOfChapter() {
+        return state.isCurrentScenesFinished();
     }
 
-    // TODO: Fazer os métodos para transformar GAME em uma FACADE. No caso, seria os
-    // métodos de passar capítulos, aplicar mudanças... ou seja, dividir o
-    // gameRunning em métodos separados(faço depois do almoço kk) - Simeony
+    public String autoSave(Settings settings) {
+        if (state.isRunning() && settings.isAutoSave()) {
+            GameSave.saveCurrentProgress(state, state.getCurrentChapter().getCurrentScene().getNextSceneId(), -1);
+            return "Jogo salvo automaticamente em autosave " + (settings.getAutoSaveCounter()) + ".";
+        }
+        return null;
+    }
+
+    public boolean isTheEndOfGame() {
+        Chapter currentChapter = state.getCurrentChapter();
+        Scene currentScene = currentChapter.getCurrentScene();
+        if (currentScene.isEnding()) {
+            collection.onFinalReached(currentChapter.getCurrentScene().getSceneId());
+            state.setRunning(false);
+            return true;
+        }
+        return false;
+    }
+
+    public String getCurrentChapterTitle() {
+        return state.getCurrentChapter().getTitle();
+    }
+
+    public String nextChapter() {
+        int chapterNumber = state.getCurrentChapterIndex();
+        collection.onChapterReached(chapterNumber);
+        state.advanceChapter();
+        Settings settings = SaveManager.loadSettings();
+        autoSave(settings);
+
+        return null;
+    }
+
+    public int getTextSpeed() {
+        return textSpeed;
+    }
+
+    public void addObservers(Observer newObs) {
+        observers.add(newObs);
+    }
+
+    public void removeObservers(Observer obs) {
+        observers.remove(obs);
+    }
+
+    public void notifyObservers() {
+        for (Observer obs : observers) {
+            obs.modelUpdated(state.getOrfeu());
+        }
+    }
 
 }
