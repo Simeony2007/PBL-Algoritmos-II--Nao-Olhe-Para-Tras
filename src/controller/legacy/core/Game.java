@@ -153,11 +153,10 @@ public class Game {
      * Thread.currentThread().interrupt();
      * }
      * }
-     * 
-     * public void setTextSpeed(int speed) {
-     * textSpeed = speed;
-     * }
      */
+    public void setTextSpeed(int speed) {
+        textSpeed = speed;
+    }
 
     public ArrayList<Map.Entry<String, String>> allSceneDialoguesQueue() {
         if (!state.isCurrentScenesFinished()) {

@@ -1,8 +1,9 @@
 package src.view;
 
+import src.controller.ControllerFX;
 import src.model.Observer;
 import src.model.service.logic.Orfeu;
-
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 
 import java.util.ArrayList;
@@ -24,6 +25,7 @@ import javafx.animation.SequentialTransition;
 public class GameInterfaceJFX implements Observer {
 
     private Scene scene;
+    private ControllerFX fxControl = new ControllerFX(); // Acho que dá pra usar como Static - Simeony
 
     @Override
     public void modelUpdated(Orfeu orfeu) {
@@ -35,6 +37,10 @@ public class GameInterfaceJFX implements Observer {
         // StackPane stackPane = new StackPane();
         HBox hBox = new HBox();
         VBox vBox = new VBox();
+        VBox choicesVBox = new VBox();
+
+        choicesVBox.setVisible(false);
+        choicesVBox.setId("#PainelDeEscolhas");
 
         Label nomePersonagem = new Label();
         Label falaPersonagem = new Label();
@@ -43,6 +49,7 @@ public class GameInterfaceJFX implements Observer {
 
         vBox.getChildren().addAll(nomePersonagem, falaPersonagem);
 
+        bpane.setCenter(choicesVBox);
         bpane.getChildren().add(hBox);
         bpane.getChildren().add(vBox);
 
@@ -85,7 +92,23 @@ public class GameInterfaceJFX implements Observer {
     }
 
     public void showChoicesOptions(ArrayList<String> escolhas) {
-        // TODO
+        VBox choices = (VBox) scene.lookup("#PainelDeEscolhas");
+        ArrayList<Button> choicesList = new ArrayList<>();
+
+        choices.getChildren().clear();
+
+        for (String str : escolhas) {
+            Button nButton = new Button(str);
+            choicesList.add(nButton);
+        }
+
+        choices.getChildren().addAll(choicesList);
+        choices.setVisible(true);
+
+        for (Button cButton : choicesList) {
+            cButton.setOnAction(e -> fxControl.choicedOption(choicesList.indexOf(cButton)));
+        }
+
     }
 
     public void showEndChapter() {

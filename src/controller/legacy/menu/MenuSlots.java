@@ -42,7 +42,7 @@ public class MenuSlots {
                 SaveState loadedState = SaveManager.loadGame(slot);
                 game = new Game(loadedState, collection, settings);
                 game.setTextSpeed(settings.getTextSpeed());
-                game.gameRunning();
+                // game.gameRunning();
                 break;
             case 2:
                 try {
@@ -128,7 +128,7 @@ public class MenuSlots {
         SaveState loadedState = SaveManager.loadGame(slot);
         game = new Game(loadedState, collection, settings);
         game.setTextSpeed(settings.getTextSpeed());
-        game.gameRunning();
+        // game.gameRunning();
     }
 
 }

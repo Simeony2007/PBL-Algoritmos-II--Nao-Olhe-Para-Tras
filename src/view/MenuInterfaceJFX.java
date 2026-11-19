@@ -14,13 +14,26 @@ import javafx.scene.text.FontWeight;
 import javafx.scene.control.*;
 import javafx.stage.Stage;
 import src.controller.ControllerFX;
-import src.controller.StageController;
 import javafx.scene.layout.*;
 
-public class MenuInterfaceJFX {
+public class MenuInterfaceJFX extends Application {
     int buttonWidth = 100;
     ControllerFX controllerFx = new ControllerFX();
-    StageController stgControl = new StageController();
+    Stage principalStage;
+    Scene menuScene;
+
+    @Override
+    public void start(Stage principalStage) throws Exception {
+
+        this.principalStage = principalStage;
+        this.menuScene = menuScreen();
+
+        principalStage.setHeight(600);
+        principalStage.setWidth(800);
+        principalStage.setScene(menuScene);
+        principalStage.show();
+
+    }
 
     public Scene menuScreen() {
         BorderPane bPane = new BorderPane();
@@ -64,14 +77,14 @@ public class MenuInterfaceJFX {
 
         // Apenas para teste atualmente! Isso deve vir da real lista de Metadados dos
         // botões. - Simeony
-        btnStart.setOnAction(e -> stgControl.setScene(slotsScreen(textos)));
+        btnStart.setOnAction(e -> principalStage.setScene(slotsScreen(textos)));
 
-        btnSettings.setOnAction(e -> stgControl.setScene(settingsScreen()));
-        btnCollection.setOnAction(e -> stgControl.setScene(collectionScreen()));
+        btnSettings.setOnAction(e -> principalStage.setScene(settingsScreen()));
+        btnCollection.setOnAction(e -> principalStage.setScene(collectionScreen()));
 
-        btnInstructions.setOnAction(e -> stgControl.setScene(instructionsScreen()));
-        btnCredits.setOnAction(e -> stgControl.setScene(creditsScreen()));
-        btnExit.setOnAction(e -> stgControl.close());
+        btnInstructions.setOnAction(e -> principalStage.setScene(instructionsScreen()));
+        btnCredits.setOnAction(e -> principalStage.setScene(creditsScreen()));
+        btnExit.setOnAction(e -> principalStage.close());
 
         label.setFont(Font.font("Arial", 30));
 
@@ -108,7 +121,7 @@ public class MenuInterfaceJFX {
         for (Button btn : buttonsList) {
             btn.setOnAction(e -> {
                 controllerFx.loader(buttonsList.indexOf(btn));
-                stgControl.startGame();
+                startGame();
             }); // DONE(aparentemente) - Simeony
         }
         Scene scene = new Scene(bPane);
@@ -118,6 +131,10 @@ public class MenuInterfaceJFX {
     // TODO: Fazer essas duas telas! Settings e Collection. - Simeony
     private Scene settingsScreen() {
         return new Scene(null);
+    }
+
+    private void startGame() {
+        // TODO: Precisa fazer o controle pra iniciar GameInterfaceFX
     }
 
     private Scene collectionScreen() {
@@ -149,7 +166,7 @@ public class MenuInterfaceJFX {
 
         btnBack.setPrefWidth(buttonWidth);
 
-        btnBack.setOnAction(e -> stgControl.setScene(menuScene));
+        btnBack.setOnAction(e -> principalStage.setScene(menuScene));
 
         label.setFont(Font.font("Arial", 30));
 
@@ -187,13 +204,17 @@ public class MenuInterfaceJFX {
 
         btnBack.setPrefWidth(buttonWidth);
 
-        btnBack.setOnAction(e -> stgControl.setScene(menuScene));
+        btnBack.setOnAction(e -> principalStage.setScene(menuScene));
 
         label.setFont(Font.font("Arial", 30));
 
         Scene scene = new Scene(bPane);
 
         return scene;
+    }
+
+    public static void main(String[] args) {
+        launch(args);
     }
 
 }
