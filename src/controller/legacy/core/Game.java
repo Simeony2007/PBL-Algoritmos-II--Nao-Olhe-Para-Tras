@@ -177,7 +177,9 @@ public class Game {
         Scene currentScene = currentChapter.getCurrentScene();
         ArrayList<String> choicesQueue = new ArrayList<>();
         if (currentScene.choicesSize() != 0) {
-            choicesQueue.add(currentScene.getChoicesText());
+            for (String texto : currentScene.getChoicesText()) {
+                choicesQueue.add(texto);
+            }
         }
         return choicesQueue;
     }

@@ -12,6 +12,8 @@ import java.util.Map;
 import javafx.animation.KeyFrame;
 import javafx.animation.PauseTransition;
 import javafx.animation.Timeline;
+import javafx.geometry.Insets;
+import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
@@ -19,17 +21,25 @@ import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Polygon;
+import javafx.scene.text.Font;
 import javafx.util.Duration;
 import javafx.animation.SequentialTransition;
 
 public class GameInterfaceJFX implements Observer {
 
     private Scene scene;
-    private ControllerFX fxControl = new ControllerFX(); // Acho que dá pra usar como Static - Simeony
+    private ControllerFX fxControl; // Acho que dá pra usar como Static - Simeony
+    private Label nomePersonagem;
+    private Label falaPersonagem;
+    private VBox choicesVBox;
 
     @Override
     public void modelUpdated(Orfeu orfeu) {
 
+    }
+
+    public void setController(ControllerFX ctrl) {
+        fxControl = ctrl;
     }
 
     public GameInterfaceJFX() {
@@ -37,21 +47,32 @@ public class GameInterfaceJFX implements Observer {
         // StackPane stackPane = new StackPane();
         HBox hBox = new HBox();
         VBox vBox = new VBox();
-        VBox choicesVBox = new VBox();
+        this.choicesVBox = new VBox();
 
         choicesVBox.setVisible(false);
-        choicesVBox.setId("#PainelDeEscolhas");
+        choicesVBox.setId("PainelDeEscolhas");
+        choicesVBox.setAlignment(Pos.CENTER);
+        choicesVBox.setSpacing(12);
+        vBox.setPadding(new Insets(0, 10, 10, 10));
 
-        Label nomePersonagem = new Label();
-        Label falaPersonagem = new Label();
-        nomePersonagem.setId("#NomeDoPersonagem");
-        falaPersonagem.setId("#FalaDoPersonagem");
+        nomePersonagem = new Label();
+        falaPersonagem = new Label();
+
+        nomePersonagem.setFont(new Font("Arial", 20));
+        nomePersonagem.setTextFill(Color.BLACK);
+
+        falaPersonagem.setFont(new Font("Arial", 20));
+        falaPersonagem.setTextFill(Color.BLACK);
+        falaPersonagem.setWrapText(true);
+
+        nomePersonagem.setId("NomeDoPersonagem");
+        falaPersonagem.setId("FalaDoPersonagem");
 
         vBox.getChildren().addAll(nomePersonagem, falaPersonagem);
 
         bpane.setCenter(choicesVBox);
         bpane.getChildren().add(hBox);
-        bpane.getChildren().add(vBox);
+        bpane.setBottom(vBox);
 
         scene = new Scene(bpane);
     }
@@ -61,9 +82,6 @@ public class GameInterfaceJFX implements Observer {
     }
 
     public void showDialogues(ArrayList<Map.Entry<String, String>> dialogos, int speed) {
-        Label nomePersonagem = (Label) scene.lookup("#NomeDoPersonagem");
-        Label falaPersonagem = (Label) scene.lookup("#FalaDoPersonagem");
-
         SequentialTransition sequencia = new SequentialTransition();
 
         for (Map.Entry<String, String> dialogue : dialogos) {
@@ -73,7 +91,7 @@ public class GameInterfaceJFX implements Observer {
             nomePersonagem.setText(nome);
             final int[] contadorLetras = { 0 };
 
-            KeyFrame frame = new KeyFrame(Duration.millis(speed), evento -> {
+            KeyFrame frame = new KeyFrame(Duration.millis(5/* TODO: Colocar velcidade compatível! */), evento -> {
                 contadorLetras[0]++;
                 falaPersonagem.setText(fala.substring(0, contadorLetras[0]));
             });
@@ -81,9 +99,9 @@ public class GameInterfaceJFX implements Observer {
             Timeline timelineFala = new Timeline(frame);
             timelineFala.setCycleCount(fala.length());
 
-            sequencia.getChildren().addAll(timelineFala, new PauseTransition(Duration.seconds(1)));
+            sequencia.getChildren().addAll(timelineFala, new PauseTransition(Duration.seconds(0.5)));
         }
-
+        sequencia.setOnFinished(e -> fxControl.endedDialogues());
         sequencia.play();
     }
 
@@ -92,21 +110,23 @@ public class GameInterfaceJFX implements Observer {
     }
 
     public void showChoicesOptions(ArrayList<String> escolhas) {
-        VBox choices = (VBox) scene.lookup("#PainelDeEscolhas");
         ArrayList<Button> choicesList = new ArrayList<>();
 
-        choices.getChildren().clear();
+        choicesVBox.getChildren().clear();
 
         for (String str : escolhas) {
             Button nButton = new Button(str);
             choicesList.add(nButton);
         }
 
-        choices.getChildren().addAll(choicesList);
-        choices.setVisible(true);
+        choicesVBox.getChildren().addAll(choicesList);
+        choicesVBox.setVisible(true);
 
         for (Button cButton : choicesList) {
-            cButton.setOnAction(e -> fxControl.choicedOption(choicesList.indexOf(cButton)));
+            cButton.setOnAction(e -> {
+                choicesVBox.setVisible(false);
+                fxControl.choicedOption(choicesList.indexOf(cButton));
+            });
         }
 
     }

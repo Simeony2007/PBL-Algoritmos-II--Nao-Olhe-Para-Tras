@@ -44,7 +44,11 @@ public class Dialogue {
 	 *         no NPC, ele adiciona o nome e a fala
 	 */
 	public Map.Entry<String, String> getTexto() {
-		Map.Entry<String, String> dic = Map.entry(npcThatSaidIt, text);
+		String nomeDoNpc = "";
+		if (npcThatSaidIt != null) {
+			nomeDoNpc = npcThatSaidIt;
+		}
+		Map.Entry<String, String> dic = Map.entry(nomeDoNpc, text);
 		return dic;
 	}
 

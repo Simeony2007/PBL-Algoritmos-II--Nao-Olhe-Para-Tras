@@ -81,10 +81,10 @@ public class Scene {
         return dialogues.get(currentDialogueID++).getTexto();
     }
 
-    public String getChoicesText() {
-        String generic = "";
-        for (int i = 0; i < choices.size(); i++) {
-            generic += (i + 1) + " - " + choices.get(i).getText() + "\n";
+    public ArrayList<String> getChoicesText() {
+        ArrayList<String> generic = new ArrayList<>();
+        for (Choice choice : choices) {
+            generic.add(choice.getText());
         }
         return generic;
     }

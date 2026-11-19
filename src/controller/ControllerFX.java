@@ -16,7 +16,11 @@ import src.controller.legacy.core.Game;
 public class ControllerFX {
 
     private Game game;
-    private GameInterfaceJFX view; // Sua View JavaFX (que também pode ser Observer do Game)
+    private GameInterfaceJFX view;
+
+    public void setView(GameInterfaceJFX view) {
+        this.view = view;
+    }
 
     public void loader(int index) {
         SaveState savestate = SaveManager.loadGame(index);
@@ -32,15 +36,13 @@ public class ControllerFX {
     // }
 
     public void startCurrentScene() {
-
         ArrayList<Map.Entry<String, String>> dialogos = game.allSceneDialoguesQueue();
-
+        System.out.println(dialogos);
         int speed = game.getTextSpeed();
         view.showDialogues(dialogos, speed);
-        endedDialogues();
     }
 
-    private void endedDialogues() {
+    public void endedDialogues() {
         // Verifica se é um final
         if (game.isTheEndOfGame()) {
             view.showEndGame(); // Fim do jogo, mostra tela final/sair

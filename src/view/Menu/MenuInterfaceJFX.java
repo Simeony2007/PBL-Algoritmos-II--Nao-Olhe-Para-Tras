@@ -1,4 +1,12 @@
+<<<<<<< HEAD:src/view/MenuInterfaceJFX.java
+package src.view;
+
+import java.util.ArrayList;
+import java.util.Map;
+import java.util.Stack;
+=======
 package src.view.Menu;
+>>>>>>> c0bbb62ce0a07c1fdfa91f99689df6c5661271db:src/view/Menu/MenuInterfaceJFX.java
 
 import javafx.application.Application;
 import javafx.geometry.Insets;
@@ -11,9 +19,17 @@ import javafx.scene.layout.*;
 import javafx.scene.Parent;
 
 public class MenuInterfaceJFX extends Application {
+<<<<<<< HEAD:src/view/MenuInterfaceJFX.java
+    int buttonWidth = 100;
+    ControllerFX controllerFx = new ControllerFX();
+    GameInterfaceJFX ginterface = new GameInterfaceJFX();
+    Stage principalStage;
+    Scene menuScene;
+=======
     private static final int BUTTON_WIDTH = 100;
     private Stage principalStage;
     public Scene menuScene;
+>>>>>>> c0bbb62ce0a07c1fdfa91f99689df6c5661271db:src/view/Menu/MenuInterfaceJFX.java
 
     @Override
     public void start(Stage principalStage) throws Exception {
@@ -83,9 +99,17 @@ public class MenuInterfaceJFX extends Application {
         return new VBox();
     }
 
+<<<<<<< HEAD:src/view/MenuInterfaceJFX.java
+    private void startGame() {
+        principalStage.setScene(ginterface.gameScene());
+        ginterface.setController(controllerFx);
+        controllerFx.setView(ginterface);
+        controllerFx.startCurrentScene();
+=======
     private Parent collectionScreen() {
         return CollectionsJFX.createView(() -> menuScene.setRoot(menuScreen()));
         
+>>>>>>> c0bbb62ce0a07c1fdfa91f99689df6c5661271db:src/view/Menu/MenuInterfaceJFX.java
     }
 
     private Parent creditsScreen() {
