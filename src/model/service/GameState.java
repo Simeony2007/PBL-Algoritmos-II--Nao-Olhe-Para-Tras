@@ -2,11 +2,13 @@ package src.model.service;
 
 import java.util.ArrayList;
 
+import src.model.Observer;
 import src.model.service.logic.Chapter;
 import src.model.service.logic.Npc;
 import src.model.service.logic.Orfeu;
 
 public class GameState {
+    private ArrayList<Observer> observers = new ArrayList<>();
     private Orfeu orfeu;
     private ArrayList<Npc> npcs;
     private ArrayList<Chapter> chapters;
@@ -20,6 +22,20 @@ public class GameState {
         this.chapters = chapters;
         this.currentChapterIndex = 0;
         this.isRunning = true;
+    }
+
+    public void addObservers(Observer newObs) {
+        observers.add(newObs);
+    }
+
+    public void removeObservers(Observer obs) {
+        observers.remove(obs);
+    }
+
+    public void notifyObservers() {
+        for (Observer obs : observers) {
+            obs.modelUpdated(orfeu);
+        }
     }
 
     public Orfeu getOrfeu() {
@@ -38,7 +54,7 @@ public class GameState {
     }
 
     public int getCurrentChapterIndex() {
-       return currentChapterIndex;
+        return currentChapterIndex;
     }
 
     public void advanceChapter() {

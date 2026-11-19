@@ -1,5 +1,6 @@
 package src.view;
 
+import java.util.ArrayList;
 import java.util.Stack;
 
 import javafx.application.Application;
@@ -12,6 +13,7 @@ import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.scene.control.*;
 import javafx.stage.Stage;
+import src.model.repository.SaveManager;
 import javafx.scene.layout.*;
 
 public class MenuInterfaceJFX extends Application {
@@ -61,11 +63,25 @@ public class MenuInterfaceJFX extends Application {
         btnCredits.setPrefWidth(buttonWidth);
         btnExit.setPrefWidth(buttonWidth);
 
+        // TESTE!
+        ArrayList<String> textos = new ArrayList<>();
+        textos.add("teste");
+        textos.add("teste1");
+        textos.add("teste2");
+        textos.add("teste2");
+        textos.add("teste2");
+        textos.add("teste2");
+        textos.add("teste2");
+        textos.add("teste2");
+
+        // Apenas para teste atualmente! Isso deve vir da real lista de Metadados dos
+        // botões. - Simeony
+        btnStart.setOnAction(e -> principalStage.setScene(slotsScreen(textos)));
         /*
-        btnStart.setOnAction(e -> principalStage.setScene(menuSlots));
-        btnSettings.setOnAction(e -> principalStage.setScene(menuSlots));
-        btnCollection.setOnAction(e -> principalStage.setScene(menuSlots));
-        */
+         * 
+         * btnSettings.setOnAction(e -> principalStage.setScene(menuSlots));
+         * btnCollection.setOnAction(e -> principalStage.setScene(menuSlots));
+         */
         btnInstructions.setOnAction(e -> principalStage.setScene(instructionsScreen()));
         btnCredits.setOnAction(e -> principalStage.setScene(creditsScreen()));
         btnExit.setOnAction(e -> principalStage.close());
@@ -77,7 +93,40 @@ public class MenuInterfaceJFX extends Application {
         return scene;
     }
 
-    private Scene creditsScreen (){
+    private Scene slotsScreen(ArrayList<String> textOfButtons) {
+        BorderPane bPane = new BorderPane();
+        VBox vBox = new VBox();
+        StackPane stackPane = new StackPane();
+        bPane.setLeft(vBox);
+
+        Label title = new Label("Slots");
+        title.setFont(Font.font("Arial", 30));
+        bPane.setTop(stackPane);
+        stackPane.getChildren().add(title);
+        title.setPadding(new Insets(50));
+
+        ArrayList<Button> buttonsList = new ArrayList<>();
+
+        for (String str : textOfButtons) {
+            Button nSlot = new Button(str);
+            // nSlot.setMaxWidth(buttonWidth);
+            nSlot.setMinWidth(buttonWidth);
+            buttonsList.add(nSlot);
+        }
+        vBox.getChildren().addAll(buttonsList);
+        vBox.setPadding(new Insets(0, 0, 0, 30));
+        vBox.setAlignment(Pos.CENTER);
+        vBox.setSpacing(10);
+
+        for (Button btn : buttonsList) {
+            btn.setOnAction(e -> controllerFx.loader(buttonsList.indexOf(btn))); // TODO: Método de carregar save no
+                                                                                 // ControllerFX - Simeony
+        }
+        Scene scene = new Scene(bPane);
+        return scene;
+    }
+
+    private Scene creditsScreen() {
         BorderPane bPane = new BorderPane();
         VBox vBox = new VBox();
         StackPane stackPane = new StackPane();
@@ -85,8 +134,9 @@ public class MenuInterfaceJFX extends Application {
         Button btnBack = new Button("Voltar");
 
         Label label = new Label("Créditos");
-        Label labelCredits = new Label("Desenvolvido por:\n Pedro e Simeony\n\n" + "Universo e História inspirados na mitologia grega, em especial o conto de Orfeu e Eurídice\n\n" +
-        "Artes:\n Retiradas do jogo Hades e Hades 2\n\n" + "Músicas:\n Retiradas do jogo Hades e Hades 2");
+        Label labelCredits = new Label("Desenvolvido por:\n Pedro e Simeony\n\n"
+                + "Universo e História inspirados na mitologia grega, em especial o conto de Orfeu e Eurídice\n\n" +
+                "Artes:\n Retiradas do jogo Hades e Hades 2\n\n" + "Músicas:\n Retiradas do jogo Hades e Hades 2");
 
         bPane.setTop(stackPane);
         bPane.setCenter(vBox);
@@ -101,9 +151,7 @@ public class MenuInterfaceJFX extends Application {
 
         btnBack.setPrefWidth(buttonWidth);
 
-        
         btnBack.setOnAction(e -> principalStage.setScene(menuScene));
-        
 
         label.setFont(Font.font("Arial", 30));
 
@@ -112,7 +160,7 @@ public class MenuInterfaceJFX extends Application {
         return scene;
     }
 
-    private Scene instructionsScreen (){
+    private Scene instructionsScreen() {
         BorderPane bPane = new BorderPane();
         VBox vBox = new VBox();
         StackPane stackPane = new StackPane();
@@ -121,12 +169,13 @@ public class MenuInterfaceJFX extends Application {
 
         Label label = new Label("Instruções");
         Label labelInstructions = new Label("Objetivo:\n- Atravessar o Submundo e recuperar sua Amada.\n\n" +
-        "Como Jogar:\n- Selecione uma opção clicando no botão correspondente.\n\n" +
-        "Mecânicas:\n- Orfeu possui 3 atributos, Amor, Raiva e Tristeza, eles aumentam ou diminuem conforme suas escolhas\n" +
-        "- Orfeu também irá coletar óbolos (moedas) para atravessar o Submundo.\n" +
-        "- Você também fará relacionamento com alguns personagens.\n" +
-        "- Tanto o relacionameto, quanto os atributos terão consequências futuras.\n\n" +
-        "Para salvar manualmente, digite \"salvar\" no momento onde uma escolha for exigida.");
+                "Como Jogar:\n- Selecione uma opção clicando no botão correspondente.\n\n" +
+                "Mecânicas:\n- Orfeu possui 3 atributos, Amor, Raiva e Tristeza, eles aumentam ou diminuem conforme suas escolhas\n"
+                +
+                "- Orfeu também irá coletar óbolos (moedas) para atravessar o Submundo.\n" +
+                "- Você também fará relacionamento com alguns personagens.\n" +
+                "- Tanto o relacionameto, quanto os atributos terão consequências futuras.\n\n" +
+                "Para salvar manualmente, digite \"salvar\" no momento onde uma escolha for exigida.");
         bPane.setTop(stackPane);
         bPane.setCenter(vBox);
         vBox.setSpacing(10);
@@ -140,9 +189,7 @@ public class MenuInterfaceJFX extends Application {
 
         btnBack.setPrefWidth(buttonWidth);
 
-        
         btnBack.setOnAction(e -> principalStage.setScene(menuScene));
-        
 
         label.setFont(Font.font("Arial", 30));
 

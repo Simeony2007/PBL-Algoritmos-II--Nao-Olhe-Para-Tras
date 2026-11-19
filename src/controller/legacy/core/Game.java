@@ -1,5 +1,7 @@
 package src.controller.legacy.core;
 
+import java.util.ArrayList;
+
 import src.model.repository.SaveManager;
 import src.model.repository.StoryBuilder;
 import src.model.service.Collection;
@@ -49,6 +51,7 @@ public class Game {
      */
     public void gameRunning() {
         Settings settings = SaveManager.loadSettings();
+        ArrayList<String> dialoguesQueue = new ArrayList<>();
         while (state.isRunning()) {
             Chapter currentChapter = state.getCurrentChapter();
             GameInterface.showChapterTitle(currentChapter.getTitle());
@@ -58,8 +61,9 @@ public class Game {
 
                 // Passa um dialogo até o outro
                 while (!currentScene.isFinishedAllDialogues()) {
-                    GameInterface.showDialogue(currentScene.nextDialogue());
-                    littleStop(textSpeed);
+                    dialoguesQueue.add(currentScene.nextDialogue());
+                    // GameInterface.showDialogue(currentScene.nextDialogue());
+                    // littleStop(textSpeed);
                 }
 
                 GameInterface.showTextLn("");

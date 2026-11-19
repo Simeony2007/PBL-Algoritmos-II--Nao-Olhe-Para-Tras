@@ -1,4 +1,4 @@
-package src.view;
+package src.view._sandbox;
 
 import java.io.File;
 import java.io.FileInputStream;
