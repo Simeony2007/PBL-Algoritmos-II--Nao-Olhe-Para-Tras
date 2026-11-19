@@ -13,6 +13,7 @@ import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.scene.control.*;
 import javafx.stage.Stage;
+import src.controller.ControllerFX;
 import src.model.repository.SaveManager;
 import javafx.scene.layout.*;
 
@@ -20,6 +21,7 @@ public class MenuInterfaceJFX extends Application {
     int buttonWidth = 100;
     Stage principalStage;
     Scene menuScene;
+    ControllerFX controllerFx = new ControllerFX();
 
     @Override
     public void start(Stage principalStage) throws Exception {
@@ -77,11 +79,10 @@ public class MenuInterfaceJFX extends Application {
         // Apenas para teste atualmente! Isso deve vir da real lista de Metadados dos
         // botões. - Simeony
         btnStart.setOnAction(e -> principalStage.setScene(slotsScreen(textos)));
-        /*
-         * 
-         * btnSettings.setOnAction(e -> principalStage.setScene(menuSlots));
-         * btnCollection.setOnAction(e -> principalStage.setScene(menuSlots));
-         */
+
+        btnSettings.setOnAction(e -> principalStage.setScene(settingsScreen()));
+        btnCollection.setOnAction(e -> principalStage.setScene(collectionScreen()));
+
         btnInstructions.setOnAction(e -> principalStage.setScene(instructionsScreen()));
         btnCredits.setOnAction(e -> principalStage.setScene(creditsScreen()));
         btnExit.setOnAction(e -> principalStage.close());
@@ -119,11 +120,19 @@ public class MenuInterfaceJFX extends Application {
         vBox.setSpacing(10);
 
         for (Button btn : buttonsList) {
-            btn.setOnAction(e -> controllerFx.loader(buttonsList.indexOf(btn))); // TODO: Método de carregar save no
-                                                                                 // ControllerFX - Simeony
+            btn.setOnAction(e -> controllerFx.loader(buttonsList.indexOf(btn))); // DONE(aparentemente) - Simeony
         }
         Scene scene = new Scene(bPane);
         return scene;
+    }
+
+    // TODO: Fazer essas duas telas! Settings e Collection. - Simeony
+    private Scene settingsScreen() {
+        return new Scene(null);
+    }
+
+    private Scene collectionScreen() {
+        return new Scene(null);
     }
 
     private Scene creditsScreen() {

@@ -51,7 +51,6 @@ public class Game {
      */
     public void gameRunning() {
         Settings settings = SaveManager.loadSettings();
-        ArrayList<String> dialoguesQueue = new ArrayList<>();
         while (state.isRunning()) {
             Chapter currentChapter = state.getCurrentChapter();
             GameInterface.showChapterTitle(currentChapter.getTitle());
@@ -61,9 +60,8 @@ public class Game {
 
                 // Passa um dialogo até o outro
                 while (!currentScene.isFinishedAllDialogues()) {
-                    dialoguesQueue.add(currentScene.nextDialogue());
-                    // GameInterface.showDialogue(currentScene.nextDialogue());
-                    // littleStop(textSpeed);
+                    GameInterface.showDialogue(currentScene.nextDialogue());
+                    littleStop(textSpeed);
                 }
 
                 GameInterface.showTextLn("");
@@ -148,5 +146,9 @@ public class Game {
     public void setTextSpeed(int speed) {
         textSpeed = speed;
     }
+
+    // TODO: Fazer os métodos para transformar GAME em uma FACADE. No caso, seria os
+    // métodos de passar capítulos, aplicar mudanças... ou seja, dividir o
+    // gameRunning em métodos separados(faço depois do almoço kk) - Simeony
 
 }
