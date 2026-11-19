@@ -1,6 +1,7 @@
 package src.controller.legacy.core;
 
 import java.util.ArrayList;
+import java.util.Map;
 
 import src.model.repository.SaveManager;
 import src.model.repository.StoryBuilder;
@@ -158,11 +159,11 @@ public class Game {
      * }
      */
 
-    public ArrayList<String> allSceneDialoguesQueue() {
+    public ArrayList<Map.Entry<String, String>> allSceneDialoguesQueue() {
         if (!state.isCurrentScenesFinished()) {
             Chapter currentChapter = state.getCurrentChapter();
             Scene currentScene = currentChapter.getCurrentScene();
-            ArrayList<String> queue = new ArrayList<>();
+            ArrayList<Map.Entry<String, String>> queue = new ArrayList<>();
             // Passa um dialogo até o outro
             while (!currentScene.isFinishedAllDialogues()) {
                 queue.add(currentScene.nextDialogue());

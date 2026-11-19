@@ -7,6 +7,7 @@ import src.model.service.Settings;
 import src.view.GameInterfaceJFX;
 
 import java.util.ArrayList;
+import java.util.Map;
 
 import src.controller.legacy.core.ApplyConsequences;
 import src.controller.legacy.core.Game;
@@ -32,7 +33,7 @@ public class ControllerFX {
 
     public void startCurrentScene() {
 
-        ArrayList<String> dialogos = game.allSceneDialoguesQueue();
+        ArrayList<Map.Entry<String, String>> dialogos = game.allSceneDialoguesQueue();
 
         int speed = game.getTextSpeed();
         view.showDialogues(dialogos, speed);
