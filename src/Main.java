@@ -1,6 +1,6 @@
 package src;
 
-import src.view.MenuInterfaceJFX;
+import src.view.Menu.MenuInterfaceJFX;
 
 public class Main {
 	public static void main(String[] args) {

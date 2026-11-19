@@ -1,32 +1,25 @@
-package src.view;
-
-import java.util.ArrayList;
-import java.util.Stack;
+package src.view.Menu;
 
 import javafx.application.Application;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
-import javafx.scene.paint.Color;
-import javafx.scene.paint.Paint;
 import javafx.scene.text.Font;
-import javafx.scene.text.FontWeight;
 import javafx.scene.control.*;
 import javafx.stage.Stage;
-import src.controller.ControllerFX;
 import javafx.scene.layout.*;
+import javafx.scene.Parent;
 
 public class MenuInterfaceJFX extends Application {
-    int buttonWidth = 100;
-    ControllerFX controllerFx = new ControllerFX();
-    Stage principalStage;
-    Scene menuScene;
+    private static final int BUTTON_WIDTH = 100;
+    private Stage principalStage;
+    public Scene menuScene;
 
     @Override
     public void start(Stage principalStage) throws Exception {
 
         this.principalStage = principalStage;
-        this.menuScene = menuScreen();
+        this.menuScene = new Scene(menuScreen());
 
         principalStage.setHeight(600);
         principalStage.setWidth(800);
@@ -35,7 +28,7 @@ public class MenuInterfaceJFX extends Application {
 
     }
 
-    public Scene menuScreen() {
+    public Parent menuScreen() {
         BorderPane bPane = new BorderPane();
         VBox vBox = new VBox();
         StackPane stackPane = new StackPane();
@@ -57,91 +50,45 @@ public class MenuInterfaceJFX extends Application {
         stackPane.getChildren().add(label);
         label.setPadding(new Insets(50));
 
-        btnStart.setPrefWidth(buttonWidth);
-        btnSettings.setPrefWidth(buttonWidth);
-        btnCollection.setPrefWidth(buttonWidth);
-        btnInstructions.setPrefWidth(buttonWidth);
-        btnCredits.setPrefWidth(buttonWidth);
-        btnExit.setPrefWidth(buttonWidth);
+        btnStart.setPrefWidth(BUTTON_WIDTH);
+        btnSettings.setPrefWidth(BUTTON_WIDTH);
+        btnCollection.setPrefWidth(BUTTON_WIDTH);
+        btnInstructions.setPrefWidth(BUTTON_WIDTH);
+        btnCredits.setPrefWidth(BUTTON_WIDTH);
+        btnExit.setPrefWidth(BUTTON_WIDTH);
 
-        // TESTE!
-        ArrayList<String> textos = new ArrayList<>();
-        textos.add("teste");
-        textos.add("teste1");
-        textos.add("teste2");
-        textos.add("teste2");
-        textos.add("teste2");
-        textos.add("teste2");
-        textos.add("teste2");
-        textos.add("teste2");
 
         // Apenas para teste atualmente! Isso deve vir da real lista de Metadados dos
         // botões. - Simeony
-        btnStart.setOnAction(e -> principalStage.setScene(slotsScreen(textos)));
+        btnStart.setOnAction(e -> menuScene.setRoot(slotsScreen()));
 
-        btnSettings.setOnAction(e -> principalStage.setScene(settingsScreen()));
-        btnCollection.setOnAction(e -> principalStage.setScene(collectionScreen()));
+        btnSettings.setOnAction(e -> menuScene.setRoot(settingsScreen()));
+        btnCollection.setOnAction(e -> menuScene.setRoot(collectionScreen()));
 
-        btnInstructions.setOnAction(e -> principalStage.setScene(instructionsScreen()));
-        btnCredits.setOnAction(e -> principalStage.setScene(creditsScreen()));
+        btnInstructions.setOnAction(e -> menuScene.setRoot(instructionsScreen()));
+        btnCredits.setOnAction(e -> menuScene.setRoot(creditsScreen()));
         btnExit.setOnAction(e -> principalStage.close());
 
         label.setFont(Font.font("Arial", 30));
 
-        Scene scene = new Scene(bPane);
-
-        return scene;
+        return bPane;
     }
 
-    private Scene slotsScreen(ArrayList<String> textOfButtons) {
-        BorderPane bPane = new BorderPane();
-        VBox vBox = new VBox();
-        StackPane stackPane = new StackPane();
-        bPane.setLeft(vBox);
-
-        Label title = new Label("Slots");
-        title.setFont(Font.font("Arial", 30));
-        bPane.setTop(stackPane);
-        stackPane.getChildren().add(title);
-        title.setPadding(new Insets(50));
-
-        ArrayList<Button> buttonsList = new ArrayList<>();
-
-        for (String str : textOfButtons) {
-            Button nSlot = new Button(str);
-            // nSlot.setMaxWidth(buttonWidth);
-            nSlot.setMinWidth(buttonWidth);
-            buttonsList.add(nSlot);
+    private Parent slotsScreen() {
+        return new VBox();
         }
-        vBox.getChildren().addAll(buttonsList);
-        vBox.setPadding(new Insets(0, 0, 0, 30));
-        vBox.setAlignment(Pos.CENTER);
-        vBox.setSpacing(10);
-
-        for (Button btn : buttonsList) {
-            btn.setOnAction(e -> {
-                controllerFx.loader(buttonsList.indexOf(btn));
-                startGame();
-            }); // DONE(aparentemente) - Simeony
-        }
-        Scene scene = new Scene(bPane);
-        return scene;
-    }
 
     // TODO: Fazer essas duas telas! Settings e Collection. - Simeony
-    private Scene settingsScreen() {
-        return new Scene(null);
+    private Parent settingsScreen() {
+        return new VBox();
     }
 
-    private void startGame() {
-        // TODO: Precisa fazer o controle pra iniciar GameInterfaceFX
+    private Parent collectionScreen() {
+        return CollectionsJFX.createView(() -> menuScene.setRoot(menuScreen()));
+        
     }
 
-    private Scene collectionScreen() {
-        return new Scene(null);
-    }
-
-    private Scene creditsScreen() {
+    private Parent creditsScreen() {
         BorderPane bPane = new BorderPane();
         VBox vBox = new VBox();
         StackPane stackPane = new StackPane();
@@ -164,18 +111,16 @@ public class MenuInterfaceJFX extends Application {
         stackPane.getChildren().add(label);
         label.setPadding(new Insets(50));
 
-        btnBack.setPrefWidth(buttonWidth);
+        btnBack.setPrefWidth(BUTTON_WIDTH);
 
-        btnBack.setOnAction(e -> principalStage.setScene(menuScene));
+        btnBack.setOnAction(e -> menuScene.setRoot(menuScreen()));
 
         label.setFont(Font.font("Arial", 30));
 
-        Scene scene = new Scene(bPane);
-
-        return scene;
+        return bPane;
     }
 
-    private Scene instructionsScreen() {
+    private Parent instructionsScreen() {
         BorderPane bPane = new BorderPane();
         VBox vBox = new VBox();
         StackPane stackPane = new StackPane();
@@ -202,15 +147,13 @@ public class MenuInterfaceJFX extends Application {
         stackPane.getChildren().add(label);
         label.setPadding(new Insets(50));
 
-        btnBack.setPrefWidth(buttonWidth);
+        btnBack.setPrefWidth(BUTTON_WIDTH);
 
-        btnBack.setOnAction(e -> principalStage.setScene(menuScene));
+        btnBack.setOnAction(e -> menuScene.setRoot(menuScreen()));
 
         label.setFont(Font.font("Arial", 30));
 
-        Scene scene = new Scene(bPane);
-
-        return scene;
+        return bPane;
     }
 
     public static void main(String[] args) {

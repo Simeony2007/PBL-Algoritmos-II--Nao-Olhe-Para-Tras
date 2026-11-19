@@ -17,10 +17,10 @@ public class MenuCollection {
             choice = getCollectionMenuOption();
             MenuInterface.clearConsole();
             if (choice == 1) {
-                collection.showEndings();
+//               collection.showEndings();
                 MenuInterface.getTextInput();
             } else if (choice == 2) {
-                collection.showAchievements();
+//                collection.showAchievements();
                 MenuInterface.getTextInput();
             }
             MenuInterface.clearConsole();

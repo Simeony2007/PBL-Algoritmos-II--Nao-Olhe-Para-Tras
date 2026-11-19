@@ -3,6 +3,27 @@
     "configurations": [
         {
             "type": "java",
+            "name": "StageController",
+            "request": "launch",
+            "mainClass": "src.controller.StageController",
+            "projectName": "PBL-Algoritmos-II--Nao-Olhe-Para-Tras_415999ff"
+        },
+        {
+            "type": "java",
+            "name": "CollectionsInterfaceJFX",
+            "request": "launch",
+            "mainClass": "src.view.CollectionsInterfaceJFX",
+            "projectName": "PBL-Algoritmos-II--Nao-Olhe-Para-Tras_415999ff"
+        },
+        {
+            "type": "java",
+            "name": "GaleriaApp",
+            "request": "launch",
+            "mainClass": "src.view.GaleriaApp",
+            "projectName": "PBL-Algoritmos-II--Nao-Olhe-Para-Tras_415999ff"
+        },
+        {
+            "type": "java",
             "name": "Game",
             "request": "launch",
             "mainClass": "src.controller.legacy.core.Game",
