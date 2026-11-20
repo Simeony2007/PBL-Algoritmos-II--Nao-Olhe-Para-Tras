@@ -37,7 +37,9 @@ public class ControllerFX {
     public void startCurrentScene() {
         ArrayList<Map.Entry<String, String>> dialogos = DialoguesParser
                 .dialogueSeparator(game.allSceneDialoguesQueue());
-        System.out.println(dialogos);
+        System.out.println(dialogos); // TODO: Remover quando tudo tiver certo
+        String nomeImagem = game.getCurrentChapterBgName();
+        view.setChapterBackground(nomeImagem);
         int speed = game.getTextSpeed();
         view.showDialogues(dialogos, speed);
     }

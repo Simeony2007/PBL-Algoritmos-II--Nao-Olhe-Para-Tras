@@ -1,9 +1,9 @@
 {
   "orfeu": {
-    "obol": 0,
-    "love": 3,
-    "angry": 0,
-    "sadness": 0
+    "obol": 2,
+    "love": 6,
+    "angry": 1,
+    "sadness": 6
   },
   "npcs": [
     {
@@ -19,5 +19,5 @@
       "affinity": 0
     }
   ],
-  "chapterIndex": 2
+  "chapterIndex": 6
 }

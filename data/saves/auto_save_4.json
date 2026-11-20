@@ -1,9 +1,9 @@
 {
   "orfeu": {
     "obol": 0,
-    "love": 3,
+    "love": 1,
     "angry": 0,
-    "sadness": 0
+    "sadness": 2
   },
   "npcs": [
     {

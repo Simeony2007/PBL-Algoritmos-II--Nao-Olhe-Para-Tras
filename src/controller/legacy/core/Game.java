@@ -174,6 +174,29 @@ public class Game {
         return null;
     }
 
+    public String getCurrentChapterBgName() {
+        Chapter currenChapter = state.getCurrentChapter();
+        switch (currenChapter.getTitle()) {
+            case "Capítulo 1 - A Entrada do Submundo":
+                return "asphodel.png"; // só pra teste - Simeony
+            case "Capítulo 2 - Campos de Asfódelos":
+                return "asphodel.png";
+            case "Capítulo 3 - Campos Elíseos":
+                return "elysium.jpg";
+            case "Capítulo 4 - O Tártaro":
+                return "tartarus.jpg";
+            case "Capítulo 6 - A volta pelo Tártaro":
+                return "tartarus.jpg";
+            case "Capítulo 7 - A volta por Elíseos":
+                return "elysium.jpg";
+            case "Capítulo 8 - A volta por Asfódelo":
+                return "asphodel.png";
+
+            default:
+                return "";
+        }
+    }
+
     public ArrayList<String> allSceneChoices() {
         Chapter currentChapter = state.getCurrentChapter();
         Scene currentScene = currentChapter.getCurrentScene();
