@@ -3,19 +3,15 @@ package src.model.repository;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
-import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
-import src.model.service.SaveState;
 import src.model.service.logic.Chapter;
-import src.model.service.logic.Condition;
 import src.model.service.logic.Npc;
 import src.model.service.logic.Orfeu;
-import src.model.service.logic.Scene;
 
 public class StoryBuilder {
         public static Object BuildGame;

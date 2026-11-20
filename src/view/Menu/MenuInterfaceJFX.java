@@ -62,13 +62,9 @@ public class MenuInterfaceJFX extends Application {
         btnExit.setPrefWidth(BUTTON_WIDTH);
 
 
-        // Apenas para teste atualmente! Isso deve vir da real lista de Metadados dos
-        // botões. - Simeony
         btnStart.setOnAction(e -> menuScene.setRoot(slotsScreen()));
-
         btnSettings.setOnAction(e -> menuScene.setRoot(settingsScreen()));
         btnCollection.setOnAction(e -> menuScene.setRoot(collectionScreen()));
-
         btnInstructions.setOnAction(e -> menuScene.setRoot(instructionsScreen()));
         btnCredits.setOnAction(e -> menuScene.setRoot(creditsScreen()));
         btnExit.setOnAction(e -> principalStage.close());

@@ -17,10 +17,10 @@ public class MenuSettings {
         while (choice != 4) {
             choice = getSettingsMenuOption();
             if (choice == 1) {
-                settings.setAutosave();
+//                settings.toggleAutosave();
             } else if (choice == 2) {
-                settings.changeColorNumber();
-                MenuInterface.changeColor(settings.getColorNum());
+//                settings.changeColorNumber();
+//                MenuInterface.changeColor(settings.getColorNum());
             } else if (choice == 3) {
                 settings.changeTextSpeed();
             }
@@ -33,7 +33,7 @@ public class MenuSettings {
     private int getSettingsMenuOption() {
         while (true) {
             try {
-                MenuInterface.showSettings(settings.isAutoSave(), settings.getColorNum(), settings.getTextSpeed());
+//                MenuInterface.showSettings(settings.isAutoSave(), settings.getColorNum(), settings.getTextSpeed());
                 String userInput = MenuInterface.getTextInput();
                 int number = Integer.parseInt(userInput.trim());
                 if (number > 0 && number <= 4) {

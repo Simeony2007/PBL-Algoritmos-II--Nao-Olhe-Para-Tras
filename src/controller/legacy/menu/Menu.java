@@ -16,7 +16,7 @@ public class Menu {
     private void iniciar() {
         settings = SaveManager.loadSettings();
         collection = SaveManager.loadCollection();
-        MenuInterface.changeColor(settings.getColorNum());
+//        MenuInterface.changeColor(settings.getColorNum());
         int opcao = 0;
         while (opcao != 6) {
             opcao = inputOptions();

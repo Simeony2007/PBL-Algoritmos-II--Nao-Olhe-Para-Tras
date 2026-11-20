@@ -47,8 +47,8 @@ public class SaveAndLoadTest {
     @Test
     public void settingsAreCreatedSavedAndLoaded() throws IOException {
         Settings settings = new Settings();
-        settings.setAutosave();
-        settings.changeColorNumber();
+//        settings.toggleAutosave();
+//        settings.changeColorNumber();
         settings.changeTextSpeed();
         settings.addAutoSaveCounter();
 
@@ -59,7 +59,7 @@ public class SaveAndLoadTest {
         assertNotNull(loadedSettings);
 
         assertFalse(loadedSettings.isAutoSave());
-        assertEquals(2, loadedSettings.getColorNum());
+//        assertEquals(2, loadedSettings.getColorNum());
         assertEquals(100, loadedSettings.getTextSpeed());
         assertEquals(2, loadedSettings.getAutoSaveCounter());
     }

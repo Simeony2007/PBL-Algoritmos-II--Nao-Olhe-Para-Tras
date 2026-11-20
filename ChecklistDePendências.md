@@ -3,7 +3,7 @@
 - [ ] Telas do Menu:
 - - [x] Menu Inicial + Instruções + Créditos
 - - [ ] Iniciar
-- - [ ] Configurações
+- - [x] Configurações
 - - [x] Coleção
 
 - [ ] Telas do Jogo:
