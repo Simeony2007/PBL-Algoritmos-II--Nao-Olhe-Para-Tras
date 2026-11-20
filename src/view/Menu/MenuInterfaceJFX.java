@@ -11,7 +11,7 @@ import javafx.scene.layout.*;
 import javafx.scene.Parent;
 import src.controller.ControllerFX;
 import src.controller.SlotsMenuJFX;
-import src.view.GameInterfaceJFX;
+import src.view.Game.GameInterfaceJFX;
 
 public class MenuInterfaceJFX extends Application {
     private static final int BUTTON_WIDTH = 100;

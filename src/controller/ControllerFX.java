@@ -4,7 +4,10 @@ import src.model.repository.SaveManager;
 import src.model.service.Collection;
 import src.model.service.SaveState;
 import src.model.service.Settings;
-import src.view.GameInterfaceJFX;
+import src.model.service.logic.Npc;
+import src.model.service.logic.Orfeu;
+import src.view.Game.GameInterfaceJFX;
+import src.model.Observer;
 
 import java.util.ArrayList;
 import java.util.Map;
@@ -12,14 +15,13 @@ import java.util.Map;
 import src.controller.legacy.core.Game;
 
 // FACADE ENTRE O GAME E O VIEWJFX 
-public class ControllerFX {
+public class ControllerFX implements Observer {
 
     private Game game;
     private GameInterfaceJFX view;
 
     public void setView(GameInterfaceJFX view) {
         this.view = view;
-        game.addObservers(view);
     }
 
     public void loader(int index) {
@@ -27,6 +29,7 @@ public class ControllerFX {
         Collection collection = SaveManager.loadCollection();
         Settings settings = SaveManager.loadSettings();
         game = new Game(savestate, collection, settings);
+        game.addObservers(this);
     }
 
     // public void loader(int index, Collection collection) {
@@ -81,6 +84,39 @@ public class ControllerFX {
     public void startNextChapter() {
         game.nextChapter();
         startCurrentScene();
+    }
+
+    @Override
+    public void modelUpdated(Orfeu orfeu, ArrayList<Npc> npcs, Orfeu oldOrfeu, ArrayList<Npc> oldNpcs) {
+        for (int i = 0; i < npcs.size(); i++) {
+            int diffAff = npcs.get(i).getAffinity() - oldNpcs.get(i).getAffinity();
+            if (diffAff != 0) {
+                view.showNotification(String.format("%s: %+d de afinidade", npcs.get(i).getName(), diffAff));
+            }
+        }
+
+        int quantAngry = orfeu.getAngry() - oldOrfeu.getAngry();
+        int quantObol = orfeu.getObol() - oldOrfeu.getObol();
+        int quantLove = orfeu.getLove() - oldOrfeu.getLove();
+        int quantSadness = orfeu.getSadness() - oldOrfeu.getSadness();
+
+        if (quantAngry != 0) {
+            view.showNotification(String.format("%+d de raiva para Orfeu", quantAngry));
+        }
+        if (quantObol != 0) {
+            view.showNotification(String.format("%+d óbolo para Orfeu", quantObol));
+        }
+        if (quantLove != 0) {
+            view.showNotification(String.format("%+d de amor para Orfeu", quantLove));
+        }
+        if (quantSadness != 0) {
+            view.showNotification(String.format("%+d de tristeza para Orfeu", quantSadness));
+        }
+    }
+
+    @Override
+    public void saveWasMade() {
+        view.showNotification("Jogo salvo!");
     }
 
 }

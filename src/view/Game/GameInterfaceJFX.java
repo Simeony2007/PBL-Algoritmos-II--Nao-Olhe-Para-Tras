@@ -1,0 +1,135 @@
+package src.view.Game;
+
+import java.io.File;
+import java.util.ArrayList;
+import java.util.Map;
+
+import src.controller.ControllerFX;
+import javafx.geometry.Insets;
+import javafx.geometry.Pos;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.StackPane;
+
+public class GameInterfaceJFX {
+
+    private final BorderPane root = new BorderPane();
+    private final Scene scene;
+    private final DialogueJFX dialogue;
+    private final ChoicesJFX choices;
+    private final NotificationOverlayJFX notifications;
+    private final GameMenuJFX gameMenu;
+    private ControllerFX controller;
+
+    public GameInterfaceJFX() {
+        dialogue = new DialogueJFX();
+        choices = new ChoicesJFX();
+        notifications = new NotificationOverlayJFX();
+        gameMenu = new GameMenuJFX();
+
+        StackPane gameLayer = new StackPane(
+                dialogue.getCharacterLayer(),
+                choices.getView(),
+                notifications.getView(),
+                gameMenu.getView());
+        StackPane.setAlignment(notifications.getView(), Pos.TOP_LEFT);
+        StackPane.setMargin(notifications.getView(), new Insets(15));
+
+        Button menuButton = new Button("☰");
+        BorderPane.setAlignment(menuButton, Pos.TOP_RIGHT);
+        BorderPane.setMargin(menuButton, new Insets(15, 15, 0, 0));
+        menuButton.setOnAction(event -> {
+            event.consume();
+            openedMenu();
+        });
+
+        root.setOnMouseClicked(event -> {
+            if (!gameMenu.isVisible() && !choices.isVisible()) {
+                nextDialogue();
+            }
+        });
+        root.setTop(menuButton);
+        root.setCenter(gameLayer);
+        root.setBottom(dialogue.getDialogueBox());
+        BorderPane.setMargin(dialogue.getDialogueBox(), new Insets(0, 15, 15, 15));
+
+        scene = new Scene(root);
+    }
+
+    public void setController(ControllerFX controller) {
+        this.controller = controller;
+    }
+
+    public Scene gameScene() {
+        return scene;
+    }
+
+    public void showDialogues(ArrayList<Map.Entry<String, String>> dialogues, int speed) {
+        choices.hide();
+        choices.setDisabled(false);
+        gameMenu.setVisible(false);
+        dialogue.showDialogues(dialogues, this::onDialogueQueueFinished);
+    }
+
+    public void nextDialogue() {
+        dialogue.advance();
+    }
+
+    private void onDialogueQueueFinished() {
+        if (controller != null) {
+            controller.endedDialogues();
+        }
+    }
+
+    public void openedMenu() {
+        boolean opening = !gameMenu.isVisible();
+        gameMenu.setVisible(opening);
+        choices.setDisabled(opening);
+        if (opening) {
+            dialogue.pause();
+        } else {
+            dialogue.resume();
+        }
+    }
+
+    public void showNotification(String message) {
+        notifications.showNotification(message);
+    }
+
+    public void showChoicesOptions(ArrayList<String> choices) {
+        this.choices.showChoicesOptions(choices, this::choicedOption);
+    }
+
+    public void choicedOption(int number) {
+        if (controller != null) {
+            controller.choicedOption(number);
+        }
+    }
+
+    public void setChapterBackground(String filename) {
+        if (filename == null || filename.trim().isEmpty()) {
+            return;
+        }
+
+        File background = new File("assets/sprites/background/" + filename);
+        if (!background.isFile()) {
+            return;
+        }
+
+        String uri = background.toURI().toString();
+        root.setStyle(
+                "-fx-background-image: url('" + uri + "'); " +
+                        "-fx-background-size: cover; " +
+                        "-fx-background-position: center center; " +
+                        "-fx-background-repeat: no-repeat;");
+    }
+
+    public void showEndGame() {
+        // TODO
+    }
+
+    public void showEndChapter() {
+        // TODO
+    }
+}

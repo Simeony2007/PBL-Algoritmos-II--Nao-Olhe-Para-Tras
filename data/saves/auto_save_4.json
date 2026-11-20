@@ -1,9 +1,9 @@
 {
   "orfeu": {
     "obol": 0,
-    "love": 1,
-    "angry": 0,
-    "sadness": 2
+    "love": 10,
+    "angry": 4,
+    "sadness": 4
   },
   "npcs": [
     {
@@ -19,6 +19,6 @@
       "affinity": 0
     }
   ],
-  "chapterIndex": 1,
-  "sceneId": "Alma do Marinheiro"
+  "chapterIndex": 8,
+  "sceneId": "s5_sisyphus_hostile"
 }
