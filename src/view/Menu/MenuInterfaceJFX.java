@@ -10,6 +10,7 @@ import javafx.stage.Stage;
 import javafx.scene.layout.*;
 import javafx.scene.Parent;
 import src.controller.ControllerFX;
+import src.controller.SlotsMenuJFX;
 import src.view.GameInterfaceJFX;
 
 public class MenuInterfaceJFX extends Application {
@@ -61,7 +62,6 @@ public class MenuInterfaceJFX extends Application {
         btnCredits.setPrefWidth(BUTTON_WIDTH);
         btnExit.setPrefWidth(BUTTON_WIDTH);
 
-
         btnStart.setOnAction(e -> menuScene.setRoot(slotsScreen()));
         btnSettings.setOnAction(e -> menuScene.setRoot(settingsScreen()));
         btnCollection.setOnAction(e -> menuScene.setRoot(collectionScreen()));
@@ -75,7 +75,10 @@ public class MenuInterfaceJFX extends Application {
     }
 
     private Parent slotsScreen() {
-        return SlotsJFX.createView(() -> menuScene.setRoot(menuScreen()));
+        return SlotsJFX.createView(
+                controllerFx,
+                () -> menuScene.setRoot(menuScreen()),
+                () -> startGame());
     }
 
     private Parent collectionScreen() {

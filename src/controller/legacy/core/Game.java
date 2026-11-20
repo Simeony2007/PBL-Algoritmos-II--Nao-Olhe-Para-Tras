@@ -1,6 +1,8 @@
 package src.controller.legacy.core;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 
 import src.model.repository.SaveManager;
@@ -211,6 +213,10 @@ public class Game {
             currentChapter.changeCurrentScene(currentScene.getNextSceneId());
         } else {
             currentChapter.nextScene();
+            if (currentChapter.getCurrentScene() == null) {
+                nextChapter();
+                // currentChapter.nextScene();
+            }
         }
     }
 

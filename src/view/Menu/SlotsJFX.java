@@ -11,12 +11,15 @@ import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
+import src.controller.ControllerFX;
 import src.controller.SlotsMenuJFX;
 import javafx.scene.control.Label;
 
 public class SlotsJFX {
-    public static Parent createView(Runnable onReturnAction) {
-        SlotsMenuJFX control = new SlotsMenuJFX();
+    public static SlotsMenuJFX control;
+
+    public static Parent createView(ControllerFX mainController, Runnable onReturnAction, Runnable onStartGame) {
+        control = new SlotsMenuJFX(mainController);
         Map<Integer, String> savesInfo = control.getAllSaves();
 
         BorderPane bPane = new BorderPane();
@@ -44,7 +47,10 @@ public class SlotsJFX {
         vBox.setSpacing(10);
 
         for (Button btn : buttonsList) {
-            // btn.setOnAction(e -> controllerFx.loader(buttonsList.indexOf(btn))); //
+            btn.setOnAction(e -> {
+                control.loadSave(buttonsList.indexOf(btn));
+                onStartGame.run();
+            });
             // DONE(aparentemente) - Simeony
         }
         return bPane;

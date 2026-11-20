@@ -35,7 +35,8 @@ public class ControllerFX {
     // }
 
     public void startCurrentScene() {
-        ArrayList<Map.Entry<String, String>> dialogos = game.allSceneDialoguesQueue();
+        ArrayList<Map.Entry<String, String>> dialogos = DialoguesParser
+                .dialogueSeparator(game.allSceneDialoguesQueue());
         System.out.println(dialogos);
         int speed = game.getTextSpeed();
         view.showDialogues(dialogos, speed);

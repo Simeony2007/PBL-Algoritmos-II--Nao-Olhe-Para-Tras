@@ -65,6 +65,9 @@ public class GameInterfaceJFX implements Observer {
         falaPersonagem.setTextFill(Color.BLACK);
         falaPersonagem.setWrapText(true);
 
+        nomePersonagem.setAlignment(Pos.TOP_LEFT);
+        falaPersonagem.setAlignment(Pos.TOP_LEFT);
+
         nomePersonagem.setId("NomeDoPersonagem");
         falaPersonagem.setId("FalaDoPersonagem");
 
@@ -88,10 +91,12 @@ public class GameInterfaceJFX implements Observer {
             String nome = dialogue.getKey();
             String fala = dialogue.getValue();
 
-            nomePersonagem.setText(nome);
             final int[] contadorLetras = { 0 };
 
-            KeyFrame frame = new KeyFrame(Duration.millis(5/* TODO: Colocar velcidade compatível! */), evento -> {
+            KeyFrame frame = new KeyFrame(Duration.millis(1/* TODO: Colocar velcidade compatível! */), evento -> {
+                if (contadorLetras[0] == 0) {
+                    nomePersonagem.setText(nome);
+                }
                 contadorLetras[0]++;
                 falaPersonagem.setText(fala.substring(0, contadorLetras[0]));
             });
