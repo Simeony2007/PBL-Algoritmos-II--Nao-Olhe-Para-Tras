@@ -1,8 +1,8 @@
 {
   "orfeu": {
     "obol": 0,
-    "love": 9,
-    "angry": 3,
+    "love": 10,
+    "angry": 4,
     "sadness": 4
   },
   "npcs": [
@@ -19,5 +19,6 @@
       "affinity": 0
     }
   ],
-  "chapterIndex": 7
+  "chapterIndex": 9,
+  "sceneId": "Última Conversa"
 }

@@ -34,6 +34,12 @@ public class ChoicesJFX {
         view.setVisible(false);
     }
 
+    public void reset() {
+        hide();
+        setDisabled(false);
+        view.getChildren().clear();
+    }
+
     public void showChoicesOptions(ArrayList<String> choices, IntConsumer onChoice) {
         view.getChildren().clear();
 

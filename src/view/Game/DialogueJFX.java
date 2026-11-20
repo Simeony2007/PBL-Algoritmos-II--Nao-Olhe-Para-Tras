@@ -107,6 +107,19 @@ public class DialogueJFX {
         advance();
     }
 
+    public void reset() {
+        stopTypewriter();
+        dialogues = null;
+        onFinished = () -> {
+        };
+        dialogueIndex = 0;
+        currentText = "";
+        completionSent = false;
+        characterName.setText("");
+        dialogueText.setText("");
+        characterLayer.getChildren().clear();
+    }
+
     public void advance() {
         if (dialogues == null) {
             return;

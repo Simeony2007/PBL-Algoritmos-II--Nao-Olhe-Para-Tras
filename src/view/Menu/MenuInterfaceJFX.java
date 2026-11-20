@@ -25,6 +25,7 @@ public class MenuInterfaceJFX extends Application {
     public void start(Stage principalStage) throws Exception {
         this.principalStage = principalStage;
         this.menuScene = new Scene(menuScreen());
+        ginterface.setOnReturnToMainMenu(this::returnToMainMenu);
 
         principalStage.setHeight(600);
         principalStage.setWidth(800);
@@ -90,6 +91,11 @@ public class MenuInterfaceJFX extends Application {
 
         principalStage.setScene(ginterface.gameScene());
         controllerFx.startCurrentScene();
+    }
+
+    private void returnToMainMenu() {
+        menuScene.setRoot(menuScreen());
+        principalStage.setScene(menuScene);
     }
 
     private Parent collectionScreen() {

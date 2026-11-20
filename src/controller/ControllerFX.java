@@ -51,7 +51,9 @@ public class ControllerFX implements Observer {
     public void endedDialogues() {
         // Verifica se é um final
         if (game.isTheEndOfGame()) {
-            view.showEndGame(); // Fim do jogo, mostra tela final/sair
+            String sceneId = game.getCurrentSceneId();
+            System.out.println(sceneId);
+            view.showEndGame(sceneId); // Fim do jogo, mostra tela final/sair
             return;
         }
 

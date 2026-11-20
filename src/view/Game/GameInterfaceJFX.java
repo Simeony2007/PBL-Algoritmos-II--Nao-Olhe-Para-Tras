@@ -3,6 +3,7 @@ package src.view.Game;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.Map;
+import java.util.Objects;
 
 import src.controller.ControllerFX;
 import javafx.geometry.Insets;
@@ -19,16 +20,22 @@ public class GameInterfaceJFX {
     private final DialogueJFX dialogue;
     private final ChoicesJFX choices;
     private final NotificationOverlayJFX notifications;
+    private final StackPane gameLayer;
+    private final Button menuButton;
     private final GameMenuJFX gameMenu;
+    private final EndGameJFX endGame;
     private ControllerFX controller;
+    private Runnable onReturnToMainMenu;
+    private boolean gameScreenVisible = true;
 
     public GameInterfaceJFX() {
         dialogue = new DialogueJFX();
         choices = new ChoicesJFX();
         notifications = new NotificationOverlayJFX();
-        gameMenu = new GameMenuJFX();
+        gameMenu = new GameMenuJFX(this::returnToMainMenu);
+        endGame = new EndGameJFX(this::returnToMainMenu);
 
-        StackPane gameLayer = new StackPane(
+        gameLayer = new StackPane(
                 dialogue.getCharacterLayer(),
                 choices.getView(),
                 notifications.getView(),
@@ -36,7 +43,7 @@ public class GameInterfaceJFX {
         StackPane.setAlignment(notifications.getView(), Pos.TOP_LEFT);
         StackPane.setMargin(notifications.getView(), new Insets(15));
 
-        Button menuButton = new Button("☰");
+        menuButton = new Button("☰");
         BorderPane.setAlignment(menuButton, Pos.TOP_RIGHT);
         BorderPane.setMargin(menuButton, new Insets(15, 15, 0, 0));
         menuButton.setOnAction(event -> {
@@ -45,14 +52,12 @@ public class GameInterfaceJFX {
         });
 
         root.setOnMouseClicked(event -> {
-            if (!gameMenu.isVisible() && !choices.isVisible()) {
+            if (gameScreenVisible && !gameMenu.isVisible() && !choices.isVisible()) {
                 nextDialogue();
             }
         });
-        root.setTop(menuButton);
-        root.setCenter(gameLayer);
-        root.setBottom(dialogue.getDialogueBox());
-        BorderPane.setMargin(dialogue.getDialogueBox(), new Insets(0, 15, 15, 15));
+
+        showGameScreen();
 
         scene = new Scene(root);
     }
@@ -61,11 +66,16 @@ public class GameInterfaceJFX {
         this.controller = controller;
     }
 
+    public void setOnReturnToMainMenu(Runnable onReturnToMainMenu) {
+        this.onReturnToMainMenu = onReturnToMainMenu;
+    }
+
     public Scene gameScene() {
         return scene;
     }
 
     public void showDialogues(ArrayList<Map.Entry<String, String>> dialogues, int speed) {
+        showGameScreen();
         choices.hide();
         choices.setDisabled(false);
         gameMenu.setVisible(false);
@@ -98,13 +108,11 @@ public class GameInterfaceJFX {
     }
 
     public void showChoicesOptions(ArrayList<String> choices) {
-        this.choices.showChoicesOptions(choices, this::choicedOption);
-    }
-
-    public void choicedOption(int number) {
-        if (controller != null) {
-            controller.choicedOption(number);
-        }
+        this.choices.showChoicesOptions(choices, number -> {
+            if (controller != null) {
+                controller.choicedOption(number);
+            }
+        });
     }
 
     public void setChapterBackground(String filename) {
@@ -125,8 +133,41 @@ public class GameInterfaceJFX {
                         "-fx-background-repeat: no-repeat;");
     }
 
-    public void showEndGame() {
-        // TODO
+    public void showEndGame(String title) {
+        gameScreenVisible = false;
+        endGame.show(title);
+        root.setTop(null);
+        root.setCenter(endGame.getView());
+        root.setBottom(null);
+    }
+
+    private void showGameScreen() {
+        gameScreenVisible = true;
+        root.setTop(menuButton);
+        root.setCenter(gameLayer);
+        root.setBottom(dialogue.getDialogueBox());
+        BorderPane.setMargin(dialogue.getDialogueBox(), new Insets(0, 15, 15, 15));
+    }
+
+    public void returnToMainMenu() {
+        if (onReturnToMainMenu == null) {
+            throw new IllegalStateException("A tela principal não configurou a ação de retorno ao menu.");
+        }
+        reset();
+        onReturnToMainMenu.run();
+    }
+
+    public void reset() {
+        dialogue.reset();
+        choices.reset();
+        notifications.reset();
+        gameMenu.setVisible(false);
+        endGame.reset();
+        gameScreenVisible = false;
+        root.setTop(null);
+        root.setCenter(null);
+        root.setBottom(null);
+        root.setStyle("");
     }
 
     public void showEndChapter() {

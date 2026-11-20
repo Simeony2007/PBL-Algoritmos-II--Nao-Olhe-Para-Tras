@@ -162,6 +162,12 @@ public class Game {
         textSpeed = speed;
     }
 
+    public String getCurrentSceneId() {
+        Chapter currentChapter = state.getCurrentChapter();
+        Scene currentScene = currentChapter.getCurrentScene();
+        return currentScene.getSceneId();
+    }
+
     public ArrayList<Map.Entry<String, String>> allSceneDialoguesQueue() {
         if (!state.isCurrentScenesFinished()) {
             Chapter currentChapter = state.getCurrentChapter();
@@ -296,7 +302,6 @@ public class Game {
     }
 
     public void notifyObserversModelChange(Orfeu oldStatus, ArrayList<Npc> oldNpcsStatus) {
-        System.out.println(observers);
         for (Observer obs : observers) {
             obs.modelUpdated(state.getOrfeu(), state.getNpcs(), oldStatus, oldNpcsStatus);
         }

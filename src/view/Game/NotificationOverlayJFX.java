@@ -1,5 +1,8 @@
 package src.view.Game;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import javafx.animation.PauseTransition;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
@@ -20,6 +23,7 @@ import javafx.util.Duration;
 public class NotificationOverlayJFX {
 
     private final VBox view = new VBox(8);
+    private final Map<Label, PauseTransition> timers = new HashMap<>();
 
     public NotificationOverlayJFX() {
         view.setAlignment(Pos.TOP_LEFT);
@@ -52,11 +56,22 @@ public class NotificationOverlayJFX {
 
         PauseTransition timer = new PauseTransition(Duration.seconds(2.5));
         timer.setOnFinished(event -> {
+            timers.remove(notification);
             view.getChildren().remove(notification);
             if (view.getChildren().isEmpty()) {
                 view.setVisible(false);
             }
         });
+        timers.put(notification, timer);
         timer.play();
+    }
+
+    public void reset() {
+        for (PauseTransition timer : timers.values()) {
+            timer.stop();
+        }
+        timers.clear();
+        view.getChildren().clear();
+        view.setVisible(false);
     }
 }
