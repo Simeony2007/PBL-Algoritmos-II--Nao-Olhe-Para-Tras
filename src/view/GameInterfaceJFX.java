@@ -14,19 +14,28 @@ import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.Map;
 
+import javafx.animation.Animation;
 import javafx.animation.KeyFrame;
 import javafx.animation.PauseTransition;
 import javafx.animation.Timeline;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.layout.Background;
+import javafx.scene.layout.BackgroundFill;
 import javafx.scene.layout.BackgroundImage;
 import javafx.scene.layout.BackgroundPosition;
 import javafx.scene.layout.BackgroundRepeat;
 import javafx.scene.layout.BackgroundSize;
+import javafx.scene.layout.Border;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.BorderStroke;
+import javafx.scene.layout.BorderStrokeStyle;
+import javafx.scene.layout.BorderWidths;
+import javafx.scene.layout.CornerRadii;
 import javafx.scene.layout.HBox;
+import javafx.scene.layout.Region;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
@@ -44,6 +53,10 @@ public class GameInterfaceJFX implements Observer {
     private HBox hBox;
     private VBox choicesVBox;
     private BorderPane bpane;
+    private SequentialTransition sequencia;
+    private ArrayList<Map.Entry<String, String>> dialogues;
+    private Timeline timelineFala;
+    private int indexDialogue = 0;
 
     @Override
     public void modelUpdated(Orfeu orfeu) {
@@ -136,17 +149,58 @@ public class GameInterfaceJFX implements Observer {
 
         hBox.setAlignment(Pos.BOTTOM_CENTER);
 
+        VBox miniMenu = miniMenu();
+        miniMenu.setAlignment(Pos.CENTER);
+        miniMenu.setVisible(false);
+
         StackPane containerDialogo = new StackPane(poligonoCaixa, vBox);
+
         containerDialogo.setAlignment(Pos.TOP_LEFT);
         BorderPane.setMargin(containerDialogo, new Insets(0, 15, 15, 15));
 
         vBox.getChildren().addAll(nomePersonagem, falaPersonagem);
 
-        stackPane.getChildren().addAll(hBox, choicesVBox);
+        Button btnMiniMenu = new Button("☰");
+
+        BorderPane.setAlignment(btnMiniMenu, Pos.TOP_RIGHT);
+        BorderPane.setMargin(btnMiniMenu, new Insets(15, 15, 0, 0));
+
+        btnMiniMenu.setAlignment(Pos.CENTER);
+        btnMiniMenu.setOnAction(e -> {
+            if (miniMenu.isVisible()) {
+                miniMenu.setVisible(false);
+                openedMenu();
+            } else {
+                miniMenu.setVisible(true);
+                openedMenu();
+            }
+        });
+
+        stackPane.getChildren().addAll(hBox, choicesVBox, miniMenu);
+        bpane.setOnMouseClicked(e -> {
+            if (!miniMenu.isVisible() && !choicesVBox.isVisible()) {
+                nextDialogue();
+            }
+        });
+        bpane.setTop(btnMiniMenu);
         bpane.setCenter(stackPane);
         bpane.setBottom(containerDialogo);
 
         scene = new Scene(bpane);
+    }
+
+    public void openedMenu() {
+        if (choicesVBox.isDisabled()) {
+            choicesVBox.setDisable(false);
+            if (timelineFala != null && timelineFala.getStatus() == Animation.Status.PAUSED) {
+                timelineFala.play();
+            }
+        } else {
+            choicesVBox.setDisable(true);
+            if (timelineFala != null && timelineFala.getStatus() == Animation.Status.RUNNING) {
+                timelineFala.pause();
+            }
+        }
     }
 
     public Scene gameScene() {
@@ -154,51 +208,117 @@ public class GameInterfaceJFX implements Observer {
     }
 
     public void showDialogues(ArrayList<Map.Entry<String, String>> dialogos, int speed) {
-        SequentialTransition sequencia = new SequentialTransition();
+        this.dialogues = dialogos;
+        indexDialogue = 0;
+        nextDialogue();
+    }
 
-        for (Map.Entry<String, String> dialogue : dialogos) {
-            String nome = dialogue.getKey();
-            String fala = dialogue.getValue();
+    public void nextDialogue() {
+        if (dialogues == null)
+            return;
 
-            ImageView spriteView = null;
-            if (nome != null && !nome.isEmpty()) {
-                File arquivoSprite = new File("assets/sprites/character/" + nome + ".png");
-                if (arquivoSprite.exists()) {
-                    try (InputStream is = new FileInputStream(arquivoSprite)) {
-                        Image image = new Image(is);
-                        spriteView = new ImageView(image);
-                        spriteView.setPreserveRatio(true);
-                        spriteView.setFitHeight(350); // Ajuste a altura do sprite conforme sua tela
-                    } catch (Exception e) {
-                        e.printStackTrace();
-                    }
+        // 1. Se a fala atual ainda está digitando, completa ela imediatamente
+        if (timelineFala != null && timelineFala.getStatus() == javafx.animation.Animation.Status.RUNNING) {
+            timelineFala.stop();
+            // indexDialogo já foi incrementado quando essa fala começou, por isso usamos
+            // (indexDialogo - 1)
+            falaPersonagem.setText(dialogues.get(indexDialogue - 1).getValue());
+            return;
+        }
+
+        // 2. Se já passou do último elemento do ArrayList, avisa o controller
+        if (indexDialogue >= dialogues.size()) {
+            fxControl.endedDialogues();
+            return;
+        }
+
+        // 3. Pega o elemento atual da lista e avança o índice
+        Map.Entry<String, String> atual = dialogues.get(indexDialogue);
+        indexDialogue++;
+
+        String nome = atual.getKey();
+        String fala = atual.getValue();
+
+        nomePersonagem.setText(nome);
+        falaPersonagem.setText("");
+
+        // Carrega o sprite do personagem
+        hBox.getChildren().clear();
+        if (nome != null && !nome.isEmpty()) {
+            File arquivoSprite = new File("assets/sprites/character/" + nome + ".png");
+            if (arquivoSprite.exists()) {
+                try (InputStream is = new FileInputStream(arquivoSprite)) {
+                    ImageView iv = new ImageView(new Image(is));
+                    iv.setPreserveRatio(true);
+                    iv.setFitHeight(350);
+                    hBox.getChildren().add(iv);
+                } catch (Exception ignored) {
                 }
             }
-
-            final ImageView imagemFinal = spriteView;
-
-            final int[] contadorLetras = { 0 };
-
-            KeyFrame frame = new KeyFrame(Duration.millis(1/* TODO: Colocar velcidade compatível! */), evento -> {
-                if (contadorLetras[0] == 0) {
-                    nomePersonagem.setText(nome);
-                    hBox.getChildren().clear();
-                    if (imagemFinal != null) {
-                        hBox.getChildren().add(imagemFinal);
-                    }
-                }
-                contadorLetras[0]++;
-                falaPersonagem.setText(fala.substring(0, contadorLetras[0]));
-            });
-
-            Timeline timelineFala = new Timeline(frame);
-            timelineFala.setCycleCount(fala.length());
-
-            sequencia.getChildren().addAll(timelineFala, new PauseTransition(Duration.seconds(0.5)));
         }
-        sequencia.setOnFinished(e -> fxControl.endedDialogues());
-        sequencia.play();
+
+        final int[] i = { 0 };
+        timelineFala = new Timeline(new KeyFrame(Duration.millis(15), e -> {
+            if (i[0] < fala.length()) {
+                falaPersonagem.setText(fala.substring(0, ++i[0]));
+            }
+        }));
+        timelineFala.setCycleCount(fala.length());
+        timelineFala.play();
     }
+
+    // public void showDialogues(ArrayList<Map.Entry<String, String>> dialogos, int
+    // speed) {
+    // if (sequencia != null) {
+    // sequencia.stop();
+    // }
+    // sequencia = new SequentialTransition();
+    // for (Map.Entry<String, String> dialogue : dialogos) {
+    // String nome = dialogue.getKey();
+    // String fala = dialogue.getValue();
+
+    // ImageView spriteView = null;
+    // if (nome != null && !nome.isEmpty()) {
+    // File arquivoSprite = new File("assets/sprites/character/" + nome + ".png");
+    // if (arquivoSprite.exists()) {
+    // try (InputStream is = new FileInputStream(arquivoSprite)) {
+    // Image image = new Image(is);
+    // spriteView = new ImageView(image);
+    // spriteView.setPreserveRatio(true);
+    // spriteView.setFitHeight(350); // Ajuste a altura do sprite conforme sua tela
+    // } catch (Exception e) {
+    // e.printStackTrace();
+    // }
+    // }
+    // }
+
+    // final ImageView imagemFinal = spriteView;
+
+    // final int[] contadorLetras = { 0 };
+
+    // KeyFrame frame = new KeyFrame(Duration.millis(1), evento -> {
+    // if (contadorLetras[0] == 0) {
+    // nomePersonagem.setText(nome);
+    // hBox.getChildren().clear();
+    // if (imagemFinal != null) {
+    // hBox.getChildren().add(imagemFinal);
+    // }
+    // }
+    // if (contadorLetras[0] < fala.length()) {
+    // contadorLetras[0]++;
+    // falaPersonagem.setText(fala.substring(0, contadorLetras[0]));
+    // }
+    // });
+
+    // Timeline timelineFala = new Timeline(frame);
+    // timelineFala.setCycleCount(fala.length());
+
+    // sequencia.getChildren().addAll(timelineFala, new
+    // PauseTransition(Duration.seconds(0.5)));
+    // }
+    // sequencia.setOnFinished(e -> fxControl.endedDialogues());
+    // sequencia.play();
+    // }
 
     public void showEndGame() {
         // TODO
@@ -238,6 +358,42 @@ public class GameInterfaceJFX implements Observer {
                             "-fx-background-position: center center; " +
                             "-fx-background-repeat: no-repeat;");
         }
+    }
+
+    public VBox miniMenu() {
+        VBox miniMenuVBox = new VBox();
+        Button btnStatus = new Button("Status");
+        Button btnConfig = new Button("Configurações");
+        Button btnSalvar = new Button("Salvar");
+        Button btnSair = new Button("Retornar ao menu");
+
+        // Deixa todos os botões com a mesma largura dentro da caixa
+        double larguraBotoes = 200;
+        for (Button btn : new Button[] { btnStatus, btnConfig, btnSalvar, btnSair }) {
+            btn.setPrefWidth(larguraBotoes);
+            btn.setMaxWidth(Double.MAX_VALUE);
+        }
+
+        miniMenuVBox.getChildren().addAll(btnStatus, btnConfig, btnSalvar, btnSair);
+        miniMenuVBox.setSpacing(20);
+        miniMenuVBox.setAlignment(Pos.CENTER);
+        miniMenuVBox.setPadding(new Insets(30));
+
+        // 1. Impede o VBox de esticar para a tela inteira (fica apenas do tamanho dos
+        // botões + padding)
+        miniMenuVBox.setMaxSize(Region.USE_PREF_SIZE, Region.USE_PREF_SIZE);
+
+        // 2. Desenha o fundo quadrado/retangular e a borda diretamente no VBox
+        miniMenuVBox.setBackground(new Background(new BackgroundFill(
+                Color.rgb(20, 20, 28, 0.92), // Cor de fundo escura
+                new CornerRadii(12), // Cantos arredondados (use CornerRadii.EMPTY para quina reta)
+                Insets.EMPTY)));
+        miniMenuVBox.setBorder(new Border(new BorderStroke(
+                Color.rgb(158, 131, 9), // Mesma borda dourada da caixa de diálogo
+                BorderStrokeStyle.SOLID,
+                new CornerRadii(12),
+                new BorderWidths(2))));
+        return miniMenuVBox;
     }
 
     public void showEndChapter() {
