@@ -62,4 +62,13 @@ public class GameState {
         return current == null || current.isScenesFinished();
     }
 
+    public ArrayList<Npc> cloneNpcsList() {
+        ArrayList<Npc> clonedList = new ArrayList<>();
+        for (Npc npc : npcs) {
+            Npc npcClone = npc.clone();
+            clonedList.add(npcClone);
+        }
+        return clonedList;
+    }
+
 }

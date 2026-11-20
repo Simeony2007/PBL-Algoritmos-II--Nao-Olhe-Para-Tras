@@ -13,6 +13,8 @@ import src.model.service.SaveState;
 import src.model.service.Settings;
 import src.model.service.logic.Chapter;
 import src.model.service.logic.Choice;
+import src.model.service.logic.Npc;
+import src.model.service.logic.Orfeu;
 import src.model.service.logic.Scene;
 import src.view.legacy.GameInterface;
 import src.model.Observer;
@@ -212,11 +214,13 @@ public class Game {
     public void makeAChoice(int index) {
         Chapter currentChapter = state.getCurrentChapter();
         Scene currentScene = currentChapter.getCurrentScene();
+        Orfeu oldOrfeu = state.getOrfeu().clone();
+        ArrayList<Npc> oldNpcs = state.cloneNpcsList();
         String currentSceneId = ApplyConsequences.applyConsequences(
                 state.getOrfeu(),
                 state.getNpcs(),
                 currentScene.getChoice(index));
-        notifyObservers();
+        notifyObserversModelChange(oldOrfeu, oldNpcs);
         currentChapter.changeCurrentScene(currentSceneId);
     }
 
@@ -247,12 +251,11 @@ public class Game {
         return state.isCurrentScenesFinished();
     }
 
-    public String autoSave(Settings settings) {
+    public void autoSave(Settings settings) {
         if (state.isRunning() && settings.isAutoSave()) {
             GameSave.saveCurrentProgress(state, state.getCurrentChapter().getCurrentScene().getNextSceneId(), -1);
-            return "Jogo salvo automaticamente em autosave " + (settings.getAutoSaveCounter()) + ".";
+            notifyObserversSave();
         }
-        return null;
     }
 
     public boolean isTheEndOfGame() {
@@ -292,9 +295,16 @@ public class Game {
         observers.remove(obs);
     }
 
-    public void notifyObservers() {
+    public void notifyObserversModelChange(Orfeu oldStatus, ArrayList<Npc> oldNpcsStatus) {
+        System.out.println(observers);
         for (Observer obs : observers) {
-            obs.modelUpdated(state.getOrfeu());
+            obs.modelUpdated(state.getOrfeu(), state.getNpcs(), oldStatus, oldNpcsStatus);
+        }
+    }
+
+    public void notifyObserversSave() {
+        for (Observer obs : observers) {
+            obs.saveWasMade();
         }
     }
 

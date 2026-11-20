@@ -19,6 +19,7 @@ public class ControllerFX {
 
     public void setView(GameInterfaceJFX view) {
         this.view = view;
+        game.addObservers(view);
     }
 
     public void loader(int index) {

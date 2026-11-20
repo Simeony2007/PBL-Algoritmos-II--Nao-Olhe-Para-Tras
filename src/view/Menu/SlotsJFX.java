@@ -1,95 +1,59 @@
 package src.view.Menu;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
+import java.util.function.IntConsumer;
 
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Parent;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
-import src.controller.ControllerFX;
-import src.controller.SlotsMenuJFX;
-import javafx.scene.control.Label;
 
-public class SlotsJFX {
-    public static SlotsMenuJFX control;
+public final class SlotsJFX {
 
-    public static Parent createView(ControllerFX mainController, Runnable onReturnAction, Runnable onStartGame) {
-        control = new SlotsMenuJFX(mainController);
-        Map<Integer, String> savesInfo = control.getAllSaves();
+    private SlotsJFX() {
+    }
 
-        BorderPane bPane = new BorderPane();
-        VBox vBox = new VBox();
-        StackPane stackPane = new StackPane();
-        bPane.setLeft(vBox);
+    public static Parent createView(
+            Map<Integer, String> savesInfo,
+            IntConsumer onSelectSlot,
+            Runnable onReturn) {
+
+        BorderPane root = new BorderPane();
+        VBox slotsBox = new VBox(10);
+        slotsBox.setAlignment(Pos.CENTER);
+        slotsBox.setPadding(new Insets(20));
 
         Label title = new Label("Slots");
         title.setFont(Font.font("Arial", 30));
-        bPane.setTop(stackPane);
-        stackPane.getChildren().add(title);
-        title.setPadding(new Insets(50));
+        BorderPane.setAlignment(title, Pos.CENTER);
+        root.setTop(title);
 
-        ArrayList<Button> buttonsList = new ArrayList<>();
+        List<Map.Entry<Integer, String>> slots = new ArrayList<>(savesInfo.entrySet());
+        slots.sort(Map.Entry.comparingByKey());
 
-        for (String str : savesInfo.values()) {
-            Button nSlot = new Button(str);
-            // nSlot.setMaxWidth(BUTTON_WIDTH);
-            // nSlot.setMinWidth(BUTTON_WIDTH);
-            buttonsList.add(nSlot);
+        for (Map.Entry<Integer, String> slot : slots) {
+            Button button = new Button(slot.getValue());
+            button.setMaxWidth(Double.MAX_VALUE);
+
+            // Numero real(1–8), não o índice(0–7).
+            button.setOnAction(event -> onSelectSlot.accept(slot.getKey()));
+            slotsBox.getChildren().add(button);
         }
-        vBox.getChildren().addAll(buttonsList);
-        vBox.setPadding(new Insets(0, 0, 0, 30));
-        vBox.setAlignment(Pos.CENTER);
-        vBox.setSpacing(10);
 
-        for (Button btn : buttonsList) {
-            btn.setOnAction(e -> {
-                control.loadSave(buttonsList.indexOf(btn));
-                onStartGame.run();
-            });
-            // DONE(aparentemente) - Simeony
-        }
-        return bPane;
+        root.setCenter(slotsBox);
+
+        Button backButton = new Button("Voltar");
+        backButton.setOnAction(event -> onReturn.run());
+        BorderPane.setAlignment(backButton, Pos.CENTER);
+        BorderPane.setMargin(backButton, new Insets(0, 0, 20, 0));
+        root.setBottom(backButton);
+
+        return root;
     }
-
-    /*
-     * private Parent slotsScreen() {
-     * SlotsMenuJFX control = new SlotsMenuJFX();
-     * Map<Integer, String> savesInfo = control.getAllSaves();
-     * 
-     * BorderPane bPane = new BorderPane();
-     * VBox vBox = new VBox();
-     * StackPane stackPane = new StackPane();
-     * bPane.setLeft(vBox);
-     * 
-     * Label title = new Label("Slots");
-     * title.setFont(Font.font("Arial", 30));
-     * bPane.setTop(stackPane);
-     * stackPane.getChildren().add(title);
-     * title.setPadding(new Insets(50));
-     * 
-     * ArrayList<Button> buttonsList = new ArrayList<>();
-     * 
-     * for (String str : savesInfo.values()) {
-     * Button nSlot = new Button(str);
-     * // nSlot.setMaxWidth(BUTTON_WIDTH);
-     * // nSlot.setMinWidth(BUTTON_WIDTH);
-     * buttonsList.add(nSlot);
-     * }
-     * vBox.getChildren().addAll(buttonsList);
-     * vBox.setPadding(new Insets(0, 0, 0, 30));
-     * vBox.setAlignment(Pos.CENTER);
-     * vBox.setSpacing(10);
-     * 
-     * for (Button btn : buttonsList) {
-     * // btn.setOnAction(e -> controllerFx.loader(buttonsList.indexOf(btn))); //
-     * // DONE(aparentemente) - Simeony
-     * }
-     * return bPane;
-     * }
-     */
 }

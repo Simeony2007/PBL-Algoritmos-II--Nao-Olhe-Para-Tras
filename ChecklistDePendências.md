@@ -13,7 +13,7 @@
 - [ ] Os 3 Padrões GoF:
 - - [ ] Definir quais padrões usados (atualizar nome abaixo e dizer onde foi aplicado quando implementar)
 - - [ ] Padrão Observer (wip)
-- - [ ] Padrão 2
+- - [x] Padrão Prototype (Clona Orfeu e lista de Npcs para mostrar na view - Simeony)
 - - [x] Padrão Facade (ControllerFX é uma facade entre game e a view - Simeony)
 
 - [ ] Audiovisual:

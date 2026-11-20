@@ -2,6 +2,7 @@ package src.view;
 
 import src.controller.ControllerFX;
 import src.model.Observer;
+import src.model.service.logic.Npc;
 import src.model.service.logic.Orfeu;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -52,6 +53,7 @@ public class GameInterfaceJFX implements Observer {
     private Label falaPersonagem;
     private HBox hBox;
     private VBox choicesVBox;
+    private VBox notificacoesVBox;
     private BorderPane bpane;
     private SequentialTransition sequencia;
     private ArrayList<Map.Entry<String, String>> dialogues;
@@ -59,8 +61,67 @@ public class GameInterfaceJFX implements Observer {
     private int indexDialogue = 0;
 
     @Override
-    public void modelUpdated(Orfeu orfeu) {
-        // TODO: Finalizar implementação do Observer - Simeony
+    public void modelUpdated(Orfeu orfeu, ArrayList<Npc> npcs, Orfeu oldOrfeu, ArrayList<Npc> oldNpcs) {
+        for (int i = 0; i < npcs.size(); i++) {
+            int diffAff = npcs.get(i).getAffinity() - oldNpcs.get(i).getAffinity();
+            if (diffAff != 0) {
+                showNotification(String.format("%s: %+d de afinidade", npcs.get(i).getName(), diffAff));
+            }
+        }
+
+        int quantAngry = orfeu.getAngry() - oldOrfeu.getAngry();
+        int quantObol = orfeu.getObol() - oldOrfeu.getObol();
+        int quantLove = orfeu.getLove() - oldOrfeu.getLove();
+        int quantSadness = orfeu.getSadness() - oldOrfeu.getSadness();
+
+        if (quantAngry != 0) {
+            showNotification(String.format("%+d de raiva para Orfeu", quantAngry));
+        }
+        if (quantObol != 0) {
+            showNotification(String.format("%+d óbolo para Orfeu", quantObol));
+        }
+        if (quantLove != 0) {
+            showNotification(String.format("%+d de amor para Orfeu", quantLove));
+        }
+        if (quantSadness != 0) {
+            showNotification(String.format("%+d de tristeza para Orfeu", quantSadness));
+        }
+
+        System.out.println("OBSERVER!");
+
+    }
+
+    @Override
+    public void saveWasMade() {
+        showNotification("Jogo salvo!");
+    }
+
+    public void showNotification(String mensagem) {
+        Label aviso = new Label(mensagem);
+        aviso.setFont(new Font("Arial", 16));
+        aviso.setTextFill(Color.WHITE);
+        aviso.setPadding(new Insets(8, 15, 8, 15));
+        aviso.setBackground(new Background(new BackgroundFill(
+                Color.rgb(20, 20, 28, 0.90),
+                new CornerRadii(8),
+                Insets.EMPTY)));
+        aviso.setBorder(new Border(new BorderStroke(
+                Color.rgb(158, 131, 9),
+                BorderStrokeStyle.SOLID,
+                new CornerRadii(8),
+                new BorderWidths(1.5))));
+
+        notificacoesVBox.getChildren().add(aviso);
+        notificacoesVBox.setVisible(true);
+
+        PauseTransition timer = new PauseTransition(Duration.seconds(2.5));
+        timer.setOnFinished(e -> {
+            notificacoesVBox.getChildren().remove(aviso);
+            if (notificacoesVBox.getChildren().isEmpty()) {
+                notificacoesVBox.setVisible(false);
+            }
+        });
+        timer.play();
     }
 
     public void setController(ControllerFX ctrl) {
@@ -176,12 +237,22 @@ public class GameInterfaceJFX implements Observer {
             }
         });
 
-        stackPane.getChildren().addAll(hBox, choicesVBox, miniMenu);
         bpane.setOnMouseClicked(e -> {
             if (!miniMenu.isVisible() && !choicesVBox.isVisible()) {
                 nextDialogue();
             }
         });
+
+        notificacoesVBox = new VBox(8); // 8px de espaço entre cada notificação empilhada
+        notificacoesVBox.setAlignment(Pos.TOP_LEFT);
+        notificacoesVBox.setMouseTransparent(true); // Não bloqueia cliques na tela do jogo
+        notificacoesVBox.setMaxSize(Region.USE_PREF_SIZE, Region.USE_PREF_SIZE);
+        notificacoesVBox.setVisible(false);
+
+        stackPane.getChildren().addAll(hBox, choicesVBox, notificacoesVBox, miniMenu);
+        StackPane.setAlignment(notificacoesVBox, Pos.TOP_LEFT);
+        StackPane.setMargin(notificacoesVBox, new Insets(15));
+
         bpane.setTop(btnMiniMenu);
         bpane.setCenter(stackPane);
         bpane.setBottom(containerDialogo);
