@@ -35,7 +35,7 @@ public class GameInterfaceJFX implements Observer {
 
     @Override
     public void modelUpdated(Orfeu orfeu) {
-
+        // TODO: Finalizar implementação do Observer - Simeony
     }
 
     public void setController(ControllerFX ctrl) {

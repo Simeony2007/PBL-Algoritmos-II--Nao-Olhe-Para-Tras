@@ -9,7 +9,6 @@ import src.view.GameInterfaceJFX;
 import java.util.ArrayList;
 import java.util.Map;
 
-import src.controller.legacy.core.ApplyConsequences;
 import src.controller.legacy.core.Game;
 
 // FACADE ENTRE O GAME E O VIEWJFX 

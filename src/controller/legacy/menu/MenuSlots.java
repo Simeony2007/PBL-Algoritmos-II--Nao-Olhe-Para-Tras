@@ -22,6 +22,13 @@ public class MenuSlots {
         manageSaves();
     }
 
+    public MenuSlots() {
+        // Apenas para não precisar do Static em getAllSavesInformation() nem precisar
+        // carregar settings e collection no SlotsMenuJFX... que seria inutilizado -
+        // Simeony
+
+    }
+
     public void manageSaves() {
         MenuInterface.showLoadMenu(getAllSavesInformation());
 
@@ -57,7 +64,7 @@ public class MenuSlots {
         }
     }
 
-    private Map<Integer, String> getAllSavesInformation() {
+    public Map<Integer, String> getAllSavesInformation() {
         Map<Integer, String> tempDic = new HashMap<>();
 
         // 1. Saves manuais (1 a 3)

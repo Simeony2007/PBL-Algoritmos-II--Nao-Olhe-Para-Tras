@@ -3,6 +3,27 @@
     "configurations": [
         {
             "type": "java",
+            "name": "TestApp",
+            "request": "launch",
+            "mainClass": "src.view._sandbox.TestApp",
+            "projectName": "PBL-Algoritmos-II--Nao-Olhe-Para-Tras_d146948e"
+        },
+        {
+            "type": "java",
+            "name": "WindowMenuInterface",
+            "request": "launch",
+            "mainClass": "src.view._sandbox.WindowMenuInterface",
+            "projectName": "PBL-Algoritmos-II--Nao-Olhe-Para-Tras_d146948e"
+        },
+        {
+            "type": "java",
+            "name": "MenuInterfaceJFX",
+            "request": "launch",
+            "mainClass": "src.view.Menu.MenuInterfaceJFX",
+            "projectName": "PBL-Algoritmos-II--Nao-Olhe-Para-Tras_d146948e"
+        },
+        {
+            "type": "java",
             "name": "StageController",
             "request": "launch",
             "mainClass": "src.controller.StageController",

@@ -12,9 +12,9 @@
 
 - [ ] Os 3 Padrões GoF:
 - - [ ] Definir quais padrões usados (atualizar nome abaixo e dizer onde foi aplicado quando implementar)
-- - [ ] Padrão Observer (implementando no Gamestate ainda - Simeony)
-- - [ ] Padrão 2 (Talvez um adapter? Usa o ControllerFX como um adapter do Game talvez... Mas dá mais trabalhoo, tem que mecher com Thread - Simeony)
-- - [ ] Padrão 3 (Facade, o ControllerFX pode ser uma facade entre Game e o viewJfx em geral - Simeony)
+- - [ ] Padrão Observer (wip)
+- - [ ] Padrão 2
+- - [x] Padrão Facade (ControllerFX é uma facade entre game e a view - Simeony)
 
 - [ ] Audiovisual:
 - - [ ] Todos os Sprites dos Personagens:
