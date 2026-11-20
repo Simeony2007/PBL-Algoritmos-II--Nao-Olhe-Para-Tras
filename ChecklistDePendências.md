@@ -4,7 +4,7 @@
 - - [x] Menu Inicial + Instruções + Créditos
 - - [ ] Iniciar
 - - [ ] Configurações
-- - [ ] Coleção
+- - [x] Coleção
 
 - [ ] Telas do Jogo:
 - - [ ] Criação de Personagem (motivação, o ngc de começar com mais 5 em X atributo)

@@ -1,12 +1,4 @@
-<<<<<<< HEAD:src/view/MenuInterfaceJFX.java
-package src.view;
-
-import java.util.ArrayList;
-import java.util.Map;
-import java.util.Stack;
-=======
 package src.view.Menu;
->>>>>>> c0bbb62ce0a07c1fdfa91f99689df6c5661271db:src/view/Menu/MenuInterfaceJFX.java
 
 import javafx.application.Application;
 import javafx.geometry.Insets;
@@ -17,23 +9,18 @@ import javafx.scene.control.*;
 import javafx.stage.Stage;
 import javafx.scene.layout.*;
 import javafx.scene.Parent;
+import src.controller.ControllerFX;
+import src.view.GameInterfaceJFX;
 
 public class MenuInterfaceJFX extends Application {
-<<<<<<< HEAD:src/view/MenuInterfaceJFX.java
-    int buttonWidth = 100;
-    ControllerFX controllerFx = new ControllerFX();
-    GameInterfaceJFX ginterface = new GameInterfaceJFX();
-    Stage principalStage;
-    Scene menuScene;
-=======
     private static final int BUTTON_WIDTH = 100;
+    private ControllerFX controllerFx = new ControllerFX();
+    private GameInterfaceJFX ginterface = new GameInterfaceJFX();
     private Stage principalStage;
-    public Scene menuScene;
->>>>>>> c0bbb62ce0a07c1fdfa91f99689df6c5661271db:src/view/Menu/MenuInterfaceJFX.java
+    private Scene menuScene;
 
     @Override
     public void start(Stage principalStage) throws Exception {
-
         this.principalStage = principalStage;
         this.menuScene = new Scene(menuScreen());
 
@@ -44,8 +31,8 @@ public class MenuInterfaceJFX extends Application {
 
     }
 
-    public Parent menuScreen() {
-        BorderPane bPane = new BorderPane();
+    private Parent menuScreen() {
+        BorderPane root = new BorderPane();
         VBox vBox = new VBox();
         StackPane stackPane = new StackPane();
 
@@ -56,15 +43,16 @@ public class MenuInterfaceJFX extends Application {
         Button btnCredits = new Button("Créditos");
         Button btnExit = new Button("Fechar jogo");
 
-        Label label = new Label("Título");
+        Label title = new Label("Não Olhe Para Trás");
+        title.setStyle("-fx-font-size: 50px; -fx-font-weight: bold;");
 
-        bPane.setTop(stackPane);
-        bPane.setCenter(vBox);
+        root.setTop(stackPane);
+        root.setCenter(vBox);
         vBox.setSpacing(10);
         vBox.getChildren().addAll(btnStart, btnSettings, btnCollection, btnInstructions, btnCredits, btnExit);
         vBox.setAlignment(Pos.CENTER);
-        stackPane.getChildren().add(label);
-        label.setPadding(new Insets(50));
+        stackPane.getChildren().add(title);
+        title.setPadding(new Insets(50));
 
         btnStart.setPrefWidth(BUTTON_WIDTH);
         btnSettings.setPrefWidth(BUTTON_WIDTH);
@@ -85,31 +73,28 @@ public class MenuInterfaceJFX extends Application {
         btnCredits.setOnAction(e -> menuScene.setRoot(creditsScreen()));
         btnExit.setOnAction(e -> principalStage.close());
 
-        label.setFont(Font.font("Arial", 30));
+        title.setFont(Font.font("Arial", 30));
 
-        return bPane;
+        return root;
     }
 
     private Parent slotsScreen() {
-        return new VBox();
-        }
-
-    // TODO: Fazer essas duas telas! Settings e Collection. - Simeony
-    private Parent settingsScreen() {
-        return new VBox();
+        return SlotsJFX.createView(() -> menuScene.setRoot(menuScreen()));
     }
 
-<<<<<<< HEAD:src/view/MenuInterfaceJFX.java
+    private Parent collectionScreen() {
+        return CollectionsJFX.createView(() -> menuScene.setRoot(menuScreen()));
+    }
+
+    private Parent settingsScreen() {
+        return SettingsJFX.createView(() -> menuScene.setRoot(menuScreen()));
+    }
+
     private void startGame() {
         principalStage.setScene(ginterface.gameScene());
         ginterface.setController(controllerFx);
         controllerFx.setView(ginterface);
         controllerFx.startCurrentScene();
-=======
-    private Parent collectionScreen() {
-        return CollectionsJFX.createView(() -> menuScene.setRoot(menuScreen()));
-        
->>>>>>> c0bbb62ce0a07c1fdfa91f99689df6c5661271db:src/view/Menu/MenuInterfaceJFX.java
     }
 
     private Parent creditsScreen() {

@@ -13,6 +13,11 @@ import javafx.scene.text.Font;
 import javafx.scene.control.Label;
 
 public class SlotsJFX {
+    public static Parent createView(Runnable onReturnAction) {
+            return new VBox();
+    }
+
+
     private Parent slotsScreen(ArrayList<String> textOfButtons) {
         BorderPane bPane = new BorderPane();
         VBox vBox = new VBox();
