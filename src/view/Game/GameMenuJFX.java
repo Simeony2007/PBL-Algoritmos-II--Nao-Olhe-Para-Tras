@@ -14,29 +14,31 @@ import javafx.scene.layout.Region;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 
+/**
+ * 
+ * Obsolete/Unused
+ */
 public class GameMenuJFX {
 
     private final VBox view = new VBox();
 
-    public GameMenuJFX(Runnable onStatus, Runnable onSettings, Runnable onSave, Runnable onReturnToMainMenu) {
-        Button statusButton = new Button("Status");
+    public GameMenuJFX(Runnable onSettings, Runnable onSave, Runnable onReturnToMainMenu) {
         Button settingsButton = new Button("Configurações");
         Button saveButton = new Button("Salvar");
         Button returnButton = new Button("Retornar ao menu");
-        statusButton.setOnAction(event -> onStatus.run());
         settingsButton.setOnAction(event -> onSettings.run());
         saveButton.setOnAction(event -> onSave.run());
         returnButton.setOnAction(event -> onReturnToMainMenu.run());
 
         double buttonWidth = 200;
         for (Button button : new Button[] {
-                statusButton, settingsButton, saveButton, returnButton
+                settingsButton, saveButton, returnButton
         }) {
             button.setPrefWidth(buttonWidth);
             button.setMaxWidth(Double.MAX_VALUE);
         }
 
-        view.getChildren().addAll(statusButton, settingsButton, saveButton, returnButton);
+        view.getChildren().addAll(settingsButton, saveButton, returnButton);
         view.setSpacing(20);
         view.setAlignment(Pos.CENTER);
         view.setPadding(new Insets(30));

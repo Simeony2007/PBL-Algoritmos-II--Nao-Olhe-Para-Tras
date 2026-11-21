@@ -2,6 +2,7 @@ package src.controller;
 
 import src.model.repository.SaveManager;
 import src.model.service.Collection;
+import src.model.service.GameState;
 import src.model.service.SaveState;
 import src.model.service.Settings;
 import src.model.service.logic.Npc;
@@ -15,6 +16,7 @@ import java.util.ArrayList;
 import java.util.Map;
 
 import src.controller.legacy.core.Game;
+import src.controller.legacy.core.GameSave;
 
 // FACADE ENTRE O GAME E O VIEWJFX 
 public class ControllerFX implements Observer {
@@ -33,6 +35,9 @@ public class ControllerFX implements Observer {
 
     public void setView(GameInterfaceJFX view) {
         this.view = view;
+        if (game != null) {
+            view.updateStatus(game.getState().getOrfeu(), game.getState().getNpcs());
+        }
     }
 
     public void loader(int index) {
@@ -47,10 +52,13 @@ public class ControllerFX implements Observer {
         SaveManager.deleteSave(index);
     }
 
+    public void saveGame(int index) {
+        GameSave.saveCurrentProgress(game.getState(), game.getCurrentSceneId(), index);
+    }
+
     public void startCurrentScene() {
         ArrayList<Map.Entry<String, String>> dialogos = DialoguesParser
                 .dialogueSeparator(game.allSceneDialoguesQueue());
-        // System.out.println(dialogos); // TODO: Remover quando tudo tiver certo
         String nomeImagem = game.getCurrentChapterBgName();
         view.setChapterBackground(nomeImagem);
         int speed = game.getTextSpeed();
@@ -68,6 +76,9 @@ public class ControllerFX implements Observer {
         if (!escolhas.isEmpty()) {
             view.showChoicesOptions(escolhas);
         } else {
+            if (game.isTheEndOfChapter()) {
+                startNextChapter();
+            }
             nextScene();
         }
     }
@@ -84,7 +95,7 @@ public class ControllerFX implements Observer {
 
     private void runChoice() {
         if (game.isTheEndOfChapter()) {
-            view.showEndChapter();
+            startNextChapter();
         } else {
             startCurrentScene();
         }
@@ -92,11 +103,14 @@ public class ControllerFX implements Observer {
 
     public void startNextChapter() {
         game.nextChapter();
-        startCurrentScene();
+        if (view.showStartNewChapter(game.getCurrentChapterTitle())) {
+            startCurrentScene();
+        }
     }
 
     @Override
     public void modelUpdated(Orfeu orfeu, ArrayList<Npc> npcs, Orfeu oldOrfeu, ArrayList<Npc> oldNpcs) {
+        view.updateStatus(orfeu, npcs);
         for (int i = 0; i < npcs.size(); i++) {
             int diffAff = npcs.get(i).getAffinity() - oldNpcs.get(i).getAffinity();
             if (diffAff != 0) {

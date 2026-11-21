@@ -78,10 +78,8 @@ public class DialogueJFX {
         background.setManaged(false);
 
         Runnable updateBackground = () -> updateBackground(background, content.getWidth());
-        content.widthProperty().addListener((observable, oldValue, newValue) ->
-                updateBackground.run());
-        characterName.textProperty().addListener((observable, oldValue, newValue) ->
-                updateBackground.run());
+        content.widthProperty().addListener((observable, oldValue, newValue) -> updateBackground.run());
+        characterName.textProperty().addListener((observable, oldValue, newValue) -> updateBackground.run());
 
         dialogueBox = new StackPane(background, content);
         dialogueBox.setAlignment(Pos.TOP_LEFT);

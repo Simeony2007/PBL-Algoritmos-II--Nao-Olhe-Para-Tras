@@ -28,6 +28,10 @@ public class SlotsMenuJFX {
         return menuSlots.getAllSavesInformation();
     }
 
+    public boolean doesSaveExist(int index) {
+        return SaveManager.doesSaveExist(index);
+    }
+
     public void deleteSave(int index) {
         try {
             control.deleteSave(index);

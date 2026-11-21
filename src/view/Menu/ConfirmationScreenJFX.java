@@ -18,11 +18,15 @@ import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 
-final class ConfirmationScreenJFX {
+public final class ConfirmationScreenJFX {
 
     private final VBox view = new VBox(20);
 
-    ConfirmationScreenJFX(Runnable onConfirm, Runnable onCancel) {
+    public ConfirmationScreenJFX(Runnable onConfirm, Runnable onCancel) {
+        this(onConfirm, onCancel, "Tem certeza?");
+    }
+
+    public ConfirmationScreenJFX(Runnable onConfirm, Runnable onCancel, String text) {
         view.setMaxSize(Region.USE_PREF_SIZE, Region.USE_PREF_SIZE);
         view.setPrefWidth(260);
         view.setPadding(new Insets(20));
@@ -37,7 +41,7 @@ final class ConfirmationScreenJFX {
                 new CornerRadii(12),
                 new BorderWidths(2))));
 
-        Label question = new Label("Tem certeza?");
+        Label question = new Label(text);
         question.setFont(new Font("Arial", 18));
         question.setTextFill(Color.WHITE);
 
@@ -61,11 +65,11 @@ final class ConfirmationScreenJFX {
         });
     }
 
-    Parent getView() {
+    public Parent getView() {
         return view;
     }
 
-    void show() {
+    public void show() {
         view.setVisible(true);
     }
 

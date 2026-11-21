@@ -25,40 +25,84 @@ final class SaveSlotManagerJFX {
     private final StackPane view = new StackPane();
     private final BorderPane managerPane = new BorderPane();
     private final Label saveInfoLabel = new Label();
+    private final Button actionButton = new Button();
+    private final Runnable onSave;
     private final Runnable onLoad;
     private final Runnable onDelete;
     private final Runnable onOpen;
     private final Runnable onClose;
-    private final ConfirmationScreenJFX confirmation;
+    private final ConfirmationScreenJFX deleteConfirmation;
+    private final ConfirmationScreenJFX overwriteConfirmation;
 
     SaveSlotManagerJFX(
             Runnable onLoad,
             Runnable onDelete,
             Runnable onOpen,
             Runnable onClose) {
+        this(onLoad, onDelete, onOpen, onClose, () -> {
+        });
+    }
+
+    SaveSlotManagerJFX(
+            Runnable onLoad,
+            Runnable onDelete,
+            Runnable onOpen,
+            Runnable onClose,
+            Runnable onSave) {
         this.onLoad = onLoad;
         this.onDelete = onDelete;
         this.onOpen = onOpen;
         this.onClose = onClose;
+        this.onSave = onSave;
 
-        confirmation = new ConfirmationScreenJFX(
+        deleteConfirmation = new ConfirmationScreenJFX(
                 () -> {
                     managerPane.setDisable(false);
                     this.onDelete.run();
+                    close();
                 },
                 () -> managerPane.setDisable(false));
 
+        overwriteConfirmation = new ConfirmationScreenJFX(() -> {
+            managerPane.setDisable(false);
+            this.onSave.run();
+            close();
+        }, () -> {
+            managerPane.setDisable(false);
+        },
+                "Deseja sobrescrever?");
         createManagerPane();
-        view.getChildren().addAll(managerPane, confirmation.getView());
+        view.getChildren().addAll(
+                managerPane,
+                deleteConfirmation.getView(),
+                overwriteConfirmation.getView());
         view.setVisible(false);
     }
 
-    Parent getView() {
+    public Parent getView() {
         return view;
     }
 
-    void showSaveManager(String saveInfo) {
+    public void showSaveManager(String saveInfo) {
+        showSaveManager(saveInfo, "Carregar", onLoad);
+    }
+
+    public void showSaveManagerForSave(String saveInfo, boolean saveExists) {
+        showSaveManager(saveInfo, "Salvar", () -> {
+            if (saveExists) {
+                managerPane.setDisable(true);
+                overwriteConfirmation.show();
+            } else {
+                onSave.run();
+                close();
+            }
+        });
+    }
+
+    private void showSaveManager(String saveInfo, String actionLabel, Runnable action) {
         saveInfoLabel.setText(saveInfo);
+        actionButton.setText(actionLabel);
+        actionButton.setOnAction(event -> action.run());
         view.setVisible(true);
         onOpen.run();
     }
@@ -93,12 +137,11 @@ final class SaveSlotManagerJFX {
         textBox.setAlignment(Pos.CENTER);
         BorderPane.setMargin(textBox, new Insets(15, 10, 20, 10));
 
-        Button loadButton = new Button("Carregar");
         Button deleteButton = new Button("Apagar");
-        loadButton.setPrefWidth(120);
+        actionButton.setPrefWidth(120);
         deleteButton.setPrefWidth(120);
 
-        HBox buttons = new HBox(20, loadButton, deleteButton);
+        HBox buttons = new HBox(20, actionButton, deleteButton);
         buttons.setAlignment(Pos.CENTER);
 
         managerPane.setTop(closeButton);
@@ -106,10 +149,9 @@ final class SaveSlotManagerJFX {
         managerPane.setBottom(buttons);
 
         closeButton.setOnAction(event -> close());
-        loadButton.setOnAction(event -> onLoad.run());
         deleteButton.setOnAction(event -> {
             managerPane.setDisable(true);
-            confirmation.show();
+            deleteConfirmation.show();
         });
     }
 
