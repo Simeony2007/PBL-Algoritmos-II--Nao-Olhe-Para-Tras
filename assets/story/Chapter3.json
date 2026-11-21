@@ -1,0 +1,324 @@
+{
+  "scenes": [
+    {
+      "dialogues": [
+        {
+          "text": "Orfeu adentra os Campos Elíseos, um local vibrante banhado por grama dourada e brisa suave. Perto da margem do rio Lete, cujas águas apagam as memórias dos mortos, ele nota uma alma segurando um óbolo."
+        },
+        {
+          "text": "Alma Nobre: Músico vivo... estou exausto. As lembranças das minhas perdas no mundo me torturam diariamente, mas tenho pavor do vazio total. Guardei este óbolo, mas agora não vejo sentido na viagem."
+        },
+        {
+          "text": "Alma Nobre: Se você puder me dar uma razão sólida para não apagar minha própria essência nas águas deste rio, esta moeda é sua. Caso contrário, beberei o esquecimento e afundarei esta prata no lodo."
+        },
+        {
+          "text": "Qual argumento Orfeu usará para salvar as memórias do nobre e conseguir a moeda?"
+        }
+      ],
+      "choices": [
+        {
+          "text": "Nossas memórias são os alicerces de quem amamos",
+          "nextSceneId": "s1a_memory",
+          "obol": 1,
+          "affinity": 0,
+          "love": 0,
+          "angry": 0,
+          "sadness": 0
+        },
+        {
+          "text": "A dor prova que um dia nós estivemos vivos",
+          "nextSceneId": "s1b_memory",
+          "npc": "Charon",
+          "obol": 1,
+          "affinity": 1,
+          "love": 0,
+          "angry": 0,
+          "sadness": 0
+        },
+        {
+          "text": "Sua covardia me dá nojo",
+          "nextSceneId": "s1c_memory",
+          "npc": "Charon",
+          "obol": 1,
+          "affinity": -1,
+          "love": 0,
+          "angry": 0,
+          "sadness": 1
+        }
+      ],
+      "sceneId": "Preço da Memória",
+      "currentDialogueID": 0,
+      "isEnding": false
+    },
+    {
+      "dialogues": [
+        {
+          "text": "Orfeu: Apagar sua dor é apagar também os sorrisos e a luz de quem você amou."
+        },
+        {
+          "text": "A alma recua, emocionada com a verdade de suas palavras, e lhe entrega a prata cintilante com profunda gratidão."
+        }
+      ],
+      "choices": [],
+      "sceneId": "s1a_memory",
+      "currentDialogueID": 0,
+      "nextSceneId": "Ilusão da Glória",
+      "isEnding": false
+    },
+    {
+      "dialogues": [
+        {
+          "text": "Orfeu: O vazio infinito é pior que a angústia da perda. Aceite o peso da sua história."
+        },
+        {
+          "text": "Compreendendo a melancolia da afirmação, o nobre chora em silêncio e passa a moeda para suas mãos quentes."
+        }
+      ],
+      "choices": [],
+      "sceneId": "s1b_memory",
+      "currentDialogueID": 0,
+      "nextSceneId": "Ilusão da Glória",
+      "isEnding": false
+    },
+    {
+      "dialogues": [
+        {
+          "text": "Orfeu: Você chora por dores patéticas enquanto eu desbravo o submundo pelo que é meu. Você não é digno dos Campos Elíseos, me entregue o óbolo antes que eu mesmo o jogue nesse rio maldito."
+        },
+        {
+          "text": "Amedrontado pela crueldade egoísta e agressiva do bardo, o nobre encolhe-se e simplesmente solta a moeda em suas mãos."
+        }
+      ],
+      "choices": [],
+      "sceneId": "s1c_memory",
+      "currentDialogueID": 0,
+      "nextSceneId": "Ilusão da Glória",
+      "isEnding": false
+    },
+    {
+      "dialogues": [
+        {
+          "text": "Com a moeda guardada, o bardo se afasta do rio. Ao longe, um banquete divino atrai heróis e semideuses. Porém, isolado dessa multidão festiva, um guerreiro imponente afia uma espada de bronze rachada."
+        },
+        {
+          "text": "Guerreiro: Você cheira a suor e terra molhada, mortal. Veio buscar histórias épicas de vitórias para cantar no mundo de cima? Saiba que a glória eterna aqui não passa de vento vazio em nossa mente."
+        },
+        {
+          "text": "Guerreiro: Eu daria toda a minha fama conquistada nas areias de Troia apenas para sentir o calor do sol na pele mais uma vez, ou para abraçar minha filha. A morte revela a grande farsa da guerra."
+        },
+        {
+          "text": "Como Orfeu responde à revelação amarga do velho soldado?"
+        }
+      ],
+      "choices": [
+        {
+          "text": "O paraíso é justo, pois o amor deles pelo mundo lhes custou tudo",
+          "nextSceneId": "s2a_glory",
+          "obol": 0,
+          "affinity": 0,
+          "love": 1,
+          "angry": 0,
+          "sadness": 0
+        },
+        {
+          "text": "A eternidade dourada não apaga a dor do que foi perdido",
+          "nextSceneId": "s2b_glory",
+          "npc": "Charon",
+          "obol": 0,
+          "affinity": 1,
+          "love": 0,
+          "angry": 1,
+          "sadness": 0
+        },
+        {
+          "text": "Sua glória inútil não me interessa, seu fantasma patético",
+          "nextSceneId": "s2c_glory",
+          "npc": "Charon",
+          "obol": 0,
+          "affinity": -1,
+          "love": 0,
+          "angry": 0,
+          "sadness": 1
+        }
+      ],
+      "sceneId": "Ilusão da Glória",
+      "currentDialogueID": 0,
+      "isEnding": false
+    },
+    {
+      "dialogues": [
+        {
+          "text": "Orfeu: Eles sacrificaram seu futuro para proteger suas famílias e cidades. A paz é a única recompensa justa."
+        },
+        {
+          "text": "O soldado suspira e sorri com amargura, encontrando um breve e doce conforto ao lembrar que lutou por quem amava."
+        }
+      ],
+      "choices": [],
+      "sceneId": "s2a_glory",
+      "currentDialogueID": 0,
+      "nextSceneId": "Encontro com Jasão",
+      "isEnding": false
+    },
+    {
+      "dialogues": [
+        {
+          "text": "Orfeu: Vi reis chorarem na luz. O paraíso é apenas uma jaula bonita; a angústia por tudo o que não puderam viver os assombra para sempre."
+        },
+        {
+          "text": "O guerreiro concorda solenemente."
+        }
+      ],
+      "choices": [],
+      "sceneId": "s2b_glory",
+      "currentDialogueID": 0,
+      "nextSceneId": "Encontro com Jasão",
+      "isEnding": false
+    },
+    {
+      "dialogues": [
+        {
+          "text": "Orfeu: Você viveu apenas para derramar sangue e agora chora como um covarde por ter perdido o sol. Guarde sua autopiedade para si, pois sua existência vazia me dá nojo."
+        },
+        {
+          "text": "O guerreiro trinca os dentes e aperta o cabo da espada, ofendido com o seu desprezo e crueldade, e vira as costas abruptamente."
+        }
+      ],
+      "choices": [],
+      "sceneId": "s2c_glory",
+      "currentDialogueID": 0,
+      "nextSceneId": "Encontro com Jasão",
+      "isEnding": false
+    },
+    {
+      "dialogues": [
+        {
+          "text": "A luz reconfortante dos Elíseos ilumina uma grande oliveira. Sob ela, descansando em uma túnica simples, está Jasão, o líder dos Argonautas. Ao notar o bardo, ele levanta-se surpreso com o calor humano."
+        },
+        {
+          "text": "Jasão: Orfeu? Pelos deuses celestes, a vida ainda corre quente em suas veias! Que ventos tempestuosos e trágicos trouxeram o maior músico de todos os tempos e meu velho amigo até o fim da linha?"
+        },
+        {
+          "text": "Orfeu: Vim buscar minha esposa, Jasão. Não posso aceitar que o fio da vida de Eurídice tenha sido cortado pelas Moiras de forma tão prematura. Preciso resgatá-la do fundo deste abismo sombrio."
+        },
+        {
+          "text": "Jasão: O amor... Força mais destrutiva que monstros marinhos. Confiei em Médea e ela assassinou nossos filhos para me punir. Conquistei o Velocino, mas uma mulher destroçou minha alma. Vale a pena?"
+        },
+        {
+          "text": "Qual será a resposta de Orfeu ao questionamento fatalista de Jasão?"
+        }
+      ],
+      "choices": [
+        {
+          "text": "O amor verdadeiro cura, não destrói",
+          "nextSceneId": "s3a_jason",
+          "obol": 0,
+          "affinity": 0,
+          "love": 1,
+          "angry": 0,
+          "sadness": 0
+        },
+        {
+          "text": "A dor da perda é o nosso destino comum",
+          "nextSceneId": "s3b_jason",
+          "obol": 0,
+          "affinity": 0,
+          "love": 0,
+          "angry": 1,
+          "sadness": 0
+        },
+        {
+          "text": "O passado de vocês não dita o meu futuro",
+          "nextSceneId": "s3c_jason",
+          "obol": 0,
+          "affinity": 0,
+          "love": 0,
+          "angry": 0,
+          "sadness": 1
+        }
+      ],
+      "sceneId": "Encontro com Jasão",
+      "currentDialogueID": 0,
+      "isEnding": false
+    },
+    {
+      "dialogues": [
+        {
+          "text": "Orfeu: Médea foi consumida pela obsessão pura. O que sinto por Eurídice é divino e lutarei por isso até o fim."
+        },
+        {
+          "text": "Jasão suspira, admirando sua convicção inabalável e desejando-lhe muita sorte."
+        }
+      ],
+      "choices": [],
+      "sceneId": "s3a_jason",
+      "currentDialogueID": 0,
+      "nextSceneId": "Porto do caronte",
+      "isEnding": false
+    },
+    {
+      "dialogues": [
+        {
+          "text": "Orfeu: Nossas histórias sempre terminam em desgraça, meu capitão. Somos peões na mão dos deuses."
+        },
+        {
+          "text": "O herói abaixa a cabeça com peso, compartilhando do seu luto profundo em absoluto silêncio."
+        }
+      ],
+      "choices": [],
+      "sceneId": "s3b_jason",
+      "currentDialogueID": 0,
+      "nextSceneId": "Porto do caronte",
+      "isEnding": false
+    },
+    {
+      "dialogues": [
+        {
+          "text": "Orfeu mantém uma postura pragmática e firme, recusando-se a comparar seu casamento de luz com os erros letais de Jasão. O herói balança a cabeça, reconhece a teimosia de Orfeu e deixa o caminho livre."
+        }
+      ],
+      "choices": [],
+      "sceneId": "s3c_jason",
+      "currentDialogueID": 0,
+      "nextSceneId": "Porto do caronte",
+      "isEnding": false
+    },
+    {
+      "dialogues": [
+        {
+          "text": "Os campos férteis acabam abruptamente, dando lugar às margens escuras do próximo afluente do rio infernal. Lá, a velha barca de madeira balança na água negra. Caronte o aguarda com a mão ossuda estendida."
+        }
+      ],
+      "choices": [
+        {
+          "text": "Oferecer óbolo ao caronte",
+          "nextSceneId": "s5_charon",
+          "obol": -1,
+          "affinity": 0,
+          "love": 0,
+          "angry": 0,
+          "sadness": 0
+        }
+      ],
+      "sceneId": "Porto do caronte",
+      "currentDialogueID": 0,
+      "isEnding": false
+    },
+    {
+      "dialogues": [
+        {
+          "text": "Orfeu deposita o óbolo de prata que conquistou na mão fria de Caronte. O barqueiro avalia o brilho do metal com um leve grunhido de aprovação e abre espaço para o bardo subir em sua barca."
+        },
+        {
+          "text": "A madeira range ameaçadoramente sob os pés do bardo enquanto a barca rasga a correnteza cada vez mais violenta do rio. Deixando as memórias douradas dos Elíseos para trás, o frio absoluto do núcleo do Submundo perfura os ossos de Orfeu, um alerta sombrio de que o próximo destino exigirá mais do que apenas moedas e belas canções."
+        }
+      ],
+      "choices": [],
+      "sceneId": "s5_charon",
+      "currentDialogueID": 0,
+      "isEnding": false
+    }
+  ],
+  "title": "Capítulo 3 - Campos Elíseos",
+  "currentSceneIndex": 0
+}

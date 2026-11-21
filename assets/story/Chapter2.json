@@ -1,0 +1,392 @@
+{
+  "scenes": [
+    {
+      "dialogues": [
+        {
+          "text": "O barco de Caronte se afasta lentamente, deixando Orfeu nas margens desoladas dos Campos de Asfódelo. Diante dele se estende uma planície cinzenta e infinita, onde flores pálidas e murchas cobrem o chão coberto de pó."
+        },
+        {
+          "text": "Milhares de almas vagam sem rumo neste limbo apático, murmurando palavras ininteligíveis. Não há grandes punições aqui, mas também não há alegria; apenas uma existência monótona e esquecida, suspensa na eternidade de Hades."
+        },
+        {
+          "text": "Orfeu sabe que, para prosseguir sua descida pelo Submundo e cruzar a próxima barreira do rio Estige, precisará convencer o barqueiro novamente. O bardo aperta sua harpa divina contra o peito, ciente de que precisará encontrar mais um óbolo neste deserto espiritual."
+        }
+      ],
+      "choices": [],
+      "sceneId": "s1_asphodel",
+      "currentDialogueID": 0,
+      "nextSceneId": "Alma do Marinheiro",
+      "isEnding": false
+    },
+    {
+      "dialogues": [
+        {
+          "text": "Caminhando pela névoa densa, Orfeu percebe uma figura robusta, de braços cruzados, observando as águas paradas ao longe com uma saudade profunda. A alma usa trapos que um dia foram roupas de um navegador."
+        },
+        {
+          "text": "Ao ouvir os passos firmes de Orfeu, o espírito se vira bruscamente. Seus olhos translúcidos se arregalam ao notar as cores vivas e o calor emanando do corpo do bardo. É uma visão raríssima."
+        },
+        {
+          "text": "Marinheiro: Pelos deuses esquecidos... Você respira! Faz tanto tempo que não vejo a vida pulsando dessa forma. Diga-me, jovem vivo... Como estão os oceanos?"
+        },
+        {
+          "text": "Marinheiro: Eu fui um grande capitão nos mares Egeus, mas a névoa deste lugar está devorando minha mente. Eu... Eu não consigo mais lembrar da cor do mar, nem do som das ondas. Por favor, me traga uma lembrança."
+        },
+        {
+          "text": "Como Orfeu responderá ao apelo doloroso do velho lobo do mar?"
+        }
+      ],
+      "choices": [
+        {
+          "text": "Música vibrante sobre o mar e a brisa salgada",
+          "nextSceneId": "s2a_sailor",
+          "npc": "Charon",
+          "obol": 0,
+          "affinity": 1,
+          "love": 0,
+          "angry": -1,
+          "sadness": 0
+        },
+        {
+          "text": "Lamentar a perda das memórias e a tragédia do marinheiro",
+          "nextSceneId": "s2b_sailor",
+          "obol": 0,
+          "affinity": 0,
+          "love": 0,
+          "angry": 0,
+          "sadness": 0
+        },
+        {
+          "text": "Ignorar sua prece nostálgica e pedir informações",
+          "nextSceneId": "s2c_sailor",
+          "npc": "Charon",
+          "obol": 0,
+          "affinity": -1,
+          "love": 0,
+          "angry": 0,
+          "sadness": 0
+        }
+      ],
+      "sceneId": "Alma do Marinheiro",
+      "currentDialogueID": 0,
+      "isEnding": false
+    },
+    {
+      "dialogues": [
+        {
+          "text": "A melodia traz o cheiro imaginário de sal e a visão de águas cristalinas. O marinheiro chora de alegria."
+        },
+        {
+          "text": "Marinheiro: Obrigado! E se esse velho pode te ajudar em sua jornada, tem monstros voadores perigosos nesses campos, eles só recuam se você revirar seu ataque."
+        }
+      ],
+      "choices": [],
+      "sceneId": "s2a_sailor",
+      "currentDialogueID": 0,
+      "nextSceneId": "Fã de Orfeu",
+      "isEnding": false
+    },
+    {
+      "dialogues": [
+        {
+          "text": "Orfeu canta uma balada suave e dolorosa sobre como tudo no mundo dos vivos acaba desaparecendo nas areias do tempo. O marinheiro suspira, aceitando o abraço frio da eternidade e desaparecendo lentamente na multidão silenciosa de Asfódelo."
+        }
+      ],
+      "choices": [],
+      "sceneId": "s2b_sailor",
+      "currentDialogueID": 0,
+      "nextSceneId": "Fã de Orfeu",
+      "isEnding": false
+    },
+    {
+      "dialogues": [
+        {
+          "text": "Orfeu: Não tenho tempo para nostalgias marítimas de quem já afundou no esquecimento. Onde encontro uma moeda por aqui?"
+        },
+        {
+          "text": "O marinheiro fecha a cara, ofendido com sua brutalidade implacável"
+        },
+        {
+          "text": "Marinheiro: Vá para o poço do Tártaro, garoto prepotente. Que os espíritos o devorem!"
+        },
+        {
+          "text": "Ele cospe no chão de cinzas e se afasta furioso."
+        }
+      ],
+      "choices": [],
+      "sceneId": "s2c_sailor",
+      "currentDialogueID": 0,
+      "nextSceneId": "Fã de Orfeu",
+      "isEnding": false
+    },
+    {
+      "dialogues": [
+        {
+          "text": "Afastando-se das margens, Orfeu percebe que não está mais sozinho na vasta planície. Uma alma jovem, esguia e pálida, o acompanha a poucos passos de distância, com as mãos entrelaçadas e um sorriso admirado."
+        },
+        {
+          "text": "Fã: Eu não posso acreditar... Esses acordes celestiais, esse rosto abençoado pelas Musas. Você é realmente Orfeu de Trácia! Eu viajava de vilarejo em vilarejo no mundo lá em cima só para ouvir suas incríveis apresentações."
+        },
+        {
+          "text": "Fã: Você iluminou minha vida mortal, grande bardo. Eu escondi isto quando desci aos mundos inferiores porque era tudo o que eu tinha. Quero que você fique com ela, para que sua música nunca pare de tocar."
+        },
+        {
+          "text": "O espírito maravilhado estende a mão translúcida e revela um óbolo perfeitamente conservado, brilhando com um fraco fulgor na penumbra opressora dos Campos de Asfódelo."
+        },
+        {
+          "text": "Como você recebe o presente inesperado do seu antigo admirador?"
+        }
+      ],
+      "choices": [
+        {
+          "text": "Agradecer o carinho com humildade e oferecer uma melodia em retribuição",
+          "nextSceneId": "s3a_fan",
+          "npc": "Charon",
+          "obol": 1,
+          "affinity": 1,
+          "love": 0,
+          "angry": 0,
+          "sadness": 0
+        },
+        {
+          "text": "Aceitar a moeda com melancolia, dizendo que a fama não salvou sua esposa",
+          "nextSceneId": "s3b_fan",
+          "obol": 1,
+          "affinity": 0,
+          "love": 0,
+          "angry": 0,
+          "sadness": 0
+        },
+        {
+          "text": "Pegar a moeda de forma ríspida, dizendo que elogios não têm valor no mundo dos mortos",
+          "nextSceneId": "s3c_fan",
+          "npc": "Charon",
+          "obol": 1,
+          "affinity": -1,
+          "love": 0,
+          "angry": 0,
+          "sadness": 0
+        }
+      ],
+      "sceneId": "Fã de Orfeu",
+      "currentDialogueID": 0,
+      "isEnding": false
+    },
+    {
+      "dialogues": [
+        {
+          "text": "Orfeu: Sua gentileza aquece este reino de gelo eterno. Deixe-me retribuir da única forma que sei."
+        },
+        {
+          "text": "Você toca a canção favorita dele suavemente. A alma chora de alegria pura antes de sumir na névoa, deixando a moeda em suas mãos e o seu coração levemente reconfortado."
+        }
+      ],
+      "choices": [],
+      "sceneId": "s3a_fan",
+      "currentDialogueID": 0,
+      "nextSceneId": "Ataque das Keres",
+      "isEnding": false
+    },
+    {
+      "dialogues": [
+        {
+          "text": "Orfeu: Minha fama não impediu a víbora de picar o calcanhar da minha amada... Mas essa sua moeda me ajudará a tentar consertar minha falha."
+        },
+        {
+          "text": "Você aceita o óbolo de forma solene. O fã abaixa a cabeça com profunda empatia, compreendendo sua dor, e respeitosamente deixa você sozinho."
+        }
+      ],
+      "choices": [],
+      "sceneId": "s3b_fan",
+      "currentDialogueID": 0,
+      "nextSceneId": "Ataque das Keres",
+      "isEnding": false
+    },
+    {
+      "dialogues": [
+        {
+          "text": "Orfeu: Elogios de fantasmas não valem nada neste inferno. Mas o seu dinheiro será muito útil para mim."
+        },
+        {
+          "text": "Você arranca a moeda da mão da alma. O jovem recua assustado e profundamente magoado com a frieza do ídolo que tanto admirava em vida, fugindo para longe de você."
+        }
+      ],
+      "choices": [],
+      "sceneId": "s3c_fan",
+      "currentDialogueID": 0,
+      "nextSceneId": "Ataque das Keres",
+      "isEnding": false
+    },
+    {
+      "dialogues": [
+        {
+          "text": "O bardo segue viagem por um campo desolado até que um guincho estridente e demoníaco corta o silêncio mórbido. Do céu coberto de trevas, criaturas aladas e grotescas com presas afiadas mergulham em direção a Orfeu. São as terríveis Keres, espíritos da matança."
+        },
+        {
+          "text": "Elas não parecem interessadas na carne de Orfeu, mas sim no brilho dourado e divino de sua harpa. As garras enferrujadas rasgam o ar, ameaçando destruir o intruso para arrancar o instrumento sagrado de suas mãos."
+        },
+        {
+          "text": "Orfeu recua rapidamente, desviando de uma investida rasante que por pouco não rasga seu ombro. Ele sabe que armas comuns seriam inúteis. Suas mãos se posicionam instintivamente sobre as cordas mágicas de Apolo."
+        },
+        {
+          "text": "Qual música você usará para repelir as Keres famintas?"
+        }
+      ],
+      "choices": [
+        {
+          "text": "Música sobre esperança de um futuro melhor",
+          "nextSceneId": "s4a_keres",
+          "obol": 0,
+          "affinity": 0,
+          "love": 0,
+          "angry": 0,
+          "sadness": 0
+        },
+        {
+          "text": "Música sobre a fatalidade da morte",
+          "nextSceneId": "s4b_keres",
+          "obol": 0,
+          "affinity": 0,
+          "love": 0,
+          "angry": 0,
+          "sadness": 0
+        },
+        {
+          "text": "Música sobre heróis matando monstros",
+          "nextSceneId": "s4c_keres",
+          "obol": 1,
+          "affinity": 0,
+          "love": 0,
+          "angry": 0,
+          "sadness": 0
+        }
+      ],
+      "sceneId": "Ataque das Keres",
+      "currentDialogueID": 0,
+      "isEnding": false
+    },
+    {
+      "dialogues": [
+        {
+          "text": "Notas puras e radiantes criam uma redoma invisível de luz pulsante ao seu redor. Acostumadas com a desgraça e o caos, as Keres não suportam a beleza e a pureza extrema do som, fugindo atordoadas para as sombras de onde vieram."
+        }
+      ],
+      "choices": [],
+      "sceneId": "s4a_keres",
+      "currentDialogueID": 0,
+      "nextSceneId": "Retorno de Caronte",
+      "isEnding": false
+    },
+    {
+      "dialogues": [
+        {
+          "text": "A canção ecoa um lamento tão macabro e definitivo que as próprias Keres perdem a vontade de destruir. Satisfeitas com a energia letárgica que você emanou, elas se dispersam lentamente pelos ares lúgubres sem te ferir."
+        }
+      ],
+      "choices": [],
+      "sceneId": "s4b_keres",
+      "currentDialogueID": 0,
+      "nextSceneId": "Retorno de Caronte",
+      "isEnding": false
+    },
+    {
+      "dialogues": [
+        {
+          "text": "Acordes violentos e trovejantes simulam o choque de espadas de Héracles e a fúria de Aquiles. As Keres gritam apavoradas com a agressividade sonora e fogem. Na pressa, uma delas derruba um óbolo enferrujado que havia roubado de um cadáver na superfície."
+        }
+      ],
+      "choices": [],
+      "sceneId": "s4c_keres",
+      "currentDialogueID": 0,
+      "nextSceneId": "Retorno de Caronte",
+      "isEnding": false
+    },
+    {
+      "dialogues": [
+        {
+          "text": "Com a moeda no bolso e a determinação renovada, Orfeu faz o perigoso caminho de volta até as margens escuras. Caronte está lá novamente, encostado em seu longo remo rústico, aguardando impaciente."
+        },
+        {
+          "text": "Caronte: Você ainda não virou pó e os monstros não devoraram sua carne. Um feito surpreendente para um tocador de harpa. E vejo no brilho dos seus olhos que encontrou o pagamento da travessia."
+        },
+        {
+          "text": "O barqueiro estende a mão esquelética. Orfeu deposita a moeda arduamente conquistada (-1 moeda), garantindo sua passagem para as águas mais traiçoeiras e profundas da morada de Hades."
+        },
+        {
+          "text": "Caronte: Já que pagou, suba no barco de uma vez. Mas me diga, intruso vivo... Caminhar por entre as flores mortas de Asfódelo muda qualquer um. O que achou do destino comum da imensa maioria da raça humana?"
+        },
+        {
+          "text": "O que Orfeu expressa sobre sua experiência nos Campos de Asfódelo?"
+        }
+      ],
+      "choices": [
+        {
+          "text": "Expressar compaixão pelas almas",
+          "nextSceneId": "s5a_charon",
+          "npc": "Charon",
+          "obol": -1,
+          "affinity": 2,
+          "love": 0,
+          "angry": 0,
+          "sadness": 0
+        },
+        {
+          "text": "Demonstrar desprezo pelas almas e pelo lugar",
+          "nextSceneId": "s5b_charon",
+          "npc": "Charon",
+          "obol": -1,
+          "affinity": -2,
+          "love": 0,
+          "angry": 0,
+          "sadness": 0
+        }
+      ],
+      "sceneId": "Retorno de Caronte",
+      "currentDialogueID": 0,
+      "isEnding": false
+    },
+    {
+      "dialogues": [
+        {
+          "text": "Orfeu: Ninguém merece ser esquecido dessa forma, apagado como uma chama sem vento. É uma existência cruel, privada de dor, mas roubada de qualquer alegria. Sinto pena de cada uma daquelas almas."
+        },
+        {
+          "text": "Caronte acena levemente com a cabeça, seus olhos esverdeados brilhando com uma fagulha de respeito pela sua observação sábia e sua empatia pelas vítimas do destino."
+        }
+      ],
+      "choices": [],
+      "sceneId": "s5a_charon",
+      "currentDialogueID": 0,
+      "nextSceneId": "s6_end_chapter",
+      "isEnding": false
+    },
+    {
+      "dialogues": [
+        {
+          "text": "Orfeu: É um bando de inúteis choramingando num mar de poeira e tédio. Aquele lugar me dá nojo, um desperdício imenso de espaço para pessoas que não tiveram coragem de viver e amar de verdade."
+        },
+        {
+          "text": "Caronte resmunga e aperta o remo com nojo. \"A arrogância de quem ainda tem sangue nas veias é uma doença patética\", diz ele com frieza, virando o rosto ossudo para a escuridão do rio."
+        }
+      ],
+      "choices": [],
+      "sceneId": "s5b_charon",
+      "currentDialogueID": 0,
+      "nextSceneId": "s6_end_chapter",
+      "isEnding": false
+    },
+    {
+      "dialogues": [
+        {
+          "text": "Caronte empurra a barca, cortando as águas densas do Estige rumo à próxima região do Submundo."
+        }
+      ],
+      "choices": [],
+      "sceneId": "s6_end_chapter",
+      "currentDialogueID": 0,
+      "isEnding": false
+    }
+  ],
+  "title": "Capítulo 2 - Campos de Asfódelos",
+  "currentSceneIndex": 0
+}

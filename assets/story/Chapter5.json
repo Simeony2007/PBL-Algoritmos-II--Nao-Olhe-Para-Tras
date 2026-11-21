@@ -1,0 +1,268 @@
+{
+  "scenes": [
+    {
+      "dialogues": [
+        {
+          "text": "Os imensos portões de ébano se abrem com um estrondo pesado. Orfeu adentra um salão colossal cujo chão é cravejado com diamantes brutos, enquanto as imensas colunas de obsidiana são adornadas com veios de ouro puro e rubis do tamanho de maçãs."
+        },
+        {
+          "text": "No fundo, repousa o rei do Submundo. Seus olhos são frios e calculistas. Ao seu lado, a rainha Perséfone exibe uma beleza pálida e compreensiva, coroada com flores tecidas em prata e rubis."
+        },
+        {
+          "text": "Hades: Orfeu de Trácia. Até mesmo os imortais no cume do Olimpo se calam para ouvir os ecos da sua harpa. Reconheço a sua fama, mortal, mas fama não é moeda de troca no meu reino. O que o traz ao fundo da terra?"
+        },
+        {
+          "text": "Perséfone: Hades, meu amor, os ventos do Tártaro me contaram a jornada que ele trilhou para chegar até nossa casa. Deixe que ele faça sua súplica."
+        },
+        {
+          "text": "O bardo guarda sua harpa. Ele sabe que a música não será suficiente para convencer os senhores do Submundo; ele precisará usar o peso de suas próprias palavras."
+        },
+        {
+          "text": "Qual é o principal argumento de Orfeu para que os deuses devolvam Eurídice?"
+        }
+      ],
+      "choices": [
+        {
+          "text": "Nossas almas foram forjadas como uma só, separá-las é um erro",
+          "nextSceneId": "Julgamento de Hades",
+          "obol": 0,
+          "affinity": 0,
+          "love": 0,
+          "angry": 0,
+          "sadness": 0
+        },
+        {
+          "text": "A escuridão já tomou muito do meu mundo lá em cima, não leve a minha única luz",
+          "nextSceneId": "Julgamento de Hades",
+          "obol": 0,
+          "affinity": 0,
+          "love": 0,
+          "angry": 0,
+          "sadness": 0
+        },
+        {
+          "text": "Ela foi roubada por uma fatalidade cruel antes de viver seu destino!",
+          "nextSceneId": "Julgamento de Hades",
+          "obol": 0,
+          "affinity": 0,
+          "love": 0,
+          "angry": 0,
+          "sadness": 0
+        }
+      ],
+      "sceneId": "Sala do Trono",
+      "currentDialogueID": 0,
+      "isEnding": false
+    },
+    {
+      "dialogues": [
+        {
+          "text": "O silêncio que se segue é denso e sufocante, quebrado apenas pelo tilintar das joias no chão. Hades se inclina em seu trono de ouro negro, pesando a alma de Orfeu e avaliando as atitudes do bardo durante sua jornada."
+        },
+        {
+          "text": "Como Orfeu responde perante o tribunal de Hades?"
+        }
+      ],
+      "choices": [
+        {
+          "text": "Engolir o orgulho e pedir perdão por sua amargura",
+          "nextSceneId": "s2a_judgment",
+          "obol": 0,
+          "affinity": 0,
+          "love": 1,
+          "angry": 0,
+          "sadness": 0
+        },
+        {
+          "text": "Dobrar a aposta e exigir Eurídice de qualquer maneira",
+          "nextSceneId": "Final 3: Punição Eterna",
+          "obol": 0,
+          "affinity": 0,
+          "love": 0,
+          "angry": 0,
+          "sadness": 1
+        }
+      ],
+      "sceneId": "Julgamento de Hades",
+      "currentDialogueID": 0,
+      "isEnding": false
+    },
+    {
+      "dialogues": [
+        {
+          "text": "Orfeu abaixa a cabeça."
+        },
+        {
+          "text": "Orfeu: O desespero cegou meu julgamento, grande Hades. Minha dor me transformou em um monstro para os seus súditos, e eu me arrependo."
+        },
+        {
+          "text": "Perséfone toca o braço do marido. Hades suspira e concorda em lhe dar uma chance."
+        },
+        {
+          "text": "Hades: Leve sua amada de volta para o sol, mas sob uma única regra inquebrável. Ela caminhará atrás de você. Se você olhar para trás antes de deixarem a totalidade dos meus domínios, o acordo estará quebrado e ela será minha para sempre."
+        },
+        {
+          "text": "Hades estala os dedos e uma pequena bolsa de couro cai aos pés de Orfeu, contendo dois óbolos para a travessia de volta."
+        }
+      ],
+      "choices": [],
+      "sceneId": "s2a_judgment",
+      "currentDialogueID": 0,
+      "nextSceneId": "Encontro com Eurídice",
+      "isEnding": false
+    },
+    {
+      "dialogues": [
+        {
+          "text": "Orfeu: Seus mortos são fracos e o seu reino é patético! Eu exijo que ela volte comigo agora!"
+        },
+        {
+          "text": "Hades ergue a mão, com chamas sombrias nos olhos."
+        },
+        {
+          "text": "Hades: Tolo insolente. Você se juntará a eles pela eternidade!"
+        },
+        {
+          "text": "Correntes de bronze surgem do chão, prendendo Orfeu para sempre no Tártaro."
+        },
+        {
+          "text": "[Final 3: Punição Eterna]"
+        }
+      ],
+      "choices": [],
+      "sceneId": "Final 3: Punição Eterna",
+      "currentDialogueID": 0,
+      "isEnding": true
+    },
+    {
+      "dialogues": [
+        {
+          "text": "Perséfone ergue a mão e uma bruma de ametista se forma no centro do salão. Das névoas, uma figura feminina com véu de noiva caminha hesitante. É Eurídice."
+        },
+        {
+          "text": "Ela levanta o olhar e para bruscamente, confusa. Ela olha para as próprias mãos translúcidas e depois para o peito arfante de Orfeu, incapaz de processar o que está acontecendo."
+        },
+        {
+          "text": "Eurídice: Orfeu? É você mesmo? Mas você... você está vivo. Como chegou até aqui? Por quê?"
+        },
+        {
+          "text": "Orfeu: Eu vim te buscar, meu amor. Os senhores do Submundo nos deram permissão. Nós vamos voltar para casa."
+        },
+        {
+          "text": "Eurídice: Voltar...? Orfeu, eu sinto tanto frio aqui, mas... a dor da picada sumiu. As lágrimas e as tristezas do mundo mortal não me alcançam mais. Voltar significa estar viva, mas também significa sangrar de novo, sofrer de novo. Eu... eu não sei se quero sentir toda aquela dor novamente."
+        },
+        {
+          "text": "Como Orfeu tenta convencer Eurídice a abandonar o conforto apático da morte?"
+        }
+      ],
+      "choices": [
+        {
+          "text": "Lembre-se do sol tocando nosso rosto e de tudo o que ainda vamos viver",
+          "nextSceneId": "s3a_eurydice",
+          "npc": "Eurydice",
+          "obol": 0,
+          "affinity": 0,
+          "love": 1,
+          "angry": 0,
+          "sadness": 0
+        },
+        {
+          "text": "Por favor, eu imploro, não me deixe sozinho com esse desespero",
+          "nextSceneId": "s3b_eurydice",
+          "npc": "Eurydice",
+          "obol": 0,
+          "affinity": 0,
+          "love": 0,
+          "angry": 1,
+          "sadness": 0
+        },
+        {
+          "text": "Se você ficar, levarei sua memória comigo como um farol eterno",
+          "nextSceneId": "s3c_eurydice",
+          "npc": "Eurydice",
+          "obol": 0,
+          "affinity": 1,
+          "love": 0,
+          "angry": 0,
+          "sadness": 0
+        }
+      ],
+      "sceneId": "Encontro com Eurídice",
+      "currentDialogueID": 0,
+      "isEnding": false
+    },
+    {
+      "dialogues": [
+        {
+          "text": "Orfeu exibe um sorriso esperançoso, segurando as mãos pálidas dela com carinho."
+        },
+        {
+          "text": "Orfeu: A vida tem espinhos, mas o nosso amor é maior que a morte. Deixe-me cuidar de você de novo."
+        },
+        {
+          "text": "Eurídice sorri docemente, recuperando a firmeza para retornar ao seu lado."
+        }
+      ],
+      "choices": [],
+      "sceneId": "s3a_eurydice",
+      "currentDialogueID": 0,
+      "nextSceneId": "s4_leaving",
+      "isEnding": false
+    },
+    {
+      "dialogues": [
+        {
+          "text": "Orfeu agarra a própria cabeça, com a voz embargada e lágrimas nos olhos."
+        },
+        {
+          "text": "Orfeu: O mundo lá em cima é um vazio sem fim sem você. Eu não consigo respirar, eu não consigo viver! Por favor, volte comigo!"
+        },
+        {
+          "text": "Eurídice se comove profundamente com a sua vulnerabilidade extrema e assente, aproximando-se para acalmá-lo."
+        }
+      ],
+      "choices": [],
+      "sceneId": "s3b_eurydice",
+      "currentDialogueID": 0,
+      "nextSceneId": "s4_leaving",
+      "isEnding": false
+    },
+    {
+      "dialogues": [
+        {
+          "text": "Orfeu respira fundo, aceitando o livre-arbítrio dela com uma dignidade melancólica e serena."
+        },
+        {
+          "text": "Orfeu: Se a sua escolha for o descanso, eu honrarei sua paz e levarei sua luz em minhas canções para sempre."
+        },
+        {
+          "text": "Eurídice o olha com profunda admiração por respeitar sua vontade, tocada pela pureza e maturidade do seu amor."
+        }
+      ],
+      "choices": [],
+      "sceneId": "s3c_eurydice",
+      "currentDialogueID": 0,
+      "nextSceneId": "s4_leaving",
+      "isEnding": false
+    },
+    {
+      "dialogues": [
+        {
+          "text": "Afastando-se dos tronos com dois óbolos em mãos, Orfeu guarda a bolsa com extremo cuidado. Ele olha profundamente nos olhos de sua esposa pela última vez."
+        },
+        {
+          "text": "Orfeu: Lembre-se do acordo. Hades afastou os monstros, o caminho estará livre de perigos, mas eu serei proibido de olhar para o seu rosto. Siga o som dos meus passos."
+        },
+        {
+          "text": "Eurídice concorda lentamente com a cabeça, ainda levemente atônita, mas com o coração decidido. Orfeu solta a mão de sua amada, sentindo o calor abandonar seus dedos. Ele vira as costas para Eurídice e encara os imensos portões do palácio, dando o primeiro passo em direção à longa e angustiante caminhada rumo ao mundo dos vivos."
+        }
+      ],
+      "choices": [],
+      "sceneId": "s4_leaving",
+      "currentDialogueID": 0,
+      "isEnding": false
+    }
+  ],
+  "title": "Capítulo 5 - A Casa de Hades",
+  "currentSceneIndex": 0
+}

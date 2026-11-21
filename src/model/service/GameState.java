@@ -7,6 +7,7 @@ import src.model.service.logic.Npc;
 import src.model.service.logic.Orfeu;
 
 public class GameState {
+
     private Orfeu orfeu;
     private ArrayList<Npc> npcs;
     private ArrayList<Chapter> chapters;
@@ -38,7 +39,7 @@ public class GameState {
     }
 
     public int getCurrentChapterIndex() {
-       return currentChapterIndex;
+        return currentChapterIndex;
     }
 
     public void advanceChapter() {
@@ -59,6 +60,15 @@ public class GameState {
         }
         Chapter current = getCurrentChapter();
         return current == null || current.isScenesFinished();
+    }
+
+    public ArrayList<Npc> cloneNpcsList() {
+        ArrayList<Npc> clonedList = new ArrayList<>();
+        for (Npc npc : npcs) {
+            Npc npcClone = npc.clone();
+            clonedList.add(npcClone);
+        }
+        return clonedList;
     }
 
 }

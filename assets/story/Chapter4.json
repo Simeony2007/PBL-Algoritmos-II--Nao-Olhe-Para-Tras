@@ -1,0 +1,294 @@
+{
+  "scenes": [
+    {
+      "dialogues": [
+        {
+          "text": "Orfeu desce pelas encostas quentes e sufocantes do Tártaro. Em meio à escuridão, ele avista um homem suado empurrando uma rocha colossal ladeira acima. A pedra escorrega e rola de volta para a base."
+        },
+        {
+          "text": "O homem simplesmente enxuga a testa e abre um sorriso caloroso ao notar o bardo."
+        },
+        {
+          "text": "Sísifo: Ora, um vivo no Tártaro! Faz eras que não vejo sangue quente por essas bandas. As almas recém-chegadas não param de sussurrar sobre suas melodias no escuro. Você deve ser o famoso Orfeu."
+        },
+        {
+          "text": "Orfeu: E você é Sísifo, o antigo rei de Corinto. Não achei que ainda tivesse fôlego para sorrir com essa rocha pesando sobre os seus ombros pela eternidade."
+        },
+        {
+          "text": "Sísifo: A eternidade é longa demais para não se fazer pausas, meu jovem! Deixe a pedra aí por um momento. O palácio de Hades não está longe. Gostaria de acompanhá-lo e conversar um pouco no caminho."
+        },
+        {
+          "text": "Como Orfeu reage à oferta calorosa e repentina do antigo rei?"
+        }
+      ],
+      "choices": [
+        {
+          "text": "Aceito sua companhia, a caminhada tem sido muito solitária",
+          "nextSceneId": "s1a_sisyphus",
+          "npc": "Sisyphus",
+          "obol": 0,
+          "affinity": 1,
+          "love": 0,
+          "angry": 0,
+          "sadness": 0
+        },
+        {
+          "text": "Não vejo sentido, mas aceito alguém para dividir a escuridão",
+          "nextSceneId": "s1b_sisyphus",
+          "npc": "Sisyphus",
+          "obol": 0,
+          "affinity": 1,
+          "love": 0,
+          "angry": 0,
+          "sadness": 0
+        },
+        {
+          "text": "Conheço sua fama de trapaceiro. Mantenha distância se vier comigo",
+          "nextSceneId": "s1c_sisyphus",
+          "obol": 0,
+          "affinity": 0,
+          "love": 0,
+          "angry": 0,
+          "sadness": 0
+        }
+      ],
+      "sceneId": "Encontro com Sísifo",
+      "currentDialogueID": 0,
+      "isEnding": false
+    },
+    {
+      "dialogues": [
+        {
+          "text": "Orfeu: Se deseja caminhar ao meu lado, serei grato pela presença."
+        },
+        {
+          "text": "Sísifo abre um sorriso acolhedor, assentindo positivamente com a cabeça e demonstrando profunda satisfação com a aceitação."
+        }
+      ],
+      "choices": [],
+      "sceneId": "s1a_sisyphus",
+      "currentDialogueID": 0,
+      "nextSceneId": "Conversa no Abismo",
+      "isEnding": false
+    },
+    {
+      "dialogues": [
+        {
+          "text": "Orfeu: Nossas histórias são de dor, Sísifo. Mas não recuso alguém para compartilhar o silêncio."
+        },
+        {
+          "text": "O rei suspira e concorda com um olhar solene, colocando-se respeitosamente ao seu lado."
+        }
+      ],
+      "choices": [],
+      "sceneId": "s1b_sisyphus",
+      "currentDialogueID": 0,
+      "nextSceneId": "Conversa no Abismo",
+      "isEnding": false
+    },
+    {
+      "dialogues": [
+        {
+          "text": "Orfeu: O caminho é livre, mas não confio em você."
+        },
+        {
+          "text": "Sísifo não perde o sorriso amigável; ele apenas faz uma pequena mesura e garante em tom muito educado que manterá uma distância respeitosa."
+        }
+      ],
+      "choices": [],
+      "sceneId": "s1c_sisyphus",
+      "currentDialogueID": 0,
+      "nextSceneId": "Conversa no Abismo",
+      "isEnding": false
+    },
+    {
+      "dialogues": [
+        {
+          "text": "Enquanto caminham pelos desfiladeiros de basalto, o calor opressor do Tártaro parece não incomodar Sísifo. Ele observa Orfeu com uma curiosidade genuína, tentando desvendar o coração do bardo."
+        },
+        {
+          "text": "Sísifo: Diga-me, Orfeu... O que realmente impulsiona um homem a descer vivo ao abismo? Conheci o desespero e a ambição em vida, mas desafiar o senhor dos mortos exige algo que foge à razão."
+        },
+        {
+          "text": "Sísifo: Quando você olha para as portas daquele palácio, o que é que grita mais alto dentro do seu peito? É apenas a saudade da sua esposa, ou há algo mais pesado guiando os seus passos?"
+        },
+        {
+          "text": "O que Orfeu revela sobre seus sentimentos e como lida com o questionamento?"
+        }
+      ],
+      "choices": [
+        {
+          "text": "O amor dela é a única luz que me mantém respirando",
+          "nextSceneId": "s2a_abyss",
+          "npc": "Sisyphus",
+          "obol": 0,
+          "affinity": 1,
+          "love": 0,
+          "angry": 0,
+          "sadness": 0
+        },
+        {
+          "text": "A dor do luto é uma âncora que me arrastou para cá",
+          "nextSceneId": "s2b_abyss",
+          "npc": "Sisyphus",
+          "obol": 0,
+          "affinity": 1,
+          "love": 0,
+          "angry": 0,
+          "sadness": 0
+        },
+        {
+          "text": "Por que tanto interesse nos meus motivos, mestre das mentiras?",
+          "nextSceneId": "s2c_abyss",
+          "obol": 0,
+          "affinity": 0,
+          "love": 0,
+          "angry": 0,
+          "sadness": 0
+        }
+      ],
+      "sceneId": "Conversa no Abismo",
+      "currentDialogueID": 0,
+      "isEnding": false
+    },
+    {
+      "dialogues": [
+        {
+          "text": "Orfeu: Sem Eurídice, meu coração já está morto. Suportaria mil infernos por ela."
+        },
+        {
+          "text": "Sísifo o observa com uma empatia silenciosa, parecendo admirar a devoção pura e inabalável do bardo."
+        }
+      ],
+      "choices": [],
+      "sceneId": "s2a_abyss",
+      "currentDialogueID": 0,
+      "nextSceneId": "Portas de Hades",
+      "isEnding": false
+    },
+    {
+      "dialogues": [
+        {
+          "text": "Orfeu: O vazio que ela deixou não tem cura. Não há futuro no mundo lá em cima para mim."
+        },
+        {
+          "text": "Sísifo concorda devagar, parecendo compreender perfeitamente o peso da melancolia que o consome."
+        }
+      ],
+      "choices": [],
+      "sceneId": "s2b_abyss",
+      "currentDialogueID": 0,
+      "nextSceneId": "Portas de Hades",
+      "isEnding": false
+    },
+    {
+      "dialogues": [
+        {
+          "text": "Orfeu: Não vou entregar meus sentimentos para você usar contra mim."
+        },
+        {
+          "text": "Sísifo levanta as mãos calmamente, respondendo com extrema gentileza que apenas buscava uma boa história para aliviar o tédio."
+        }
+      ],
+      "choices": [],
+      "sceneId": "s2c_abyss",
+      "currentDialogueID": 0,
+      "nextSceneId": "Portas de Hades",
+      "isEnding": false
+    },
+    {
+      "dialogues": [
+        {
+          "text": "A névoa se dissipa, revelando os imensos portões de ébano e bronze do palácio de Hades. O som de chicotes estalando ao longe ecoa pelas pedras. As Fúrias estão fazendo a ronda."
+        },
+        {
+          "text": "Sísifo: Bem, minha pequena caminhada termina aqui. Mais um passo e os guardas do Tártaro me farão rolar a pedra com o dobro do peso. Foi uma excelente conversa, bardo."
+        },
+        {
+          "text": "Sísifo: Entre lá e faça os senhores do Submundo chorarem com a sua harpa. Espero, do fundo do meu coração, que você consiga o que veio buscar."
+        },
+        {
+          "text": "O que Orfeu faz antes de Sísifo voltar ao castigo?"
+        }
+      ],
+      "choices": [
+        {
+          "text": "Expressar profunda gratidão pelas palavras e pela companhia sincera",
+          "nextSceneId": "s3a_gates",
+          "npc": "Sisyphus",
+          "obol": 0,
+          "affinity": 1,
+          "love": 0,
+          "angry": 0,
+          "sadness": 0
+        },
+        {
+          "text": "Desejar que a eternidade seja misericordiosa com ele",
+          "nextSceneId": "s3b_gates",
+          "npc": "Sisyphus",
+          "obol": 0,
+          "affinity": 1,
+          "love": 0,
+          "angry": 0,
+          "sadness": 0
+        },
+        {
+          "text": "Dizer para ele sumir logo antes que tente alguma armadilha",
+          "nextSceneId": "s3c_gates",
+          "obol": 0,
+          "affinity": 0,
+          "love": 0,
+          "angry": 0,
+          "sadness": 0
+        }
+      ],
+      "sceneId": "Portas de Hades",
+      "currentDialogueID": 0,
+      "isEnding": false
+    },
+    {
+      "dialogues": [
+        {
+          "text": "Orfeu: Sua presença tornou a escuridão menos opressora, Sísifo. Agradeço de coração por ter caminhado ao meu lado até aqui."
+        },
+        {
+          "text": "O antigo rei sorri, recebendo as palavras amáveis com um aceno nobre antes de se afastar para o seu fardo."
+        }
+      ],
+      "choices": [],
+      "sceneId": "s3a_gates",
+      "currentDialogueID": 0,
+      "isEnding": false
+    },
+    {
+      "dialogues": [
+        {
+          "text": "Orfeu: Que as pedras um dia rolem a seu favor, Sísifo."
+        },
+        {
+          "text": "O homem sorri com a sua empatia, absorvendo as palavras amargas e gentis enquanto caminha de volta para a escuridão do Tártaro."
+        }
+      ],
+      "choices": [],
+      "sceneId": "s3b_gates",
+      "currentDialogueID": 0,
+      "isEnding": false
+    },
+    {
+      "dialogues": [
+        {
+          "text": "Orfeu: Volte para a sua pedra antes que eu perceba qual era o seu verdadeiro truque."
+        },
+        {
+          "text": "Sísifo dá uma leve risada elegante, desejando-lhe boa sorte com imensa cortesia antes de virar as costas."
+        }
+      ],
+      "choices": [],
+      "sceneId": "s3c_gates",
+      "currentDialogueID": 0,
+      "isEnding": false
+    }
+  ],
+  "title": "Capítulo 4 - O Tártaro",
+  "currentSceneIndex": 0
+}

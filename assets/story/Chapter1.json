@@ -1,0 +1,439 @@
+{
+  "scenes": [
+    {
+      "dialogues": [
+        {
+          "text": "Orfeu, filho da musa Calíope, era considerado o maior bardo de toda a Grécia. Com a harpa de Apolo em mãos, ele viajou com os Argonautas, entoando canções que acalmavam mares e feras."
+        },
+        {
+          "text": "Sua vida ganhou verdadeiro sentido ao se casar com a bela ninfa Eurídice. No entanto, a alegria durou pouco. Logo após a cerimônia, enquanto fugia de um perseguidor invejoso e cheio de ódio, ela foi picada por uma víbora e seu espírito foi levado para o reino dos mortos."
+        },
+        {
+          "text": "Consumido pelo luto, Orfeu toma uma decisão impensável: descer ao próprio Submundo, desafiar as leis da vida e da morte, e trazer sua amada de volta para a luz."
+        },
+        {
+          "text": "O que mais motiva os passos de Orfeu em direção ao abismo?"
+        }
+      ],
+      "choices": [
+        {
+          "text": "Seu peito queima com um amor que transcende a mortalidade. Você avança movido pela convicção de que nem mesmo Hades pode separar duas almas gêmeas.",
+          "nextSceneId": "Encontro com Cérbero",
+          "obol": 0,
+          "affinity": 0,
+          "love": 2,
+          "angry": 0,
+          "sadness": 0
+        },
+        {
+          "text": "Cada nota que toca é um lamento lúgubre. A dor de não tê-la ao seu lado é um peso esmagador que o arrasta naturalmente para as sombras.",
+          "nextSceneId": "Encontro com Cérbero",
+          "obol": 0,
+          "affinity": 0,
+          "love": 0,
+          "angry": 0,
+          "sadness": 2
+        },
+        {
+          "text": "Como os deuses permitiram tamanha injustiça? Sua música agora é um hino de fúria contra o destino cruel, e você não aceitará um \u0027não\u0027 como resposta.",
+          "nextSceneId": "Encontro com Cérbero",
+          "obol": 0,
+          "affinity": 0,
+          "love": 2,
+          "angry": 0,
+          "sadness": 0
+        }
+      ],
+      "sceneId": "Introdução",
+      "currentDialogueID": 0,
+      "isEnding": false
+    },
+    {
+      "dialogues": [
+        {
+          "text": "A jornada o leva até o sombrio Cabo Tênaro, onde o ar se torna gélido e com cheiro de enxofre. Diante da caverna profunda, uma criatura aterrorizante barra definitivamente o seu caminho."
+        },
+        {
+          "text": "É Cérbero, o cão gigante de três cabeças, rosnando e babando, pronto para devorar qualquer ser vivo que ouse adentrar os domínios de seu mestre. Orfeu, ciente de que armas mortais são inúteis aqui, não puxa uma espada, mas sim as cordas douradas de sua harpa."
+        },
+        {
+          "text": "Qual música Orfeu tocará para lidar com o guardião infernal?"
+        }
+      ],
+      "choices": [
+        {
+          "text": "Música sobre o descanso e o acalento da natureza",
+          "nextSceneId": "s2a_cerberus",
+          "obol": 0,
+          "affinity": 0,
+          "love": 1,
+          "angry": 0,
+          "sadness": 0
+        },
+        {
+          "text": "Música sobre o peso da perda",
+          "nextSceneId": "s2b_cerberus",
+          "obol": 0,
+          "affinity": 0,
+          "love": 0,
+          "angry": 0,
+          "sadness": 1
+        },
+        {
+          "text": "Música sobre guerra",
+          "nextSceneId": "s2c_cerberus",
+          "obol": 0,
+          "affinity": 0,
+          "love": 0,
+          "angry": 1,
+          "sadness": 0
+        }
+      ],
+      "sceneId": "Encontro com Cérbero",
+      "currentDialogueID": 0,
+      "isEnding": false
+    },
+    {
+      "dialogues": [
+        {
+          "text": "As notas fluem suaves como a brisa da primavera, lembrando o cão dos campos verdejantes. As três cabeças se acalmam, deitando no chão e caindo em um sono sereno, abrindo caminho."
+        }
+      ],
+      "choices": [],
+      "sceneId": "s2a_cerberus",
+      "currentDialogueID": 0,
+      "nextSceneId": "Margem do Rio",
+      "isEnding": false
+    },
+    {
+      "dialogues": [
+        {
+          "text": "As notas graves e melancólicas carregadas do peso de um luto insuportável fazem Cérbero soltar ganidos lúgubres pelas três bocas, chorando em sintonia com a dor do bardo enquanto este contorna o guardião cabisbaixo, determinado a transformar a própria tragédia no caminho para resgatar sua amada."
+        }
+      ],
+      "choices": [],
+      "sceneId": "s2b_cerberus",
+      "currentDialogueID": 0,
+      "nextSceneId": "Margem do Rio",
+      "isEnding": false
+    },
+    {
+      "dialogues": [
+        {
+          "text": "O dedilhado agressivo e vibrante ressoa como o estalo do trovão, intimidando a besta colossal que dá passos para trás e se curva em submissão involuntária, abrindo passagem para Orfeu avançar com passos firmes em direção às profundezas do reino dos mortos."
+        }
+      ],
+      "choices": [],
+      "sceneId": "s2c_cerberus",
+      "currentDialogueID": 0,
+      "nextSceneId": "Margem do Rio",
+      "isEnding": false
+    },
+    {
+      "dialogues": [
+        {
+          "text": "A escuridão engole Orfeu enquanto ele desce pelas entranhas da terra. Em pouco tempo, ele chega a uma costa sombria, margeada por um rio lamacento e coberta por uma névoa densa."
+        },
+        {
+          "text": "O local está lotado de almas translúcidas humanas, que vagam sem rumo murmurando lamentos incessantes. Atracado na água escura do rio, um pequeno barco de madeira balança levemente, guiado por um homem velho, de pele cinzenta, que aguarda impassível."
+        },
+        {
+          "text": "O que você faz ao observar a margem do rio dos mortos?"
+        }
+      ],
+      "choices": [
+        {
+          "text": "Se aproximar do Caronte",
+          "nextSceneId": "Conversa com Caronte",
+          "obol": 0,
+          "affinity": 0,
+          "love": 0,
+          "angry": 0,
+          "sadness": 0
+        },
+        {
+          "text": "Interagir com uma das almas",
+          "nextSceneId": "Conversa com Alma",
+          "obol": 0,
+          "affinity": 0,
+          "love": 0,
+          "angry": 0,
+          "sadness": 0
+        }
+      ],
+      "sceneId": "Margem do Rio",
+      "currentDialogueID": 0,
+      "isEnding": false
+    },
+    {
+      "dialogues": [
+        {
+          "text": "Você se aproxima de uma sombra curvada que chora compulsivamente na beira do rio, estendendo suas mãos pálidas para as águas negras."
+        },
+        {
+          "text": "Orfeu: Quem é você, e por que chora mais alto que o próprio correr destas águas?"
+        },
+        {
+          "text": "Alma Esquecida: Sou apenas um pobre coitado, bardo... Estou vagando por esta margem há um século. Minha família me enterrou às pressas, sem a honra de uma moeda sob a língua."
+        },
+        {
+          "text": "Alma Esquecida: Dizem que, de vez em quando, algumas moedas extras perdidas aparecem pelo chão de terra da margem, trazidas pelas correntes. Mas meus olhos já estão opacos... Eu nunca achei uma sequer."
+        },
+        {
+          "text": "Como você reage ao lamento centenário dessa alma?"
+        }
+      ],
+      "choices": [
+        {
+          "text": "Oferecer seu único óbolo",
+          "nextSceneId": "s4a_soul",
+          "npc": "Charon",
+          "obol": -1,
+          "affinity": 1,
+          "love": 0,
+          "angry": 0,
+          "sadness": 0
+        },
+        {
+          "text": "Deixar a Alma para trás",
+          "nextSceneId": "s4b_soul",
+          "obol": 0,
+          "affinity": 0,
+          "love": 0,
+          "angry": 0,
+          "sadness": 0
+        }
+      ],
+      "sceneId": "Conversa com Alma",
+      "currentDialogueID": 0,
+      "isEnding": false
+    },
+    {
+      "dialogues": [
+        {
+          "text": "Você coloca uma moeda brilhante na mão espectral. A alma chora lágrimas de gratidão e desaparece rumo ao barco. Ao longe, o velho barqueiro observa seu ato com um olhar intrigado."
+        }
+      ],
+      "choices": [],
+      "sceneId": "s4a_soul",
+      "currentDialogueID": 0,
+      "nextSceneId": "Conversa com Caronte",
+      "isEnding": false
+    },
+    {
+      "dialogues": [
+        {
+          "text": "Você se afasta com pesar, deixando a alma continuar sua eterna e frustrante busca no barro."
+        }
+      ],
+      "choices": [],
+      "sceneId": "s4b_soul",
+      "currentDialogueID": 0,
+      "nextSceneId": "Conversa com Caronte",
+      "isEnding": false
+    },
+    {
+      "dialogues": [
+        {
+          "text": "Você finalmente para diante do barqueiro do Submundo. Caronte o observa de cima a baixo com olhos ocos que brilham com uma luz esverdeada e avarenta sob o capuz esfarrapado."
+        },
+        {
+          "text": "Caronte: Mais um espírito choroso para encher meu barco... Não, espere. Há sangue quente correndo sob essa pele."
+        },
+        {
+          "text": "Orfeu: Preciso cruzar este rio. Tenho assuntos a tratar no reino de Hades, no outro lado."
+        },
+        {
+          "text": "Caronte: Assuntos de vivos não me dizem respeito, bardo. Meu único negócio aqui é a cobrança. A regra é imutável: eu espero a moeda, o passageiro paga a moeda. Enquanto houver pagamento, eu não me importo se você respira ou não."
+        },
+        {
+          "text": "Como você negociará a travessia com o barqueiro?"
+        }
+      ],
+      "choices": [
+        {
+          "text": "Pagar a moeda",
+          "nextSceneId": "s5a_charon",
+          "obol": -1,
+          "affinity": 0,
+          "love": 0,
+          "angry": 0,
+          "sadness": 0
+        },
+        {
+          "text": "Tentar convencer o Caronte a deixá-lo passar sem pagar",
+          "nextSceneId": "s5b_charon",
+          "npc": "Charon",
+          "obol": 0,
+          "affinity": 0,
+          "love": 0,
+          "angry": 0,
+          "sadness": 0
+        },
+        {
+          "text": "Voltar para a margem",
+          "nextSceneId": "s5c_charon",
+          "obol": 0,
+          "affinity": 0,
+          "love": 0,
+          "angry": 0,
+          "sadness": 0
+        }
+      ],
+      "sceneId": "Conversa com Caronte",
+      "currentDialogueID": 0,
+      "isEnding": false
+    },
+    {
+      "dialogues": [
+        {
+          "text": "Sem hesitar, você coloca o óbolo na mão esquelética de Caronte. Ele sente o peso do metal, dá um sorriso desdentado e aponta com a cabeça para que você suba na barca."
+        }
+      ],
+      "choices": [],
+      "sceneId": "s5a_charon",
+      "currentDialogueID": 0,
+      "nextSceneId": "Barca de Caronte",
+      "isEnding": false
+    },
+    {
+      "dialogues": [
+        {
+          "text": "Orfeu: Você não sabe quem eu sou? Minha música vale mais que todos os tesouros de Hades! Me deixe passar!"
+        },
+        {
+          "text": "Caronte: E minha paciência vale menos do que a poeira que você pisa. Sem prata, sem viagem. Saia daqui, mortal insolente!"
+        }
+      ],
+      "choices": [],
+      "sceneId": "s5b_charon",
+      "currentDialogueID": 0,
+      "nextSceneId": "s5c_charon",
+      "isEnding": false
+    },
+    {
+      "dialogues": [
+        {
+          "text": "Desolado por não ter como pagar, você se afasta do píer. Você chora e passa horas cavando a terra fria, até que o brilho de um óbolo esquecido reflete na penumbra. Com ele em mãos, você retorna à barca e garante sua passagem."
+        }
+      ],
+      "choices": [],
+      "sceneId": "s5c_charon",
+      "currentDialogueID": 0,
+      "nextSceneId": "Barca de Caronte",
+      "isEnding": false
+    },
+    {
+      "dialogues": [
+        {
+          "text": "A madeira podre range sob seus pés enquanto a barca corta as águas densas do submundo. O silêncio é pesado, quebrado apenas pelo som do remo batendo contra a correnteza."
+        },
+        {
+          "text": "Caronte: Não costumo receber passageiros com um coração batendo no peito. A maioria dos mortais foge de fininho do Submundo, não entra nele marchando."
+        },
+        {
+          "text": "Caronte: Diga-me, vivo... O que exatamente te arrastou para a terra dos mortos?"
+        },
+        {
+          "text": "O que você responde às indagações de Caronte?"
+        }
+      ],
+      "choices": [
+        {
+          "text": "Não faça perguntas, apenas me leve em frente",
+          "nextSceneId": "s6a_charon_boat",
+          "npc": "Charon",
+          "obol": 0,
+          "affinity": -1,
+          "love": 0,
+          "angry": 0,
+          "sadness": 0
+        },
+        {
+          "text": "Desejo rever o amor da minha vida",
+          "nextSceneId": "s6b_charon_boat",
+          "npc": "Charon",
+          "obol": 0,
+          "affinity": 0,
+          "love": 0,
+          "angry": 0,
+          "sadness": 0
+        },
+        {
+          "text": "Não consigo viver sem ela",
+          "nextSceneId": "s6c_charon_boat",
+          "npc": "Charon",
+          "obol": 0,
+          "affinity": 0,
+          "love": 0,
+          "angry": 0,
+          "sadness": 0
+        }
+      ],
+      "sceneId": "Barca de Caronte",
+      "currentDialogueID": 0,
+      "isEnding": false
+    },
+    {
+      "dialogues": [
+        {
+          "text": "Caronte aperta o remo com força, irritado com a sua hostilidade."
+        },
+        {
+          "text": "Caronte: Tolo arrogante."
+        },
+        {
+          "text": "Caronte: Hades vai mastigar sua insolência."
+        }
+      ],
+      "choices": [],
+      "sceneId": "s6a_charon_boat",
+      "currentDialogueID": 0,
+      "nextSceneId": "s7_end_chapter",
+      "isEnding": false
+    },
+    {
+      "dialogues": [
+        {
+          "text": "A postura tensa do barqueiro relaxa um pouco."
+        },
+        {
+          "text": "Caronte: Amor... O veneno dos vivos."
+        }
+      ],
+      "choices": [],
+      "sceneId": "s6b_charon_boat",
+      "currentDialogueID": 0,
+      "nextSceneId": "s7_end_chapter",
+      "isEnding": false
+    },
+    {
+      "dialogues": [
+        {
+          "text": "Você desvia o olhar, encarando seu próprio reflexo distorcido na água negra."
+        },
+        {
+          "text": "Caronte solta um suspiro rouco, há muito acostumado com o desespero, mas levemente impressionado pela profundidade da sua dor."
+        }
+      ],
+      "choices": [],
+      "sceneId": "s6c_charon_boat",
+      "currentDialogueID": 0,
+      "nextSceneId": "s7_end_chapter",
+      "isEnding": false
+    },
+    {
+      "dialogues": [
+        {
+          "text": "Caronte: Escute bem, vivo. Minha jurisdição é limitada pelas águas. Posso levá-lo apenas uma região por vez. Se deseja se embrenhar mais a fundo nos domínios de Hades, precisará de mais moedas para o resto do trajeto."
+        }
+      ],
+      "choices": [],
+      "sceneId": "s7_end_chapter",
+      "currentDialogueID": 0,
+      "isEnding": false
+    }
+  ],
+  "title": "Capítulo 1 - A Entrada do Submundo",
+  "currentSceneIndex": 0
+}

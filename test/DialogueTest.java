@@ -4,7 +4,6 @@ import static org.junit.Assert.assertEquals;
 import org.junit.Before;
 import org.junit.Test;
 
-import src.model.service.*;
 import src.model.service.logic.Dialogue;
 
 public class DialogueTest {

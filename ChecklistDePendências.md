@@ -1,19 +1,36 @@
 ## Checklist de Pendências:
 
-- [x] Salvar e Selecionar save _(Implementado - Pedro)_
+- [ ] Telas do Menu:
+- - [x] Menu Inicial + Instruções + Créditos
+- - [ ] Iniciar
+- - - [x] Mostrar slots
+- - - [ ] Gerenciar slot selecionado
+- - [x] Configurações
+- - [x] Coleção
 
-- [ ] Sistema de confirmação de sobrescrita. _(Planejo dividir parte dela para SaveManager ou MenuSlots - Pedro)_
+- [ ] Telas do Jogo:
+- - [ ] Criação de Personagem (motivação, o ngc de começar com mais 5 em X atributo)
+- - [ ] Tela de confirmação
+- - [ ] MiniMenu abrir o menu de configurações e de salvamento. (Dá pra reutilizar os já existentes do próprio menu principal, só adaptar - Simeony)
+- - [ ] O Jogo em si (+/- - Simeony)
 
-- [x] Exclusão de saves. _(Implementado - Pedro)_
+- [x] Os 3 Padrões GoF:
+- - [x] Definir quais padrões usados (atualizar nome abaixo e dizer onde foi aplicado quando implementar)
+- - [x] Padrão Observer (ControllerFX é um observer de Game - Simeony)
+- - [x] Padrão Prototype (Clona Orfeu e lista de Npcs para mostrar na view - Simeony)
+- - [x] Padrão Facade (ControllerFX é uma facade entre game e a view - Simeony)
 
-- [x] Configurações e a persistência da mesma. _(Implementado - Pedro)_
-
-- [x] Registro de finais _(Implementado - Pedro)_
-
-- [x] Conquistas _(Implementado - Pedro)_
-
-- [ ] Exceptions personalizadas.
-
-- [x] O contador do Autosave está ultrapassando o limite de 5. _(Corrigi, ao invés de colocar de volta em 1, tava adicionando mais um - Simeony)_
-
-- [ ] O final de não olhar para trás não roda
+- [ ] Audiovisual:
+- - [ ] Todos os Sprites dos Personagens:
+- - - [x] Sprite Orfeu
+- - - [x] Sprite Eurídice
+- - - [x] Sprite Sisifo
+- - - [x] Sprite Caronte
+- - - [x] Sprite Jasão
+- - - [x] Sprite Hades
+- - - [x] Sprite Persefone
+- - - [ ] Sprite Sombra(Personagem genérico)
+- - [ ] Botões e Menus Decorados
+- - [ ] Músicas
+- - [ ] Artes de Fundo (3/?)
+- - [ ] Animações (?)

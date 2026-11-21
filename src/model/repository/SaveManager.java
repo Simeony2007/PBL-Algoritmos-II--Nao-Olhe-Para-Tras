@@ -5,6 +5,8 @@ import com.google.gson.GsonBuilder;
 
 import src.model.service.SaveState;
 import src.model.service.Settings;
+import src.model.Observer;
+import src.model.customExceptions.SaveNotFoundException;
 import src.model.service.Collection;
 
 import java.io.File;
@@ -13,9 +15,11 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.sql.Date;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 
 public class SaveManager {
     private static final Gson gson = new GsonBuilder().setPrettyPrinting().create();
+    private static ArrayList<Observer> observers = new ArrayList<>();
 
     // 1. Define the dedicated folder path
     public static final String SAVE_DIRECTORY = "data/saves/";
@@ -39,6 +43,7 @@ public class SaveManager {
                 gson.toJson(state, writer);
                 settings.addAutoSaveCounter();
                 SaveManager.saveSettings(settings);
+                notifyObserversSaveMade();
             } catch (IOException e) {
                 // GameInterface.printWarning("\n[!] Erro crítico ao salvar o arquivo: " +
                 // e.getMessage());
@@ -56,6 +61,7 @@ public class SaveManager {
 
             try (FileWriter writer = new FileWriter(fileName)) {
                 gson.toJson(state, writer);
+                notifyObserversSaveMade();
             } catch (IOException e) {
                 // GameInterface.printWarning("\n[!] Erro crítico ao salvar o arquivo: " +
                 // e.getMessage());
@@ -106,20 +112,24 @@ public class SaveManager {
         }
     }
 
-    public static void deleteSave(int saveSlot) {
+    public static void deleteSave(int saveSlot) throws SaveNotFoundException {
         if (saveSlot > 3) {
-            File file = new File(SAVE_DIRECTORY + "auto_save_" + saveSlot + ".json");
+            File file = new File(SAVE_DIRECTORY + "auto_save_" + (saveSlot - 3) + ".json");
             if (file.exists()) {
                 file.delete();
+                notifyObserversSaveDeleted();
             } else {
                 // throw CUSTOMEXCEPTION (DÁ PRA COLOCAR UMA AQ!!)
+                throw new SaveNotFoundException(saveSlot);
             }
         } else {
             File file = new File(SAVE_DIRECTORY + "save_slot_" + saveSlot + ".json");
             if (file.exists()) {
                 file.delete();
+                notifyObserversSaveDeleted();
             } else {
                 // throw CUSTOMEXCEPTION (DÁ PRA COLOCAR UMA AQ!!)
+                throw new SaveNotFoundException(saveSlot);
             }
         }
     }
@@ -191,5 +201,25 @@ public class SaveManager {
                 return new Collection();
             }
         }
+    }
+
+    public static void notifyObserversSaveMade() {
+        for (Observer obs : observers) {
+            obs.saveWasMade();
+        }
+    }
+
+    public static void notifyObserversSaveDeleted() {
+        for (Observer obs : observers) {
+            obs.saveWasDeleted();
+        }
+    }
+
+    public static void addObservers(Observer newObs) {
+        observers.add(newObs);
+    }
+
+    public static void removeObservers(Observer obs) {
+        observers.remove(obs);
     }
 }

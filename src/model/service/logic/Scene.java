@@ -1,6 +1,7 @@
 package src.model.service.logic;
 
 import java.util.ArrayList;
+import java.util.Map;
 
 public class Scene {
     private ArrayList<Dialogue> dialogues = new ArrayList<>();
@@ -52,12 +53,14 @@ public class Scene {
         dialogues.add(generic);
     }
 
-    public void addNewChoice(String text, String nextSceneId, int obol, int affinity, int love, int angry, int sadness) {
+    public void addNewChoice(String text, String nextSceneId, int obol, int affinity, int love, int angry,
+            int sadness) {
         Choice generic = new Choice(text, nextSceneId, obol, affinity, love, angry, sadness);
         choices.add(generic);
     }
 
-    public void addNewChoice(String text, String nextSceneId, String npcName, int obol, int affinity, int love, int angry, int sadness) {
+    public void addNewChoice(String text, String nextSceneId, String npcName, int obol, int affinity, int love,
+            int angry, int sadness) {
         Choice generic = new Choice(text, nextSceneId, npcName, obol, affinity, love, angry, sadness);
         choices.add(generic);
     }
@@ -74,14 +77,14 @@ public class Scene {
         return choices.size();
     }
 
-    public String nextDialogue() {
+    public Map.Entry<String, String> nextDialogue() {
         return dialogues.get(currentDialogueID++).getTexto();
     }
 
-    public String getChoicesText() {
-        String generic = "";
-        for (int i = 0; i < choices.size(); i++) {
-            generic += (i + 1) + " - " + choices.get(i).getText() + "\n";
+    public ArrayList<String> getChoicesText() {
+        ArrayList<String> generic = new ArrayList<>();
+        for (Choice choice : choices) {
+            generic.add(choice.getText());
         }
         return generic;
     }

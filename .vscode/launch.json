@@ -1,0 +1,124 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "TestApp",
+            "request": "launch",
+            "mainClass": "src.view._sandbox.TestApp",
+            "projectName": "PBL-Algoritmos-II--Nao-Olhe-Para-Tras_d146948e"
+        },
+        {
+            "type": "java",
+            "name": "WindowMenuInterface",
+            "request": "launch",
+            "mainClass": "src.view._sandbox.WindowMenuInterface",
+            "projectName": "PBL-Algoritmos-II--Nao-Olhe-Para-Tras_d146948e"
+        },
+        {
+            "type": "java",
+            "name": "MenuInterfaceJFX",
+            "request": "launch",
+            "mainClass": "src.view.Menu.MenuInterfaceJFX",
+            "projectName": "PBL-Algoritmos-II--Nao-Olhe-Para-Tras_d146948e"
+        },
+        {
+            "type": "java",
+            "name": "StageController",
+            "request": "launch",
+            "mainClass": "src.controller.StageController",
+            "projectName": "PBL-Algoritmos-II--Nao-Olhe-Para-Tras_415999ff"
+        },
+        {
+            "type": "java",
+            "name": "CollectionsInterfaceJFX",
+            "request": "launch",
+            "mainClass": "src.view.CollectionsInterfaceJFX",
+            "projectName": "PBL-Algoritmos-II--Nao-Olhe-Para-Tras_415999ff"
+        },
+        {
+            "type": "java",
+            "name": "GaleriaApp",
+            "request": "launch",
+            "mainClass": "src.view.GaleriaApp",
+            "projectName": "PBL-Algoritmos-II--Nao-Olhe-Para-Tras_415999ff"
+        },
+        {
+            "type": "java",
+            "name": "Game",
+            "request": "launch",
+            "mainClass": "src.controller.legacy.core.Game",
+            "projectName": "PBL-Algoritmos-II--Nao-Olhe-Para-Tras_d146948e"
+        },
+        {
+            "type": "java",
+            "name": "MenuInterfaceJFX",
+            "request": "launch",
+            "mainClass": "src.view.MenuInterfaceJFX",
+            "projectName": "PBL-Algoritmos-II--Nao-Olhe-Para-Tras_d146948e"
+        },
+        {
+            "type": "java",
+            "name": "Main",
+            "request": "launch",
+            "mainClass": "src.Main",
+            "projectName": "PBL-Algoritmos-II--Nao-Olhe-Para-Tras_415999ff"
+        },
+        {
+            "type": "java",
+            "name": "WindowMenuInterface",
+            "request": "launch",
+            "mainClass": "src.view.WindowMenuInterface",
+            "projectName": "PBL-Algoritmos-II--Nao-Olhe-Para-Tras_415999ff"
+        },
+        {
+            "type": "java",
+            "name": "Main",
+            "request": "launch",
+            "mainClass": "src.Main",
+            "projectName": "PBL-Algoritmos-II---Jogo-em-Java_e0d7350"
+        },
+        {
+            "type": "java",
+            "name": "TestApp",
+            "request": "launch",
+            "mainClass": "src.view.TestApp",
+            "projectName": "PBL-Algoritmos-II---Jogo-em-Java_e0d7350"
+        },
+        {
+            "type": "java",
+            "name": "WindowMenuInterface",
+            "request": "launch",
+            "mainClass": "src.view.WindowMenuInterface",
+            "projectName": "PBL-Algoritmos-II---Jogo-em-Java_e0d7350"
+        },
+        {
+            "type": "java",
+            "name": "WindowMenuInterface",
+            "request": "launch",
+            "mainClass": "src.view.WindowMenuInterface",
+            "projectName": "PBL-Algoritmos-II--Nao-Olhe-Para-Tras_d146948e"
+        },
+        {
+            "type": "java",
+            "name": "Main",
+            "request": "launch",
+            "mainClass": "src.Main",
+            "projectName": "PBL-Algoritmos-II--Nao-Olhe-Para-Tras_d146948e"
+        },
+        {
+            "type": "java",
+            "name": "TestApp",
+            "request": "launch",
+            "mainClass": "src.view.TestApp",
+            "projectName": "PBL-Algoritmos-II--Nao-Olhe-Para-Tras_d146948e"
+        },
+        {
+            "type": "java",
+            "name": "Rodar JavaFX",
+            "request": "launch",
+            "mainClass": "${file}",
+            "vmArgs": "--module-path \"${workspaceFolder}/lib/javafx-sdk-27.0.1/lib\" --add-modules javafx.controls,javafx.fxml --enable-native-access=javafx.graphics"
+        }
+    ]
+}
