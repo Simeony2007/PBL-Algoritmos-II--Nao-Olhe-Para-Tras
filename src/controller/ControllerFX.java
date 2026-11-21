@@ -8,6 +8,7 @@ import src.model.service.logic.Npc;
 import src.model.service.logic.Orfeu;
 import src.view.Game.GameInterfaceJFX;
 import src.model.Observer;
+import src.model.customExceptions.SaveNotFoundException;
 
 import java.util.ArrayList;
 import java.util.Map;
@@ -32,11 +33,13 @@ public class ControllerFX implements Observer {
         game.addObservers(this);
     }
 
-    // public void loader(int index, Collection collection) {
-    // SaveState savestate = SaveManager.loadGame(index);
-    // Settings settings = SaveManager.loadSettings();
-    // game = new Game(savestate, collection, settings);
-    // }
+    public void deleteSave(int index) {
+        try {
+            SaveManager.deleteSave(index);
+        } catch (SaveNotFoundException e) {
+            System.out.println("SaveNotFound!"); // TODO: USAR NOTIFICATION OVERLAY AQUI!
+        }
+    }
 
     public void startCurrentScene() {
         ArrayList<Map.Entry<String, String>> dialogos = DialoguesParser

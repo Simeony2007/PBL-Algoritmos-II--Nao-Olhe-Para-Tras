@@ -24,6 +24,10 @@ public class SlotsMenuJFX {
         return menuSlots.getAllSavesInformation();
     }
 
+    public void deleteSave(int index) {
+        control.deleteSave(index);
+    }
+
     public void loadSave(int index) {
         control.loader(index);
     }

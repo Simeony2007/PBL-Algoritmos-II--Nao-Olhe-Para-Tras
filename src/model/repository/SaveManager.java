@@ -109,7 +109,7 @@ public class SaveManager {
 
     public static void deleteSave(int saveSlot) throws SaveNotFoundException {
         if (saveSlot > 3) {
-            File file = new File(SAVE_DIRECTORY + "auto_save_" + saveSlot + ".json");
+            File file = new File(SAVE_DIRECTORY + "auto_save_" + (saveSlot - 3) + ".json");
             if (file.exists()) {
                 file.delete();
             } else {

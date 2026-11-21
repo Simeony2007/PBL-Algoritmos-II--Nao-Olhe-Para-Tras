@@ -50,6 +50,8 @@ public final class SlotsJFX {
         title.setFont(Font.font("Arial", 30));
         BorderPane.setAlignment(title, Pos.CENTER);
         root.setTop(title);
+        saveManagerScreenCreator(onButtonClick);
+        Button btnApagar = (Button) saveManagerBPane.lookup("#Apagar");
 
         List<Map.Entry<Integer, String>> slots = new ArrayList<>(savesInfo.entrySet());
 
@@ -60,9 +62,15 @@ public final class SlotsJFX {
             // Numero real(1–8), não o índice(0–7).
             button.setOnAction(event -> {
                 setSlot(slot.getKey());
-                showSaveManager("teste"); // TODO: COLOCAR A INFO DO SAVE E RETORNAR O CARREGAR!
+                showSaveManager(slot.getKey().toString()); // TODO: COLOCAR A INFO DO SAVE E RETORNAR O CARREGAR!
                 // onButtonClick.run();
             });
+
+            btnApagar.setOnAction(e -> {
+                System.out.println(slotIndex);
+                onDelete.run();
+            });
+
             slotsBox.getChildren().add(button);
         }
 
@@ -71,7 +79,6 @@ public final class SlotsJFX {
         Button backButton = new Button("Voltar");
         backButton.setOnAction(event -> onReturn.run());
         backButton.setId("BackButton");
-        saveManagerScreenCreator(onButtonClick, onDelete);
 
         stackPane.getChildren().add(saveManagerBPane);
         root.setCenter(stackPane);
@@ -82,7 +89,7 @@ public final class SlotsJFX {
         return root;
     }
 
-    private void saveManagerScreenCreator(Runnable loadButtonCustomFunction, Runnable onDeleteCustomFunction) {
+    private void saveManagerScreenCreator(Runnable loadButtonCustomFunction) {
         saveManagerBPane = new BorderPane();
 
         saveManagerBPane.setMaxSize(Region.USE_PREF_SIZE, Region.USE_PREF_SIZE);
@@ -120,6 +127,7 @@ public final class SlotsJFX {
         Button apagarButton = new Button("Apagar");
         carregarButton.setPrefWidth(120);
         apagarButton.setPrefWidth(120);
+        apagarButton.setId("Apagar");
 
         HBox hBoxButtons = new HBox(20, carregarButton, apagarButton);
         hBoxButtons.setAlignment(Pos.CENTER);
@@ -131,7 +139,6 @@ public final class SlotsJFX {
 
         fecharButton.setOnAction(e -> onBackButton());
         carregarButton.setOnAction(e -> loadButtonCustomFunction.run());
-        apagarButton.setOnAction(e -> onDeleteCustomFunction.run());
     }
 
     public void showSaveManager(String saveInfo) {

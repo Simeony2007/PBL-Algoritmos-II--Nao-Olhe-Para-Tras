@@ -81,7 +81,13 @@ public class MenuInterfaceJFX extends Application {
         return slotsView.createView(
                 slotsController.getAllSaves(),
                 () -> startGameFromSlot(slotsView.getSlot()),
-                () -> menuScene.setRoot(menuScreen()));
+                () -> menuScene.setRoot(menuScreen()),
+                () -> onDelete(slotsView.getSlot()));
+    }
+
+    private void onDelete(int index) {
+        System.out.println(index);
+        slotsController.deleteSave(index);
     }
 
     private void startGameFromSlot(int slot) {
