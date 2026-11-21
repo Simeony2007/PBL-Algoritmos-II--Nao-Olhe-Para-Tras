@@ -20,6 +20,8 @@ public class Npc implements Prototype {
 	}
 
 	public void changeAffinity(int value) {
+		// affinity = Math.max(0, Math.min(99, affinity + value));
+		// TODO: VERIFICAR AS AFINIDADES NEGATIVAS
 		affinity = Math.max(0, Math.min(99, affinity + value));
 	}
 

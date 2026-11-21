@@ -303,6 +303,12 @@ public class Game {
 
     public void notifyObserversModelChange(Orfeu oldStatus, ArrayList<Npc> oldNpcsStatus) {
         for (Observer obs : observers) {
+            for (int i = 0; i < oldNpcsStatus.size(); i++) {
+                System.out.println("Npcs: " + state.getNpcs().get(i).getName() + "OldNpcs:"
+                        + oldNpcsStatus.get(i).getName());
+                System.out.println("Npcs: " + state.getNpcs().get(i).getAffinity() + "OldNpcs:"
+                        + oldNpcsStatus.get(i).getAffinity());
+            }
             obs.modelUpdated(state.getOrfeu(), state.getNpcs(), oldStatus, oldNpcsStatus);
         }
     }

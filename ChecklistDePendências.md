@@ -29,6 +29,7 @@
 - - - [x] Sprite Jasão
 - - - [x] Sprite Hades
 - - - [x] Sprite Persefone
+- - - [ ] Sprite Sombra(Personagem genérico)
 - - [ ] Botões e Menus Decorados
 - - [ ] Músicas
 - - [ ] Artes de Fundo (3/?)

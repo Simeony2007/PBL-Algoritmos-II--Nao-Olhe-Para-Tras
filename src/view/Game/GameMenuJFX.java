@@ -18,11 +18,14 @@ public class GameMenuJFX {
 
     private final VBox view = new VBox();
 
-    public GameMenuJFX(Runnable onReturnToMainMenu) {
+    public GameMenuJFX(Runnable onStatus, Runnable onSettings, Runnable onSave, Runnable onReturnToMainMenu) {
         Button statusButton = new Button("Status");
         Button settingsButton = new Button("Configurações");
         Button saveButton = new Button("Salvar");
         Button returnButton = new Button("Retornar ao menu");
+        statusButton.setOnAction(event -> onStatus.run());
+        settingsButton.setOnAction(event -> onSettings.run());
+        saveButton.setOnAction(event -> onSave.run());
         returnButton.setOnAction(event -> onReturnToMainMenu.run());
 
         double buttonWidth = 200;

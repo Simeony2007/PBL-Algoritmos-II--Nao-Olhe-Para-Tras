@@ -32,7 +32,8 @@ public class GameInterfaceJFX {
         dialogue = new DialogueJFX();
         choices = new ChoicesJFX();
         notifications = new NotificationOverlayJFX();
-        gameMenu = new GameMenuJFX(this::returnToMainMenu);
+        gameMenu = new GameMenuJFX(this::returnToMainMenu, this::returnToMainMenu, this::returnToMainMenu,
+                this::returnToMainMenu); // TODO: Fazer as funções para os botões do miniMenu
         endGame = new EndGameJFX(this::returnToMainMenu);
 
         gameLayer = new StackPane(

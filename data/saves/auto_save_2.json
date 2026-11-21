@@ -1,9 +1,9 @@
 {
   "orfeu": {
     "obol": 0,
-    "love": 10,
-    "angry": 4,
-    "sadness": 4
+    "love": 3,
+    "angry": 0,
+    "sadness": 0
   },
   "npcs": [
     {
@@ -19,6 +19,6 @@
       "affinity": 0
     }
   ],
-  "chapterIndex": 9,
-  "sceneId": "Última Conversa"
+  "chapterIndex": 1,
+  "sceneId": "Alma do Marinheiro"
 }

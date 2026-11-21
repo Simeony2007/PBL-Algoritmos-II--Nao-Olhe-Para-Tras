@@ -18,6 +18,7 @@ public class MenuInterfaceJFX extends Application {
     private final ControllerFX controllerFx = new ControllerFX();
     private final SlotsMenuJFX slotsController = new SlotsMenuJFX(controllerFx);
     private final GameInterfaceJFX ginterface = new GameInterfaceJFX();
+    private final SlotsJFX slotsView = new SlotsJFX();
     private Stage principalStage;
     private Scene menuScene;
 
@@ -77,9 +78,9 @@ public class MenuInterfaceJFX extends Application {
     }
 
     private Parent slotsScreen() {
-        return SlotsJFX.createView(
+        return slotsView.createView(
                 slotsController.getAllSaves(),
-                this::startGameFromSlot,
+                () -> startGameFromSlot(slotsView.getSlot()),
                 () -> menuScene.setRoot(menuScreen()));
     }
 
