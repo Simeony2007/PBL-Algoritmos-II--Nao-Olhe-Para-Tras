@@ -31,6 +31,7 @@ public class Game {
      */
     public Game(SaveState loadedData, Collection collection, Settings settings) {
         this.collection = collection;
+        this.textSpeed = settings.getTextSpeed();
 
         try {
             this.state = new GameState(

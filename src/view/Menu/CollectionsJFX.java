@@ -102,7 +102,6 @@ public class CollectionsJFX {
     private static Button CreateButtonsMenu(String texto) {
         Button btn = new Button(texto);
         btn.setPrefSize(120, 35);
-        btn.setStyle("-fx-border-color: black; -fx-border-width: 2; -fx-background-color: white;");
         return btn;
     }
 

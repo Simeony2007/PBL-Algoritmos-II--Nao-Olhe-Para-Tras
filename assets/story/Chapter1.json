@@ -10,9 +10,6 @@
         },
         {
           "text": "Consumido pelo luto, Orfeu toma uma decisão impensável: descer ao próprio Submundo, desafiar as leis da vida e da morte, e trazer sua amada de volta para a luz."
-        },
-        {
-          "text": "O que mais motiva os passos de Orfeu em direção ao abismo?"
         }
       ],
       "choices": [
@@ -39,8 +36,8 @@
           "nextSceneId": "Encontro com Cérbero",
           "obol": 0,
           "affinity": 0,
-          "love": 2,
-          "angry": 0,
+          "love": 0,
+          "angry": 2,
           "sadness": 0
         }
       ],

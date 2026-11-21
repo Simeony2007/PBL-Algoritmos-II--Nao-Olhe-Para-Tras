@@ -1,5 +1,7 @@
 package src.view.Menu;
 
+import java.io.File;
+
 import javafx.application.Application;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
@@ -12,17 +14,20 @@ import javafx.scene.layout.*;
 import javafx.scene.Parent;
 import src.controller.ControllerFX;
 import src.controller.SlotsMenuJFX;
+import src.model.repository.SaveManager;
 import src.model.customExceptions.SaveNotFoundException;
 import src.view.Game.GameInterfaceJFX;
 import src.view.Game.NotificationOverlayJFX;
+import src.view.MusicPlayerJFX;
 
 public class MenuInterfaceJFX extends Application {
-    private static final int BUTTON_WIDTH = 100;
+    private static final int BUTTON_WIDTH = 240;
     private final ControllerFX controllerFx = new ControllerFX();
     private final NotificationOverlayJFX slotsNotifications = new NotificationOverlayJFX();
     private final SlotsMenuJFX slotsController = new SlotsMenuJFX(controllerFx, slotsNotifications);
     private final GameInterfaceJFX ginterface = new GameInterfaceJFX();
     private final SlotsJFX slotsView = new SlotsJFX(slotsNotifications);
+    private final MusicPlayerJFX musicPlayer = new MusicPlayerJFX();
 
     private Stage principalStage;
     private Scene menuScene;
@@ -36,13 +41,20 @@ public class MenuInterfaceJFX extends Application {
     public void start(Stage principalStage) throws Exception {
         this.principalStage = principalStage;
         this.menuScene = new Scene(menuScreen());
+        menuScene.getStylesheets().add(new File("assets/styles/buttons.css").toURI().toString());
+        musicPlayer.setVolume(SaveManager.loadSettings().getVolume());
+        musicPlayer.playTrack("main_menu.mp3");
         ginterface.setOnReturnToMainMenu(this::returnToMainMenu);
 
         principalStage.setHeight(600);
         principalStage.setWidth(800);
         principalStage.setScene(menuScene);
         principalStage.show();
+    }
 
+    @Override
+    public void stop() {
+        musicPlayer.stop();
     }
 
     private Parent menuScreen() {
@@ -68,12 +80,12 @@ public class MenuInterfaceJFX extends Application {
         stackPane.getChildren().add(title);
         title.setPadding(new Insets(50));
 
-        btnStart.setPrefWidth(BUTTON_WIDTH);
-        btnSettings.setPrefWidth(BUTTON_WIDTH);
-        btnCollection.setPrefWidth(BUTTON_WIDTH);
-        btnInstructions.setPrefWidth(BUTTON_WIDTH);
-        btnCredits.setPrefWidth(BUTTON_WIDTH);
-        btnExit.setPrefWidth(BUTTON_WIDTH);
+        for (Button button : new Button[] {
+                btnStart, btnSettings, btnCollection, btnInstructions, btnCredits, btnExit
+        }) {
+            button.setPrefWidth(BUTTON_WIDTH);
+            button.setMaxWidth(BUTTON_WIDTH);
+        }
 
         btnStart.setOnAction(e -> menuScene.setRoot(slotsScreen()));
         btnSettings.setOnAction(e -> menuScene.setRoot(settingsScreen()));
@@ -106,11 +118,13 @@ public class MenuInterfaceJFX extends Application {
         ginterface.setController(controllerFx);
         controllerFx.setView(ginterface);
 
+        musicPlayer.playTrack("game.mp3");
         principalStage.setScene(ginterface.gameScene());
         controllerFx.startCurrentScene();
     }
 
     private void returnToMainMenu() {
+        musicPlayer.playTrack("main_menu.mp3");
         menuScene.setRoot(menuScreen());
         principalStage.setScene(menuScene);
     }
@@ -120,10 +134,13 @@ public class MenuInterfaceJFX extends Application {
     }
 
     private Parent settingsScreen() {
-        return SettingsJFX.createView(() -> menuScene.setRoot(menuScreen()));
+        return SettingsJFX.createView(
+                () -> menuScene.setRoot(menuScreen()),
+                musicPlayer::setVolume);
     }
 
     private void startGame() {
+        musicPlayer.playTrack("game.mp3");
         principalStage.setScene(ginterface.gameScene());
         ginterface.setController(controllerFx);
         controllerFx.setView(ginterface);

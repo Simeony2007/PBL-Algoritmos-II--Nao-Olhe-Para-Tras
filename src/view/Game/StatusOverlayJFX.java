@@ -56,6 +56,9 @@ public class StatusOverlayJFX {
         spriteView.setCache(true);
         spriteView.setFitHeight(64);
         spriteView.setPreserveRatio(true);
+        if (characterName.equals("Orfeu") || characterName.equals("Eurídice")) {
+            spriteView.setScaleX(-1);
+        }
         cortarTransparenciaInferior(spriteView);
 
         // Calcula o centro horizontal exato do sprite

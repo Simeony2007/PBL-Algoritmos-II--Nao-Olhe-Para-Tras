@@ -10,6 +10,7 @@ import src.model.service.logic.Npc;
 import src.model.service.logic.Orfeu;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
+import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.Background;
@@ -31,7 +32,9 @@ public class GameInterfaceJFX {
     private final ChoicesJFX choices;
     private final NotificationOverlayJFX notifications;
     private final StatusOverlayJFX statusOverlay;
+    private final SceneDirectorJFX sceneDirector;
     private final StackPane gameLayer;
+    private final StackPane sceneContent;
     private final GameControlsJFX controls;
     private final ChapterTitleOverlayJFX chapterTitle;
     private InGameSaveMenuJFX inGameSaveMenu;
@@ -46,25 +49,33 @@ public class GameInterfaceJFX {
         choices = new ChoicesJFX();
         notifications = new NotificationOverlayJFX();
         statusOverlay = new StatusOverlayJFX();
+        sceneDirector = new SceneDirectorJFX();
+        sceneDirector.bindCharacterHeightTo(sceneRoot.heightProperty());
         endGame = new EndGameJFX(this::returnToMainMenu);
         controls = new GameControlsJFX(this::openedMenu, this::saveGame);
         chapterTitle = new ChapterTitleOverlayJFX();
+        dialogue.setOnSpeakerChanged(sceneDirector::setSpeakingCharacter);
         returnConfirmation = new ConfirmationScreenJFX(
                 this::returnToMainMenu,
                 this::cancelReturnToMainMenu);
         gameLayer = new StackPane(
-                dialogue.getCharacterLayer(),
+                sceneDirector.getView(),
                 choices.getView(),
                 notifications.getView(),
                 statusOverlay.getView(),
                 chapterTitle.getView());
+        sceneContent = new StackPane(gameLayer, dialogue.getDialogueBox());
+        StackPane.setAlignment(sceneDirector.getView(), Pos.BOTTOM_CENTER);
+        StackPane.setAlignment(dialogue.getDialogueBox(), Pos.BOTTOM_CENTER);
+        StackPane.setMargin(dialogue.getDialogueBox(), new Insets(0, 15, 15, 15));
+        dialogue.getDialogueBox().setMouseTransparent(true);
         StackPane.setAlignment(notifications.getView(), Pos.TOP_LEFT);
         StackPane.setMargin(notifications.getView(), new Insets(15));
         StackPane.setAlignment(statusOverlay.getView(), Pos.CENTER_LEFT);
         StackPane.setMargin(statusOverlay.getView(), new Insets(10));
 
         root.setOnMouseClicked(event -> {
-            if (gameScreenVisible && !choices.isVisible()) {
+            if (gameScreenVisible && !choices.isVisible() && !isChoiceTarget(event.getTarget())) {
                 nextDialogue();
             }
         });
@@ -82,6 +93,7 @@ public class GameInterfaceJFX {
         showGameScreen();
 
         scene = new Scene(sceneRoot);
+        scene.getStylesheets().add(new File("assets/styles/buttons.css").toURI().toString());
     }
 
     public void setController(ControllerFX controller) {
@@ -100,7 +112,12 @@ public class GameInterfaceJFX {
         showGameScreen();
         choices.hide();
         choices.setDisabled(false);
+        dialogue.setTextSpeed(speed);
         dialogue.showDialogues(dialogues, this::onDialogueQueueFinished);
+    }
+
+    public void setSceneActors(int chapter, String sceneId) {
+        sceneDirector.setScene(chapter, sceneId);
     }
 
     public void nextDialogue() {
@@ -111,6 +128,19 @@ public class GameInterfaceJFX {
         if (controller != null) {
             controller.endedDialogues();
         }
+    }
+
+    private boolean isChoiceTarget(Object target) {
+        if (!(target instanceof Node)) {
+            return false;
+        }
+
+        for (Node node = (Node) target; node != null; node = node.getParent()) {
+            if (node == choices.getView()) {
+                return true;
+            }
+        }
+        return false;
     }
 
     public void openedMenu() {
@@ -138,11 +168,17 @@ public class GameInterfaceJFX {
     }
 
     public void showChoicesOptions(ArrayList<String> choices) {
-        this.choices.showChoicesOptions(choices, number -> {
-            if (controller != null) {
-                controller.choicedOption(number);
-            }
-        });
+        this.choices.showChoicesOptions(choices, this::chooseOption);
+    }
+
+    public void showCharacterCreationOptions(ArrayList<String> choices) {
+        this.choices.showCharacterCreationOptions(choices, this::chooseOption);
+    }
+
+    private void chooseOption(int number) {
+        if (controller != null) {
+            controller.choicedOption(number);
+        }
     }
 
     public void setChapterBackground(String filename) {
@@ -176,9 +212,8 @@ public class GameInterfaceJFX {
         HBox hbox = controls.getView();
         hbox.setAlignment(Pos.TOP_RIGHT);
         root.setTop(hbox);
-        root.setCenter(gameLayer);
-        root.setBottom(dialogue.getDialogueBox());
-        BorderPane.setMargin(dialogue.getDialogueBox(), new Insets(0, 15, 15, 15));
+        root.setCenter(sceneContent);
+        root.setBottom(null);
     }
 
     public void returnToMainMenu() {

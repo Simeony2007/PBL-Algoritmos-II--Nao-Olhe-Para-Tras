@@ -1,0 +1,897 @@
+{
+  "scenes": [
+    {
+      "chapter": 1,
+      "sceneId": "Introdução",
+      "characters": [
+        "Orfeu"
+      ]
+    },
+    {
+      "chapter": 1,
+      "sceneId": "Encontro com Cérbero",
+      "characters": [
+        "Orfeu"
+      ]
+    },
+    {
+      "chapter": 1,
+      "sceneId": "s2a_cerberus",
+      "characters": [
+        "Orfeu"
+      ]
+    },
+    {
+      "chapter": 1,
+      "sceneId": "s2b_cerberus",
+      "characters": [
+        "Orfeu"
+      ]
+    },
+    {
+      "chapter": 1,
+      "sceneId": "s2c_cerberus",
+      "characters": [
+        "Orfeu"
+      ]
+    },
+    {
+      "chapter": 1,
+      "sceneId": "Margem do Rio",
+      "characters": [
+        "Orfeu"
+      ]
+    },
+    {
+      "chapter": 1,
+      "sceneId": "Conversa com Alma",
+      "characters": [
+        "Orfeu"
+      ]
+    },
+    {
+      "chapter": 1,
+      "sceneId": "s4a_soul",
+      "characters": [
+        "Orfeu"
+      ]
+    },
+    {
+      "chapter": 1,
+      "sceneId": "s4b_soul",
+      "characters": [
+        "Orfeu"
+      ]
+    },
+    {
+      "chapter": 1,
+      "sceneId": "Conversa com Caronte",
+      "characters": [
+        "Orfeu",
+        "Caronte"
+      ]
+    },
+    {
+      "chapter": 1,
+      "sceneId": "s5a_charon",
+      "characters": [
+        "Orfeu"
+      ]
+    },
+    {
+      "chapter": 1,
+      "sceneId": "s5b_charon",
+      "characters": [
+        "Orfeu",
+        "Caronte"
+      ]
+    },
+    {
+      "chapter": 1,
+      "sceneId": "s5c_charon",
+      "characters": [
+        "Orfeu"
+      ]
+    },
+    {
+      "chapter": 1,
+      "sceneId": "Barca de Caronte",
+      "characters": [
+        "Orfeu",
+        "Caronte"
+      ]
+    },
+    {
+      "chapter": 1,
+      "sceneId": "s6a_charon_boat",
+      "characters": [
+        "Orfeu",
+        "Caronte"
+      ]
+    },
+    {
+      "chapter": 1,
+      "sceneId": "s6b_charon_boat",
+      "characters": [
+        "Orfeu",
+        "Caronte"
+      ]
+    },
+    {
+      "chapter": 1,
+      "sceneId": "s6c_charon_boat",
+      "characters": [
+        "Orfeu"
+      ]
+    },
+    {
+      "chapter": 1,
+      "sceneId": "s7_end_chapter",
+      "characters": [
+        "Orfeu",
+        "Caronte"
+      ]
+    },
+    {
+      "chapter": 2,
+      "sceneId": "s1_asphodel",
+      "characters": [
+        "Orfeu"
+      ]
+    },
+    {
+      "chapter": 2,
+      "sceneId": "Alma do Marinheiro",
+      "characters": [
+        "Orfeu"
+      ]
+    },
+    {
+      "chapter": 2,
+      "sceneId": "s2a_sailor",
+      "characters": [
+        "Orfeu"
+      ]
+    },
+    {
+      "chapter": 2,
+      "sceneId": "s2b_sailor",
+      "characters": [
+        "Orfeu"
+      ]
+    },
+    {
+      "chapter": 2,
+      "sceneId": "s2c_sailor",
+      "characters": [
+        "Orfeu"
+      ]
+    },
+    {
+      "chapter": 2,
+      "sceneId": "Fã de Orfeu",
+      "characters": [
+        "Orfeu"
+      ]
+    },
+    {
+      "chapter": 2,
+      "sceneId": "s3a_fan",
+      "characters": [
+        "Orfeu"
+      ]
+    },
+    {
+      "chapter": 2,
+      "sceneId": "s3b_fan",
+      "characters": [
+        "Orfeu"
+      ]
+    },
+    {
+      "chapter": 2,
+      "sceneId": "s3c_fan",
+      "characters": [
+        "Orfeu"
+      ]
+    },
+    {
+      "chapter": 2,
+      "sceneId": "Ataque das Keres",
+      "characters": [
+        "Orfeu"
+      ]
+    },
+    {
+      "chapter": 2,
+      "sceneId": "s4a_keres",
+      "characters": [
+        "Orfeu"
+      ]
+    },
+    {
+      "chapter": 2,
+      "sceneId": "s4b_keres",
+      "characters": [
+        "Orfeu"
+      ]
+    },
+    {
+      "chapter": 2,
+      "sceneId": "s4c_keres",
+      "characters": [
+        "Orfeu"
+      ]
+    },
+    {
+      "chapter": 2,
+      "sceneId": "Retorno de Caronte",
+      "characters": [
+        "Orfeu",
+        "Caronte"
+      ]
+    },
+    {
+      "chapter": 2,
+      "sceneId": "s5a_charon",
+      "characters": [
+        "Orfeu"
+      ]
+    },
+    {
+      "chapter": 2,
+      "sceneId": "s5b_charon",
+      "characters": [
+        "Orfeu"
+      ]
+    },
+    {
+      "chapter": 2,
+      "sceneId": "s6_end_chapter",
+      "characters": [
+        "Orfeu"
+      ]
+    },
+    {
+      "chapter": 3,
+      "sceneId": "Preço da Memória",
+      "characters": [
+        "Orfeu"
+      ]
+    },
+    {
+      "chapter": 3,
+      "sceneId": "s1a_memory",
+      "characters": [
+        "Orfeu"
+      ]
+    },
+    {
+      "chapter": 3,
+      "sceneId": "s1b_memory",
+      "characters": [
+        "Orfeu"
+      ]
+    },
+    {
+      "chapter": 3,
+      "sceneId": "s1c_memory",
+      "characters": [
+        "Orfeu"
+      ]
+    },
+    {
+      "chapter": 3,
+      "sceneId": "Ilusão da Glória",
+      "characters": [
+        "Orfeu"
+      ]
+    },
+    {
+      "chapter": 3,
+      "sceneId": "s2a_glory",
+      "characters": [
+        "Orfeu"
+      ]
+    },
+    {
+      "chapter": 3,
+      "sceneId": "s2b_glory",
+      "characters": [
+        "Orfeu"
+      ]
+    },
+    {
+      "chapter": 3,
+      "sceneId": "s2c_glory",
+      "characters": [
+        "Orfeu"
+      ]
+    },
+    {
+      "chapter": 3,
+      "sceneId": "Encontro com Jasão",
+      "characters": [
+        "Orfeu",
+        "Jasão"
+      ]
+    },
+    {
+      "chapter": 3,
+      "sceneId": "s3a_jason",
+      "characters": [
+        "Orfeu"
+      ]
+    },
+    {
+      "chapter": 3,
+      "sceneId": "s3b_jason",
+      "characters": [
+        "Orfeu"
+      ]
+    },
+    {
+      "chapter": 3,
+      "sceneId": "s3c_jason",
+      "characters": [
+        "Orfeu"
+      ]
+    },
+    {
+      "chapter": 3,
+      "sceneId": "Porto do caronte",
+      "characters": [
+        "Orfeu"
+      ]
+    },
+    {
+      "chapter": 3,
+      "sceneId": "s5_charon",
+      "characters": [
+        "Orfeu"
+      ]
+    },
+    {
+      "chapter": 4,
+      "sceneId": "Encontro com Sísifo",
+      "characters": [
+        "Orfeu",
+        "Sísifo"
+      ]
+    },
+    {
+      "chapter": 4,
+      "sceneId": "s1a_sisyphus",
+      "characters": [
+        "Orfeu"
+      ]
+    },
+    {
+      "chapter": 4,
+      "sceneId": "s1b_sisyphus",
+      "characters": [
+        "Orfeu"
+      ]
+    },
+    {
+      "chapter": 4,
+      "sceneId": "s1c_sisyphus",
+      "characters": [
+        "Orfeu"
+      ]
+    },
+    {
+      "chapter": 4,
+      "sceneId": "Conversa no Abismo",
+      "characters": [
+        "Orfeu",
+        "Sísifo"
+      ]
+    },
+    {
+      "chapter": 4,
+      "sceneId": "s2a_abyss",
+      "characters": [
+        "Orfeu"
+      ]
+    },
+    {
+      "chapter": 4,
+      "sceneId": "s2b_abyss",
+      "characters": [
+        "Orfeu"
+      ]
+    },
+    {
+      "chapter": 4,
+      "sceneId": "s2c_abyss",
+      "characters": [
+        "Orfeu"
+      ]
+    },
+    {
+      "chapter": 4,
+      "sceneId": "Portas de Hades",
+      "characters": [
+        "Orfeu",
+        "Sísifo"
+      ]
+    },
+    {
+      "chapter": 4,
+      "sceneId": "s3a_gates",
+      "characters": [
+        "Orfeu"
+      ]
+    },
+    {
+      "chapter": 4,
+      "sceneId": "s3b_gates",
+      "characters": [
+        "Orfeu"
+      ]
+    },
+    {
+      "chapter": 4,
+      "sceneId": "s3c_gates",
+      "characters": [
+        "Orfeu"
+      ]
+    },
+    {
+      "chapter": 5,
+      "sceneId": "Sala do Trono",
+      "characters": [
+        "Orfeu",
+        "Hades",
+        "Perséfone"
+      ]
+    },
+    {
+      "chapter": 5,
+      "sceneId": "Julgamento de Hades",
+      "characters": [
+        "Orfeu"
+      ]
+    },
+    {
+      "chapter": 5,
+      "sceneId": "s2a_judgment",
+      "characters": [
+        "Orfeu",
+        "Hades"
+      ]
+    },
+    {
+      "chapter": 5,
+      "sceneId": "Final 3: Punição Eterna",
+      "characters": [
+        "Orfeu",
+        "Hades"
+      ]
+    },
+    {
+      "chapter": 5,
+      "sceneId": "Encontro com Eurídice",
+      "characters": [
+        "Orfeu",
+        "Eurídice"
+      ]
+    },
+    {
+      "chapter": 5,
+      "sceneId": "s3a_eurydice",
+      "characters": [
+        "Orfeu"
+      ]
+    },
+    {
+      "chapter": 5,
+      "sceneId": "s3b_eurydice",
+      "characters": [
+        "Orfeu"
+      ]
+    },
+    {
+      "chapter": 5,
+      "sceneId": "s3c_eurydice",
+      "characters": [
+        "Orfeu"
+      ]
+    },
+    {
+      "chapter": 5,
+      "sceneId": "s4_leaving",
+      "characters": [
+        "Orfeu"
+      ]
+    },
+    {
+      "chapter": 6,
+      "sceneId": "O Eco do Abismo",
+      "characters": [
+        "Orfeu",
+        "Eurídice"
+      ]
+    },
+    {
+      "chapter": 6,
+      "sceneId": "s1a_abyss_echo",
+      "characters": [
+        "Orfeu"
+      ]
+    },
+    {
+      "chapter": 6,
+      "sceneId": "s1b_abyss_echo",
+      "characters": [
+        "Orfeu"
+      ]
+    },
+    {
+      "chapter": 6,
+      "sceneId": "s1c_abyss_echo",
+      "characters": [
+        "Orfeu"
+      ]
+    },
+    {
+      "chapter": 6,
+      "sceneId": "A Sombra na Trilha",
+      "characters": [
+        "Orfeu",
+        "Eurídice"
+      ]
+    },
+    {
+      "chapter": 6,
+      "sceneId": "s2a_trail_shadow",
+      "characters": [
+        "Orfeu"
+      ]
+    },
+    {
+      "chapter": 6,
+      "sceneId": "s2b_trail_shadow",
+      "characters": [
+        "Orfeu"
+      ]
+    },
+    {
+      "chapter": 6,
+      "sceneId": "s2c_trail_shadow",
+      "characters": [
+        "Orfeu"
+      ]
+    },
+    {
+      "chapter": 6,
+      "sceneId": "O Atalho Oculto",
+      "characters": [
+        "Orfeu",
+        "Eurídice"
+      ]
+    },
+    {
+      "chapter": 6,
+      "sceneId": "s3a_hidden_shortcut",
+      "characters": [
+        "Orfeu"
+      ]
+    },
+    {
+      "chapter": 6,
+      "sceneId": "s3b_hidden_shortcut",
+      "characters": [
+        "Orfeu"
+      ]
+    },
+    {
+      "chapter": 6,
+      "sceneId": "s3c_hidden_shortcut",
+      "characters": [
+        "Orfeu"
+      ]
+    },
+    {
+      "chapter": 7,
+      "sceneId": "Brilho dos Elíseos",
+      "characters": [
+        "Orfeu",
+        "Eurídice"
+      ]
+    },
+    {
+      "chapter": 7,
+      "sceneId": "s1a_elysium_glow",
+      "characters": [
+        "Orfeu"
+      ]
+    },
+    {
+      "chapter": 7,
+      "sceneId": "s1b_elysium_glow",
+      "characters": [
+        "Orfeu"
+      ]
+    },
+    {
+      "chapter": 7,
+      "sceneId": "s1c_elysium_glow",
+      "characters": [
+        "Orfeu"
+      ]
+    },
+    {
+      "chapter": 7,
+      "sceneId": "Tentação do Descanso",
+      "characters": [
+        "Orfeu",
+        "Eurídice"
+      ]
+    },
+    {
+      "chapter": 7,
+      "sceneId": "s2a_temptation",
+      "characters": [
+        "Orfeu"
+      ]
+    },
+    {
+      "chapter": 7,
+      "sceneId": "s2b_temptation",
+      "characters": [
+        "Orfeu"
+      ]
+    },
+    {
+      "chapter": 7,
+      "sceneId": "s2c_temptation",
+      "characters": [
+        "Orfeu"
+      ]
+    },
+    {
+      "chapter": 7,
+      "sceneId": "Portas de Asfódelo",
+      "characters": [
+        "Orfeu",
+        "Eurídice"
+      ]
+    },
+    {
+      "chapter": 7,
+      "sceneId": "s3a_asphodel_gates",
+      "characters": [
+        "Orfeu"
+      ]
+    },
+    {
+      "chapter": 7,
+      "sceneId": "s3b_asphodel_gates",
+      "characters": [
+        "Orfeu"
+      ]
+    },
+    {
+      "chapter": 7,
+      "sceneId": "s3c_asphodel_gates",
+      "characters": [
+        "Orfeu"
+      ]
+    },
+    {
+      "chapter": 8,
+      "sceneId": "Névoa do Esquecimento",
+      "characters": [
+        "Orfeu",
+        "Eurídice"
+      ]
+    },
+    {
+      "chapter": 8,
+      "sceneId": "s1a_asphodel_mist",
+      "characters": [
+        "Orfeu"
+      ]
+    },
+    {
+      "chapter": 8,
+      "sceneId": "s1b_asphodel_mist",
+      "characters": [
+        "Orfeu"
+      ]
+    },
+    {
+      "chapter": 8,
+      "sceneId": "s1c_asphodel_mist",
+      "characters": [
+        "Orfeu"
+      ]
+    },
+    {
+      "chapter": 8,
+      "sceneId": "Ecos da Distância",
+      "characters": [
+        "Orfeu",
+        "Eurídice"
+      ]
+    },
+    {
+      "chapter": 8,
+      "sceneId": "s2a_distant_echoes",
+      "characters": [
+        "Orfeu"
+      ]
+    },
+    {
+      "chapter": 8,
+      "sceneId": "s2b_distant_echoes",
+      "characters": [
+        "Orfeu"
+      ]
+    },
+    {
+      "chapter": 8,
+      "sceneId": "s2c_distant_echoes",
+      "characters": [
+        "Orfeu"
+      ]
+    },
+    {
+      "chapter": 8,
+      "sceneId": "s3_styx_shore",
+      "characters": [
+        "Orfeu"
+      ]
+    },
+    {
+      "chapter": 9,
+      "sceneId": "s1_styx_intro",
+      "characters": [
+        "Orfeu",
+        "Caronte"
+      ]
+    },
+    {
+      "chapter": 9,
+      "sceneId": "s2_sisyphus_friendly",
+      "characters": [
+        "Orfeu",
+        "Sísifo"
+      ]
+    },
+    {
+      "chapter": 9,
+      "sceneId": "s3a_charon_help",
+      "characters": [
+        "Orfeu",
+        "Caronte"
+      ]
+    },
+    {
+      "chapter": 9,
+      "sceneId": "s3b_charon_rigidity",
+      "characters": [
+        "Orfeu",
+        "Caronte"
+      ]
+    },
+    {
+      "chapter": 9,
+      "sceneId": "s4a_melancholy_weight",
+      "characters": [
+        "Orfeu"
+      ]
+    },
+    {
+      "chapter": 9,
+      "sceneId": "s4b_failed_resignation",
+      "characters": [
+        "Orfeu"
+      ]
+    },
+    {
+      "chapter": 9,
+      "sceneId": "s5_sisyphus_hostile",
+      "characters": [
+        "Orfeu",
+        "Sísifo"
+      ]
+    },
+    {
+      "chapter": 9,
+      "sceneId": "s6a_charon_exception",
+      "characters": [
+        "Orfeu",
+        "Caronte"
+      ]
+    },
+    {
+      "chapter": 9,
+      "sceneId": "s6b_charon_neutrality",
+      "characters": [
+        "Orfeu",
+        "Caronte"
+      ]
+    },
+    {
+      "chapter": 9,
+      "sceneId": "s7a_wrath_impulse",
+      "characters": [
+        "Orfeu"
+      ]
+    },
+    {
+      "chapter": 9,
+      "sceneId": "s7b_silent_despair",
+      "characters": [
+        "Orfeu"
+      ]
+    },
+    {
+      "chapter": 9,
+      "sceneId": "Final 4: Orfeu fracassa e Sísifo escapa",
+      "characters": [
+        "Orfeu"
+      ]
+    },
+    {
+      "chapter": 9,
+      "sceneId": "s9_climax_threshold",
+      "characters": [
+        "Orfeu"
+      ]
+    },
+    {
+      "chapter": 10,
+      "sceneId": "Último Degrau",
+      "characters": [
+        "Orfeu",
+        "Eurídice"
+      ]
+    },
+    {
+      "chapter": 10,
+      "sceneId": "Última Conversa",
+      "characters": [
+        "Orfeu"
+      ]
+    },
+    {
+      "chapter": 10,
+      "sceneId": "Teste Afinidade",
+      "characters": [
+        "Orfeu"
+      ]
+    },
+    {
+      "chapter": 10,
+      "sceneId": "Olhar para trás",
+      "characters": [
+        "Orfeu"
+      ]
+    },
+    {
+      "chapter": 10,
+      "sceneId": "Final 1: Olhe para trás",
+      "characters": [
+        "Orfeu"
+      ]
+    },
+    {
+      "chapter": 10,
+      "sceneId": "Não Olhar",
+      "characters": [
+        "Orfeu"
+      ]
+    },
+    {
+      "chapter": 10,
+      "sceneId": "Final 2: Não olhe para trás",
+      "characters": [
+        "Orfeu"
+      ]
+    }
+  ]
+}

@@ -1,5 +1,7 @@
 package src.view.Menu;
 
+import java.util.function.IntConsumer;
+
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Parent;
@@ -17,6 +19,11 @@ import src.controller.SettingsMenuJFX;
 public class SettingsJFX {
 
     public static Parent createView(Runnable onBackAction) {
+        return createView(onBackAction, volume -> {
+        });
+    }
+
+    public static Parent createView(Runnable onBackAction, IntConsumer onVolumeChanged) {
         SettingsMenuJFX settings = new SettingsMenuJFX();
 
         VBox root = new VBox(30);
@@ -65,6 +72,8 @@ public class SettingsJFX {
 
         Slider sliderVolume = new Slider(0, 100, settings.getVolume());
         sliderVolume.setPrefWidth(170);
+        sliderVolume.valueProperty().addListener((observable, oldValue, newValue) ->
+                onVolumeChanged.accept(newValue.intValue()));
 
         Label lblPercent = new Label();
         lblPercent.setPrefWidth(48);
@@ -126,25 +135,12 @@ public class SettingsJFX {
     private static Button CreateBoxButton(String texto) {
         Button btn = new Button(texto);
         btn.setPrefSize(180, 42);
-        btn.setStyle(
-            "-fx-border-color: black;" +
-            "-fx-border-width: 2;" +
-            "-fx-background-color: white;" +
-            "-fx-cursor: hand;"
-        );
         return btn;
     }
 
     private static Button createButton(String texto) {
         Button btn = new Button(texto);
         btn.setPrefSize(130, 40);
-        btn.setStyle(
-            "-fx-font-size: 15px;" +
-            "-fx-border-color: black;" +
-            "-fx-border-width: 2;" +
-            "-fx-background-color: white;" +
-            "-fx-cursor: hand;"
-        );
         return btn;
     }
 }

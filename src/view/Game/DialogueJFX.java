@@ -1,18 +1,15 @@
 package src.view.Game;
 
-import java.io.File;
 import java.util.ArrayList;
 import java.util.Map;
+import java.util.function.Consumer;
 
 import javafx.animation.Animation;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
-import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
 import javafx.scene.control.Label;
-import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
@@ -25,11 +22,10 @@ public class DialogueJFX {
     private static final double NAME_HEIGHT = 38;
     private static final double DIALOGUE_HEIGHT = 122;
     private static final double NAME_TAB_WIDTH = 240;
-    private static final double TYPEWRITER_INTERVAL_MILLIS = 15;
+    private static final double DEFAULT_TYPEWRITER_INTERVAL_MILLIS = 15;
 
     private final Label characterName = new Label();
     private final Label dialogueText = new Label();
-    private final HBox characterLayer = new HBox();
     private final StackPane dialogueBox;
     private ArrayList<Map.Entry<String, String>> dialogues;
     private Timeline typewriter;
@@ -38,10 +34,11 @@ public class DialogueJFX {
     private int dialogueIndex;
     private String currentText = "";
     private boolean completionSent;
+    private double typewriterIntervalMillis = DEFAULT_TYPEWRITER_INTERVAL_MILLIS;
+    private Consumer<String> onSpeakerChanged = ignored -> {
+    };
 
     public DialogueJFX() {
-        characterLayer.setAlignment(Pos.BOTTOM_CENTER);
-
         characterName.setFont(new Font("Arial", 20));
         characterName.setTextFill(Color.WHITE);
         characterName.setAlignment(Pos.CENTER_LEFT);
@@ -84,10 +81,14 @@ public class DialogueJFX {
         dialogueBox = new StackPane(background, content);
         dialogueBox.setAlignment(Pos.TOP_LEFT);
         dialogueBox.setMaxWidth(Double.MAX_VALUE);
+        double dialogueBoxHeight = NAME_HEIGHT + DIALOGUE_HEIGHT;
+        dialogueBox.setMinHeight(dialogueBoxHeight);
+        dialogueBox.setPrefHeight(dialogueBoxHeight);
+        dialogueBox.setMaxHeight(dialogueBoxHeight);
     }
 
-    public HBox getCharacterLayer() {
-        return characterLayer;
+    public void setOnSpeakerChanged(Consumer<String> onSpeakerChanged) {
+        this.onSpeakerChanged = onSpeakerChanged;
     }
 
     public StackPane getDialogueBox() {
@@ -105,6 +106,26 @@ public class DialogueJFX {
         advance();
     }
 
+    public void setTextSpeed(int textSpeed) {
+        switch (textSpeed) {
+            case 2500:
+                typewriterIntervalMillis = 60;
+                break;
+            case 1000:
+                typewriterIntervalMillis = 35;
+                break;
+            case 100:
+                typewriterIntervalMillis = DEFAULT_TYPEWRITER_INTERVAL_MILLIS;
+                break;
+            case 0:
+                typewriterIntervalMillis = 0;
+                break;
+            default:
+                typewriterIntervalMillis = DEFAULT_TYPEWRITER_INTERVAL_MILLIS;
+                break;
+        }
+    }
+
     public void reset() {
         stopTypewriter();
         dialogues = null;
@@ -115,7 +136,7 @@ public class DialogueJFX {
         completionSent = false;
         characterName.setText("");
         dialogueText.setText("");
-        characterLayer.getChildren().clear();
+        onSpeakerChanged.accept(null);
     }
 
     public void advance() {
@@ -132,6 +153,7 @@ public class DialogueJFX {
         if (dialogueIndex >= dialogues.size()) {
             if (!completionSent) {
                 completionSent = true;
+                onSpeakerChanged.accept(null);
                 onFinished.run();
             }
             return;
@@ -142,12 +164,17 @@ public class DialogueJFX {
         currentText = dialogue.getValue();
 
         characterName.setText(name);
-        dialogueText.setText("");
-        showCharacterSprite(name);
+        onSpeakerChanged.accept(name);
 
+        if (typewriterIntervalMillis == 0) {
+            dialogueText.setText(currentText);
+            return;
+        }
+
+        dialogueText.setText("");
         int[] visibleCharacters = { 0 };
         typewriter = new Timeline(new KeyFrame(
-                Duration.millis(TYPEWRITER_INTERVAL_MILLIS),
+                Duration.millis(typewriterIntervalMillis),
                 event -> {
                     if (visibleCharacters[0] < currentText.length()) {
                         dialogueText.setText(currentText.substring(0, ++visibleCharacters[0]));
@@ -167,28 +194,6 @@ public class DialogueJFX {
         if (typewriter != null && typewriter.getStatus() == Animation.Status.PAUSED) {
             typewriter.play();
         }
-    }
-
-    private void showCharacterSprite(String name) {
-        characterLayer.getChildren().clear();
-        if (name == null || name.isEmpty()) {
-            return;
-        }
-
-        File spriteFile = new File("assets/sprites/character/" + name + ".png");
-        if (!spriteFile.isFile()) {
-            return;
-        }
-
-        Image image = new Image(spriteFile.toURI().toString());
-        if (image.isError()) {
-            return;
-        }
-
-        ImageView sprite = new ImageView(image);
-        sprite.setPreserveRatio(true);
-        sprite.setFitHeight(350);
-        characterLayer.getChildren().add(sprite);
     }
 
     private void stopTypewriter() {
