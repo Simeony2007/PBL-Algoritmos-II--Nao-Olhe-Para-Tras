@@ -86,7 +86,6 @@ public class MenuInterfaceJFX extends Application {
     }
 
     private void onDelete(int index) {
-        System.out.println(index);
         slotsController.deleteSave(index);
     }
 

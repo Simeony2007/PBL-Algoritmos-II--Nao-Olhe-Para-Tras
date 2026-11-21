@@ -260,7 +260,6 @@ public class Game {
     public void autoSave(Settings settings) {
         if (state.isRunning() && settings.isAutoSave()) {
             GameSave.saveCurrentProgress(state, state.getCurrentChapter().getCurrentScene().getNextSceneId(), -1);
-            notifyObserversSave();
         }
     }
 
@@ -310,12 +309,6 @@ public class Game {
                         + oldNpcsStatus.get(i).getAffinity());
             }
             obs.modelUpdated(state.getOrfeu(), state.getNpcs(), oldStatus, oldNpcsStatus);
-        }
-    }
-
-    public void notifyObserversSave() {
-        for (Observer obs : observers) {
-            obs.saveWasMade();
         }
     }
 

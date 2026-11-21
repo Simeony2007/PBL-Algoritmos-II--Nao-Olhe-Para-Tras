@@ -11,4 +11,6 @@ public interface Observer {
 
     public void saveWasMade();
 
+    public void saveWasDeleted();
+
 }

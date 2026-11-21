@@ -124,4 +124,9 @@ public class ControllerFX implements Observer {
         view.showNotification("Jogo salvo!");
     }
 
+    @Override
+    public void saveWasDeleted() {
+        // TODO: Fazer isso atualizar Slots!
+    }
+
 }
