@@ -171,7 +171,11 @@ public class GameInterfaceJFX {
         root.setStyle("");
     }
 
+    public void endChapterScreenMounter() {
+        // TODO: Fazer criador da tela de Fim de capítulo
+    }
+
     public void showEndChapter() {
-        // TODO
+        // TODO: Fszer o método de mostrar ele por um curto tempo
     }
 }

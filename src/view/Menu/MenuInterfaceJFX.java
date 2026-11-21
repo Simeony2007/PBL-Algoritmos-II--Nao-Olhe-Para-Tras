@@ -11,14 +11,18 @@ import javafx.scene.layout.*;
 import javafx.scene.Parent;
 import src.controller.ControllerFX;
 import src.controller.SlotsMenuJFX;
+import src.model.customExceptions.SaveNotFoundException;
 import src.view.Game.GameInterfaceJFX;
+import src.view.Game.NotificationOverlayJFX;
 
 public class MenuInterfaceJFX extends Application {
     private static final int BUTTON_WIDTH = 100;
     private final ControllerFX controllerFx = new ControllerFX();
-    private final SlotsMenuJFX slotsController = new SlotsMenuJFX(controllerFx);
+    private final NotificationOverlayJFX slotsNotifications = new NotificationOverlayJFX();
+    private final SlotsMenuJFX slotsController = new SlotsMenuJFX(controllerFx, slotsNotifications);
     private final GameInterfaceJFX ginterface = new GameInterfaceJFX();
-    private final SlotsJFX slotsView = new SlotsJFX();
+    private final SlotsJFX slotsView = new SlotsJFX(slotsNotifications);
+
     private Stage principalStage;
     private Scene menuScene;
 
@@ -92,6 +96,7 @@ public class MenuInterfaceJFX extends Application {
 
     private void onDelete(int index) {
         slotsController.deleteSave(index);
+
     }
 
     private void startGameFromSlot(int slot) {

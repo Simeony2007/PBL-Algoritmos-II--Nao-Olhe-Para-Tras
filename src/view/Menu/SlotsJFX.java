@@ -16,15 +16,18 @@ import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
+import src.view.Game.NotificationOverlayJFX;
 
 public final class SlotsJFX {
 
     private SaveSlotManagerJFX saveManager;
     private BorderPane root;
     private int slotIndex;
+    private final NotificationOverlayJFX notifications;
 
-    public SlotsJFX() {
+    public SlotsJFX(NotificationOverlayJFX notifications) {
         slotIndex = 0;
+        this.notifications = notifications;
     }
 
     public Parent createView(
@@ -76,7 +79,9 @@ public final class SlotsJFX {
             slotsBox.getChildren().add(button);
         }
 
-        StackPane stackPane = new StackPane(slotsBox, saveManager.getView());
+        StackPane stackPane = new StackPane(slotsBox, saveManager.getView(), notifications.getView());
+        StackPane.setAlignment(notifications.getView(), Pos.TOP_LEFT);
+        StackPane.setMargin(notifications.getView(), new Insets(15));
         root.setCenter(stackPane);
 
         BorderPane.setAlignment(backButton, Pos.CENTER);

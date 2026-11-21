@@ -7,6 +7,7 @@ import src.model.service.Settings;
 import src.model.service.logic.Npc;
 import src.model.service.logic.Orfeu;
 import src.view.Game.GameInterfaceJFX;
+import src.view.Game.NotificationOverlayJFX;
 import src.model.Observer;
 import src.model.customExceptions.SaveNotFoundException;
 
@@ -42,18 +43,14 @@ public class ControllerFX implements Observer {
         game.addObservers(this);
     }
 
-    public void deleteSave(int index) {
-        try {
-            SaveManager.deleteSave(index);
-        } catch (SaveNotFoundException e) {
-            System.out.println("SaveNotFound!"); // TODO: USAR NOTIFICATION OVERLAY AQUI!
-        }
+    public void deleteSave(int index) throws SaveNotFoundException {
+        SaveManager.deleteSave(index);
     }
 
     public void startCurrentScene() {
         ArrayList<Map.Entry<String, String>> dialogos = DialoguesParser
                 .dialogueSeparator(game.allSceneDialoguesQueue());
-        System.out.println(dialogos); // TODO: Remover quando tudo tiver certo
+        // System.out.println(dialogos); // TODO: Remover quando tudo tiver certo
         String nomeImagem = game.getCurrentChapterBgName();
         view.setChapterBackground(nomeImagem);
         int speed = game.getTextSpeed();
