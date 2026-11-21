@@ -20,8 +20,6 @@ public class ApplyConsequences {
         if (choice.getNpcInChoice() != null) {
             for (Npc npc : npcs) {
                 if (npc.getName().equals(choice.getNpcInChoice())) {
-                    System.out.println(choice.getAffinity()); // TODO: REMOVER
-                    System.out.println(npc.getName()); // TODO: REMOVER
                     npc.changeAffinity(choice.getAffinity());
                 }
             }

@@ -4,8 +4,11 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
+import javafx.beans.Observable;
+import javafx.collections.ObservableList;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -16,6 +19,8 @@ import javafx.scene.text.Font;
 
 public final class SlotsJFX {
 
+    private SaveSlotManagerJFX saveManager;
+    private BorderPane root;
     private int slotIndex;
 
     public SlotsJFX() {
@@ -28,7 +33,8 @@ public final class SlotsJFX {
             Runnable onReturn,
             Runnable onDelete) {
 
-        BorderPane root = new BorderPane();
+        root = new BorderPane();
+        root.setId("Root");
         VBox slotsBox = new VBox(10);
         slotsBox.setId("SlotsBox");
         slotsBox.setAlignment(Pos.CENTER);
@@ -43,9 +49,12 @@ public final class SlotsJFX {
         backButton.setOnAction(event -> onReturn.run());
         backButton.setId("BackButton");
 
-        SaveSlotManagerJFX saveManager = new SaveSlotManagerJFX(
+        saveManager = new SaveSlotManagerJFX(
                 onButtonClick,
-                onDelete,
+                () -> {
+                    onDelete.run();
+                    saveManager.showSaveManager(slotIndex + " - Vazio");
+                },
                 () -> {
                     slotsBox.setDisable(true);
                     backButton.setDisable(true);
@@ -62,7 +71,7 @@ public final class SlotsJFX {
             button.setMaxWidth(Double.MAX_VALUE);
             button.setOnAction(event -> {
                 setSlot(slotNumber);
-                saveManager.showSaveManager(Integer.toString(slotNumber));
+                saveManager.showSaveManager(slot.getValue());
             });
             slotsBox.getChildren().add(button);
         }
@@ -85,8 +94,25 @@ public final class SlotsJFX {
         return slotIndex;
     }
 
-    public void updateSaveInformation() {
-        VBox vbox = root.lookup("#SlotsBox");
+    private void onDelete(Runnable onDeleteFunction) {
+        onDeleteFunction.run();
+        saveManager.showSaveManager("Vazio");
+    }
+
+    public void updateSaveInformation(Map<Integer, String> savesInfo) {
+        VBox vbox = (VBox) root.lookup("#SlotsBox");
+        List<Map.Entry<Integer, String>> slots = new ArrayList<>(savesInfo.entrySet());
+        vbox.getChildren().clear();
+        for (Map.Entry<Integer, String> slot : slots) {
+            int slotNumber = slot.getKey();
+            Button button = new Button(slot.getValue());
+            button.setMaxWidth(Double.MAX_VALUE);
+            button.setOnAction(event -> {
+                setSlot(slotNumber);
+                saveManager.showSaveManager(slot.getValue());
+            });
+            vbox.getChildren().add(button);
+        }
     }
 
 }

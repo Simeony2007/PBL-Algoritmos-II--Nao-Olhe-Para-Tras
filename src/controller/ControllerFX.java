@@ -20,6 +20,15 @@ public class ControllerFX implements Observer {
 
     private Game game;
     private GameInterfaceJFX view;
+    private Runnable onSaveDeleted;
+
+    public ControllerFX() {
+        SaveManager.addObservers(this);
+    }
+
+    public void setOnSaveDeleted(Runnable onSaveDeleted) {
+        this.onSaveDeleted = onSaveDeleted;
+    }
 
     public void setView(GameInterfaceJFX view) {
         this.view = view;
@@ -52,11 +61,9 @@ public class ControllerFX implements Observer {
     }
 
     public void endedDialogues() {
-        // Verifica se é um final
         if (game.isTheEndOfGame()) {
             String sceneId = game.getCurrentSceneId();
-            System.out.println(sceneId); // TODO: REMOVER
-            view.showEndGame(sceneId); // Fim do jogo, mostra tela final/sair
+            view.showEndGame(sceneId); // Mostra tela final/sair
             return;
         }
 
@@ -126,7 +133,6 @@ public class ControllerFX implements Observer {
 
     @Override
     public void saveWasDeleted() {
-        // TODO: Fazer isso atualizar Slots!
+        onSaveDeleted.run();
     }
-
 }

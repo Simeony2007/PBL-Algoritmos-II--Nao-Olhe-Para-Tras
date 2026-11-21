@@ -58,7 +58,6 @@ final class SaveSlotManagerJFX {
     }
 
     void showSaveManager(String saveInfo) {
-        // TODO: Exibir os dados completos do save, não apenas o número do slot.
         saveInfoLabel.setText(saveInfo);
         view.setVisible(true);
         onOpen.run();

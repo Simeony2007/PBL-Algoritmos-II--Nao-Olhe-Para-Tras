@@ -22,6 +22,11 @@ public class MenuInterfaceJFX extends Application {
     private Stage principalStage;
     private Scene menuScene;
 
+    public MenuInterfaceJFX() {
+        controllerFx.setOnSaveDeleted(
+                () -> slotsView.updateSaveInformation(slotsController.getAllSaves()));
+    }
+
     @Override
     public void start(Stage principalStage) throws Exception {
         this.principalStage = principalStage;
