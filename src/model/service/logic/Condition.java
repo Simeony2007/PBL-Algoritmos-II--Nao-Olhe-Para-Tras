@@ -53,7 +53,7 @@ public class Condition {
     public boolean isMet(Orfeu orfeu, ArrayList<Npc> npcs) {
         if (npcName != null) {
             for (Npc npc : npcs) {
-                if (npc.getName().equals(npcName)) {
+                if (npc.getName().equalsIgnoreCase(npcName)) {
                     return npc.getAffinity() >= this.affinity;
                 }
             }

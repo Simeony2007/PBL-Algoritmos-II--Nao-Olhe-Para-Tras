@@ -258,6 +258,7 @@
       "choices": [],
       "sceneId": "s3a_gates",
       "currentDialogueID": 0,
+      "nextSceneId": "Fim do Tártaro",
       "isEnding": false
     },
     {
@@ -272,6 +273,7 @@
       "choices": [],
       "sceneId": "s3b_gates",
       "currentDialogueID": 0,
+      "nextSceneId": "Fim do Tártaro",
       "isEnding": false
     },
     {
@@ -285,6 +287,18 @@
       ],
       "choices": [],
       "sceneId": "s3c_gates",
+      "currentDialogueID": 0,
+      "nextSceneId": "Fim do Tártaro",
+      "isEnding": false
+    },
+    {
+      "dialogues": [
+        {
+          "text": "Após a despedida, Orfeu se prepara para atravessar os portões do palácio de Hades, deixando Sísifo para trás."
+        }
+      ],
+      "choices": [],
+      "sceneId": "Fim do Tártaro",
       "currentDialogueID": 0,
       "isEnding": false
     }

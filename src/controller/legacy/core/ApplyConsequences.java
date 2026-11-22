@@ -19,7 +19,7 @@ public class ApplyConsequences {
         orfeu.changeAngry(choice.getAngry());
         if (choice.getNpcInChoice() != null) {
             for (Npc npc : npcs) {
-                if (npc.getName().equals(choice.getNpcInChoice())) {
+                if (npc.getName().equalsIgnoreCase(choice.getNpcInChoice())) {
                     npc.changeAffinity(choice.getAffinity());
                 }
             }
