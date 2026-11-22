@@ -16,9 +16,7 @@ import src.controller.SettingsMenuJFX;
 
 public class SettingsJFX {
 
-    public static Parent createView(Runnable onBackAction) {
-        SettingsMenuJFX settings = new SettingsMenuJFX();
-
+    public static Parent createView(SettingsMenuJFX settings, Runnable onBackAction, Runnable onSaveSettings) {
         VBox root = new VBox(30);
         root.setPadding(new Insets(30));
         root.setStyle("-fx-background-color: white;");
@@ -54,11 +52,11 @@ public class SettingsJFX {
         });
 
         /*
-        // BOTÃO: Resolução da Tela
-        Label lblScreenResolution = createBoxLabel("Resolução da Tela");
-        Button btnScreenResolution = CreateBoxButton(settings.getResolutionString());
-        grid.addRow(2, lblScreenResolution, btnScreenResolution);
-        */
+         * // BOTÃO: Resolução da Tela
+         * Label lblScreenResolution = createBoxLabel("Resolução da Tela");
+         * Button btnScreenResolution = CreateBoxButton(settings.getResolutionString());
+         * grid.addRow(2, lblScreenResolution, btnScreenResolution);
+         */
 
         // BOTÃO: Volume + Slider + Porcentagem
         Label lblVolume = createBoxLabel("Volume");
@@ -72,16 +70,14 @@ public class SettingsJFX {
         lblPercent.setStyle("-fx-font-size: 14px; -fx-font-weight: bold;");
         lblPercent.textProperty().bind(sliderVolume.valueProperty().asString("%.0f%%"));
 
-
         HBox volumeBox = new HBox(10, sliderVolume, lblPercent);
         volumeBox.setAlignment(Pos.CENTER);
         volumeBox.setPrefSize(250, 42);
         volumeBox.setPadding(new Insets(0, 12, 0, 12));
         volumeBox.setStyle(
-            "-fx-border-color: black;" +
-            "-fx-border-width: 2;" +
-            "-fx-background-color: white;"
-        );
+                "-fx-border-color: black;" +
+                        "-fx-border-width: 2;" +
+                        "-fx-background-color: white;");
 
         grid.addRow(3, lblVolume, volumeBox);
 
@@ -99,6 +95,7 @@ public class SettingsJFX {
         btnSave.setOnAction(e -> {
             settings.setVolume((int) sliderVolume.getValue());
             settings.saveSettings();
+            onSaveSettings.run();
         });
 
         HBox barraInferior = new HBox(15, btnReturn, btnSave);
@@ -108,18 +105,16 @@ public class SettingsJFX {
         return root;
     }
 
-
     private static Label createBoxLabel(String texto) {
         Label label = new Label(texto);
         label.setPrefSize(220, 42);
         label.setPadding(new Insets(0, 0, 0, 12));
         label.setAlignment(Pos.CENTER_LEFT);
         label.setStyle(
-            "-fx-font-size: 16px;" +
-            "-fx-border-color: black;" +
-            "-fx-border-width: 2;" +
-            "-fx-background-color: white;"
-        );
+                "-fx-font-size: 16px;" +
+                        "-fx-border-color: black;" +
+                        "-fx-border-width: 2;" +
+                        "-fx-background-color: white;");
         return label;
     }
 
@@ -127,11 +122,10 @@ public class SettingsJFX {
         Button btn = new Button(texto);
         btn.setPrefSize(180, 42);
         btn.setStyle(
-            "-fx-border-color: black;" +
-            "-fx-border-width: 2;" +
-            "-fx-background-color: white;" +
-            "-fx-cursor: hand;"
-        );
+                "-fx-border-color: black;" +
+                        "-fx-border-width: 2;" +
+                        "-fx-background-color: white;" +
+                        "-fx-cursor: hand;");
         return btn;
     }
 
@@ -139,12 +133,11 @@ public class SettingsJFX {
         Button btn = new Button(texto);
         btn.setPrefSize(130, 40);
         btn.setStyle(
-            "-fx-font-size: 15px;" +
-            "-fx-border-color: black;" +
-            "-fx-border-width: 2;" +
-            "-fx-background-color: white;" +
-            "-fx-cursor: hand;"
-        );
+                "-fx-font-size: 15px;" +
+                        "-fx-border-color: black;" +
+                        "-fx-border-width: 2;" +
+                        "-fx-background-color: white;" +
+                        "-fx-cursor: hand;");
         return btn;
     }
 }

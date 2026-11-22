@@ -11,8 +11,10 @@ import javafx.stage.Stage;
 import javafx.scene.layout.*;
 import javafx.scene.Parent;
 import src.controller.ControllerFX;
+import src.controller.SettingsMenuJFX;
 import src.controller.SlotsMenuJFX;
 import src.model.customExceptions.SaveNotFoundException;
+import src.view.AudioManager;
 import src.view.Game.GameInterfaceJFX;
 import src.view.Game.NotificationOverlayJFX;
 
@@ -23,6 +25,8 @@ public class MenuInterfaceJFX extends Application {
     private final SlotsMenuJFX slotsController = new SlotsMenuJFX(controllerFx, slotsNotifications);
     private final GameInterfaceJFX ginterface = new GameInterfaceJFX();
     private final SlotsJFX slotsView = new SlotsJFX(slotsNotifications);
+    private final SettingsMenuJFX settings = new SettingsMenuJFX();
+    private final AudioManager audio = new AudioManager();
 
     private Stage principalStage;
     private Scene menuScene;
@@ -37,6 +41,9 @@ public class MenuInterfaceJFX extends Application {
         this.principalStage = principalStage;
         this.menuScene = new Scene(menuScreen());
         ginterface.setOnReturnToMainMenu(this::returnToMainMenu);
+        int vol = settings.getVolume();
+        audio.setVolume((float) vol / 100);
+        audio.playBgSong();
 
         principalStage.setHeight(600);
         principalStage.setWidth(800);
@@ -120,14 +127,12 @@ public class MenuInterfaceJFX extends Application {
     }
 
     private Parent settingsScreen() {
-        return SettingsJFX.createView(() -> menuScene.setRoot(menuScreen()));
-    }
-
-    private void startGame() {
-        principalStage.setScene(ginterface.gameScene());
-        ginterface.setController(controllerFx);
-        controllerFx.setView(ginterface);
-        controllerFx.startCurrentScene();
+        return SettingsJFX.createView(settings,
+                () -> menuScene.setRoot(menuScreen()),
+                () -> {
+                    int vol = settings.getVolume();
+                    audio.setVolume((float) vol / 100);
+                });
     }
 
     private Parent creditsScreen() {

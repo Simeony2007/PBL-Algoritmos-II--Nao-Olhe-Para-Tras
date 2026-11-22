@@ -23,20 +23,20 @@ public class Settings {
 
     public void changeTextSpeed() {
         switch (textSpeed) {
-            case 2500:
-                textSpeed = 1000;
+            case 70:
+                textSpeed = 35;
                 break;
-            case 1000:
-                textSpeed = 100;
+            case 35:
+                textSpeed = 15;
                 break;
-            case 100:
+            case 15:
                 textSpeed = 0;
                 break;
             case 0:
-                textSpeed = 2500;
+                textSpeed = 70;
                 break;
             default:
-                textSpeed = 1000;
+                textSpeed = 35;
                 break;
         }
     }
@@ -44,7 +44,6 @@ public class Settings {
     public void addAutoSaveCounter() {
         autoSaveCounter++;
     }
-
 
     public boolean isAutoSave() {
         return autoSave;
@@ -64,11 +63,11 @@ public class Settings {
 
     public String getTextSpeedString() {
         switch (textSpeed) {
-            case 2500:
+            case 70:
                 return "Lento";
-            case 1000:
+            case 35:
                 return "Médio";
-            case 100:
+            case 15:
                 return "Rápido";
             case 0:
                 return "Instantâneo";

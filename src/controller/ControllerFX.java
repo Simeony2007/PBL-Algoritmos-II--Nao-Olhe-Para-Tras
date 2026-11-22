@@ -45,6 +45,7 @@ public class ControllerFX implements Observer {
         Collection collection = SaveManager.loadCollection();
         Settings settings = SaveManager.loadSettings();
         game = new Game(savestate, collection, settings);
+        game.setTextSpeed(settings.getTextSpeed());
         game.addObservers(this);
     }
 

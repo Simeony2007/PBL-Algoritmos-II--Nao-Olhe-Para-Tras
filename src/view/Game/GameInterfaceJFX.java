@@ -100,7 +100,7 @@ public class GameInterfaceJFX {
         showGameScreen();
         choices.hide();
         choices.setDisabled(false);
-        dialogue.showDialogues(dialogues, this::onDialogueQueueFinished);
+        dialogue.showDialogues(dialogues, speed, this::onDialogueQueueFinished);
     }
 
     public void nextDialogue() {

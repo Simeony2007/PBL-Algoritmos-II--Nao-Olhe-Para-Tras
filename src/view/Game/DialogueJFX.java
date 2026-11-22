@@ -25,12 +25,12 @@ public class DialogueJFX {
     private static final double NAME_HEIGHT = 38;
     private static final double DIALOGUE_HEIGHT = 122;
     private static final double NAME_TAB_WIDTH = 240;
-    private static final double TYPEWRITER_INTERVAL_MILLIS = 15;
 
     private final Label characterName = new Label();
     private final Label dialogueText = new Label();
     private final HBox characterLayer = new HBox();
     private final StackPane dialogueBox;
+    private int textSpeed;
     private ArrayList<Map.Entry<String, String>> dialogues;
     private Timeline typewriter;
     private Runnable onFinished = () -> {
@@ -94,12 +94,18 @@ public class DialogueJFX {
         return dialogueBox;
     }
 
+    public void setTextSpeed(int vel) {
+        this.textSpeed = vel;
+    }
+
     public void showDialogues(
             ArrayList<Map.Entry<String, String>> dialogues,
+            int textSpeed,
             Runnable onFinished) {
         stopTypewriter();
         this.dialogues = dialogues;
         this.onFinished = onFinished;
+        this.textSpeed = textSpeed;
         dialogueIndex = 0;
         completionSent = false;
         advance();
@@ -141,13 +147,20 @@ public class DialogueJFX {
         String name = dialogue.getKey();
         currentText = dialogue.getValue();
 
+        if (textSpeed == 0) {
+            characterName.setText(name);
+            dialogueText.setText(currentText);
+            showCharacterSprite(name);
+            return;
+        }
+
         characterName.setText(name);
         dialogueText.setText("");
         showCharacterSprite(name);
 
         int[] visibleCharacters = { 0 };
         typewriter = new Timeline(new KeyFrame(
-                Duration.millis(TYPEWRITER_INTERVAL_MILLIS),
+                Duration.millis(textSpeed),
                 event -> {
                     if (visibleCharacters[0] < currentText.length()) {
                         dialogueText.setText(currentText.substring(0, ++visibleCharacters[0]));
