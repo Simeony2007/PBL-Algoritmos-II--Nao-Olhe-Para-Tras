@@ -1,6 +1,6 @@
 {
   "autoSave": true,
-  "autoSaveCounter": 5,
-  "textSpeed": 35,
-  "volume": 60
+  "autoSaveCounter": 3,
+  "textSpeed": 0,
+  "volume": 30
 }

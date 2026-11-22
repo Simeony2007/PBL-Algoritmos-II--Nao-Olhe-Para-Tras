@@ -4,8 +4,10 @@ import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.effect.DropShadow;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.VBox;
+import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 
 public class EndGameJFX {
@@ -19,6 +21,16 @@ public class EndGameJFX {
 
         title.setFont(new Font("Arial", 40));
         endingName.setFont(new Font("Arial", 20));
+        title.setTextFill(Color.WHITE);
+        endingName.setTextFill(Color.WHITE);
+
+        DropShadow textShadow = new DropShadow();
+        textShadow.setColor(Color.BLACK);
+        textShadow.setRadius(5);
+        textShadow.setOffsetX(2);
+        textShadow.setOffsetY(2);
+        title.setEffect(textShadow);
+        endingName.setEffect(textShadow);
 
         VBox content = new VBox(title, endingName);
         content.setAlignment(Pos.CENTER);

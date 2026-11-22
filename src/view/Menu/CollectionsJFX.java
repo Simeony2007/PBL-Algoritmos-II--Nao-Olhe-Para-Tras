@@ -17,7 +17,6 @@ public class CollectionsJFX {
     public static Parent createView(Runnable onReturnAction) {
         VBox root = new VBox(15);
         root.setPadding(new Insets(25));
-        root.setStyle("-fx-background-color: white;");
 
         Label title = new Label("Galeria");
         title.setStyle("-fx-font-size: 24px; -fx-font-weight: bold;");
@@ -91,7 +90,9 @@ public class CollectionsJFX {
     private static VBox createCard(String tituloTexto, String descricaoTexto) {
         VBox card = new VBox(5);
         card.setPadding(new Insets(12));
-        card.setStyle("-fx-border-color: black; -fx-border-width: 2; -fx-background-color: white;");
+        card.setStyle(
+                "-fx-border-color: #9E8309; -fx-border-width: 2; " +
+                        "-fx-background-color: rgba(20,20,28,0.9);");
         Label lblTitulo = new Label(tituloTexto);
         lblTitulo.setStyle("-fx-font-size: 18px; -fx-font-weight: bold;");
         Label lblDesc = new Label(descricaoTexto);
@@ -102,7 +103,6 @@ public class CollectionsJFX {
     private static Button CreateButtonsMenu(String texto) {
         Button btn = new Button(texto);
         btn.setPrefSize(120, 35);
-        btn.setStyle("-fx-border-color: black; -fx-border-width: 2; -fx-background-color: white;");
         return btn;
     }
 

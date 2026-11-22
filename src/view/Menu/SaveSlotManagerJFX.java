@@ -129,7 +129,7 @@ final class SaveSlotManagerJFX {
         title.setTextFill(Color.WHITE);
 
         saveInfoLabel.setFont(new Font("Arial", 15));
-        saveInfoLabel.setTextFill(Color.LIGHTGRAY);
+        saveInfoLabel.setTextFill(Color.WHITE);
         saveInfoLabel.setWrapText(true);
         saveInfoLabel.setId("LabelSaveInfo");
 

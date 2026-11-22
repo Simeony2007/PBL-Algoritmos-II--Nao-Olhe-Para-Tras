@@ -15,14 +15,16 @@ import javafx.scene.layout.VBox;
 import src.controller.SettingsMenuJFX;
 
 public class SettingsJFX {
+    private static final String TEXT_STYLE =
+            "-fx-text-fill: white;" +
+                    "-fx-effect: dropshadow(gaussian, black, 4, 0.0, 1, 1);";
 
     public static Parent createView(SettingsMenuJFX settings, Runnable onBackAction, Runnable onSaveSettings) {
         VBox root = new VBox(30);
         root.setPadding(new Insets(30));
-        root.setStyle("-fx-background-color: white;");
 
         Label title = new Label("Configurações");
-        title.setStyle("-fx-font-size: 28px; -fx-font-weight: bold;");
+        title.setStyle("-fx-font-size: 28px; -fx-font-weight: bold;" + TEXT_STYLE);
 
         StackPane header = new StackPane(title);
         header.setAlignment(Pos.CENTER);
@@ -67,7 +69,7 @@ public class SettingsJFX {
         Label lblPercent = new Label();
         lblPercent.setPrefWidth(48);
         lblPercent.setAlignment(Pos.CENTER_RIGHT);
-        lblPercent.setStyle("-fx-font-size: 14px; -fx-font-weight: bold;");
+        lblPercent.setStyle("-fx-font-size: 14px; -fx-font-weight: bold;" + TEXT_STYLE);
         lblPercent.textProperty().bind(sliderVolume.valueProperty().asString("%.0f%%"));
 
         HBox volumeBox = new HBox(10, sliderVolume, lblPercent);
@@ -75,9 +77,9 @@ public class SettingsJFX {
         volumeBox.setPrefSize(250, 42);
         volumeBox.setPadding(new Insets(0, 12, 0, 12));
         volumeBox.setStyle(
-                "-fx-border-color: black;" +
+                "-fx-border-color: #9E8309;" +
                         "-fx-border-width: 2;" +
-                        "-fx-background-color: white;");
+                        "-fx-background-color: rgba(20,20,28,0.9);");
 
         grid.addRow(3, lblVolume, volumeBox);
 
@@ -112,32 +114,24 @@ public class SettingsJFX {
         label.setAlignment(Pos.CENTER_LEFT);
         label.setStyle(
                 "-fx-font-size: 16px;" +
-                        "-fx-border-color: black;" +
+                        TEXT_STYLE +
+                        "-fx-border-color: #9E8309;" +
                         "-fx-border-width: 2;" +
-                        "-fx-background-color: white;");
+                        "-fx-background-color: rgba(20,20,28,0.9);");
         return label;
     }
 
     private static Button CreateBoxButton(String texto) {
         Button btn = new Button(texto);
         btn.setPrefSize(180, 42);
-        btn.setStyle(
-                "-fx-border-color: black;" +
-                        "-fx-border-width: 2;" +
-                        "-fx-background-color: white;" +
-                        "-fx-cursor: hand;");
+        btn.setStyle(TEXT_STYLE);
         return btn;
     }
 
     private static Button createButton(String texto) {
         Button btn = new Button(texto);
         btn.setPrefSize(130, 40);
-        btn.setStyle(
-                "-fx-font-size: 15px;" +
-                        "-fx-border-color: black;" +
-                        "-fx-border-width: 2;" +
-                        "-fx-background-color: white;" +
-                        "-fx-cursor: hand;");
+        btn.setStyle(TEXT_STYLE);
         return btn;
     }
 }

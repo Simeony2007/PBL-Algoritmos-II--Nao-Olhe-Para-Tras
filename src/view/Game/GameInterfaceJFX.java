@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.Map;
 
 import src.controller.ControllerFX;
+import src.controller.SettingsMenuJFX;
 import src.model.service.logic.Npc;
 import src.model.service.logic.Orfeu;
 import javafx.geometry.Insets;
@@ -16,10 +17,13 @@ import javafx.scene.layout.Background;
 import javafx.scene.layout.BackgroundFill;
 import javafx.scene.layout.CornerRadii;
 import javafx.scene.layout.HBox;
+import javafx.scene.layout.Region;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import src.view.Menu.ConfirmationScreenJFX;
+import src.view.Menu.SettingsJFX;
+import src.view.AudioManager;
 
 public class GameInterfaceJFX {
 
@@ -27,27 +31,34 @@ public class GameInterfaceJFX {
     private final StackPane sceneRoot = new StackPane();
     private final StackPane returnConfirmationOverlay = new StackPane();
     private final Scene scene;
+    private final StackPane miniMenuOverlay = new StackPane();
     private final DialogueJFX dialogue;
     private final ChoicesJFX choices;
     private final NotificationOverlayJFX notifications;
     private final StatusOverlayJFX statusOverlay;
     private final StackPane gameLayer;
+    private final CharacterCreationJFX characterCreation;
     private final GameControlsJFX controls;
     private final ChapterTitleOverlayJFX chapterTitle;
     private InGameSaveMenuJFX inGameSaveMenu;
     private final EndGameJFX endGame;
     private final ConfirmationScreenJFX returnConfirmation;
+    private SettingsMenuJFX settings;
+    private AudioManager audio;
     private ControllerFX controller;
     private Runnable onReturnToMainMenu;
     private boolean gameScreenVisible = true;
 
-    public GameInterfaceJFX() {
+    public GameInterfaceJFX(SettingsMenuJFX settingsMenu, AudioManager audioManager) {
         dialogue = new DialogueJFX();
         choices = new ChoicesJFX();
         notifications = new NotificationOverlayJFX();
         statusOverlay = new StatusOverlayJFX();
+        characterCreation = new CharacterCreationJFX();
+        settings = settingsMenu;
+        audio = audioManager;
         endGame = new EndGameJFX(this::returnToMainMenu);
-        controls = new GameControlsJFX(this::openedMenu, this::saveGame);
+        controls = new GameControlsJFX(this::returnTOMainMenu, this::saveGame, this::openSettings);
         chapterTitle = new ChapterTitleOverlayJFX();
         returnConfirmation = new ConfirmationScreenJFX(
                 this::returnToMainMenu,
@@ -77,7 +88,27 @@ public class GameInterfaceJFX {
         returnConfirmationOverlay.getChildren().add(returnConfirmation.getView());
         returnConfirmationOverlay.setVisible(false);
         returnConfirmationOverlay.setOnMouseClicked(event -> event.consume());
-        sceneRoot.getChildren().addAll(root, returnConfirmationOverlay);
+        miniMenuOverlay.setMaxSize(Double.MAX_VALUE, Double.MAX_VALUE);
+        miniMenuOverlay.setBackground(new Background(new BackgroundFill(
+                Color.rgb(0, 0, 0, 0.65),
+                CornerRadii.EMPTY,
+                Insets.EMPTY)));
+        miniMenuOverlay.getChildren().add(controls.getMiniMenuView());
+        miniMenuOverlay.setVisible(false);
+        controls.getMiniMenuView().visibleProperty().addListener((observable, oldValue, visible) -> {
+            miniMenuOverlay.setVisible(visible);
+            root.setDisable(visible);
+            if (visible) {
+                dialogue.pause();
+            } else {
+                dialogue.resume();
+            }
+        });
+        sceneRoot.getChildren().addAll(
+                root,
+                miniMenuOverlay,
+                returnConfirmationOverlay,
+                characterCreation.getView());
 
         showGameScreen();
 
@@ -94,6 +125,32 @@ public class GameInterfaceJFX {
 
     public Scene gameScene() {
         return scene;
+    }
+
+    public void openSettings() {
+        controls.hideMiniMenu();
+        dialogue.pause();
+        root.setCenter(SettingsJFX.createView(
+                settings,
+                () -> {
+                    showGameScreen();
+                    dialogue.resume();
+                },
+                () -> {
+                    updateSettings();
+                    showGameScreen();
+                    dialogue.resume();
+                }));
+    }
+
+    private void updateSettings() {
+        dialogue.setTextSpeed(settings.getTextSpeed());
+        if (controller != null) {
+            controller.updateTextSpeed(settings.getTextSpeed());
+        }
+        if (audio != null) {
+            audio.setVolume((float) settings.getVolume() / 100);
+        }
     }
 
     public void showDialogues(ArrayList<Map.Entry<String, String>> dialogues, int speed) {
@@ -113,7 +170,7 @@ public class GameInterfaceJFX {
         }
     }
 
-    public void openedMenu() {
+    public void returnTOMainMenu() {
         if (returnConfirmationOverlay.isVisible()) {
             return;
         }
@@ -141,6 +198,16 @@ public class GameInterfaceJFX {
         this.choices.showChoicesOptions(choices, number -> {
             if (controller != null) {
                 controller.choicedOption(number);
+            }
+        });
+    }
+
+    public void showCharacterCreationOptions(ArrayList<String> options) {
+        root.setDisable(true);
+        characterCreation.show(options, choiceIndex -> {
+            root.setDisable(false);
+            if (controller != null) {
+                controller.choicedOption(choiceIndex);
             }
         });
     }
@@ -173,12 +240,28 @@ public class GameInterfaceJFX {
 
     private void showGameScreen() {
         gameScreenVisible = true;
-        HBox hbox = controls.getView();
-        hbox.setAlignment(Pos.TOP_RIGHT);
-        root.setTop(hbox);
-        root.setCenter(gameLayer);
-        root.setBottom(dialogue.getDialogueBox());
-        BorderPane.setMargin(dialogue.getDialogueBox(), new Insets(0, 15, 15, 15));
+        HBox controlsView = controls.getControlsView();
+        controlsView.setMaxSize(Region.USE_PREF_SIZE, Region.USE_PREF_SIZE);
+        StackPane.setAlignment(controlsView, Pos.TOP_RIGHT);
+        StackPane.setMargin(controlsView, new Insets(10));
+
+        // 1. Camada de personagens fixada na base real da janela
+        HBox characters = dialogue.getCharacterLayer();
+        characters.setMaxHeight(Region.USE_PREF_SIZE);
+        StackPane.setAlignment(characters, Pos.BOTTOM_CENTER);
+
+        // 2. Caixa de diálogo sobreposta na base (na frente dos personagens)
+        StackPane dialogueBox = dialogue.getDialogueBox();
+        dialogueBox.setMaxHeight(Region.USE_PREF_SIZE);
+        StackPane.setAlignment(dialogueBox, Pos.BOTTOM_CENTER);
+        StackPane.setMargin(dialogueBox, new Insets(0, 15, 15, 15));
+
+        // 3. Empilha tudo na ordem: personagens -> overlays do jogo -> caixa de diálogo
+        // -> botões
+        StackPane base = new StackPane();
+        base.getChildren().addAll(characters, gameLayer, dialogueBox, controlsView);
+
+        root.setCenter(base);
     }
 
     public void returnToMainMenu() {
@@ -198,6 +281,8 @@ public class GameInterfaceJFX {
 
     public void reset() {
         returnConfirmationOverlay.setVisible(false);
+        characterCreation.hide();
+        controls.hideMiniMenu();
         root.setDisable(false);
         dialogue.reset();
         choices.reset();

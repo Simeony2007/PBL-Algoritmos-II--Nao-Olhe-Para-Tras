@@ -57,6 +57,12 @@ public class ControllerFX implements Observer {
         GameSave.saveCurrentProgress(game.getState(), game.getCurrentSceneId(), index);
     }
 
+    public void updateTextSpeed(int speed) {
+        if (game != null) {
+            game.setTextSpeed(speed);
+        }
+    }
+
     public void startCurrentScene() {
         ArrayList<Map.Entry<String, String>> dialogos = DialoguesParser
                 .dialogueSeparator(game.allSceneDialoguesQueue());
@@ -75,7 +81,11 @@ public class ControllerFX implements Observer {
 
         ArrayList<String> escolhas = game.allSceneChoices();
         if (!escolhas.isEmpty()) {
-            view.showChoicesOptions(escolhas);
+            if ("Introdução".equals(game.getCurrentSceneId())) {
+                view.showCharacterCreationOptions(escolhas);
+            } else {
+                view.showChoicesOptions(escolhas);
+            }
         } else {
             if (game.isTheEndOfChapter()) {
                 startNextChapter();

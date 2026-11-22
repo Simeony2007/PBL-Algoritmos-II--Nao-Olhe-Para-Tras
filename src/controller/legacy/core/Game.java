@@ -186,19 +186,25 @@ public class Game {
         Chapter currenChapter = state.getCurrentChapter();
         switch (currenChapter.getTitle()) {
             case "Capítulo 1 - A Entrada do Submundo":
-                return "asphodel.png"; // só pra teste - Simeony
+                return "BoatBg.jpg";
             case "Capítulo 2 - Campos de Asfódelos":
                 return "asphodel.png";
             case "Capítulo 3 - Campos Elíseos":
                 return "elysium.jpg";
             case "Capítulo 4 - O Tártaro":
                 return "tartarus.jpg";
+            case "Capítulo 5 - A Casa de Hades":
+                return "chapter5Bg.jpg";
             case "Capítulo 6 - A volta pelo Tártaro":
                 return "tartarus.jpg";
             case "Capítulo 7 - A volta por Elíseos":
                 return "elysium.jpg";
             case "Capítulo 8 - A volta por Asfódelo":
                 return "asphodel.png";
+            case "Capítulo 9 - O Rio Estíge":
+                return "BoatBg.jpg";
+            case "Capítulo 10 - Não olhe para trás":
+                return "Chapter10Bg.jpg";
 
             default:
                 return "";

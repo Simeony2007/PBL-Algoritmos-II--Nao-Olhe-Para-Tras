@@ -74,8 +74,8 @@ public class StatusOverlayJFX {
         cardBackground.setMaxSize(Region.USE_PREF_SIZE, Region.USE_PREF_SIZE);
         cardBackground.setPadding(new Insets(6, 10, 6, metadeSprite + 6));
         cardBackground.setBackground(new Background(new BackgroundFill(
-                Color.rgb(198, 206, 214, 0.94),
-                new CornerRadii(6),
+                Color.web("#9E8309"),
+                new CornerRadii(2),
                 Insets.EMPTY)));
 
         Label nameLabel = new Label(characterName);

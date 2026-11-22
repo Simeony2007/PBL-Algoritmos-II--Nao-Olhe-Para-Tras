@@ -8,9 +8,7 @@ import java.nio.file.Paths;
 
 public class AudioManager {
 
-    private final String CAMINHO = Paths.get(System.getProperty("user.home"), "Downloads", "test.mp3").toFile()
-            .toString();
-    // private final String CAMINHO = "assets/songs/bgSong.mp3";
+    private final String CAMINHO = "assets/songs/Beneath_the_Obsidian_Gate_AI.mp3";
     private MediaPlayer bgmPlayer;
     private float volume;
 

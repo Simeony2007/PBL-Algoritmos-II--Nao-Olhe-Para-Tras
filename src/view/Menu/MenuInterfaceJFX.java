@@ -4,29 +4,29 @@ import javafx.application.Application;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.scene.text.Font;
 import javafx.scene.control.*;
-import javafx.scene.input.KeyCode;
 import javafx.stage.Stage;
 import javafx.scene.layout.*;
 import javafx.scene.Parent;
+import java.io.File;
 import src.controller.ControllerFX;
 import src.controller.SettingsMenuJFX;
 import src.controller.SlotsMenuJFX;
-import src.model.customExceptions.SaveNotFoundException;
 import src.view.AudioManager;
 import src.view.Game.GameInterfaceJFX;
 import src.view.Game.NotificationOverlayJFX;
 
 public class MenuInterfaceJFX extends Application {
-    private static final int BUTTON_WIDTH = 100;
+    private static final int BUTTON_WIDTH = 200;
     private final ControllerFX controllerFx = new ControllerFX();
     private final NotificationOverlayJFX slotsNotifications = new NotificationOverlayJFX();
     private final SlotsMenuJFX slotsController = new SlotsMenuJFX(controllerFx, slotsNotifications);
-    private final GameInterfaceJFX ginterface = new GameInterfaceJFX();
     private final SlotsJFX slotsView = new SlotsJFX(slotsNotifications);
     private final SettingsMenuJFX settings = new SettingsMenuJFX();
     private final AudioManager audio = new AudioManager();
+    private final GameInterfaceJFX ginterface = new GameInterfaceJFX(settings, audio);
 
     private Stage principalStage;
     private Scene menuScene;
@@ -39,7 +39,10 @@ public class MenuInterfaceJFX extends Application {
     @Override
     public void start(Stage principalStage) throws Exception {
         this.principalStage = principalStage;
-        this.menuScene = new Scene(menuScreen());
+        this.menuScene = new Scene(withMenuBackground(menuScreen()));
+        String buttonStylesheet = new File("assets/styles/game.css").toURI().toString();
+        menuScene.getStylesheets().add(buttonStylesheet);
+        ginterface.gameScene().getStylesheets().add(buttonStylesheet);
         ginterface.setOnReturnToMainMenu(this::returnToMainMenu);
         int vol = settings.getVolume();
         audio.setVolume((float) vol / 100);
@@ -82,24 +85,68 @@ public class MenuInterfaceJFX extends Application {
         btnCredits.setPrefWidth(BUTTON_WIDTH);
         btnExit.setPrefWidth(BUTTON_WIDTH);
 
-        btnStart.setOnAction(e -> menuScene.setRoot(slotsScreen()));
-        btnSettings.setOnAction(e -> menuScene.setRoot(settingsScreen()));
-        btnCollection.setOnAction(e -> menuScene.setRoot(collectionScreen()));
-        btnInstructions.setOnAction(e -> menuScene.setRoot(instructionsScreen()));
-        btnCredits.setOnAction(e -> menuScene.setRoot(creditsScreen()));
-        btnExit.setOnAction(e -> principalStage.close());
+        btnStart.setOnAction(e -> showMenuPage(slotsScreen()));
+        btnSettings.setOnAction(e -> showMenuPage(settingsScreen()));
+        btnCollection.setOnAction(e -> showMenuPage(collectionScreen()));
+        btnInstructions.setOnAction(e -> showMenuPage(instructionsScreen()));
+        btnCredits.setOnAction(e -> showMenuPage(creditsScreen()));
+        StackPane menuWithConfirmation = new StackPane();
+        StackPane exitConfirmationOverlay = new StackPane();
+        exitConfirmationOverlay.setBackground(new Background(new BackgroundFill(
+                javafx.scene.paint.Color.rgb(0, 0, 0, 0.65),
+                CornerRadii.EMPTY,
+                Insets.EMPTY)));
+        ConfirmationScreenJFX exitConfirmation = new ConfirmationScreenJFX(
+                () -> {
+                    exitConfirmationOverlay.setVisible(false);
+                    principalStage.close();
+                },
+                () -> {
+                    exitConfirmationOverlay.setVisible(false);
+                    root.setDisable(false);
+                },
+                "Deseja fechar o jogo?");
+        exitConfirmationOverlay.setVisible(false);
+        exitConfirmationOverlay.setOnMouseClicked(event -> event.consume());
+        exitConfirmationOverlay.getChildren().add(exitConfirmation.getView());
+        menuWithConfirmation.getChildren().addAll(root, exitConfirmationOverlay);
+
+        btnExit.setOnAction(e -> {
+            root.setDisable(true);
+            exitConfirmation.show();
+            exitConfirmationOverlay.setVisible(true);
+        });
 
         title.setFont(Font.font("Arial", 30));
 
-        return root;
+        return menuWithConfirmation;
     }
 
     private Parent slotsScreen() {
         return slotsView.createView(
                 slotsController.getAllSaves(),
                 () -> startGameFromSlot(slotsView.getSlot()),
-                () -> menuScene.setRoot(menuScreen()),
+                () -> showMenuPage(menuScreen()),
                 () -> onDelete(slotsView.getSlot()));
+    }
+
+    private Parent withMenuBackground(Parent content) {
+        Image backgroundImage = new Image(new File("assets/sprites/background/MainMenu.jpg").toURI().toString());
+        BackgroundImage background = new BackgroundImage(
+                backgroundImage,
+                BackgroundRepeat.NO_REPEAT,
+                BackgroundRepeat.NO_REPEAT,
+                BackgroundPosition.CENTER,
+                new BackgroundSize(100, 100, true, true, false, true));
+
+        StackPane page = new StackPane(content);
+        page.getStyleClass().add("menu-page");
+        page.setBackground(new Background(background));
+        return page;
+    }
+
+    private void showMenuPage(Parent page) {
+        menuScene.setRoot(withMenuBackground(page));
     }
 
     private void onDelete(int index) {
@@ -118,17 +165,17 @@ public class MenuInterfaceJFX extends Application {
     }
 
     private void returnToMainMenu() {
-        menuScene.setRoot(menuScreen());
+        showMenuPage(menuScreen());
         principalStage.setScene(menuScene);
     }
 
     private Parent collectionScreen() {
-        return CollectionsJFX.createView(() -> menuScene.setRoot(menuScreen()));
+        return CollectionsJFX.createView(() -> showMenuPage(menuScreen()));
     }
 
     private Parent settingsScreen() {
         return SettingsJFX.createView(settings,
-                () -> menuScene.setRoot(menuScreen()),
+                () -> showMenuPage(menuScreen()),
                 () -> {
                     int vol = settings.getVolume();
                     audio.setVolume((float) vol / 100);
@@ -145,7 +192,8 @@ public class MenuInterfaceJFX extends Application {
         Label label = new Label("Créditos");
         Label labelCredits = new Label("Desenvolvido por:\n Pedro e Simeony\n\n"
                 + "Universo e História inspirados na mitologia grega, em especial o conto de Orfeu e Eurídice\n\n" +
-                "Artes:\n Retiradas do jogo Hades e Hades 2\n\n" + "Músicas:\n Retiradas do jogo Hades e Hades 2");
+                "Artes:\n Retiradas do jogo Hades e Hades 2, além de geração por IA. \n\n"
+                + "Músicas:\n Geradas por IA.");
 
         bPane.setTop(stackPane);
         bPane.setCenter(vBox);
@@ -160,7 +208,7 @@ public class MenuInterfaceJFX extends Application {
 
         btnBack.setPrefWidth(BUTTON_WIDTH);
 
-        btnBack.setOnAction(e -> menuScene.setRoot(menuScreen()));
+        btnBack.setOnAction(e -> showMenuPage(menuScreen()));
 
         label.setFont(Font.font("Arial", 30));
 
@@ -196,7 +244,7 @@ public class MenuInterfaceJFX extends Application {
 
         btnBack.setPrefWidth(BUTTON_WIDTH);
 
-        btnBack.setOnAction(e -> menuScene.setRoot(menuScreen()));
+        btnBack.setOnAction(e -> showMenuPage(menuScreen()));
 
         label.setFont(Font.font("Arial", 30));
 

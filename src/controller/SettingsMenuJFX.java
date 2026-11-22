@@ -18,6 +18,10 @@ public class SettingsMenuJFX {
         return settings.getTextSpeedString();
     }
 
+    public int getTextSpeed() {
+        return settings.getTextSpeed();
+    }
+
     public void changeTextSpeed() {
         settings.changeTextSpeed();
     }

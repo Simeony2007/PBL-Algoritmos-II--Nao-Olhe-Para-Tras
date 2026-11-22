@@ -1,0 +1,44 @@
+.button {
+    -fx-background-color: #25232B;
+    -fx-text-fill: #F3E9D2;
+    -fx-border-color: #9E8309;
+    -fx-border-width: 1.5px;
+    -fx-background-radius: 6px;
+    -fx-border-radius: 6px;
+    -fx-padding: 8px 14px;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-cursor: hand;
+}
+
+.button:hover {
+    -fx-background-color: #3A3020;
+    -fx-border-color: #D4AF37;
+}
+
+.button:pressed {
+    -fx-background-color: #6E5B0A;
+    -fx-text-fill: #FFFFFF;
+}
+
+.button:focused {
+    -fx-border-color: #D4AF37;
+    -fx-border-width: 2px;
+}
+
+.button:disabled {
+    -fx-background-color: #302E33;
+    -fx-text-fill: #A7A19A;
+    -fx-border-color: #625B48;
+    -fx-opacity: 0.75;
+}
+
+.menu-page .label {
+    -fx-text-fill: #FFFFFF;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.95), 4, 0.8, 1, 1);
+}
+
+.menu-page .button {
+    -fx-text-fill: #FFFFFF;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.95), 3, 0.8, 1, 1);
+}

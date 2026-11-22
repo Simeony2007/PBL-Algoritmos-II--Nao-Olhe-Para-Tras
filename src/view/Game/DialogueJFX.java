@@ -122,6 +122,7 @@ public class DialogueJFX {
         characterName.setText("");
         dialogueText.setText("");
         characterLayer.getChildren().clear();
+        showCharacterSprite("");
     }
 
     public void advance() {
@@ -184,24 +185,40 @@ public class DialogueJFX {
 
     private void showCharacterSprite(String name) {
         characterLayer.getChildren().clear();
-        if (name == null || name.isEmpty()) {
-            return;
+        characterLayer.setAlignment(Pos.BOTTOM_CENTER);
+        characterLayer.setSpacing(20);
+        characterLayer.setPickOnBounds(false); // Não bloqueia cliques nos elementos atrás
+
+        ImageView orfeuSprite = createCharacterSprite("Orfeu");
+        if (orfeuSprite != null) {
+            characterLayer.getChildren().add(orfeuSprite);
+            HBox.setMargin(orfeuSprite, new Insets(0, 0, 0, -80));
         }
 
+        if (name != null && !name.isEmpty() && !"Orfeu".equalsIgnoreCase(name)) {
+            ImageView speakingSprite = createCharacterSprite(name);
+            if (speakingSprite != null) {
+                characterLayer.getChildren().add(speakingSprite);
+            }
+        }
+    }
+
+    private ImageView createCharacterSprite(String name) {
         File spriteFile = new File("assets/sprites/character/" + name + ".png");
         if (!spriteFile.isFile()) {
-            return;
+            return null;
         }
 
         Image image = new Image(spriteFile.toURI().toString());
         if (image.isError()) {
-            return;
+            return null;
         }
 
         ImageView sprite = new ImageView(image);
         sprite.setPreserveRatio(true);
         sprite.setFitHeight(350);
-        characterLayer.getChildren().add(sprite);
+        HBox.setMargin(sprite, Insets.EMPTY);
+        return sprite;
     }
 
     private void stopTypewriter() {

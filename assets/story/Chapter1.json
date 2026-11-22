@@ -17,7 +17,7 @@
       ],
       "choices": [
         {
-          "text": "Seu peito queima com um amor que transcende a mortalidade. Você avança movido pela convicção de que nem mesmo Hades pode separar duas almas gêmeas.",
+          "text": "Seu peito queima com um amor que transcende a mortalidade. Você avança movido pela convicção de que nem mesmo Hades pode separar duas almas gêmeas.\nAtributo inicial: Amor +2",
           "nextSceneId": "Encontro com Cérbero",
           "obol": 0,
           "affinity": 0,
@@ -26,7 +26,7 @@
           "sadness": 0
         },
         {
-          "text": "Cada nota que toca é um lamento lúgubre. A dor de não tê-la ao seu lado é um peso esmagador que o arrasta naturalmente para as sombras.",
+          "text": "Cada nota que toca é um lamento lúgubre. A dor de não tê-la ao seu lado é um peso esmagador que o arrasta naturalmente para as sombras.\nAtributo inicial: Tristeza +2",
           "nextSceneId": "Encontro com Cérbero",
           "obol": 0,
           "affinity": 0,
@@ -35,12 +35,12 @@
           "sadness": 2
         },
         {
-          "text": "Como os deuses permitiram tamanha injustiça? Sua música agora é um hino de fúria contra o destino cruel, e você não aceitará um \u0027não\u0027 como resposta.",
+          "text": "Como os deuses permitiram tamanha injustiça? Sua música agora é um hino de fúria contra o destino cruel, e você não aceitará um \u0027não\u0027 como resposta.\nAtributo inicial: Raiva +2",
           "nextSceneId": "Encontro com Cérbero",
           "obol": 0,
           "affinity": 0,
-          "love": 2,
-          "angry": 0,
+          "love": 0,
+          "angry": 2,
           "sadness": 0
         }
       ],
