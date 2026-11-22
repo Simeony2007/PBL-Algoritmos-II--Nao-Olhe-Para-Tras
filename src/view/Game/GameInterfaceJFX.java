@@ -19,7 +19,6 @@ import javafx.scene.layout.CornerRadii;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Region;
 import javafx.scene.layout.StackPane;
-import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import src.view.Menu.ConfirmationScreenJFX;
 import src.view.Menu.SettingsJFX;
@@ -58,17 +57,17 @@ public class GameInterfaceJFX {
         settings = settingsMenu;
         audio = audioManager;
         endGame = new EndGameJFX(this::returnToMainMenu);
-        controls = new GameControlsJFX(this::returnTOMainMenu, this::saveGame, this::openSettings);
+        controls = new GameControlsJFX(this::returnTOMainMenu, this::saveGame, this::openSettings, this::switchVisible);
         chapterTitle = new ChapterTitleOverlayJFX();
         returnConfirmation = new ConfirmationScreenJFX(
                 this::returnToMainMenu,
                 this::cancelReturnToMainMenu);
         gameLayer = new StackPane(
-                dialogue.getCharacterLayer(),
-                choices.getView(),
                 notifications.getView(),
                 statusOverlay.getView(),
-                chapterTitle.getView());
+                chapterTitle.getView(),
+                dialogue.getCharacterLayer(),
+                choices.getView());
         StackPane.setAlignment(notifications.getView(), Pos.TOP_LEFT);
         StackPane.setMargin(notifications.getView(), new Insets(15));
         StackPane.setAlignment(statusOverlay.getView(), Pos.CENTER_LEFT);
@@ -267,6 +266,10 @@ public class GameInterfaceJFX {
     public void returnToMainMenu() {
         reset();
         onReturnToMainMenu.run();
+    }
+
+    public void switchVisible() {
+        statusOverlay.switchVisible();
     }
 
     public void saveGame() {

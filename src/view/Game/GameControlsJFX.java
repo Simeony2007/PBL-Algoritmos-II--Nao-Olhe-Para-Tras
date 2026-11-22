@@ -13,9 +13,10 @@ final class GameControlsJFX {
     private final HBox view = new HBox();
     private final BorderPane miniMenu = new BorderPane();
 
-    public GameControlsJFX(Runnable onReturnToMenu, Runnable onSave, Runnable onSettings) {
+    public GameControlsJFX(Runnable onReturnToMenu, Runnable onSave, Runnable onSettings, Runnable switchVisible) {
         Button menuButton = new Button("Menu");
         Button saveButton = new Button("Salvar");
+        Button statusButton = new Button("Status");
 
         BorderPane mountedMiniMenu = miniMenuMounter(onReturnToMenu, onSettings);
         mountedMiniMenu.setVisible(false);
@@ -24,9 +25,11 @@ final class GameControlsJFX {
         });
         saveButton.setOnAction(event -> onSave.run());
 
+        statusButton.setOnAction(event -> switchVisible.run());
+
         view.setAlignment(Pos.TOP_RIGHT);
         view.setSpacing(5);
-        view.getChildren().addAll(saveButton, menuButton);
+        view.getChildren().addAll(statusButton, saveButton, menuButton);
     }
 
     public HBox getControlsView() {

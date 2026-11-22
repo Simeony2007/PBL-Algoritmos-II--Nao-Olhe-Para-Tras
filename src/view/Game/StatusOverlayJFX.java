@@ -40,6 +40,7 @@ public class StatusOverlayJFX {
                 createCard("Eurídice", "Afinidade: —", "Eurídice.png"),
                 createCard("Sísifo", "Afinidade: —", "Sísifo.png"),
                 createCard("Orfeu", "Óbolos: —\nAmor: —\nRaiva: —\nTristeza: —", "Orfeu.png"));
+        view.setVisible(false);
     }
 
     public VBox getView() {
@@ -176,5 +177,9 @@ public class StatusOverlayJFX {
             default:
                 return modelName;
         }
+    }
+
+    public void switchVisible(){
+        view.setVisible(!view.isVisible());
     }
 }
