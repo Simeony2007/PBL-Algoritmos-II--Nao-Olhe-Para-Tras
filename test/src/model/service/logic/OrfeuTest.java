@@ -1,11 +1,10 @@
-package test;
+package src.model.service.logic;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotSame;
 
 import org.junit.Before;
 import org.junit.Test;
-
-import src.model.service.logic.Orfeu;
 
 public class OrfeuTest {
 
@@ -18,7 +17,7 @@ public class OrfeuTest {
     }
 
     @Test
-    public void testConstructorAndGetters() {
+    public void constructorAndGetters() {
         assertEquals(5, orfeu.getObol());
         assertEquals(10, orfeu.getLove());
         assertEquals(15, orfeu.getAngry());
@@ -26,13 +25,13 @@ public class OrfeuTest {
     }
 
     @Test
-    public void testToStringFormat() {
+    public void toStringIncludesAllAttributes() {
         String expected = "	   [Obolos: 5]\n[Amor: 10 | Tristeza: 20 | Raiva: 15]";
         assertEquals(expected, orfeu.toString());
     }
 
     @Test
-    public void testChangeAttributesNormal() {
+    public void changeAttributesWithinBounds() {
         orfeu.changeObol(2);
         orfeu.changeLove(5);
         orfeu.changeAngry(-5);
@@ -45,8 +44,7 @@ public class OrfeuTest {
     }
 
     @Test
-    public void testChangeAttributesUpperBoundLimit() {
-        // Testa se trava no teto de 99
+    public void attributesAreCappedAt99() {
         orfeu.changeObol(100);
         orfeu.changeLove(100);
         orfeu.changeAngry(100);
@@ -59,7 +57,7 @@ public class OrfeuTest {
     }
 
     @Test
-    public void testChangeAttributesLowerBoundLimit() {
+    public void attributesAreFlooredAtZero() {
         // Testa se trava no piso de 0
         orfeu.changeObol(-50);
         orfeu.changeLove(-50);
@@ -70,5 +68,20 @@ public class OrfeuTest {
         assertEquals(0, orfeu.getLove());
         assertEquals(0, orfeu.getAngry());
         assertEquals(0, orfeu.getSadness());
+    }
+
+    @Test
+    public void cloneCopiesAttributesWithoutSharingInstance() {
+        Orfeu clone = orfeu.clone();
+
+        assertEquals(orfeu.getObol(), clone.getObol());
+        assertEquals(orfeu.getLove(), clone.getLove());
+        assertEquals(orfeu.getAngry(), clone.getAngry());
+        assertEquals(orfeu.getSadness(), clone.getSadness());
+        assertNotSame(orfeu, clone);
+
+        clone.changeLove(5);
+        assertEquals(10, orfeu.getLove());
+        assertEquals(15, clone.getLove());
     }
 }

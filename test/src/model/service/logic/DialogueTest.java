@@ -1,10 +1,9 @@
-package test;
+package src.model.service.logic;
+
 import static org.junit.Assert.assertEquals;
 
 import org.junit.Before;
 import org.junit.Test;
-
-import src.model.service.logic.Dialogue;
 
 public class DialogueTest {
     private Dialogue dialogue1;
@@ -13,7 +12,7 @@ public class DialogueTest {
     private Dialogue dialogue4;
 
     @Before 
-    public void setUp(){
+    public void setUp() {
         dialogue1 = new Dialogue("TEXTO TESTE");
         dialogue2 = new Dialogue("TEXTO TESTE2", "NPC1");
         dialogue3 = new Dialogue("TEXTO TESTE3", "NPC2");
@@ -21,15 +20,19 @@ public class DialogueTest {
     }
 
     @Test
-    public void dialogueTest(){
-        assertEquals("TEXTO TESTE", dialogue1.getTexto());
+    public void dialogueReturnsSpeakerAndTextSeparately() {
+        assertEquals("", dialogue1.getTexto().getKey());
+        assertEquals("TEXTO TESTE", dialogue1.getTexto().getValue());
         assertEquals(null, dialogue1.getNpcThatSaidIt());
-        assertEquals("NPC1: TEXTO TESTE2", dialogue2.getTexto());
+
+        assertEquals("NPC1", dialogue2.getTexto().getKey());
+        assertEquals("TEXTO TESTE2", dialogue2.getTexto().getValue());
         assertEquals("NPC1", dialogue2.getNpcThatSaidIt());
         assertEquals("NPC1", dialogue4.getNpcThatSaidIt());
-        assertEquals("NPC1: TEXTO TESTE4", dialogue4.getTexto());
-        assertEquals("NPC2: TEXTO TESTE3", dialogue3.getTexto());
+        assertEquals("NPC1", dialogue4.getTexto().getKey());
+        assertEquals("TEXTO TESTE4", dialogue4.getTexto().getValue());
+        assertEquals("NPC2", dialogue3.getTexto().getKey());
+        assertEquals("TEXTO TESTE3", dialogue3.getTexto().getValue());
         assertEquals("NPC2", dialogue3.getNpcThatSaidIt());
     }
-
 }

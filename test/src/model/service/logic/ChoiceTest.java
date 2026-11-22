@@ -1,25 +1,25 @@
-package test;
+package src.model.service.logic;
+
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNull;
 
 import org.junit.Before;
 import org.junit.Test;
-
-import src.model.service.logic.Choice;;
 
 public class ChoiceTest {
     private Choice choice1;
     private Choice choice2;
     
     @Before
-    public void setUp(){
+    public void setUp() {
         choice1 = new Choice("TEXTO", null, 5, 2, 3, 4, 8);
         choice2 = new Choice("TEXTO2", "CENATESTE", "NPC1", 0, 3, 0, 8, 0);
     }
 
     @Test
-    public void choiceTest(){
+    public void gettersReturnChoiceData() {
         assertEquals("TEXTO", choice1.getText());
-        assertEquals(null, choice1.getNextSceneIdChoice());
+        assertNull(choice1.getNextSceneIdChoice());
         assertEquals(5, choice1.getObol());
         assertEquals(2, choice1.getAffinity());
         assertEquals(3, choice1.getLove());
@@ -35,5 +35,4 @@ public class ChoiceTest {
         assertEquals(8, choice2.getAngry());
         assertEquals(0, choice2.getSadness());
     }
-
 }

@@ -9,7 +9,7 @@ public class Settings {
     public Settings() {
         autoSave = true;
         autoSaveCounter = 1;
-        textSpeed = 1000;
+        textSpeed = 35;
         volume = 50;
     }
 

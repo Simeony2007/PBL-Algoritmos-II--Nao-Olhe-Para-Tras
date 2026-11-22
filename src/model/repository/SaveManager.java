@@ -25,12 +25,28 @@ public class SaveManager {
     public static final String SAVE_DIRECTORY = "data/saves/";
     public static final String PROFILE_DIRECTORY = "data/profile/";
 
+    private static File saveDirectory() {
+        return new File(System.getProperty("pbl.data.directory", "data"), "saves");
+    }
+
+    private static File profileDirectory() {
+        return new File(System.getProperty("pbl.data.directory", "data"), "profile");
+    }
+
+    private static File saveFile(String fileName) {
+        return new File(saveDirectory(), fileName);
+    }
+
+    private static File profileFile(String fileName) {
+        return new File(profileDirectory(), fileName);
+    }
+
     // Saves
     public static void saveGame(SaveState state, int slot) {
         Settings settings = loadSettings();
 
         if (slot == -1) {
-            File directory = new File(SAVE_DIRECTORY);
+            File directory = saveDirectory();
             if (!directory.exists()) {
                 directory.mkdirs();
             }
@@ -38,8 +54,8 @@ public class SaveManager {
                 settings.setAutoSaveInOne();
             }
             // 3. Append the folder path to the file name
-            String fileName = SAVE_DIRECTORY + "auto_save_" + settings.getAutoSaveCounter() + ".json";
-            try (FileWriter writer = new FileWriter(fileName)) {
+            File file = saveFile("auto_save_" + settings.getAutoSaveCounter() + ".json");
+            try (FileWriter writer = new FileWriter(file)) {
                 gson.toJson(state, writer);
                 settings.addAutoSaveCounter();
                 SaveManager.saveSettings(settings);
@@ -51,15 +67,15 @@ public class SaveManager {
 
         } else {
             // 2. Check if the "saves" folder exists, and create it if it doesn't
-            File directory = new File(SAVE_DIRECTORY);
+            File directory = saveDirectory();
             if (!directory.exists()) {
                 directory.mkdirs();
             }
 
             // 3. Append the folder path to the file name
-            String fileName = SAVE_DIRECTORY + "save_slot_" + slot + ".json";
+            File file = saveFile("save_slot_" + slot + ".json");
 
-            try (FileWriter writer = new FileWriter(fileName)) {
+            try (FileWriter writer = new FileWriter(file)) {
                 gson.toJson(state, writer);
                 notifyObserversSaveMade();
             } catch (IOException e) {
@@ -72,10 +88,10 @@ public class SaveManager {
     public static SaveState loadGame(int slot) {
         File file;
         if (slot > 0 && slot <= 3) {
-            file = new File(SAVE_DIRECTORY + "save_slot_" + slot + ".json");
+            file = saveFile("save_slot_" + slot + ".json");
         } else {
             slot = slot - 3;
-            file = new File(SAVE_DIRECTORY + "auto_save_" + slot + ".json");
+            file = saveFile("auto_save_" + slot + ".json");
         }
 
         if (!file.exists()) {
@@ -92,7 +108,7 @@ public class SaveManager {
     }
 
     public static String getSaveDateTime(int slot) {
-        File file = new File(SAVE_DIRECTORY + "save_slot_" + slot + ".json");
+        File file = saveFile("save_slot_" + slot + ".json");
 
         if (file.exists()) {
             SimpleDateFormat formatador = new SimpleDateFormat("dd/MM/yyyy HH:mm");
@@ -103,7 +119,7 @@ public class SaveManager {
     }
 
     public static String getAutoSaveDateTime(int slot) {
-        File file = new File(SAVE_DIRECTORY + "auto_save_" + slot + ".json");
+        File file = saveFile("auto_save_" + slot + ".json");
         if (file.exists()) {
             SimpleDateFormat formatador = new SimpleDateFormat("dd/MM/yyyy HH:mm");
             return formatador.format(new Date(file.lastModified()));
@@ -114,7 +130,7 @@ public class SaveManager {
 
     public static void deleteSave(int saveSlot) throws SaveNotFoundException {
         if (saveSlot > 3) {
-            File file = new File(SAVE_DIRECTORY + "auto_save_" + (saveSlot - 3) + ".json");
+            File file = saveFile("auto_save_" + (saveSlot - 3) + ".json");
             if (file.exists()) {
                 file.delete();
                 notifyObserversSaveDeleted();
@@ -123,7 +139,7 @@ public class SaveManager {
                 throw new SaveNotFoundException(saveSlot);
             }
         } else {
-            File file = new File(SAVE_DIRECTORY + "save_slot_" + saveSlot + ".json");
+            File file = saveFile("save_slot_" + saveSlot + ".json");
             if (file.exists()) {
                 file.delete();
                 notifyObserversSaveDeleted();
@@ -135,19 +151,19 @@ public class SaveManager {
     }
 
     public static boolean doesSaveExist(int saveSlot) {
-        File file = new File(SAVE_DIRECTORY + "save_slot_" + saveSlot + ".json");
+        File file = saveFile("save_slot_" + saveSlot + ".json");
         return file.exists();
     }
 
     // Settings
     public static void saveSettings(Settings currentSettings) {
-        File directory = new File(PROFILE_DIRECTORY);
+        File directory = profileDirectory();
         if (!directory.exists()) {
             directory.mkdirs();
         }
 
-        String fileName = PROFILE_DIRECTORY + "settings.json";
-        try (FileWriter writer = new FileWriter(fileName)) {
+        File file = profileFile("settings.json");
+        try (FileWriter writer = new FileWriter(file)) {
             gson.toJson(currentSettings, writer);
         } catch (IOException e) {
             // GameInterface.printWarning("\n[!] Erro crítico ao salvar o arquivo: " +
@@ -157,7 +173,7 @@ public class SaveManager {
     }
 
     public static Settings loadSettings() {
-        File file = new File(PROFILE_DIRECTORY + "settings.json");
+        File file = profileFile("settings.json");
         if (!file.exists()) {
             return new Settings();
         } else {
@@ -173,13 +189,13 @@ public class SaveManager {
 
     // Collection
     public static void saveCollection(Collection currentCollection) {
-        File directory = new File(PROFILE_DIRECTORY);
+        File directory = profileDirectory();
         if (!directory.exists()) {
             directory.mkdirs();
         }
 
-        String fileName = PROFILE_DIRECTORY + "collection.json";
-        try (FileWriter writer = new FileWriter(fileName)) {
+        File file = profileFile("collection.json");
+        try (FileWriter writer = new FileWriter(file)) {
             gson.toJson(currentCollection, writer);
         } catch (IOException e) {
             // GameInterface.printWarning("\n[!] Erro crítico ao salvar o arquivo: " +
@@ -189,7 +205,7 @@ public class SaveManager {
     }
 
     public static Collection loadCollection() {
-        File file = new File(PROFILE_DIRECTORY + "collection.json");
+        File file = profileFile("collection.json");
         if (!file.exists()) {
             return new Collection();
         } else {

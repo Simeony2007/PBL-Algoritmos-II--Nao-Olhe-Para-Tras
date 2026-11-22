@@ -230,7 +230,7 @@ public class MenuInterfaceJFX extends Application {
                 "- Orfeu também irá coletar óbolos (moedas) para atravessar o Submundo.\n" +
                 "- Você também fará relacionamento com alguns personagens.\n" +
                 "- Tanto o relacionameto, quanto os atributos terão consequências futuras.\n\n" +
-                "Para salvar manualmente, digite \"salvar\" no momento onde uma escolha for exigida.");
+                "Para salvar manualmente, clique no botão \"Salvar\" que estará disponível na tela.");
         bPane.setTop(stackPane);
         bPane.setCenter(vBox);
         vBox.setSpacing(10);
