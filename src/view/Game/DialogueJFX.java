@@ -206,7 +206,7 @@ public class DialogueJFX {
     private ImageView createCharacterSprite(String name) {
         File spriteFile = new File("assets/sprites/character/" + name + ".png");
         if (!spriteFile.isFile()) {
-            return null;
+            spriteFile = new File("assets/sprites/character/shade.png");
         }
 
         Image image = new Image(spriteFile.toURI().toString());
